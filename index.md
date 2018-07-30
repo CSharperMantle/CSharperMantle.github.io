@@ -142,11 +142,11 @@ namespace Invaders.Wpf.Commons
 ```json
 {"DiedTime":0,"HighestScore":0,"KilledInvaders":0,"PlayedGames":0,"PlayedTime":"PT0S"}
 ```
-> DiedTime: Death times of the player. Type: int
-> HighestScore: The highest score the player gets. Type: int
-> KilledInvaders: Invaders the player killed. Type: int
-> PlayedGames: Games the Player played. Type: int
-> PlayedTime: The time the player played. Type: System.Nullable<System.TimeSpan>
+**DiedTime**: Death times of the player. Type: int.
+**HighestScore**: The highest score the player gets. Type: int
+**KilledInvaders**: Invaders the player killed. Type: int
+**PlayedGames**: Games the Player played. Type: int
+**PlayedTime**: The time the player played. Type: System.TimeSpan?
 
 #### Known issues
 1. _Playarea_ Border doesn't have borders and corners in right way.
