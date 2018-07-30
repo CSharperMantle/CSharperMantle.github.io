@@ -71,7 +71,7 @@ private void WriteHistoryDataFromFile()
 }
 ```
 
-2. Console logger
+1. Console logger
 
 ```csharp
 using System;
