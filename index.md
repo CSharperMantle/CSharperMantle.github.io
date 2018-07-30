@@ -11,7 +11,7 @@ layout: default
 
 #### Core algorithms
 
-1. History data recorder
+##### History data recorder
 
 ```csharp
 private void ReadHistoryDataFromFile()
@@ -71,7 +71,7 @@ private void WriteHistoryDataFromFile()
 }
 ```
 
-1. Console logger
+##### Console logger
 
 ```csharp
 using System;
@@ -147,3 +147,8 @@ namespace Invaders.Wpf.Commons
 > KilledInvaders: Invaders the player killed. Type: int
 > PlayedGames: Games the Player played. Type: int
 > PlayedTime: The time the player played. Type: System.Nullable<System.TimeSpan>
+
+#### Known issues
+1. _Playarea_ Border doesn't have borders and corners in right way.
+2. Crash when the window is too small.
+3. _Scanline_ Rectangle and Canvas appears odd when the window is too small.
