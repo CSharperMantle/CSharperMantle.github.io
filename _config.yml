@@ -17,14 +17,10 @@ title: CSharperMantle's blog
 email: csharpermantle@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
     A personal site which contains all the posts by CSharperMantle. 
-    Posts are all public except some special cases, such as the classified 
-    files from the \'SCP Foundation\'. 
-    Accessing certain posts related to the SCP Foundation without proper 
-    memetic inoculation will cause immediate death. These posts are labelled 
-    out with clearance level.
+    Posts are licensed under CC-BY-NC-SA 4.0 License.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://csharpermantle.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: null 
+twitter_username: CSharperMantle 
 github_username:  CSharperMantle
 
 # Build settings
