@@ -1,0 +1,28 @@
+==================================================================
+https://keybase.io/csharpermantle
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://csharpermantle.github.io
+  * I am csharpermantle (https://keybase.io/csharpermantle) on keybase.
+  * I have a public key with fingerprint C307 71EA 55BE B790 1695  DD7F 24CB 30C4 625D 2170
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101365f046d0b6c692da65df122bbc7b8abc1ada9ecf1c93f6ccf2519cfc7bc3d990a",
+      "fingerprint": "c30771ea55beb7901695dd7f24cb30c4625d2170",
+      "host": "keybase.io",
+      "key_id": "24cb30c4625d2170",
+      "kid": "0101365f046d0b6c692da65df122bbc7b8abc1ada9ecf1c93f6ccf2519cfc7bc3d990a",
+      "uid": "c9061b3c45c30455c76ffc44fe66b619",
+      "username": "csharpermantle"
+    },
+    "service": {
+      "hostname": "csharpermantle.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_bindin
