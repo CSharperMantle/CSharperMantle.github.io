@@ -25,4 +25,50 @@ To do so, I am signing this object:
       "hostname": "csharpermantle.github.io",
       "protocol": "https:"
     },
-    "type": "web_service_bindin
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1598706439,
+  "expire_in": 157680000,
+  "prev": "b120b2ee334cb077e0d312be07d36232f6f3d807402298e5547cc14336a6f912",
+  "seqno": 13,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNEAnicrVJtUFRVGF6+B2YoBkmdEJRrTTrBdj/P3btY8hEUMk2JyZip2/04l70D
+7C733gUWAg3lQzAYJwtzAsqRWCEz1MLJoZHCwQJFhigUVCIgZmUkhGgQse6l+ufP
+zp8z57zP87zP+5zTGexjCPJ6qhvt5HZHOby6O5qdBsuWbQGFCGcXXIi5EMmEyxvM
+EqCiWjIlATEjKIZiBKBElAQCygEeMLjAAkoQMRznOJ7mTCzHY6zAMpAXMZ4hRMDz
+Ik5hDC9qVZ4QGAZlkWhElGwZUHbIkk3VZHkCpWkMshTFQY5mUAwwlCDQIk7yHIHy
+JMApAcdoVCNa7YrO0MxxrAKNkl270w6WZXuPwP/Pvp3LcjyDAowjeJLSnJMUxdNA
+FHmSFCEAHMAYHahA2cZmQx2tWFnZAeVs1qZmQaQoGtFquRIP9Xj1eR6JM2ZIqtXJ
+/TOhQ7ardt6epaGsqupQzLqK6nLotDzIWf4VtHCSTdCS1Ri5UFYkuw0xYxqSVyW9
+A0YxJhoFJMFEIzDfIcnQIukIigYmVFt6H5irSXIYjnI4hAShBao9DUQFAsM5iNIC
+AXACF4FICCaUJlEcZ0yQokia5zGSIAALRAbDEX3EHJtd0yY0n2yGpqlIGTZWdcpa
+AN927PI1eAUZ/P289S9nCAoM+e8jRr70+F9CTfm7XeddSsrzg3GDLaLP0cHFFweG
+jcaQE9Hu1OyqzIdnZ/epU+ujwPtVtzeX7jekVAfWH9821zNx6svv/H6qiwsP2Isx
+JabKB5vjzLk/b8kPHIl3+SYLS1tb/EKmTi+UJV/bEwlNzxlr8x9OJ/x+o3X8l5H+
+0QW6LOfu24bIQXvS6o3KgbzYrh/TF3KXGgtMHXuGQMz1vtPGBe/iGCTxGd/ES71j
+a+/L8wcbVk4d7wsVipTJ+bqx/Y2V/ottoc1Z7rAbOfsmbPaBsE2RZ/pKQpDiwJEn
+Xj+3dMw5V+H0rk0C/v3JjxUNvFC3wv3VxoorBxKGjd9f+PyL4gsf3zp0p35ve486
+mt54tNrTfyLl6owX/DR+uzq+9Eat5+wrX78667q363Dd9tA1csSdQ7FwfO2V2I9i
+L4ZZJ8bSqE050xFdrc1/oAmWgu6h7vqLdHUv5U5owBYnzznxUzvWhde+lr2+BK8q
+zdtaeM0WUbpuTdPuGHfczG+XfDzzQtKT6PQ8UZFgRZ+9viE8wHib/TAzvamNSP3m
+YHx+Yw07GzfjMgdcboPvBXs+of3KsXbDztGdZeXO8x+03ix4y91wc+7wydX3Mu77
+Dos1d8uL5qfegb0KWJVibvis8kjn0ytrNlQ/uPWmMzA9tXDyao/lh7Rj+WlRLava
+g4mhxCaPh2y5/PKvO07+eWbkbzM9zUc=
+=+r7b
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/csharpermantle
+
+==================================================================
