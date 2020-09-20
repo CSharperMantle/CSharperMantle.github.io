@@ -2,12 +2,13 @@
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
   <tbody>
+    <!-- Under contruction logo. -->
     <tr>
-      <td valign="top" bgcolor="#f1f1f1">
+      <td valign="top" bgcolor="#f1f1f1" style="user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;">
         <p>
         </p>
         <p style="text-align: center;"></p>
-        <figure align="center">
+        <figure align="center" id="figure-under-construction">
           <img src="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" style="border-bottom: 1px solid #DEDCDB;">
         </figure>
         <p>
@@ -18,13 +19,14 @@
           <span style="font-family: &quot;Source Sans Pro&quot;; font-size: 14pt; color: rgb(102, 102, 102);">You may surf around freely during this time.</span>
         </h2>
         <div style="text-align: center;">
-          <span style="color: rgb(163, 163, 163);">
-            <pre id="user-agent-holder" style="font-size: 8pt;"></pre>
+          <span style="color: rgb(165, 165, 165);">
+            <pre id="pre-user-agent" style="font-size: 6pt;"></pre>
             <br>
           </span>
         </div>
       </td>
     </tr>
+    <!-- Main content starts here -->
     <tr>
       <td>
         <fieldset align="" style="border-color:#000000;">
@@ -45,6 +47,7 @@
 "use strict";
 
 (function() {
-    document.getElementById("user-agent-holder").innerText = navigator.userAgent;
+    document.getElementById("pre-user-agent").innerText = navigator.userAgent;
+    document.getElementById("figure-under-construction").addEventListener("click", () => { alert("Please be patient. The construction might take a lot of time."); });
 })();
 </script>
