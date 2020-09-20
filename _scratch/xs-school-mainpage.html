@@ -24,6 +24,10 @@
             <br>
           </span>
         </div>
+        <iframe id="iframe-game" hidden height="600" style="width: 100%;" scrolling="no" title="A matter of gravity" src="https://codepen.io/borntofrappe/embed/mddEvEW?height=600&theme-id=light&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+        See the Pen <a href='https://codepen.io/borntofrappe/pen/mddEvEW'>A matter of gravity</a> by Gabriele Corti
+        (<a href='https://codepen.io/borntofrappe'>@borntofrappe</a>) on <a href='https://codepen.io'>CodePen</a>.
+        </iframe>
       </td>
     </tr>
     <!-- Main content starts here -->
@@ -48,6 +52,17 @@
 
 (function() {
     document.getElementById("pre-user-agent").innerText = navigator.userAgent;
-    document.getElementById("figure-under-construction").addEventListener("click", () => { alert("Please be patient. The construction might take a lot of time."); });
+    document.getElementById("figure-under-construction").addEventListener("click", () => {
+      alert("Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.");
+      let gameElem = document.getElementById("iframe-game");
+      if (gameElem.hasAttribute("hidden"))
+      {
+          gameElem.removeAttribute("hidden");
+      }
+      else
+      {
+          gameElem.setAttribute("hidden", "true");
+      }
+    });
 })();
 </script>
