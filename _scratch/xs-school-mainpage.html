@@ -24,10 +24,7 @@
             <br>
           </span>
         </div>
-        <iframe id="iframe-game" hidden height="600" style="width: 100%;" scrolling="no" title="A matter of gravity" src="https://codepen.io/borntofrappe/embed/mddEvEW?height=600&theme-id=light&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-        See the Pen <a href='https://codepen.io/borntofrappe/pen/mddEvEW'>A matter of gravity</a> by Gabriele Corti
-        (<a href='https://codepen.io/borntofrappe'>@borntofrappe</a>) on <a href='https://codepen.io'>CodePen</a>.
-        </iframe>
+        <div id="div-game"></div>
       </td>
     </tr>
     <!-- Main content starts here -->
@@ -50,19 +47,21 @@
 <script>
 "use strict";
 
+const DIV_GAME_CONTENT = "CiAgICAgICAgICAgIDxpZnJhbWUgaWQ9ImlmcmFtZS1nYW1lIiBoZWlnaHQ9IjYwMCIgc3R5bGU9IndpZHRoOiAxMDAlOyIgc2Nyb2xsaW5nPSJubyIgdGl0bGU9IkEgbWF0dGVyIG9mIGdyYXZpdHkiIHNyYz0iaHR0cHM6Ly9jb2RlcGVuLmlvL2Jvcm50b2ZyYXBwZS9lbWJlZC9tZGRFdkVXP2hlaWdodD02MDAmYW1wO3RoZW1lLWlkPWxpZ2h0JmFtcDtkZWZhdWx0LXRhYj1qcyxyZXN1bHQiIGZyYW1lYm9yZGVyPSJubyIgbG9hZGluZz0ibGF6eSIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIGFsbG93ZnVsbHNjcmVlbj0idHJ1ZSI+CiAgICAgICAgICAgIFNlZSB0aGUgUGVuIDxhIGhyZWY9Imh0dHBzOi8vY29kZXBlbi5pby9ib3JudG9mcmFwcGUvcGVuL21kZEV2RVciPkEgbWF0dGVyIG9mIGdyYXZpdHk8L2E+IGJ5IEdhYnJpZWxlIENvcnRpCiAgICAgICAgICAgICg8YSBocmVmPSJodHRwczovL2NvZGVwZW4uaW8vYm9ybnRvZnJhcHBlIj5AYm9ybnRvZnJhcHBlPC9hPikgb24gPGEgaHJlZj0iaHR0cHM6Ly9jb2RlcGVuLmlvIj5Db2RlUGVuPC9hPi4KICAgICAgICAgICAgPC9pZnJhbWU+CiAgICAgICAgICAgIA==";
+
 (function() {
     document.getElementById("pre-user-agent").innerText = navigator.userAgent;
     document.getElementById("figure-under-construction").addEventListener("click", () => {
-      alert("Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.");
-      let gameElem = document.getElementById("iframe-game");
-      if (gameElem.hasAttribute("hidden"))
-      {
-          gameElem.removeAttribute("hidden");
-      }
-      else
-      {
-          gameElem.setAttribute("hidden", "true");
-      }
+        alert("Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.");
+        let gameElem = document.getElementById("div-game");
+        if (gameElem.innerHTML != "")
+        {
+            gameElem.innerHTML = "";
+        }
+        else
+        {
+            gameElem.insertAdjacentHTML("afterbegin", atob(DIV_GAME_CONTENT));
+        }
     });
 })();
 </script>
