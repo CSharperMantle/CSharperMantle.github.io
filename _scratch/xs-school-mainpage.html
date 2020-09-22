@@ -5,8 +5,7 @@
     <!-- Under contruction logo. -->
     <tr>
       <td valign="top" bgcolor="#f1f1f1" style="user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;">
-        <p>
-        </p>
+        <br>
         <p style="text-align: center;"></p>
         <figure align="center" id="figure-under-construction">
           <img src="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" style="border-bottom: 1px solid #DEDCDB;">
@@ -47,12 +46,17 @@
 <script>
 "use strict";
 
-const DIV_GAME_CONTENT = "CiAgICAgICAgICAgIDxpZnJhbWUgaWQ9ImlmcmFtZS1nYW1lIiBoZWlnaHQ9IjYwMCIgc3R5bGU9IndpZHRoOiAxMDAlOyIgc2Nyb2xsaW5nPSJubyIgdGl0bGU9IkEgbWF0dGVyIG9mIGdyYXZpdHkiIHNyYz0iaHR0cHM6Ly9jb2RlcGVuLmlvL2Jvcm50b2ZyYXBwZS9lbWJlZC9tZGRFdkVXP2hlaWdodD02MDAmYW1wO3RoZW1lLWlkPWxpZ2h0JmFtcDtkZWZhdWx0LXRhYj1qcyxyZXN1bHQiIGZyYW1lYm9yZGVyPSJubyIgbG9hZGluZz0ibGF6eSIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIGFsbG93ZnVsbHNjcmVlbj0idHJ1ZSI+CiAgICAgICAgICAgIFNlZSB0aGUgUGVuIDxhIGhyZWY9Imh0dHBzOi8vY29kZXBlbi5pby9ib3JudG9mcmFwcGUvcGVuL21kZEV2RVciPkEgbWF0dGVyIG9mIGdyYXZpdHk8L2E+IGJ5IEdhYnJpZWxlIENvcnRpCiAgICAgICAgICAgICg8YSBocmVmPSJodHRwczovL2NvZGVwZW4uaW8vYm9ybnRvZnJhcHBlIj5AYm9ybnRvZnJhcHBlPC9hPikgb24gPGEgaHJlZj0iaHR0cHM6Ly9jb2RlcGVuLmlvIj5Db2RlUGVuPC9hPi4KICAgICAgICAgICAgPC9pZnJhbWU+CiAgICAgICAgICAgIA==";
-
+const DIV_GAME_CONTENT_BASE64 = "CiAgICAgICAgICAgIDxpZnJhbWUgaWQ9ImlmcmFtZS1nYW1lIiBoZWlnaHQ9IjYwMCIgc3R5bGU9IndpZHRoOiAxMDAlOyIgc2Nyb2xsaW5nPSJubyIgdGl0bGU9IkEgbWF0dGVyIG9mIGdyYXZpdHkiIHNyYz0iaHR0cHM6Ly9jb2RlcGVuLmlvL2Jvcm50b2ZyYXBwZS9lbWJlZC9tZGRFdkVXP2hlaWdodD02MDAmYW1wO3RoZW1lLWlkPWxpZ2h0JmFtcDtkZWZhdWx0LXRhYj1qcyxyZXN1bHQiIGZyYW1lYm9yZGVyPSJubyIgbG9hZGluZz0ibGF6eSIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIGFsbG93ZnVsbHNjcmVlbj0idHJ1ZSI+CiAgICAgICAgICAgIFNlZSB0aGUgUGVuIDxhIGhyZWY9Imh0dHBzOi8vY29kZXBlbi5pby9ib3JudG9mcmFwcGUvcGVuL21kZEV2RVciPkEgbWF0dGVyIG9mIGdyYXZpdHk8L2E+IGJ5IEdhYnJpZWxlIENvcnRpCiAgICAgICAgICAgICg8YSBocmVmPSJodHRwczovL2NvZGVwZW4uaW8vYm9ybnRvZnJhcHBlIj5AYm9ybnRvZnJhcHBlPC9hPikgb24gPGEgaHJlZj0iaHR0cHM6Ly9jb2RlcGVuLmlvIj5Db2RlUGVuPC9hPi4KICAgICAgICAgICAgPC9pZnJhbWU+CiAgICAgICAgICAgIA==";
+const POPUP_GAME_CONTENT = "Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.\r\n"
+                         + "LEGAL DISCLAIMER: THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE "
+                         + "WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS "
+                         + "BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN "
+                         + "CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. ";
+  
 (function() {
     document.getElementById("pre-user-agent").innerText = navigator.userAgent;
     document.getElementById("figure-under-construction").addEventListener("click", () => {
-        alert("Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.");
+        alert(POPUP_GAME_CONTENT);
         let gameElem = document.getElementById("div-game");
         if (gameElem.innerHTML != "")
         {
@@ -60,7 +64,7 @@ const DIV_GAME_CONTENT = "CiAgICAgICAgICAgIDxpZnJhbWUgaWQ9ImlmcmFtZS1nYW1lIiBoZW
         }
         else
         {
-            gameElem.insertAdjacentHTML("afterbegin", atob(DIV_GAME_CONTENT));
+            gameElem.insertAdjacentHTML("afterbegin", atob(DIV_GAME_CONTENT_BASE64));
         }
     });
 })();
