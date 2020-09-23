@@ -25,6 +25,20 @@
             <br>
           </span>
         </div>
+      </td>
+    </tr>
+    <!-- Game element. -->
+    <tr>
+      <td bgcolor="#f1f1f1">
+        <pre id="pre-legal-disclaimer" align="center" hidden>
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+        FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+        IN THE SOFTWARE.
+        </pre>
         <div id="div-game"></div>
       </td>
     </tr>
@@ -48,24 +62,28 @@
 <script>
 "use strict";
 
-const DIV_GAME_CONTENT_BASE64 = "CiAgICAgICAgICAgIDxpZnJhbWUgaWQ9ImlmcmFtZS1nYW1lIiBoZWlnaHQ9IjYwMCIgc3R5bGU9IndpZHRoOiAxMDAlOyIgc2Nyb2xsaW5nPSJubyIgdGl0bGU9IkEgbWF0dGVyIG9mIGdyYXZpdHkiIHNyYz0iaHR0cHM6Ly9jb2RlcGVuLmlvL2Jvcm50b2ZyYXBwZS9lbWJlZC9tZGRFdkVXP2hlaWdodD02MDAmYW1wO3RoZW1lLWlkPWxpZ2h0JmFtcDtkZWZhdWx0LXRhYj1qcyxyZXN1bHQiIGZyYW1lYm9yZGVyPSJubyIgbG9hZGluZz0ibGF6eSIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIGFsbG93ZnVsbHNjcmVlbj0idHJ1ZSI+CiAgICAgICAgICAgIFNlZSB0aGUgUGVuIDxhIGhyZWY9Imh0dHBzOi8vY29kZXBlbi5pby9ib3JudG9mcmFwcGUvcGVuL21kZEV2RVciPkEgbWF0dGVyIG9mIGdyYXZpdHk8L2E+IGJ5IEdhYnJpZWxlIENvcnRpCiAgICAgICAgICAgICg8YSBocmVmPSJodHRwczovL2NvZGVwZW4uaW8vYm9ybnRvZnJhcHBlIj5AYm9ybnRvZnJhcHBlPC9hPikgb24gPGEgaHJlZj0iaHR0cHM6Ly9jb2RlcGVuLmlvIj5Db2RlUGVuPC9hPi4KICAgICAgICAgICAgPC9pZnJhbWU+CiAgICAgICAgICAgIA==";
-const POPUP_GAME_CONTENT = "Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.\r\n"
-                         + "LEGAL DISCLAIMER: THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE "
-                         + "WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS "
-                         + "BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN "
-                         + "CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. ";
-  
+const DIV_GAME_CONTENT_BASE64 = "PGlmcmFtZSBpZD0iaWZyYW1lLWdhbWUiIGhlaWdodD0iNjAwIiBzdHlsZT0id2lkdGg6IDEwMCU7IiBzY3JvbGxpbmc9Im5vIiB0aXRsZT0iQSBtYXR0ZXIgb2YgZ3Jhdml0eSIgc3JjPSJodHRwczovL2NvZGVwZW4uaW8vYm9ybnRvZnJhcHBlL2VtYmVkL21kZEV2RVc/aGVpZ2h0PTYwMCZhbXA7dGhlbWUtaWQ9bGlnaHQmYW1wO2RlZmF1bHQtdGFiPWpzLHJlc3VsdCIgZnJhbWVib3JkZXI9Im5vIiBsb2FkaW5nPSJsYXp5IiBhbGxvd3RyYW5zcGFyZW5jeT0idHJ1ZSIgYWxsb3dmdWxsc2NyZWVuPSJ0cnVlIj5TZWUgdGhlIFBlbiA8YSBocmVmPSJodHRwczovL2NvZGVwZW4uaW8vYm9ybnRvZnJhcHBlL3Blbi9tZGRFdkVXIj5BIG1hdHRlciBvZiBncmF2aXR5PC9hPiBieSBHYWJyaWVsZSBDb3J0aQooPGEgaHJlZj0iaHR0cHM6Ly9jb2RlcGVuLmlvL2Jvcm50b2ZyYXBwZSI+QGJvcm50b2ZyYXBwZTwvYT4pIG9uIDxhIGhyZWY9Imh0dHBzOi8vY29kZXBlbi5pbyI+Q29kZVBlbjwvYT4uPC9pZnJhbWU+CiAgICAgICAgICAgIA==";
+const POPUP_GAME_CONTENT = "Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.";
+
+const ELEMID_PRE_USER_AGENT = "pre-user-agent";
+const ELEMID_FIGURE_UNDER_CONSTRUCTION = "figure-under-construction";
+const ELEMID_DIV_GAME = "div-game";
+const ELEMID_PRE_LEGAL_DISCLAIMER = "pre-legal-disclaimer";
+
 (function() {
-    document.getElementById("pre-user-agent").innerText = navigator.userAgent;
-    document.getElementById("figure-under-construction").addEventListener("click", () => {
+    document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent;
+    document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener("click", () => {
         alert(POPUP_GAME_CONTENT);
-        let gameElem = document.getElementById("div-game");
+        let gameElem = document.getElementById(ELEMID_DIV_GAME);
+        let legalDisclaimerElem = document.getElementById(ELEMID_PRE_LEGAL_DISCLAIMER);
         if (gameElem.innerHTML != "")
         {
+            legalDisclaimerElem.setAttribute("hidden", "");
             gameElem.innerHTML = "";
         }
         else
         {
+            legalDisclaimerElem.removeAttribute("hidden");
             gameElem.insertAdjacentHTML("afterbegin", atob(DIV_GAME_CONTENT_BASE64));
         }
     });
