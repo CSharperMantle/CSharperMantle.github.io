@@ -61,7 +61,7 @@
             <strong>D2303班级主页</strong>
             <!--又称宁波市效实看守所东部新城分部426室，大嘤帝国嘤基李股份有限公司--></legend>
           <!-- Here comes a TODO item. Here goes the content. -->
-          <figure align="center">
+          <figure id="figure-banner" align="center">
             <img src="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" alt="class flag">
           </figure>
           <figure align="center">
@@ -78,16 +78,16 @@
 
 const DIV_GAME_CONTENT_BASE64 = "PGlmcmFtZSBoZWlnaHQ9IjYwMCIgc3R5bGU9IndpZHRoOiAxMDAlOyIgc2Nyb2xsaW5nPSJubyIgdGl0bGU9IkEgbWF0dGVyIG9mIGdyYXZpdHksIGJvdW5jaW5nIiBzcmM9Imh0dHBzOi8vY29kZXBlbi5pby9DU2hhcnBlck1hbnRsZS9lbWJlZC93dkdSeUpKP2hlaWdodD0yNjUmdGhlbWUtaWQ9bGlnaHQmZGVmYXVsdC10YWI9anMscmVzdWx0IiBmcmFtZWJvcmRlcj0ibm8iIGxvYWRpbmc9ImxhenkiIGFsbG93dHJhbnNwYXJlbmN5PSJ0cnVlIiBhbGxvd2Z1bGxzY3JlZW49InRydWUiPjwvaWZyYW1lPg==";
 const POPUP_GAME_CONTENT = "Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.";
-
+  
 const ELEMID_PRE_USER_AGENT = "pre-user-agent";
 const ELEMID_FIGURE_UNDER_CONSTRUCTION = "figure-under-construction";
 const ELEMID_DIV_GAME = "div-game";
 const ELEMID_PRE_LEGAL_DISCLAIMER = "pre-legal-disclaimer";
+const ELEMID_FIGURE_BANENR = "figure-banner";
 
 (function() {
     document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent;
     document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener("click", () => {
-        alert(POPUP_GAME_CONTENT);
         let gameElem = document.getElementById(ELEMID_DIV_GAME);
         let legalDisclaimerElem = document.getElementById(ELEMID_PRE_LEGAL_DISCLAIMER);
         if (gameElem.innerHTML != "")
@@ -97,6 +97,7 @@ const ELEMID_PRE_LEGAL_DISCLAIMER = "pre-legal-disclaimer";
         }
         else
         {
+            alert(POPUP_GAME_CONTENT);
             legalDisclaimerElem.removeAttribute("hidden");
             gameElem.insertAdjacentHTML("afterbegin", atob(DIV_GAME_CONTENT_BASE64));
         }
