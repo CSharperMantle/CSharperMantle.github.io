@@ -24,7 +24,6 @@
         <div style="text-align: center; margin: 0 auto;">
           <span style="color: rgb(165, 165, 165);">
             <pre id="pre-user-agent" style="font-size: 6pt;"></pre>
-            <br>
           </span>
         </div>
       </td>
@@ -32,18 +31,9 @@
     <!-- Game element. -->
     <tr>
       <td bgcolor="#f1f1f1">
-        <pre id="pre-legal-disclaimer" style="text-align: center; margin: 0 auto;" hidden>The MIT License
-        <br>Copyright (c) 2020 by Gabriele Corti (https://codepen.io/borntofrappe/pen/mddEvEW)<br>Copyright (c) 2020 by Rong "Mantle" Bao (https://codepen.io/CSharperMantle/pen/MWyLZvy)<br>Copyright (c) 2020 by Sean Stopnik (https://codepen.io/seanstopnik/pen/CeLqA)
         <br>
-        <br>Permission is hereby granted, free of charge, to any person obtaining a copy of<br>this software and associated documentation files (the "Software"), to deal in the<br>Software without restriction, including without limitation the rights to use, copy,<br>modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,<br>and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        <h2 id="h2-deprecated-banner" style="text-align: center; margin: 0 auto; font-weight: bold; font-size: large;" hidden>This feature is deprecated and removed.</h2>
         <br>
-        <br>The above copyright notice and this permission notice shall be included in all copies<br>or substantial portions of the Software.
-        <br>
-        <br>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,<br>INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR<br>PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE<br>FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR<br>OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER<br>DEALINGS IN THE SOFTWARE.
-        </pre>
-        <h2 id="h2-deprecated-banner" style="text-align: center; margin: 0 auto; font-weight: bold; font-size: large;" hidden>This feature is deprecated and will be removed soon.</h2>
-        <br>
-        <div id="div-game"></div>
       </td>
     </tr>
     <!-- Main content starts here -->
@@ -90,25 +80,21 @@ const ELEMID_DIV_GAME = "div-game";
 const ELEMID_PRE_LEGAL_DISCLAIMER = "pre-legal-disclaimer";
 const ELEMID_H2_DEPRECATED_BANNER = "h2-deprecated-banner";
 const ELEMID_FIGURE_BANENR = "figure-banner";
-
+let isDeprecatedBannerShowing = false;
+  
 (function() {
     document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent;
     document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener("click", () => {
-        let gameElem = document.getElementById(ELEMID_DIV_GAME);
-        let legalDisclaimerElem = document.getElementById(ELEMID_PRE_LEGAL_DISCLAIMER);
         let deprecatedBannerElem = document.getElementById(ELEMID_H2_DEPRECATED_BANNER);
-        if (gameElem.innerHTML != "")
+        if (isDeprecatedBannerShowing)
         {
-            legalDisclaimerElem.setAttribute("hidden", "");
             deprecatedBannerElem.setAttribute("hidden", "");
-            gameElem.innerHTML = "";
+            isDeprecatedBannerShowing = false;
         }
         else
         {
-            alert(POPUP_GAME_CONTENT);
-            legalDisclaimerElem.removeAttribute("hidden");
             deprecatedBannerElem.removeAttribute("hidden");
-            gameElem.insertAdjacentHTML("afterbegin", atob(DIV_GAME_CONTENT_BASE64));
+            isDeprecatedBannerShowing = true;
         }
     });
 })();
