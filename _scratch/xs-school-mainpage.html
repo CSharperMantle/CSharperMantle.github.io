@@ -1,85 +1,108 @@
 <link rel="stylesheet" href="https://cdn.staticdn.net/css?family=Source+Sans+Pro:300,400,600,700" crossorigin="anonymous">
-<link rel="preload" href="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" as="image" crossorigin="anonymous">
-<link rel="preload" href="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" as="image" crossorigin="anonymous">
-<link rel="preload" href="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" as="image" crossorigin="anonymous">
+<link rel="preload" href="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" as="image">
+<link rel="preload" href="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" as="image">
+<link rel="preload" href="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" as="image">
+<link rel="preload" href="https://csharpermantle.github.io/assets/img/6b27ae209b0bf826f11bdbfeb7b3f68de4f6bb76.jpg" as="image">
+<link rel="preload" href="https://csharpermantle.github.io/assets/img/a37d30d89b78a16f7e71085b931ca3570ba25ba6.jpg" as="image">
 <style>
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .container-center {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+
+.container-flex {
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .no-selection {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
+
+figure.gallery-fig {
+  border: thin #c0c0c0 solid;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  margin: auto;
+}
+
+figure.gallery-fig>figcaption {
+  background-color: #222;
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 3px;
+  text-align: center;
+}
+
 </style>
 <!-- Cerina, I will certainly become your deskmate next semester. -->
 <table id="table-main" border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
-    <tbody>
-        <!-- Under contruction logo. -->
-        <tr>
-            <td class="no-selection" bgcolor="#f1f1f1" style="vertical-align: top;">
-                <br>
-                <p class="text-center"></p>
-                <figure class="text-center container-center" id="figure-under-construction">
-                    <img src="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" style="border-bottom: 1px solid #DEDCDB;">
-                </figure>
-                <p>
-                </p>
-                <h2 class="text-center container-center">
-                    <span style="font-family: &quot;Source Sans Pro&quot;; font-size: 16pt; color: rgb(102, 102, 102);">Home page is under construction.</span>
-                    <br>
-                    <span style="font-family: &quot;Source Sans Pro&quot;; font-size: 14pt; color: rgb(102, 102, 102);">You may surf around freely during this time.</span>
-                </h2>
-                <div class="text-center container-center">
-                    <span style="color: rgb(165, 165, 165);">
-                        <pre id="pre-user-agent" style="font-size: 6pt;"></pre>
-                    </span>
-                </div>
-            </td>
-        </tr>
-        <!-- Game element. -->
-        <tr>
-            <td bgcolor="#f1f1f1">
-                <br>
-                <h2 id="h2-deprecated-banner" class="text-center container-center" style="font-weight: bold; font-size: large;" hidden="">This feature is deprecated and removed.</h2>
-                <br>
-            </td>
-        </tr>
-        <!-- Main content starts here -->
-        <tr>
-            <td>
-                <figure id="figure-banner" class="text-center container-center">
-                    <img class="switchable" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <fieldset style="border-color:#000000;">
-                    <legend style="font-size: 14pt">
-                        <strong>班级之星</strong>
-                    </legend>
-                    <!-- TODO: Add the content. -->
-                    <table id="table-stars" border="0" cellpadding="0" cellspacing="0" class="container-center">
-                        <tbody>
-                            <tr>
-                                <td class="text-center container-center" style="vertical-align: top;">
-                                    <figure class="container-center">
-                                        <img src="https://csharpermantle.github.io/assets/img/6b27ae209b0bf826f11bdbfeb7b3f68de4f6bb76.jpg" alt="Aristotle">
-                                    </figure>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </fieldset>
-            </td>
-        </tr>
-    </tbody>
+  <tbody>
+    <!-- Under contruction logo. -->
+    <tr>
+      <td class="no-selection" bgcolor="#f1f1f1" style="vertical-align: top;">
+        <br>
+        <p class="text-center"></p>
+        <figure class="text-center container-center" id="figure-under-construction">
+          <img src="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" style="border-bottom: 1px solid #DEDCDB;">
+        </figure>
+        <p>
+        </p>
+        <h2 class="text-center container-center">
+          <span style="font-family: &quot;Source Sans Pro&quot;; font-size: 16pt; color: rgb(102, 102, 102);">Home page is under construction.</span>
+          <br>
+          <span style="font-family: &quot;Source Sans Pro&quot;; font-size: 14pt; color: rgb(102, 102, 102);">You may surf around freely during this time.</span>
+        </h2>
+        <div class="text-center container-center">
+          <span style="color: rgb(165, 165, 165);">
+            <pre id="pre-user-agent" style="font-size: 6pt;"></pre>
+          </span>
+        </div>
+      </td>
+    </tr>
+    <!-- Game element. -->
+    <tr>
+      <td bgcolor="#f1f1f1">
+        <br>
+        <h2 id="h2-deprecated-banner" class="text-center container-center" style="font-weight: bold; font-size: large;" hidden="">This feature is deprecated and removed.</h2>
+        <br>
+      </td>
+    </tr>
+    <!-- Main content starts here -->
+    <tr>
+      <td>
+        <figure id="figure-banner" class="text-center container-center">
+          <img class="switchable" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fieldset style="border-color:#000000;">
+          <legend style="font-size: 14pt">
+            <strong>Star of the class</strong> 班级之星
+          </legend>
+          <!-- TODO: Add the content. -->
+          <div class="container-flex">
+            <figure class="gallery-fig">
+              <img src="https://csharpermantle.github.io/assets/img/6b27ae209b0bf826f11bdbfeb7b3f68de4f6bb76.jpg" alt="Aristotle">
+              <figcaption>The avatar of 翁嘉诚, aka Aristotle</figcaption>
+            </figure>
+            <figure class="gallery-fig">
+              <img src="https://csharpermantle.github.io/assets/img/a37d30d89b78a16f7e71085b931ca3570ba25ba6.jpg" alt="Alan">
+              <figcaption>梁扬荣, aka Alan or Spotty, holding a bottle of A Little Tea</figcaption>
+            </figure>
+          </div>
+        </fieldset>
+      </td>
+    </tr>
+  </tbody>
 </table>
 <script>
 "use strict";
@@ -96,50 +119,51 @@ const ELEMID_FIGURE_BANENR = "figure-banner";
 let isDeprecatedBannerShowing = false;
 
 function refreshSwitch(s) {
-    let currentSwitch = s.dataset.switchCurrent;
+  let currentSwitch = s.dataset.switchCurrent;
 
-    let switchAttrStr = "switchSrc-" + currentSwitch;
-    let currentSwitchSrc = s.dataset[switchAttrStr];
+  let switchAttrStr = "switchSrc-" + currentSwitch;
+  let currentSwitchSrc = s.dataset[switchAttrStr];
 
-    s.setAttribute("src", currentSwitchSrc);
+  s.setAttribute("src", currentSwitchSrc);
 }
 
 function switchNext(s) {
-    let currentSwitch = parseInt(s.dataset.switchCurrent, 10);
-    let switchCases = parseInt(s.dataset.switchCases, 10);
+  let currentSwitch = parseInt(s.dataset.switchCurrent, 10);
+  let switchCases = parseInt(s.dataset.switchCases, 10);
 
-    currentSwitch += 1;
-    if (currentSwitch >= switchCases) {
-        currentSwitch = 0;
-    }
+  currentSwitch += 1;
+  if (currentSwitch >= switchCases) {
+    currentSwitch = 0;
+  }
 
-    s.dataset.switchCurrent = currentSwitch;
+  s.dataset.switchCurrent = currentSwitch;
 }
 
 function initializeSwitch() {
-    let switchables = document.getElementsByClassName("switchable");
-    for (let i = 0; i < switchables.length; i += 1) {
-        let switchable = switchables[i];
-        refreshSwitch(switchable);
-        switchable.addEventListener("click", () => {
-            switchNext(switchable);
-            refreshSwitch(switchable);
-        });
-    }
+  let switchables = document.getElementsByClassName("switchable");
+  for (let i = 0; i < switchables.length; i += 1) {
+    let switchable = switchables[i];
+    refreshSwitch(switchable);
+    switchable.addEventListener("click", () => {
+      switchNext(switchable);
+      refreshSwitch(switchable);
+    });
+  }
 }
 initializeSwitch();
 
 (function() {
-    document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent;
-    document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener("click", () => {
-        let deprecatedBannerElem = document.getElementById(ELEMID_H2_DEPRECATED_BANNER);
-        if (isDeprecatedBannerShowing) {
-            deprecatedBannerElem.setAttribute("hidden", "");
-            isDeprecatedBannerShowing = false;
-        } else {
-            deprecatedBannerElem.removeAttribute("hidden");
-            isDeprecatedBannerShowing = true;
-        }
-    });
+  document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent;
+  document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener("click", () => {
+    let deprecatedBannerElem = document.getElementById(ELEMID_H2_DEPRECATED_BANNER);
+    if (isDeprecatedBannerShowing) {
+      deprecatedBannerElem.setAttribute("hidden", "");
+      isDeprecatedBannerShowing = false;
+    } else {
+      deprecatedBannerElem.removeAttribute("hidden");
+      isDeprecatedBannerShowing = true;
+    }
+  });
 })();
+
 </script>
