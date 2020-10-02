@@ -40,7 +40,7 @@
     <tr>
       <td>
         <figure id="figure-banner" style="text-align: center; margin: 0 auto;">
-            <img src="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" alt="class flag">
+            <img class="switchable" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
         </figure>
       </td>
     </tr>
@@ -81,6 +81,40 @@ const ELEMID_PRE_LEGAL_DISCLAIMER = "pre-legal-disclaimer";
 const ELEMID_H2_DEPRECATED_BANNER = "h2-deprecated-banner";
 const ELEMID_FIGURE_BANENR = "figure-banner";
 let isDeprecatedBannerShowing = false;
+
+function refreshSwitch(s) {
+  let currentSwitch = s.dataset.switchCurrent;
+
+  let switchAttrStr = "switchSrc-" + currentSwitch;
+  let currentSwitchSrc = s.dataset[switchAttrStr];
+
+  s.setAttribute("src", currentSwitchSrc);
+}
+
+function switchNext(s) {
+  let currentSwitch = parseInt(s.dataset.switchCurrent, 10);
+  let switchCases = parseInt(s.dataset.switchCases, 10);
+
+  currentSwitch += 1;
+  if (currentSwitch >= switchCases) {
+    currentSwitch = 0;
+  }
+
+  s.dataset.switchCurrent = currentSwitch;
+}
+
+function initializeSwitch() {
+  let switchables = document.getElementsByClassName("switchable");
+  for (let i = 0; i < switchables.length; i += 1) {
+    let switchable = switchables[i];
+    refreshSwitch(switchable);
+    switchable.addEventListener("click", () => {
+      switchNext(switchable);
+      refreshSwitch(switchable);
+    });
+  }
+}
+initializeSwitch();
   
 (function() {
     document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent;
