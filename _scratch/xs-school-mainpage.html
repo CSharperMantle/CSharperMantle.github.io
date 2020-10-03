@@ -13,10 +13,24 @@
   margin: 0 auto;
 }
 
-.under-construction-caption {
+#div-under-construction-banner {
+  background: #f1f1f1;
+}
+
+#h2-under-construction-cap {
   font-family: 'Source Sans Pro';
   color: rgb(102, 102, 102);
   font-weight: normal;
+}
+
+#pre-user-agent {
+  color: rgb(165, 165, 165);
+  font-size: 6pt;
+}
+
+#h2-deprecated-banner {
+  font-weight: bold;
+  font-size: large;
 }
 
 /* Do the javascript's width adjusting jobs by CSS */
@@ -27,9 +41,15 @@ img {
 /* These are for grids */
 .container-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+  grid-auto-rows: min-content;
+  grid-auto-columns: min-content;
+}
+
+.grid-row-stretch {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 /* These are for flexbox modeling */
@@ -59,70 +79,57 @@ figure.gallery-fig>figcaption {
 <!-- Cerina, I will certainly become your deskmate next semester. -->
 <main role="main">
   <div class="container-grid">
-  	<div>A</div>
+    <div id="div-under-construction-banner" class="no-selection grid-row-stretch">
+      <figure class="center" id="figure-under-construction">
+        <img src="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" style="border-bottom: 1px solid #DEDCDB;">
+      </figure>
+      <p>
+      </p>
+      <h2 id="h2-under-construction-cap" class="center">
+        <span style="font-size: 16pt;">Home page is under construction.</span>
+        <br>
+        <span style="font-size: 14pt;">You may surf around freely during this time.</span>
+      </h2>
+      <span class="center">
+        <pre id="pre-user-agent"></pre>
+      </span>
+      <br>
+      <h2 id="h2-deprecated-banner" class="center" hidden="">This feature is deprecated and removed.</h2>
+      <br>
+    </div>
+    <div id="div-class-banner" class="grid-row-stretch">
+      <figure id="figure-banner" class="center">
+        <img class="switchable" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
+      </figure>
+    </div>
+    <div id="div-teachers" class="grid-row-stretch">
+      <fieldset style="border-color:#000000;">
+        <legend style="font-size: 14pt">
+          <strong>Our teachers</strong> 教师风采
+        </legend>
+        <div class="container-flex">
+        	
+        </div>
+      </fieldset>
+    </div>
+    <div id="div-sotc" class="grid-row-stretch">
+      <fieldset style="border-color:#000000;">
+        <legend style="font-size: 14pt">
+          <strong>Star of the class</strong> 班级之星
+        </legend>
+        <div class="container-flex">
+          <figure class="gallery-fig">
+            <img src="https://csharpermantle.github.io/assets/img/6b27ae209b0bf826f11bdbfeb7b3f68de4f6bb76.jpg" alt="Aristotle">
+            <figcaption>The avatar of 翁嘉诚, aka Aristotle</figcaption>
+          </figure>
+          <figure class="gallery-fig">
+            <img src="https://csharpermantle.github.io/assets/img/a37d30d89b78a16f7e71085b931ca3570ba25ba6.jpg" alt="Alan">
+            <figcaption>梁扬荣, aka Alan or Spotty, holding a bottle of A Little Tea</figcaption>
+          </figure>
+        </div>
+      </fieldset>
+    </div>
   </div>
-  <table id="table-main" border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
-    <tbody>
-      <!-- Under contruction logo. -->
-      <tr>
-        <td class="no-selection" bgcolor="#f1f1f1" style="vertical-align: top;">
-          <br>
-          <p class="center"></p>
-          <figure class="center" id="figure-under-construction">
-            <img src="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" style="border-bottom: 1px solid #DEDCDB;">
-          </figure>
-          <p>
-          </p>
-          <h2 class="center under-construction-caption">
-            <span style="font-size: 16pt;">Home page is under construction.</span>
-            <br>
-            <span style="font-size: 14pt;">You may surf around freely during this time.</span>
-          </h2>
-          <div class="center">
-            <span style="color: rgb(165, 165, 165);">
-              <pre id="pre-user-agent" style="font-size: 6pt;"></pre>
-            </span>
-          </div>
-        </td>
-      </tr>
-      <!-- Game element. -->
-      <tr>
-        <td bgcolor="#f1f1f1">
-          <br>
-          <h2 id="h2-deprecated-banner" class="center" style="font-weight: bold; font-size: large;" hidden="">This feature is deprecated and removed.</h2>
-          <br>
-        </td>
-      </tr>
-      <!-- Main content starts here -->
-      <tr>
-        <td>
-          <figure id="figure-banner" class="center">
-            <img class="switchable" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
-          </figure>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <fieldset style="border-color:#000000;">
-            <legend style="font-size: 14pt">
-              <strong>Star of the class</strong> 班级之星
-            </legend>
-            <!-- TODO: Add the content. -->
-            <div class="container-flex">
-              <figure class="gallery-fig">
-                <img src="https://csharpermantle.github.io/assets/img/6b27ae209b0bf826f11bdbfeb7b3f68de4f6bb76.jpg" alt="Aristotle">
-                <figcaption>The avatar of 翁嘉诚, aka Aristotle</figcaption>
-              </figure>
-              <figure class="gallery-fig">
-                <img src="https://csharpermantle.github.io/assets/img/a37d30d89b78a16f7e71085b931ca3570ba25ba6.jpg" alt="Alan">
-                <figcaption>梁扬荣, aka Alan or Spotty, holding a bottle of A Little Tea</figcaption>
-              </figure>
-            </div>
-          </fieldset>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </main>
 <script>
 "use strict";
