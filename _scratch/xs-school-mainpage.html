@@ -13,6 +13,14 @@
   margin: 0 auto;
 }
 
+.bordered-with-fieldset>fieldset {
+  border-color:#000000;
+}
+
+.bordered-with-fieldset>fieldset>legend {
+  font-size: 14pt;
+}
+
 #div-under-construction-banner {
   background: #f1f1f1;
 }
@@ -31,11 +39,12 @@
 #h2-deprecated-banner {
   font-weight: bold;
   font-size: large;
+  font-size: 15px;
 }
 
 /* Do the javascript's width adjusting jobs by CSS */
 img {
-  max-width: 740;
+  max-width: 740px;
 }
 
 /* These are for grids */
@@ -86,9 +95,9 @@ figure.gallery-fig>figcaption {
       <p>
       </p>
       <h2 id="h2-under-construction-cap" class="center">
-        <span style="font-size: 16pt;">Home page is under construction.</span>
+        <span>Home page is under construction.</span>
         <br>
-        <span style="font-size: 14pt;">You may surf around freely during this time.</span>
+        <span>You may surf around freely during this time.</span>
       </h2>
       <span class="center">
         <pre id="pre-user-agent"></pre>
@@ -99,22 +108,29 @@ figure.gallery-fig>figcaption {
     </div>
     <div id="div-class-banner" class="grid-row-stretch">
       <figure id="figure-banner" class="center">
-        <img class="switchable" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
+        <img class="switchable" src="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
       </figure>
     </div>
-    <div id="div-teachers" class="grid-row-stretch">
-      <fieldset style="border-color:#000000;">
-        <legend style="font-size: 14pt">
+    <div id="div-teachers" class="bordered-with-fieldset grid-row-stretch">
+      <fieldset>
+        <legend>
           <strong>Our teachers</strong> 教师风采
         </legend>
         <div class="container-flex">
-        	
+          <figure class="gallery-fig">
+            <img src="https://csharpermantle.github.io/assets/img/656dde49fda832a7cdc5f03f81f7c4d58f6b83b9.jpg" alt="Xiaoming Shi">
+            <figcaption>Our tutor and physics teacher, 石晓明, accepting a certificate</figcaption>
+          </figure>
+          <figure class="gallery-fig">
+            <img src="https://csharpermantle.github.io/assets/img/78bcd5aa965339cff3e1cee8464c6801c1edcb59.jpg" alt="Longdi Xu">
+            <figcaption>Our chemistry teacher, 徐珑迪, showing great fluency in basketball</figcaption>
+          </figure>
         </div>
       </fieldset>
     </div>
-    <div id="div-sotc" class="grid-row-stretch">
-      <fieldset style="border-color:#000000;">
-        <legend style="font-size: 14pt">
+    <div id="div-sotc" class="bordered-with-fieldset grid-row-stretch">
+      <fieldset>
+        <legend>
           <strong>Star of the class</strong> 班级之星
         </legend>
         <div class="container-flex">
