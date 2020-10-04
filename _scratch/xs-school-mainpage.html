@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <link rel="stylesheet" href="https://cdn.staticdn.net/css?family=Source+Sans+Pro:200,300,400,600,700" crossorigin="anonymous">
 <link rel="preload" href="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" as="image">
 <style>
@@ -14,7 +15,7 @@
 }
 
 .bordered-with-fieldset>fieldset {
-  border-color:#000000;
+  border-color: #000000;
 }
 
 .bordered-with-fieldset>fieldset>legend {
@@ -56,9 +57,28 @@ img {
   grid-auto-columns: min-content;
 }
 
+.grid-row-1 {
+  grid-row: 1;
+}
+
+.grid-row-2 {
+  grid-row: 2;
+}
+
+.grid-row-3 {
+  grid-row: 3;
+}
+
+.grid-row-4 {
+  grid-row: 4;
+}
+
+.grid-row-5 {
+  grid-row: 5;
+}
+
 .grid-row-stretch {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column: 1 / -1; 
 }
 
 /* These are for flexbox modeling */
@@ -84,16 +104,102 @@ figure.gallery-fig>figcaption {
   text-align: center;
 }
 
+/* Really simple non-jQuery sliders */
+.slider {
+  max-width: 800px;
+}
+
+.slider__images {
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  list-style-type: none;
+  -webkit-transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+  transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+}
+
+.slider__images.loaded {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider__images-item {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.no-js .slider__images-item:first-of-type {
+  position: relative;
+}
+
+.no-js .slider__images-item:not(:first-of-type) {
+  display: none !important;
+}
+
+.slider__images-image {
+  display: block;
+}
+
+.slider__controls {
+  margin-top: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+}
+
+.slider__control {
+  display: inline-block;
+  color: #829995;
+  cursor: pointer;
+}
+
+.slider__control--prev {
+  margin-right: 10px;
+}
+
+.slider__control--next {
+  margin-left: 10px;
+}
+
+.slider__pagers {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.slider__pagers li {
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #829995;
+  padding: 0 10px;
+}
+
+.slider__pagers li.active {
+  color: #333;
+}
+
+.slider {
+  margin: 30px auto 0;
+  padding: 30px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 </style>
 <!-- Cerina, I will certainly become your deskmate next semester. -->
 <main role="main">
   <div class="container-grid">
-    <div id="div-under-construction-banner" class="no-selection grid-row-stretch">
+    <div id="div-under-construction-banner" class="no-selection grid-row-1 grid-row-stretch">
       <figure class="center" id="figure-under-construction">
         <img src="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" style="border-bottom: 1px solid #DEDCDB;">
       </figure>
-      <p>
-      </p>
       <h2 id="h2-under-construction-cap" class="center">
         <span>Home page is under construction.</span>
         <br>
@@ -106,12 +212,27 @@ figure.gallery-fig>figcaption {
       <h2 id="h2-deprecated-banner" class="center" hidden="">This feature is deprecated and removed.</h2>
       <br>
     </div>
-    <div id="div-class-banner" class="grid-row-stretch">
+    <div id="div-class-banner" class="grid-row-2 grid-row-stretch">
       <figure id="figure-banner" class="center">
         <img class="switchable" src="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
       </figure>
     </div>
-    <div id="div-teachers" class="bordered-with-fieldset grid-row-stretch">
+    <div id="div-slider-1" class="bordered-with-fieldset grid-row-3 grid-row-stretch">
+      <div class="wrapper">
+        <div class="slider">
+          <ul class="js__slider__images slider__images">
+            <li class="slider__images-item"><img class="slider__images-image" src="https://csharpermantle.github.io/assets/img/656dde49fda832a7cdc5f03f81f7c4d58f6b83b9_740_602.jpg" alt="石晓明 accepting a certificate"></li>
+            <li class="slider__images-item"><img class="slider__images-image" src="https://csharpermantle.github.io/assets/img/78bcd5aa965339cff3e1cee8464c6801c1edcb59_740_602.jpg" alt="徐珑迪 playing basketball"></li>
+          </ul>
+          <div class="slider__controls">
+            <span class="slider__control js__slider__control--prev slider__control--prev">Prev</span>
+            <ol class="js__slider__pagers slider__pagers"></ol>
+            <span class="slider__control js__slider__control--next slider__control--next">Next</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="div-teachers" class="bordered-with-fieldset grid-row-4 grid-row-stretch">
       <fieldset>
         <legend>
           <strong>Our teachers</strong> 教师风采
@@ -128,15 +249,15 @@ figure.gallery-fig>figcaption {
         </div>
       </fieldset>
     </div>
-    <div id="div-sotc" class="bordered-with-fieldset grid-row-stretch">
+    <div id="div-sotc" class="bordered-with-fieldset grid-row-5 grid-row-stretch">
       <fieldset>
         <legend>
           <strong>Star of the class</strong> 班级之星
         </legend>
         <div class="container-flex">
           <figure class="gallery-fig">
-            <img src="https://csharpermantle.github.io/assets/img/6b27ae209b0bf826f11bdbfeb7b3f68de4f6bb76.jpg" alt="Aristotle">
-            <figcaption>The avatar of 翁嘉诚, aka Aristotle</figcaption>
+            <img src="https://csharpermantle.github.io/assets/img/a9091faa5d37e623addde502f26ca87b5d199195.jpg" alt="Aristotle">
+            <figcaption>翁嘉诚, aka Aristotle, introducing his new business idea on a competition</figcaption>
           </figure>
           <figure class="gallery-fig">
             <img src="https://csharpermantle.github.io/assets/img/a37d30d89b78a16f7e71085b931ca3570ba25ba6.jpg" alt="Alan">
@@ -148,8 +269,6 @@ figure.gallery-fig>figcaption {
   </div>
 </main>
 <script>
-"use strict";
-
 const DIV_GAME_CONTENT_BASE64 = "PGlmcmFtZSBoZWlnaHQ9IjcyMCIgc3R5bGU9IndpZHRoOiAxMDAlOyIgc2Nyb2xsaW5nPSJubyIgdGl0bGU9IkEgYmV0dGVyIG1hdHRlciBvZiBncmF2aXR5IiBzcmM9Imh0dHBzOi8vY29kZXBlbi5pby9DU2hhcnBlck1hbnRsZS9lbWJlZC9NV3lMWnZ5P2hlaWdodD0yNjUmdGhlbWUtaWQ9ZGFyayZkZWZhdWx0LXRhYj1qcyxyZXN1bHQiIGZyYW1lYm9yZGVyPSJubyIgbG9hZGluZz0ibGF6eSIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIGFsbG93ZnVsbHNjcmVlbj0idHJ1ZSI+PC9pZnJhbWU+";
 const POPUP_GAME_CONTENT = "Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.";
 
@@ -161,41 +280,239 @@ const ELEMID_H2_DEPRECATED_BANNER = "h2-deprecated-banner";
 const ELEMID_FIGURE_BANENR = "figure-banner";
 let isDeprecatedBannerShowing = false;
 
-function refreshSwitch(s) {
-  let currentSwitch = s.dataset.switchCurrent;
+(function() {
+  "use strict";
 
-  let switchAttrStr = "switchSrc-" + currentSwitch;
-  let currentSwitchSrc = s.dataset[switchAttrStr];
+  function refreshSwitch(s) {
+    let currentSwitch = s.dataset.switchCurrent;
 
-  s.setAttribute("src", currentSwitchSrc);
-}
+    let switchAttrStr = "switchSrc-" + currentSwitch;
+    let currentSwitchSrc = s.dataset[switchAttrStr];
 
-function switchNext(s) {
-  let currentSwitch = parseInt(s.dataset.switchCurrent, 10);
-  let switchCases = parseInt(s.dataset.switchCases, 10);
-
-  currentSwitch += 1;
-  if (currentSwitch >= switchCases) {
-    currentSwitch = 0;
+    s.setAttribute("src", currentSwitchSrc);
   }
 
-  s.dataset.switchCurrent = currentSwitch;
-}
+  function switchNext(s) {
+    let currentSwitch = parseInt(s.dataset.switchCurrent, 10);
+    let switchCases = parseInt(s.dataset.switchCases, 10);
 
-function initializeSwitch() {
-  let switchables = document.getElementsByClassName("switchable");
-  for (let i = 0; i < switchables.length; i += 1) {
-    let switchable = switchables[i];
-    refreshSwitch(switchable);
-    switchable.addEventListener("click", () => {
-      switchNext(switchable);
+    currentSwitch += 1;
+    if (currentSwitch >= switchCases) {
+      currentSwitch = 0;
+    }
+
+    s.dataset.switchCurrent = currentSwitch;
+  }
+
+  function initializeSwitch() {
+    let switchables = document.getElementsByClassName("switchable");
+    for (let i = 0; i < switchables.length; i += 1) {
+      let switchable = switchables[i];
       refreshSwitch(switchable);
-    });
+      switchable.addEventListener("click", () => {
+        switchNext(switchable);
+        refreshSwitch(switchable);
+      });
+    }
   }
-}
-initializeSwitch();
+  initializeSwitch();
+})();
 
 (function() {
+  // ==GLOBAL VARS, CONSTS AND HELPERS==
+
+  // create pager list items
+  let sliderImagesList = document.querySelectorAll(".slider__images-image");
+  let sliderPagersElem = document.querySelector(".js__slider__pagers"); // we will only fill the first pager element
+
+  // HACK: fill in sliders in advance in order to get the total count of elements in LAST_ELEM_INDEX
+  function sliderPagePrefill() {
+    sliderImagesList.forEach((_, index) => {
+      sliderPagersElem.insertAdjacentHTML(
+        "beforeend",
+        "<li>" + (index + 1) + "</li>"
+      );
+    });
+  }
+  sliderPagePrefill();
+
+  // set up constants and vars
+  const SELECTOR_SLIDER_PAGERS = "ol.js__slider__pagers li";
+  const SELECTOR_SLIDER_PAGERS_ACTIVE = ".js__slider__pagers li.active";
+  const SELECTOR_SLIDER_IMAGES = ".js__slider__images";
+  const SELECTOR_SLIDER_IMAGES_ITEM = ".slider__images-item";
+  const SELECTOR_SLIDER_CONTROL_NEXT = ".slider__control--next";
+  const SELECTOR_SLIDER_CONTROL_PREV = ".slider__control--prev";
+
+  // NOTE: You may be interested in tweaking switching speed by changing this constant.
+  const SLIDER_SPEED = 5000;
+
+  const LAST_ELEM_INDEX =
+    document.querySelectorAll(SELECTOR_SLIDER_PAGERS).length - 1;
+
+  let sliderTarget = null;
+
+  function getFirstVisibleElem(iterable) {
+    for (let i = 0; i < iterable.length; i++) {
+      let elem = iterable[i];
+      if (elem.style.display !== "none" && elem.style.visibility !== "hidden") {
+        return elem;
+      }
+    }
+  }
+
+  function indexOf(iterable, elem) {
+    for (let i = 0; i < iterable.length; i++) {
+      if (iterable[i] === elem) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  function fadeInOut(elemFadeIn, elemFadeOut, speed) {
+    let speed_ = speed || 20;
+    let currentInOpac = 0;
+    let currentOutOpac = 1;
+    elemFadeIn.style.display = null;
+
+    (function() {
+      elemFadeIn.style.opacity = currentInOpac;
+      elemFadeOut.style.opacity = currentOutOpac;
+      currentInOpac += 0.03;
+      currentOutOpac -= 0.03;
+      if (currentInOpac <= 1 || currentOutOpac > 0) {
+        setTimeout(arguments.callee, speed_);
+      } else {
+        elemFadeIn.style.opacity = null;
+        elemFadeOut.style.opacity = null;
+        elemFadeOut.style.display = "none";
+      }
+    })();
+  }
+
+  // transition function
+  function sliderResponse(sliderTarget) {
+    let items = document.getElementsByClassName("slider__images-item");
+    fadeInOut(items[sliderTarget], getFirstVisibleElem(items), 5);
+    let pagers = document.querySelectorAll(SELECTOR_SLIDER_PAGERS);
+    pagers.forEach((elem) => {
+      elem.classList.remove("active");
+    });
+    pagers[sliderTarget].classList.add("active");
+  }
+
+  // add css height to slider images list
+  function checkImageHeight() {
+    let sliderHeight = getFirstVisibleElem(
+      document.querySelectorAll(".slider__images-image")
+    ).height;
+    document.querySelector(SELECTOR_SLIDER_IMAGES).style.height =
+      sliderHeight + "px";
+  }
+
+  // slider timing
+  function sliderTiming() {
+    let currentActiveElem = document.querySelector(SELECTOR_SLIDER_PAGERS_ACTIVE);
+    let currentActiveIndex = indexOf(
+      currentActiveElem.parentElement.children,
+      currentActiveElem
+    );
+    sliderTarget = currentActiveIndex;
+    sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1;
+    sliderResponse(sliderTarget);
+  }
+
+  // ==SETUP FUNCTIONS==
+
+  function initSliderPage() {
+    sliderImagesList.forEach((elem) => {
+      elem.addEventListener("load", () => {
+        checkImageHeight();
+        document.querySelector(SELECTOR_SLIDER_IMAGES).classList.add("loaded");
+      });
+    });
+    window.onresize = () => {
+      checkImageHeight();
+    };
+  }
+  initSliderPage();
+
+  // set up first slide
+  function initFirstSlide() {
+    document.querySelectorAll(SELECTOR_SLIDER_PAGERS)[0].classList.add("active");
+    let slideImageItems = document.querySelectorAll(SELECTOR_SLIDER_IMAGES_ITEM);
+    slideImageItems.forEach((elem) => {
+      elem.style.display = "none";
+    });
+    slideImageItems[0].style.display = null;
+  }
+  initFirstSlide();
+
+  // pager controls
+  function initPageControl() {
+    document
+      .querySelectorAll(SELECTOR_SLIDER_PAGERS)
+      .forEach((elem, currentIndex) => {
+        elem.addEventListener("click", () => {
+          if (!elem.classList.contains("active")) {
+            sliderTarget = currentIndex;
+            sliderResponse(sliderTarget);
+            resetTiming();
+          }
+        });
+      });
+
+    // next/prev controls
+    document
+      .querySelector(SELECTOR_SLIDER_CONTROL_NEXT)
+      .addEventListener("click", () => {
+        let currentActiveElem = document.querySelector(
+          SELECTOR_SLIDER_PAGERS_ACTIVE
+        );
+        let currentActiveIndex = indexOf(
+          currentActiveElem.parentElement.children,
+          currentActiveElem
+        );
+        sliderTarget = currentActiveIndex;
+        sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1;
+        sliderResponse(sliderTarget);
+        resetTiming();
+      });
+    document
+      .querySelector(SELECTOR_SLIDER_CONTROL_PREV)
+      .addEventListener("click", () => {
+        let currentActiveElem = document.querySelector(
+          SELECTOR_SLIDER_PAGERS_ACTIVE
+        );
+        let currentActiveIndex = indexOf(
+          currentActiveElem.parentElement.children,
+          currentActiveElem
+        );
+        sliderTarget = currentActiveIndex;
+        sliderTarget = sliderTarget === 0 ? LAST_ELEM_INDEX : sliderTarget - 1;
+        sliderResponse(sliderTarget);
+        resetTiming();
+      });
+  }
+  initPageControl();
+
+  // slider autoplay
+  let timingRun = setInterval(function() {
+    sliderTiming();
+  }, SLIDER_SPEED);
+
+  function resetTiming() {
+    clearInterval(timingRun);
+    timingRun = setInterval(function() {
+      sliderTiming();
+    }, SLIDER_SPEED);
+  }
+
+})();
+
+(function() {
+  "use strict";
   document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent;
   document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener("click", () => {
     let deprecatedBannerElem = document.getElementById(ELEMID_H2_DEPRECATED_BANNER);
