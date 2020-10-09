@@ -339,6 +339,8 @@ let isDeprecatedBannerShowing = false;
     document.querySelectorAll(SELECTOR_SLIDER_PAGERS).length - 1;
 
   let sliderTarget = null;
+  let animationOngoing = false; // HACK: Prevent from interrupting animations
+  let isDocumentOnFocus = true; // HACK: Prevent the blurring from interrupting the animation
 
   function getFirstVisibleElem(iterable) {
     for (let i = 0; i < iterable.length; i++) {
@@ -359,25 +361,37 @@ let isDeprecatedBannerShowing = false;
   }
 
   function fadeInOut(elemFadeIn, elemFadeOut, speed) {
+    animationOngoing = true;
     let speed_ = speed || 20;
     let currentInOpac = 0;
-    let currentOutOpac = 1;
+    elemFadeIn.style.opacity = currentInOpac;
+    elemFadeOut.style.opacity = 1 - currentInOpac;
     elemFadeIn.style.display = null;
+    elemFadeOut.style.display = null;
 
-    (function() {
+    let interval = setInterval(() => {
       elemFadeIn.style.opacity = currentInOpac;
-      elemFadeOut.style.opacity = currentOutOpac;
+      elemFadeOut.style.opacity = 1 - currentInOpac;
       currentInOpac += 0.03;
-      currentOutOpac -= 0.03;
-      if (currentInOpac <= 1 || currentOutOpac > 0) {
-        setTimeout(arguments.callee, speed_);
-      } else {
+      if (currentInOpac >= 1) {
         elemFadeIn.style.opacity = null;
         elemFadeOut.style.opacity = null;
         elemFadeOut.style.display = "none";
+        clearInterval(interval);
+        animationOngoing = false;
       }
-    })();
+    }, speed_);
   }
+
+  function initBlurDetection() {
+    document.addEventListener("blur", () => {
+      isDocumentOnFocus = false;
+    });
+    document.addEventListener("focus", () => {
+      isDocumentOnFocus = true;
+    });
+  }
+  initBlurDetection();
 
   // transition function
   function sliderResponse(sliderTarget) {
@@ -443,7 +457,7 @@ let isDeprecatedBannerShowing = false;
       .querySelectorAll(SELECTOR_SLIDER_PAGERS)
       .forEach((elem, currentIndex) => {
         elem.addEventListener("click", () => {
-          if (!elem.classList.contains("active")) {
+          if (!elem.classList.contains("active") && !animationOngoing) {
             sliderTarget = currentIndex;
             sliderResponse(sliderTarget);
             resetTiming();
@@ -455,45 +469,53 @@ let isDeprecatedBannerShowing = false;
     document
       .querySelector(SELECTOR_SLIDER_CONTROL_NEXT)
       .addEventListener("click", () => {
-        let currentActiveElem = document.querySelector(
-          SELECTOR_SLIDER_PAGERS_ACTIVE
-        );
-        let currentActiveIndex = indexOf(
-          currentActiveElem.parentElement.children,
-          currentActiveElem
-        );
-        sliderTarget = currentActiveIndex;
-        sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1;
-        sliderResponse(sliderTarget);
-        resetTiming();
+        if (!animationOngoing) {
+          let currentActiveElem = document.querySelector(
+            SELECTOR_SLIDER_PAGERS_ACTIVE
+          );
+          let currentActiveIndex = indexOf(
+            currentActiveElem.parentElement.children,
+            currentActiveElem
+          );
+          sliderTarget = currentActiveIndex;
+          sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1;
+          sliderResponse(sliderTarget);
+          resetTiming();
+        }
       });
     document
       .querySelector(SELECTOR_SLIDER_CONTROL_PREV)
       .addEventListener("click", () => {
-        let currentActiveElem = document.querySelector(
-          SELECTOR_SLIDER_PAGERS_ACTIVE
-        );
-        let currentActiveIndex = indexOf(
-          currentActiveElem.parentElement.children,
-          currentActiveElem
-        );
-        sliderTarget = currentActiveIndex;
-        sliderTarget = sliderTarget === 0 ? LAST_ELEM_INDEX : sliderTarget - 1;
-        sliderResponse(sliderTarget);
-        resetTiming();
+        if (!animationOngoing) {
+          let currentActiveElem = document.querySelector(
+            SELECTOR_SLIDER_PAGERS_ACTIVE
+          );
+          let currentActiveIndex = indexOf(
+            currentActiveElem.parentElement.children,
+            currentActiveElem
+          );
+          sliderTarget = currentActiveIndex;
+          sliderTarget = sliderTarget === 0 ? LAST_ELEM_INDEX : sliderTarget - 1;
+          sliderResponse(sliderTarget);
+          resetTiming();
+        }
       });
   }
   initPageControl();
 
   // slider autoplay
-  let timingRun = setInterval(function() {
-    sliderTiming();
+  let timingRun = setInterval(() => {
+    if (isDocumentOnFocus) {
+      sliderTiming();
+    }
   }, SLIDER_SPEED);
 
   function resetTiming() {
     clearInterval(timingRun);
-    timingRun = setInterval(function() {
-      sliderTiming();
+    timingRun = setInterval(() => {
+      if (isDocumentOnFocus) {
+        sliderTiming();
+      }
     }, SLIDER_SPEED);
   }
 
