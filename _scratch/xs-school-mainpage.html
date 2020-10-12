@@ -256,6 +256,8 @@ figure.gallery-fig>figcaption {
     </div>
   </div>
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script>
 const DIV_GAME_CONTENT_BASE64 = "PGlmcmFtZSBoZWlnaHQ9IjcyMCIgc3R5bGU9IndpZHRoOiAxMDAlOyIgc2Nyb2xsaW5nPSJubyIgdGl0bGU9IkEgYmV0dGVyIG1hdHRlciBvZiBncmF2aXR5IiBzcmM9Imh0dHBzOi8vY29kZXBlbi5pby9DU2hhcnBlck1hbnRsZS9lbWJlZC9NV3lMWnZ5P2hlaWdodD0yNjUmdGhlbWUtaWQ9ZGFyayZkZWZhdWx0LXRhYj1qcyxyZXN1bHQiIGZyYW1lYm9yZGVyPSJubyIgbG9hZGluZz0ibGF6eSIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIGFsbG93ZnVsbHNjcmVlbj0idHJ1ZSI+PC9pZnJhbWU+";
 const POPUP_GAME_CONTENT = "Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.";
@@ -307,217 +309,90 @@ let isDeprecatedBannerShowing = false;
 })();
 
 (function() {
-  // ==GLOBAL VARS, CONSTS AND HELPERS==
+// create pager list items
+var sliderImage = $('.slider__images-image');
 
-  // create pager list items
-  let sliderImagesList = document.querySelectorAll(".slider__images-image");
-  let sliderPagersElem = document.querySelector(".js__slider__pagers"); // we will only fill the first pager element
+sliderImage.each(function (index) {
+    $('.js__slider__pagers').append('<li>'+(index+1)+'</li>');
+});
 
-  // HACK: fill in sliders in advance in order to get the total count of elements in LAST_ELEM_INDEX
-  function sliderPagePrefill() {
-    sliderImagesList.forEach((_, index) => {
-      sliderPagersElem.insertAdjacentHTML(
-        "beforeend",
-        "<li>" + (index + 1) + "</li>"
-      );
-    });
-  }
-  sliderPagePrefill();
+// set up vars
+var sliderPagers       = 'ol.js__slider__pagers li',
+    sliderPagersActive = '.js__slider__pagers li.active',
+    sliderImages       = '.js__slider__images',
+    sliderImagesItem   = '.slider__images-item',
+    sliderControlNext  = '.slider__control--next',
+    sliderControlPrev  = '.slider__control--prev',
+    sliderSpeed        = 5000,
+    lastElem           = $(sliderPagers).length-1,
+    sliderTarget;
 
-  // set up constants and vars
-  const SELECTOR_SLIDER_PAGERS = "ol.js__slider__pagers li";
-  const SELECTOR_SLIDER_PAGERS_ACTIVE = ".js__slider__pagers li.active";
-  const SELECTOR_SLIDER_IMAGES = ".js__slider__images";
-  const SELECTOR_SLIDER_IMAGES_ITEM = ".slider__images-item";
-  const SELECTOR_SLIDER_CONTROL_NEXT = ".slider__control--next";
-  const SELECTOR_SLIDER_CONTROL_PREV = ".slider__control--prev";
+// add css heigt to slider images list
+function checkImageHeight() {
+    var sliderHeight = $('.slider__images-image:visible').height(); 
+    $(sliderImages).css('height', sliderHeight+'px');
+};
 
-  // NOTE: You may be interested in tweaking switching speed by changing this constant.
-  const SLIDER_SPEED = 5000;
+sliderImage.on('load', function() {
+    checkImageHeight();
+    $(sliderImages).addClass('loaded')
+});
+$(window).resize(function(){
+    checkImageHeight();
+});
 
-  const LAST_ELEM_INDEX =
-    document.querySelectorAll(SELECTOR_SLIDER_PAGERS).length - 1;
+// set up first slide
+$(sliderPagers).first().addClass('active');
+$(sliderImagesItem).hide().first().show();
 
-  let sliderTarget = null;
-  let animationOngoing = false; // HACK: Prevent from interrupting animations
-  let isDocumentOnFocus = true; // HACK: Prevent the blurring from interrupting the animation
+// transition function
+function sliderResponse(sliderTarget) {
+    $(sliderImagesItem).fadeOut(300).eq(sliderTarget).fadeIn(300);
+    $(sliderPagers).removeClass('active').eq(sliderTarget).addClass('active');
+}
 
-  function getFirstVisibleElem(iterable) {
-    for (let i = 0; i < iterable.length; i++) {
-      let elem = iterable[i];
-      if (elem.style.display !== "none" && elem.style.visibility !== "hidden") {
-        return elem;
-      }
+// pager controls
+$(sliderPagers).on('click', function() {
+    if ( !$(this).hasClass('active') ) {
+        sliderTarget = $(this).index();
+        sliderResponse(sliderTarget);
+        resetTiming();
     }
-  }
+});
 
-  function indexOf(iterable, elem) {
-    for (let i = 0; i < iterable.length; i++) {
-      if (iterable[i] === elem) {
-        return i;
-      }
-    }
-    return -1;
-  }
-
-  function fadeInOut(elemFadeIn, elemFadeOut, speed) {
-    animationOngoing = true;
-    let speed_ = speed || 20;
-    let currentInOpac = 0;
-    elemFadeIn.style.opacity = currentInOpac;
-    elemFadeOut.style.opacity = 1 - currentInOpac;
-    elemFadeIn.style.display = null;
-    elemFadeOut.style.display = null;
-
-    let interval = setInterval(() => {
-      elemFadeIn.style.opacity = currentInOpac;
-      elemFadeOut.style.opacity = 1 - currentInOpac;
-      currentInOpac += 0.03;
-      if (currentInOpac >= 1) {
-        elemFadeIn.style.opacity = null;
-        elemFadeOut.style.opacity = null;
-        elemFadeOut.style.display = "none";
-        clearInterval(interval);
-        animationOngoing = false;
-      }
-    }, speed_);
-  }
-
-  function initBlurDetection() {
-    document.addEventListener("blur", () => {
-      isDocumentOnFocus = false;
-    });
-    document.addEventListener("focus", () => {
-      isDocumentOnFocus = true;
-    });
-  }
-  initBlurDetection();
-
-  // transition function
-  function sliderResponse(sliderTarget) {
-    let items = document.getElementsByClassName("slider__images-item");
-    fadeInOut(items[sliderTarget], getFirstVisibleElem(items), 5);
-    let pagers = document.querySelectorAll(SELECTOR_SLIDER_PAGERS);
-    pagers.forEach((elem) => {
-      elem.classList.remove("active");
-    });
-    pagers[sliderTarget].classList.add("active");
-  }
-
-  // add css height to slider images list
-  function checkImageHeight() {
-    let sliderHeight = getFirstVisibleElem(
-      document.querySelectorAll(".slider__images-image")
-    ).height;
-    document.querySelector(SELECTOR_SLIDER_IMAGES).style.height =
-      sliderHeight + "px";
-  }
-
-  // slider timing
-  function sliderTiming() {
-    let currentActiveElem = document.querySelector(SELECTOR_SLIDER_PAGERS_ACTIVE);
-    let currentActiveIndex = indexOf(
-      currentActiveElem.parentElement.children,
-      currentActiveElem
-    );
-    sliderTarget = currentActiveIndex;
-    sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1;
+// next/prev controls
+$(sliderControlNext).on('click', function() {
+    sliderTarget = $(sliderPagersActive).index();
+    sliderTarget === lastElem ? sliderTarget = 0 : sliderTarget = sliderTarget+1;
     sliderResponse(sliderTarget);
-  }
+    resetTiming();
+});
+$(sliderControlPrev).on('click', function() {
+    sliderTarget = $(sliderPagersActive).index();
+    lastElem = $(sliderPagers).length-1;
+    sliderTarget === 0 ? sliderTarget = lastElem : sliderTarget = sliderTarget-1;
+    sliderResponse(sliderTarget);
+    resetTiming();
+});
 
-  // ==SETUP FUNCTIONS==
+// slider timing
+function sliderTiming() {
+    sliderTarget = $(sliderPagersActive).index();
+    sliderTarget === lastElem ? sliderTarget = 0 : sliderTarget = sliderTarget+1;
+    sliderResponse(sliderTarget);
+}
 
-  function initSliderPage() {
-    sliderImagesList.forEach((elem) => {
-      elem.addEventListener("load", () => {
-        checkImageHeight();
-        document.querySelector(SELECTOR_SLIDER_IMAGES).classList.add("loaded");
-      });
-    });
-    window.onresize = () => {
-      checkImageHeight();
-    };
-  }
-  initSliderPage();
+// slider autoplay
+var timingRun = setInterval(function() {
+    sliderTiming();
+}, sliderSpeed);
 
-  // set up first slide
-  function initFirstSlide() {
-    document.querySelectorAll(SELECTOR_SLIDER_PAGERS)[0].classList.add("active");
-    let slideImageItems = document.querySelectorAll(SELECTOR_SLIDER_IMAGES_ITEM);
-    slideImageItems.forEach((elem) => {
-      elem.style.display = "none";
-    });
-    slideImageItems[0].style.display = null;
-  }
-  initFirstSlide();
-
-  // pager controls
-  function initPageControl() {
-    document
-      .querySelectorAll(SELECTOR_SLIDER_PAGERS)
-      .forEach((elem, currentIndex) => {
-        elem.addEventListener("click", () => {
-          if (!elem.classList.contains("active") && !animationOngoing) {
-            sliderTarget = currentIndex;
-            sliderResponse(sliderTarget);
-            resetTiming();
-          }
-        });
-      });
-
-    // next/prev controls
-    document
-      .querySelector(SELECTOR_SLIDER_CONTROL_NEXT)
-      .addEventListener("click", () => {
-        if (!animationOngoing) {
-          let currentActiveElem = document.querySelector(
-            SELECTOR_SLIDER_PAGERS_ACTIVE
-          );
-          let currentActiveIndex = indexOf(
-            currentActiveElem.parentElement.children,
-            currentActiveElem
-          );
-          sliderTarget = currentActiveIndex;
-          sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1;
-          sliderResponse(sliderTarget);
-          resetTiming();
-        }
-      });
-    document
-      .querySelector(SELECTOR_SLIDER_CONTROL_PREV)
-      .addEventListener("click", () => {
-        if (!animationOngoing) {
-          let currentActiveElem = document.querySelector(
-            SELECTOR_SLIDER_PAGERS_ACTIVE
-          );
-          let currentActiveIndex = indexOf(
-            currentActiveElem.parentElement.children,
-            currentActiveElem
-          );
-          sliderTarget = currentActiveIndex;
-          sliderTarget = sliderTarget === 0 ? LAST_ELEM_INDEX : sliderTarget - 1;
-          sliderResponse(sliderTarget);
-          resetTiming();
-        }
-      });
-  }
-  initPageControl();
-
-  // slider autoplay
-  let timingRun = setInterval(() => {
-    if (isDocumentOnFocus) {
-      sliderTiming();
-    }
-  }, SLIDER_SPEED);
-
-  function resetTiming() {
+function resetTiming() {
     clearInterval(timingRun);
-    timingRun = setInterval(() => {
-      if (isDocumentOnFocus) {
-        sliderTiming();
-      }
-    }, SLIDER_SPEED);
-  }
+    timingRun = setInterval(function() {
+      sliderTiming();
+    }, sliderSpeed);
+}
 
 })();
 
