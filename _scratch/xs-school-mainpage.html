@@ -184,6 +184,10 @@ figure.gallery-fig>figcaption {
 .slider__pagers li.active {
   color: #333;
 }
+  
+.slider-wrapper {
+  padding: 30px;
+}
 
 .slider {
   margin: 30px auto 0;
@@ -222,7 +226,7 @@ figure.gallery-fig>figcaption {
         <legend>
           <strong>Our teachers</strong> 教师风采
         </legend>
-        <div class="wrapper">
+        <div class="slider-wrapper">
           <div class="slider">
             <ul class="js__slider__images slider__images">
               <li class="slider__images-item"><img class="slider__images-image" src="https://csharpermantle.github.io/assets/img/656dde49fda832a7cdc5f03f81f7c4d58f6b83b9_740_602.jpg" alt="石晓明 accepting a certificate"></li>
@@ -235,6 +239,7 @@ figure.gallery-fig>figcaption {
             </div>
           </div>
         </div>
+        <p class="center">Note that this will <strong>NOT</strong> work after refreshing the page if you are using Chrome beacuse of the bug of WebKit described at <a href="http://code.google.com/p/chromium/issues/detail?id=7731#c12">http://code.google.com/p/chromium/issues/detail?id=7731#c12</a>. A force refresh with no cache enabled will solve the problem.</p>
       </fieldset>
     </div>
     <div id="div-sotc" class="bordered-with-fieldset grid-row-4 grid-row-stretch">
