@@ -1,8 +1,8 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdn.staticdn.net/css?family=Source+Sans+Pro:200,300,400,600,700" crossorigin="anonymous">
-<link rel="preload" href="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" as="image">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" as="image">
 <style>
-.no-selection {
+  .no-selection {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -184,10 +184,6 @@ figure.gallery-fig>figcaption {
 .slider__pagers li.active {
   color: #333;
 }
-  
-.slider-wrapper {
-  padding: 30px;
-}
 
 .slider {
   margin: 30px auto 0;
@@ -195,14 +191,13 @@ figure.gallery-fig>figcaption {
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-
 </style>
 <!-- Cerina, I will certainly become your deskmate next semester. -->
 <main role="main">
   <div class="container-grid">
     <div id="div-under-construction-banner" class="no-selection grid-row-1 grid-row-stretch">
       <figure class="center" id="figure-under-construction">
-        <img src="https://csharpermantle.github.io/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" style="border-bottom: 1px solid #DEDCDB;">
+        <img src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" style="border-bottom: 1px solid #DEDCDB;">
       </figure>
       <h2 id="h2-under-construction-cap" class="center">
         <span>Home page is under construction.</span>
@@ -218,7 +213,7 @@ figure.gallery-fig>figcaption {
     </div>
     <div id="div-class-banner" class="grid-row-2 grid-row-stretch">
       <figure id="figure-banner" class="center">
-        <img class="switchable" src="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://csharpermantle.github.io/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://csharpermantle.github.io/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
+        <img class="switchable" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag">
       </figure>
     </div>
     <div id="div-teachers" class="bordered-with-fieldset grid-row-3 grid-row-stretch">
@@ -229,17 +224,18 @@ figure.gallery-fig>figcaption {
         <div class="slider-wrapper">
           <div class="slider">
             <ul class="js__slider__images slider__images">
-              <li class="slider__images-item"><img class="slider__images-image" src="https://csharpermantle.github.io/assets/img/656dde49fda832a7cdc5f03f81f7c4d58f6b83b9_740_602.jpg" alt="石晓明 accepting a certificate"></li>
-              <li class="slider__images-item"><img class="slider__images-image" src="https://csharpermantle.github.io/assets/img/78bcd5aa965339cff3e1cee8464c6801c1edcb59_740_602.jpg" alt="徐珑迪 playing basketball"></li>
+              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/ee0b4bde13b80788cda21f08038a4e2e0b96780d.jpg" alt="石晓明 accepting a certificate"></li>
+              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/2dec8192f83fbff00e41c26bb266428c27c2a089" alt="徐珑迪 playing basketball"></li>
+              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/ec9b44ab0f6ec8486ca42eaffc2ee5a66914873a" alt="徐珑迪 and 翁嘉诚 playing basketball"></li>
+              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/5fa49760f48b6f1f3530d8713d3457a7e0d982a7" alt="徐珑迪 with confidence"></li>
             </ul>
             <div class="slider__controls">
-              <span class="slider__control js__slider__control--prev slider__control--prev">Prev</span>
+              <button class="slider__control js__slider__control--prev slider__control--prev" type="button">Prev</button>
               <ol class="js__slider__pagers slider__pagers"></ol>
-              <span class="slider__control js__slider__control--next slider__control--next">Next</span>
+              <button class="slider__control js__slider__control--next slider__control--next" type="button">Next</button>
             </div>
           </div>
         </div>
-        <p class="center">Note that this will <strong>NOT</strong> work after refreshing the page if you are using Chrome beacuse of the bug of WebKit described at <a href="http://code.google.com/p/chromium/issues/detail?id=7731#c12">http://code.google.com/p/chromium/issues/detail?id=7731#c12</a>. A force refresh with no cache enabled will solve the problem.</p>
       </fieldset>
     </div>
     <div id="div-sotc" class="bordered-with-fieldset grid-row-4 grid-row-stretch">
@@ -249,11 +245,11 @@ figure.gallery-fig>figcaption {
         </legend>
         <div class="container-flex">
           <figure class="gallery-fig">
-            <img src="https://csharpermantle.github.io/assets/img/a9091faa5d37e623addde502f26ca87b5d199195.jpg" alt="Aristotle">
+            <img src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/a9091faa5d37e623addde502f26ca87b5d199195.jpg" alt="Aristotle">
             <figcaption>翁嘉诚, aka Aristotle, introducing his new business idea on a competition</figcaption>
           </figure>
           <figure class="gallery-fig">
-            <img src="https://csharpermantle.github.io/assets/img/a37d30d89b78a16f7e71085b931ca3570ba25ba6.jpg" alt="Alan">
+            <img src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/a37d30d89b78a16f7e71085b931ca3570ba25ba6.jpg" alt="Alan">
             <figcaption>梁扬荣, aka Alan or Spotty, holding a bottle of A Little Tea</figcaption>
           </figure>
         </div>
@@ -261,7 +257,6 @@ figure.gallery-fig>figcaption {
     </div>
   </div>
 </main>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script>
 const DIV_GAME_CONTENT_BASE64 = "PGlmcmFtZSBoZWlnaHQ9IjcyMCIgc3R5bGU9IndpZHRoOiAxMDAlOyIgc2Nyb2xsaW5nPSJubyIgdGl0bGU9IkEgYmV0dGVyIG1hdHRlciBvZiBncmF2aXR5IiBzcmM9Imh0dHBzOi8vY29kZXBlbi5pby9DU2hhcnBlck1hbnRsZS9lbWJlZC9NV3lMWnZ5P2hlaWdodD0yNjUmdGhlbWUtaWQ9ZGFyayZkZWZhdWx0LXRhYj1qcyxyZXN1bHQiIGZyYW1lYm9yZGVyPSJubyIgbG9hZGluZz0ibGF6eSIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIGFsbG93ZnVsbHNjcmVlbj0idHJ1ZSI+PC9pZnJhbWU+";
@@ -314,90 +309,219 @@ let isDeprecatedBannerShowing = false;
 })();
 
 (function() {
-// create pager list items
-var sliderImage = $('.slider__images-image');
+  // ==GLOBAL VARS, CONSTS AND HELPERS==
 
-sliderImage.each(function (index) {
-    $('.js__slider__pagers').append('<li>'+(index+1)+'</li>');
-});
+  // create pager list items
+  let sliderImagesList = document.querySelectorAll(".slider__images-image");
+  let sliderPagersElem = document.querySelector(".js__slider__pagers"); // we will only fill the first pager element
 
-// set up vars
-var sliderPagers       = 'ol.js__slider__pagers li',
-    sliderPagersActive = '.js__slider__pagers li.active',
-    sliderImages       = '.js__slider__images',
-    sliderImagesItem   = '.slider__images-item',
-    sliderControlNext  = '.slider__control--next',
-    sliderControlPrev  = '.slider__control--prev',
-    sliderSpeed        = 5000,
-    lastElem           = $(sliderPagers).length-1,
-    sliderTarget;
+  // HACK: fill in sliders in advance in order to get the total count of elements in LAST_ELEM_INDEX
+  function sliderPagePrefill() {
+    sliderImagesList.forEach((image, index) => {
+      let buttonElem = document.createElement("button");
+      let buttonText = document.createTextNode(index + 1);
+      buttonElem.appendChild(buttonText);
+      buttonElem.setAttribute("type", "button");
+      sliderPagersElem.insertAdjacentElement("beforeend", buttonElem);
 
-// add css heigt to slider images list
-function checkImageHeight() {
-    var sliderHeight = $('.slider__images-image:visible').height(); 
-    $(sliderImages).css('height', sliderHeight+'px');
-};
+      //HACK: Chrome won't fire onload event for more than 1 time even the image's src has changed. This is to forcely rerun the event handler each time the image is loaded. Chrome's behaviour is non-standard and described at http://code.google.com/p/chromium/issues/detail?id=7731#c12
+      let image_loader = new Image();
+      image_loader.addEventListener("load", () => {
+        checkImageHeight();
+        document.querySelector(SELECTOR_SLIDER_IMAGES).classList.add("loaded");
+      });
+      image_loader.src = image.getAttribute("src");
+    });
+  }
+  sliderPagePrefill();
 
-sliderImage.on('load', function() {
-    checkImageHeight();
-    $(sliderImages).addClass('loaded')
-});
-$(window).resize(function(){
-    checkImageHeight();
-});
+  // set up constants and vars
+  const SELECTOR_SLIDER_PAGERS = "ol.js__slider__pagers button";
+  const SELECTOR_SLIDER_PAGERS_ACTIVE = ".js__slider__pagers button.active";
+  const SELECTOR_SLIDER_IMAGES = ".js__slider__images";
+  const SELECTOR_SLIDER_IMAGES_ITEM = ".slider__images-item";
+  const SELECTOR_SLIDER_CONTROL_NEXT = ".slider__control--next";
+  const SELECTOR_SLIDER_CONTROL_PREV = ".slider__control--prev";
 
-// set up first slide
-$(sliderPagers).first().addClass('active');
-$(sliderImagesItem).hide().first().show();
+  // NOTE: You may be interested in tweaking switching speed by changing this constant.
+  const SLIDER_SPEED = 5000;
 
-// transition function
-function sliderResponse(sliderTarget) {
-    $(sliderImagesItem).fadeOut(300).eq(sliderTarget).fadeIn(300);
-    $(sliderPagers).removeClass('active').eq(sliderTarget).addClass('active');
-}
+  const LAST_ELEM_INDEX =
+    document.querySelectorAll(SELECTOR_SLIDER_PAGERS).length - 1;
 
-// pager controls
-$(sliderPagers).on('click', function() {
-    if ( !$(this).hasClass('active') ) {
-        sliderTarget = $(this).index();
-        sliderResponse(sliderTarget);
-        resetTiming();
+  let sliderTarget = null;
+  let animationOngoing = false; // HACK: Prevent from interrupting animations
+  let isDocumentOnFocus = true; // HACK: Prevent the blurring from interrupting the animation
+
+  function getFirstVisibleElem(iterable) {
+    for (let i = 0; i < iterable.length; i++) {
+      let elem = iterable[i];
+      if (elem.style.display !== "none" && elem.style.visibility !== "hidden") {
+        return elem;
+      }
     }
-});
+  }
 
-// next/prev controls
-$(sliderControlNext).on('click', function() {
-    sliderTarget = $(sliderPagersActive).index();
-    sliderTarget === lastElem ? sliderTarget = 0 : sliderTarget = sliderTarget+1;
-    sliderResponse(sliderTarget);
-    resetTiming();
-});
-$(sliderControlPrev).on('click', function() {
-    sliderTarget = $(sliderPagersActive).index();
-    lastElem = $(sliderPagers).length-1;
-    sliderTarget === 0 ? sliderTarget = lastElem : sliderTarget = sliderTarget-1;
-    sliderResponse(sliderTarget);
-    resetTiming();
-});
+  function indexOf(iterable, elem) {
+    for (let i = 0; i < iterable.length; i++) {
+      if (iterable[i] === elem) {
+        return i;
+      }
+    }
+    return -1;
+  }
 
-// slider timing
-function sliderTiming() {
-    sliderTarget = $(sliderPagersActive).index();
-    sliderTarget === lastElem ? sliderTarget = 0 : sliderTarget = sliderTarget+1;
-    sliderResponse(sliderTarget);
-}
+  function fadeInOut(elemFadeIn, elemFadeOut, speed) {
+    animationOngoing = true;
+    let speed_ = speed || 20;
+    let currentInOpac = 0;
+    elemFadeIn.style.opacity = currentInOpac;
+    elemFadeOut.style.opacity = 1 - currentInOpac;
+    elemFadeIn.style.display = null;
+    elemFadeOut.style.display = null;
 
-// slider autoplay
-var timingRun = setInterval(function() {
+    let interval = setInterval(() => {
+      elemFadeIn.style.opacity = currentInOpac;
+      elemFadeOut.style.opacity = 1 - currentInOpac;
+      currentInOpac += 0.03;
+      if (currentInOpac >= 1) {
+        elemFadeIn.style.opacity = null;
+        elemFadeOut.style.opacity = null;
+        elemFadeOut.style.display = "none";
+        clearInterval(interval);
+        animationOngoing = false;
+      }
+    }, speed_);
+  }
+
+  function initBlurDetection() {
+    document.addEventListener("blur", () => {
+      isDocumentOnFocus = false;
+    });
+    document.addEventListener("focus", () => {
+      isDocumentOnFocus = true;
+    });
+  }
+  initBlurDetection();
+
+  // transition function
+  function sliderResponse(sliderTarget) {
+    let items = document.getElementsByClassName("slider__images-item");
+    fadeInOut(items[sliderTarget], getFirstVisibleElem(items), 5);
+    let pagers = document.querySelectorAll(SELECTOR_SLIDER_PAGERS);
+    pagers.forEach((elem) => {
+      elem.classList.remove("active");
+    });
+    pagers[sliderTarget].classList.add("active");
+  }
+
+  // add css height to slider images list
+  function checkImageHeight() {
+    let sliderHeight = getFirstVisibleElem(
+      document.querySelectorAll(".slider__images-image")
+    ).height;
+    document.querySelector(SELECTOR_SLIDER_IMAGES).style.height =
+      sliderHeight + "px";
+  }
+
+  // slider timing
+  function sliderTiming() {
+    if (!isDocumentOnFocus) {
+      return;
+    }
+    let currentActiveElem = document.querySelector(SELECTOR_SLIDER_PAGERS_ACTIVE);
+    let currentActiveIndex = indexOf(
+      currentActiveElem.parentElement.children,
+      currentActiveElem
+    );
+    sliderTarget = currentActiveIndex;
+    sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1;
+    sliderResponse(sliderTarget);
+  }
+
+  // ==SETUP FUNCTIONS==
+
+  function initSliderPage() {
+    window.onresize = () => {
+      checkImageHeight();
+    };
+  }
+  initSliderPage();
+
+  // set up first slide
+  function initFirstSlide() {
+    document.querySelectorAll(SELECTOR_SLIDER_PAGERS)[0].classList.add("active");
+    let slideImageItems = document.querySelectorAll(SELECTOR_SLIDER_IMAGES_ITEM);
+    slideImageItems.forEach((elem) => {
+      elem.style.display = "none";
+    });
+    slideImageItems[0].style.display = null;
+  }
+  initFirstSlide();
+
+  // pager controls
+  function initPageControl() {
+    document
+      .querySelectorAll(SELECTOR_SLIDER_PAGERS)
+      .forEach((elem, currentIndex) => {
+        elem.addEventListener("click", () => {
+          if (!elem.classList.contains("active") && !animationOngoing) {
+            sliderTarget = currentIndex;
+            sliderResponse(sliderTarget);
+            resetTiming();
+          }
+        });
+      });
+
+    // next/prev controls
+    document
+      .querySelector(SELECTOR_SLIDER_CONTROL_NEXT)
+      .addEventListener("click", () => {
+        if (!animationOngoing) {
+          let currentActiveElem = document.querySelector(
+            SELECTOR_SLIDER_PAGERS_ACTIVE
+          );
+          let currentActiveIndex = indexOf(
+            currentActiveElem.parentElement.children,
+            currentActiveElem
+          );
+          sliderTarget = currentActiveIndex;
+          sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1;
+          sliderResponse(sliderTarget);
+          resetTiming();
+        }
+      });
+    document
+      .querySelector(SELECTOR_SLIDER_CONTROL_PREV)
+      .addEventListener("click", () => {
+        if (!animationOngoing) {
+          let currentActiveElem = document.querySelector(
+            SELECTOR_SLIDER_PAGERS_ACTIVE
+          );
+          let currentActiveIndex = indexOf(
+            currentActiveElem.parentElement.children,
+            currentActiveElem
+          );
+          sliderTarget = currentActiveIndex;
+          sliderTarget = sliderTarget === 0 ? LAST_ELEM_INDEX : sliderTarget - 1;
+          sliderResponse(sliderTarget);
+          resetTiming();
+        }
+      });
+  }
+  initPageControl();
+
+  // slider autoplay
+  let timingRun = setInterval(() => {
     sliderTiming();
-}, sliderSpeed);
+  }, SLIDER_SPEED);
 
-function resetTiming() {
+  function resetTiming() {
     clearInterval(timingRun);
-    timingRun = setInterval(function() {
+    timingRun = setInterval(() => {
       sliderTiming();
-    }, sliderSpeed);
-}
+    }, SLIDER_SPEED);
+  }
 
 })();
 
@@ -415,5 +539,4 @@ function resetTiming() {
     }
   });
 })();
-
 </script>
