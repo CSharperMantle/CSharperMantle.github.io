@@ -107,6 +107,10 @@ figure.gallery-fig>figcaption {
 /* Really simple non-jQuery sliders */
 .slider {
   max-width: 800px;
+  margin: 30px auto 0;
+  padding: 30px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .slider__images {
@@ -127,8 +131,8 @@ figure.gallery-fig>figcaption {
 
 .slider__images-item {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
 }
 
 .no-js .slider__images-item:first-of-type {
@@ -160,10 +164,12 @@ figure.gallery-fig>figcaption {
 
 .slider__control--prev {
   margin-right: 10px;
+  color: #333;
 }
 
 .slider__control--next {
   margin-left: 10px;
+  color: #333;
 }
 
 .slider__pagers {
@@ -173,7 +179,7 @@ figure.gallery-fig>figcaption {
   list-style-type: none;
 }
 
-.slider__pagers li {
+.slider__pagers button {
   display: inline-block;
   margin: 0 5px;
   cursor: pointer;
@@ -181,17 +187,11 @@ figure.gallery-fig>figcaption {
   padding: 0 10px;
 }
 
-.slider__pagers li.active {
+.slider__pagers button.active {
   color: #333;
 }
-
-.slider {
-  margin: 30px auto 0;
-  padding: 30px;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" integrity="sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw==" crossorigin="anonymous"></script>
 <!-- Cerina, I will certainly become your deskmate next semester. -->
 <main role="main">
   <div class="container-grid">
@@ -225,9 +225,9 @@ figure.gallery-fig>figcaption {
           <div class="slider">
             <ul class="js__slider__images slider__images">
               <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/ee0b4bde13b80788cda21f08038a4e2e0b96780d.jpg" alt="石晓明 accepting a certificate"></li>
-              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/2dec8192f83fbff00e41c26bb266428c27c2a089" alt="徐珑迪 playing basketball"></li>
-              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/ec9b44ab0f6ec8486ca42eaffc2ee5a66914873a" alt="徐珑迪 and 翁嘉诚 playing basketball"></li>
-              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/5fa49760f48b6f1f3530d8713d3457a7e0d982a7" alt="徐珑迪 with confidence"></li>
+              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/2dec8192f83fbff00e41c26bb266428c27c2a089.jpg" alt="徐珑迪 playing basketball"></li>
+              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/ec9b44ab0f6ec8486ca42eaffc2ee5a66914873a.jpg" alt="徐珑迪 and 翁嘉诚 playing basketball"></li>
+              <li class="slider__images-item"><img class="slider__images-image" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/5fa49760f48b6f1f3530d8713d3457a7e0d982a7.jpg" alt="徐珑迪 with confidence"></li>
             </ul>
             <div class="slider__controls">
               <button class="slider__control js__slider__control--prev slider__control--prev" type="button">Prev</button>
@@ -258,6 +258,7 @@ figure.gallery-fig>figcaption {
   </div>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" integrity="sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw==" crossorigin="anonymous"></script>
 <script>
 const DIV_GAME_CONTENT_BASE64 = "PGlmcmFtZSBoZWlnaHQ9IjcyMCIgc3R5bGU9IndpZHRoOiAxMDAlOyIgc2Nyb2xsaW5nPSJubyIgdGl0bGU9IkEgYmV0dGVyIG1hdHRlciBvZiBncmF2aXR5IiBzcmM9Imh0dHBzOi8vY29kZXBlbi5pby9DU2hhcnBlck1hbnRsZS9lbWJlZC9NV3lMWnZ5P2hlaWdodD0yNjUmdGhlbWUtaWQ9ZGFyayZkZWZhdWx0LXRhYj1qcyxyZXN1bHQiIGZyYW1lYm9yZGVyPSJubyIgbG9hZGluZz0ibGF6eSIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIGFsbG93ZnVsbHNjcmVlbj0idHJ1ZSI+PC9pZnJhbWU+";
 const POPUP_GAME_CONTENT = "Please be patient. The construction might take a lot of time. In order to entertain you, I added a game. Click again to switch off.";
