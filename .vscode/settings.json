@@ -6,5 +6,12 @@
         "prefill",
         "switchable",
         "switchables"
+    ],
+    "eslint.options": {
+        "configFile": ".eslintrc.js"
+    },
+    "eslint.validate": [
+        "javascript",
+        "html"
     ]
 }
