@@ -212,7 +212,7 @@ figure.gallery-fig>figcaption {
         <pre id="pre-user-agent"></pre>
       </span>
       <br>
-      <h2 id="h2-deprecated-banner" class="center" hidden="">This feature is deprecated and removed.</h2>
+      <h2 id="h2-deprecated-banner" class="center" hidden="">What‽</h2>
       <br>
     </div>
     <div id="div-class-banner" class="grid-row-2 grid-row-stretch">
@@ -269,6 +269,8 @@ figure.gallery-fig>figcaption {
 const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
 const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
 const ELEMID_H2_DEPRECATED_BANNER = 'h2-deprecated-banner'
+const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
+const SRC_SCRIPT_ASTEROID = 'https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/asteroids.js'
 let isDeprecatedBannerShowing = false;
 
 (function() {
@@ -531,11 +533,20 @@ let isDeprecatedBannerShowing = false;
   document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener('click', () => {
     const deprecatedBannerElem = document.getElementById(ELEMID_H2_DEPRECATED_BANNER)
     if (isDeprecatedBannerShowing) {
+      // hide
       deprecatedBannerElem.setAttribute('hidden', '')
       isDeprecatedBannerShowing = false
+      const asteroidScript = document.getElementById(ELEMID_SCRIPT_ASTEROID)
+      document.body.removeChild(asteroidScript)
     } else {
+      // show
       deprecatedBannerElem.removeAttribute('hidden')
       isDeprecatedBannerShowing = true
+      const asteroidScript = document.createElement('script')
+      asteroidScript.type = 'text/javascript'
+      asteroidScript.setAttribute('id', ELEMID_SCRIPT_ASTEROID)
+      document.body.appendChild(asteroidScript)
+      asteroidScript.src = SRC_SCRIPT_ASTEROID
     }
   })
 })()
