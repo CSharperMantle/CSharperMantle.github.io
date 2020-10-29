@@ -1,10 +1,17 @@
 (function() {
+  // HACK: bypass <script> filtering
   const body = document.getElementsByTagName("body")[0]
   const jqueryScript = document.createElement("script")
   jqueryScript.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js")
   jqueryScript.setAttribute("integrity", "sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==")
   jqueryScript.setAttribute("crossorigin", "anonymous")
   body.insertAdjacentElement("afterbegin", jqueryScript)
+  
+  const prefixfreeScript = document.createElement("script")
+  prefixfreeScript.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js")
+  prefixfreeScript.setAttribute("integrity", "sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw==")
+  prefixfreeScript.setAttribute("crossorigin", "anonymous")
+  body.insertAdjacentElement("afterbegin", prefixfreeScript)
 })();
 
 const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
