@@ -18,9 +18,12 @@ const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
 const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
 const ELEMID_H2_DEPRECATED_BANNER = 'h2-deprecated-banner'
 const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
+const ELEMID_SPAN_RANDOM_QUOTE = 'span-random-quote'
 const SRC_SCRIPT_ASTEROID = 'https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/asteroids.js'
+const SRC_TXT_FORTUNE = 'https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/txt/fortunes.txt'
 let isDeprecatedBannerShowing = false;
 
+// click-switching images
 (function() {
   'use strict'
 
@@ -59,6 +62,7 @@ let isDeprecatedBannerShowing = false;
   initializeSwitch()
 })();
 
+// non-jquery sliders
 (function() {
   // ==GLOBAL VARS, CONSTS AND HELPERS==
 
@@ -275,8 +279,14 @@ let isDeprecatedBannerShowing = false;
   }
 })();
 
+// other interactive elements
 (function() {
   'use strict'
+  
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
+  
   document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent
   document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener('click', () => {
     const deprecatedBannerElem = document.getElementById(ELEMID_H2_DEPRECATED_BANNER)
@@ -297,4 +307,14 @@ let isDeprecatedBannerShowing = false;
       asteroidScript.src = SRC_SCRIPT_ASTEROID
     }
   })
+  // load fortune
+  const fortuneXhr = new XMLHttpRequest()
+  fortuneXhr.onload = () => {
+    // fortune quotes are splitted with %
+    const responseList = fortuneXhr.responseText.split("%")
+    const randQuote = responseList[getRandomInt(responseList.length - 1)]
+    document.getElementById(ELEMID_SPAN_RANDOM_QUOTE).innerText = randQuote
+  }
+  fortuneXhr.open("GET", SRC_TXT_FORTUNE)
+  fortuneXhr.send()
 })()
