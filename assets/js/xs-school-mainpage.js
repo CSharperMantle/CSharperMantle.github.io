@@ -1,5 +1,5 @@
 (function() {
-  // HACK: bypass <script> filtering
+  // HACK: bypass script tag filtering
   const body = document.getElementsByTagName('body')[0]
   const jqueryScript = document.createElement('script')
   jqueryScript.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
