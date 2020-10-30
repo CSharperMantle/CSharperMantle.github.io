@@ -312,7 +312,7 @@ let isDeprecatedBannerShowing = false;
   fortuneXhr.onload = () => {
     // fortune quotes are splitted with %
     const responseList = fortuneXhr.responseText.split("%")
-    const randQuote = responseList[getRandomInt(responseList.length - 1)]
+    const randQuote = responseList[getRandomInt(responseList.length - 1)].trim()
     document.getElementById(ELEMID_SPAN_RANDOM_QUOTE).innerText = randQuote
   }
   fortuneXhr.open("GET", SRC_TXT_FORTUNE)
