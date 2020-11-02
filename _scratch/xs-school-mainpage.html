@@ -23,10 +23,11 @@
 }
 
 #div-under-construction-banner {
+  padding: 10px 5px 0 5px;
   background: #f1f1f1;
 }
 
-#h2-under-construction-cap {
+#div-under-construction-cap {
   font-family: 'Source Sans Pro';
   color: rgb(102, 102, 102);
   font-weight: normal;
@@ -38,22 +39,24 @@
 }
 
 #h2-deprecated-banner {
-  font-weight: bold;
   font-size: large;
-  font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.barrier-img {
-    margin: 20px 0 20px 0;
-    border-bottom: 1px solid #DEDCDB;
+#img-barrier {
+  margin: 20px 0 20px 0;
+  border-bottom: 1px solid #DEDCDB;
 }
   
-.random-quote {
+#span-random-quote {
+  display: block;
+  margin: 5px 0 0 0;
+  
   word-break: break-word;
+  font-size: 1.5em;
   font-family: Georgia, serif;
   color: #000;
-}    
+}
 
 /* Do the javascript's width adjusting jobs by CSS */
 img {
@@ -212,19 +215,19 @@ figure.gallery-fig>figcaption {
   <div class="container-grid">
     <div id="div-under-construction-banner" class="no-selection grid-row-1 grid-row-stretch">
       <figure class="center" id="figure-under-construction">
-        <img src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179" class="barrier-img">
+        <img id="img-barrier" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/ico/travis_barrier.svg" alt="barrier image" width="254" height="179">
       </figure>
-      <h2 id="h2-under-construction-cap" class="center">
-        <span>Home page is under construction.</span>
-        <br>
-        <span id="span-random-quote" class="random-quote">To load or not to load is a question.<br>-- WebKit</span>
-      </h2>
+      <div id="div-under-construction-cap" class="center">
+        <h2>Home page is under construction.</h2>
+        <span id="span-random-quote">To load or not to load is a question.<br>-- WebKit</span>
+      </div>
       <span class="center">
         <pre id="pre-user-agent"></pre>
         <img src="bogus" onerror="javascript:eval(atob('Y29uc3QgZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpOyBlLnNldEF0dHJpYnV0ZSgidHlwZSIsICJ0ZXh0L2phdmFzY3JpcHQiKTsgZS5zZXRBdHRyaWJ1dGUoInNyYyIsICJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvQ1NoYXJwZXJNYW50bGUvQ1NoYXJwZXJNYW50bGUuZ2l0aHViLmlvQEhFQUQvYXNzZXRzL2pzL3hzLXNjaG9vbC1tYWlucGFnZS5qcyIpOyBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgiYm9keSIpWzBdLmluc2VydEFkamFjZW50RWxlbWVudCgiYWZ0ZXJiZWdpbiIsIGUp'))" hidden=""></span>
       <br>
       <h2 id="h2-deprecated-banner" class="center" hidden="">You know what‽ We <strong>can</strong> do many things without &lt;script&gt; tags!</h2>
-      <br></div>
+      <br>
+    </div>
     <div id="div-class-banner" class="grid-row-2 grid-row-stretch">
       <figure id="figure-banner" class="center">
         <img class="switchable" src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-cases="2" data-switch-current="0" data-switch-src-0="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/img/9dc7dbc37a49c76baf071d9dab470ac330c8f49d.jpg" data-switch-src-1="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/img/6929a898263798cc12e14ee94ee62260116639c1.jpg" alt="class flag"></figure>
