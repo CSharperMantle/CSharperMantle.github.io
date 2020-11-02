@@ -103,7 +103,7 @@
             [-1 * playerHeight / 2, playerWidth / 2],
             [playerHeight / 2, 0]
         ];
-        var ignoredTypes = ['HTML', 'HEAD', 'BODY', 'SCRIPT', 'TITLE', 'META', 'STYLE', 'LINK', 'SHAPE', 'LINE', 'GROUP', 'IMAGE', 'STROKE', 'FILL', 'SKEW', 'PATH', 'TEXTPATH'];
+        var ignoredTypes = ['HTML', 'HEAD', 'BODY', 'SCRIPT', 'TITLE', 'META', 'STYLE', 'LINK'];
         var hiddenTypes = ['BR', 'HR'];
         var FPS = 50;
         var acc = 300;
