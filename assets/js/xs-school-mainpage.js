@@ -1,37 +1,44 @@
 (function() {
-  // HACK: bypass script tag filtering, inserting tags for script, one linked by one
+  // HACK: bypass script tag filtering, inserting tags for script, one linked by one, with promise chains
   const body = document.getElementsByTagName('body')[0]
-  
-  const jqueryScript = document.createElement('script')
-  jqueryScript.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
-  jqueryScript.setAttribute('integrity', 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==')
-  jqueryScript.setAttribute('crossorigin', 'anonymous')
-  body.insertAdjacentElement('afterbegin', jqueryScript)
 
-  const prefixfreeScript = document.createElement('script')
-  prefixfreeScript.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js')
-  prefixfreeScript.setAttribute('integrity', 'sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw==')
-  prefixfreeScript.setAttribute('crossorigin', 'anonymous')
-  jqueryScript.insertAdjacentElement('afterend', prefixfreeScript)
-  
-  const gsapScript = document.createElement('script')
-  gsapScript.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js')
-  gsapScript.setAttribute('integrity', 'sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==')
-  gsapScript.setAttribute('crossorigin', 'anonymous')
-  gsapScript.addEventListener('load', () => {
-    const customEaseScript = document.createElement('script')
-    customEaseScript.setAttribute('src', 'https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js')
-    gsapScript.insertAdjacentElement('afterend', customEaseScript)  
-  
-    const customWiggleScript = document.createElement('script')
-    customWiggleScript.setAttribute('src', 'https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js')
-    customWiggleScript.addEventListener('load', () => {
-      loadDropper()
+  function loadScript(url, baseElem, resolveWhen, isWithIntegrity, integrity, crossorigin) {
+    return new Promise(function(resolve, reject) {
+      const scriptElem = document.createElement('script')
+      scriptElem.setAttribute('src', url)
+      if (isWithIntegrity) {
+        scriptElem.setAttribute('integrity', integrity)
+        scriptElem.setAttribute('crossorigin', crossorigin)
+      }
+      scriptElem.addEventListener('load', function() {
+        while (!resolveWhen) {
+          ;
+        }
+        resolve()
+      })
+      scriptElem.addEventListener('error', function() {
+        reject(`${url} fails to load`)
+      })
+      baseElem.insertAdjacentElement('afterbegin', scriptElem)
     })
-    customEaseScript.insertAdjacentElement('afterend', customWiggleScript)
+  }
+
+  loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => { return (typeof $ !== 'undefined'); },
+    true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
+  .then(loadScript('https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js', body, () => { return true; },
+    true, 'sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw==', 'anonymous'))
+  .then(loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => { return (typeof gsap !== 'undefined'); },
+    false, null, null))
+  .then(loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => { return (typeof CustomEase !== 'undefined'); },
+    false, null, null))
+  .then(loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => { return (typeof CustomWiggle !== 'undefined'); },
+    false, null, null))
+  .then(() => {
+    loadDropper()
   })
-  prefixfreeScript.insertAdjacentElement('afterend', gsapScript)
-  
+  .catch((reason) => {
+    console.log(reason)
+  })
 })()
 
 const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
