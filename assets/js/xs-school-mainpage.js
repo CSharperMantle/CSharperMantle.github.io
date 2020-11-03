@@ -11,7 +11,7 @@
         scriptElem.setAttribute('crossorigin', crossorigin)
       }
       scriptElem.addEventListener('load', function() {
-        while (!resolveWhen) {
+        while (!resolveWhen()) {
           ;
         }
         resolve()
@@ -22,17 +22,21 @@
       baseElem.insertAdjacentElement('afterbegin', scriptElem)
     })
   }
-
+  
   loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => { return (typeof $ !== 'undefined'); },
     true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
-  .then(loadScript('https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js', body, () => { return true; },
-    true, 'sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw==', 'anonymous'))
-  .then(loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => { return (typeof gsap !== 'undefined'); },
-    false, null, null))
-  .then(loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => { return (typeof CustomEase !== 'undefined'); },
-    false, null, null))
-  .then(loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => { return (typeof CustomWiggle !== 'undefined'); },
-    false, null, null))
+  .then(() => {
+    return loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => { return (typeof gsap !== 'undefined'); },
+      false, null, null)
+  })
+  .then(() => {
+    return loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => { return (typeof CustomEase !== 'undefined'); },
+      false, null, null)
+  })
+  .then(() => {
+    return loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => { return (typeof CustomWiggle !== 'undefined'); },
+      false, null, null);
+  })
   .then(() => {
     loadDropper()
   })
