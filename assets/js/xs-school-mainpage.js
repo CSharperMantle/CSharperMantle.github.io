@@ -1,40 +1,43 @@
 (function() {
+  const AsyncScriptLoader = {
+      loadScript: function(url, baseElem, resolveWhen, isWithIntegrity, integrity, crossorigin) {
+          return new Promise(function(resolve, reject) {
+              const scriptElem = document.createElement('script')
+              scriptElem.setAttribute('src', url)
+              if (isWithIntegrity) {
+                  scriptElem.setAttribute('integrity', integrity)
+                  scriptElem.setAttribute('crossorigin', crossorigin)
+              }
+              scriptElem.addEventListener('load', function() {
+                  while (!resolveWhen());
+                  resolve()
+              })
+              scriptElem.addEventListener('error', function() {
+                  reject(`AsyncScriptLoader: ${url} fails to load`)
+              })
+              baseElem.insertAdjacentElement('afterbegin', scriptElem)
+          })
+      }
+  }
+  window.AsyncScriptLoader = AsyncScriptLoader
+})()
+
+(function() {
   // HACK: bypass script tag filtering, inserting tags for script, one linked by one, with promise chains
   const body = document.getElementsByTagName('body')[0]
-
-  function loadScript(url, baseElem, resolveWhen, isWithIntegrity, integrity, crossorigin) {
-    return new Promise(function(resolve, reject) {
-      const scriptElem = document.createElement('script')
-      scriptElem.setAttribute('src', url)
-      if (isWithIntegrity) {
-        scriptElem.setAttribute('integrity', integrity)
-        scriptElem.setAttribute('crossorigin', crossorigin)
-      }
-      scriptElem.addEventListener('load', function() {
-        while (!resolveWhen()) {
-          ;
-        }
-        resolve()
-      })
-      scriptElem.addEventListener('error', function() {
-        reject(`${url} fails to load`)
-      })
-      baseElem.insertAdjacentElement('afterbegin', scriptElem)
-    })
-  }
   
-  loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => { return (typeof $ !== 'undefined'); },
+  AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => { return (typeof $ !== 'undefined'); },
     true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
   .then(() => {
-    return loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => { return (typeof gsap !== 'undefined'); },
+    return AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => { return (typeof gsap !== 'undefined'); },
       false, null, null)
   })
   .then(() => {
-    return loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => { return (typeof CustomEase !== 'undefined'); },
+    return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => { return (typeof CustomEase !== 'undefined'); },
       false, null, null)
   })
   .then(() => {
-    return loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => { return (typeof CustomWiggle !== 'undefined'); },
+    return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => { return (typeof CustomWiggle !== 'undefined'); },
       false, null, null);
   })
   .then(() => {
