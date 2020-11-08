@@ -20,7 +20,7 @@
       }
   }
   window.AsyncScriptLoader = AsyncScriptLoader
-})()
+})();
 
 (function() {
   // HACK: bypass script tag filtering, inserting tags for script, one linked by one, with promise chains
