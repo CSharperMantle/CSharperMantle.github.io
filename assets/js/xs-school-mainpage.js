@@ -26,19 +26,27 @@
   // HACK: bypass script tag filtering, inserting tags for script, one linked by one, with promise chains
   const body = document.getElementsByTagName('body')[0]
 
-  AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => { return (typeof $ !== 'undefined') },
-    true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
+  AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => {
+    return (typeof $ !== 'undefined')
+  },
+  true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
     .then(() => {
-      return AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => { return (typeof gsap !== 'undefined') },
-        false, null, null)
+      return AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => {
+        return (typeof gsap !== 'undefined')
+      },
+      false, null, null)
     })
     .then(() => {
-      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => { return (typeof CustomEase !== 'undefined') },
-        false, null, null)
+      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => {
+        return (typeof CustomEase !== 'undefined')
+      },
+      false, null, null)
     })
     .then(() => {
-      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => { return (typeof CustomWiggle !== 'undefined') },
-        false, null, null)
+      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => {
+        return (typeof CustomWiggle !== 'undefined')
+      },
+      false, null, null)
     })
     .then(() => {
       loadDropper()
@@ -314,22 +322,19 @@ let isDeprecatedBannerShowing = false;
 })()
 
 // gsap animation
-// TODO: eslint this code
 function loadDropper () {
   const select = (s) => document.querySelector(s)
-  const selectAll = (s) => document.querySelectorAll(s)
   const mainSVG = select('.mainSVG')
   const liquid = select('#liquid')
   const pointArray = []
   const pointValueXArray = []
   const pointValueYArray = []
-  const liquidWidth = 300
-  const numPoints = 30
+  const liquidWidth = 200
+  const numPoints = 20
   const dripOffset = 0.0258
-  const rippleDuration = 4.6
-  const rippleAmount = '+=8'
-  let startValX = 250
-  const startValY = 400
+  const rippleAmount = '+=6'
+  let startValX = 63
+  const startValY = 115
   const colorArray = [
     '#E6098B',
     '#FFBE0B',
@@ -341,7 +346,6 @@ function loadDropper () {
     '#F75C03',
     '#F71735'
   ]
-  const allBubbles = selectAll('#bubbleGroup rect')
 
   gsap.set(mainSVG, {
     visibility: 'visible'
@@ -368,37 +372,12 @@ function loadDropper () {
   gsap.set('#level', {
     transformOrigin: '50% 100%'
   })
-  gsap.set('#bubbleGroup rect, #droplet', {
-    transformOrigin: '50% 50%'
-  })
-  gsap
-    .fromTo(
-      allBubbles,
-      {
-        x: 'random(0, 200)',
-        y: 'random(0, 120)',
-        scale: 'random(0.5, 3)',
-        rotation: 'random(20, 180)',
-        opacity: 1
-      },
-      {
-        duration: 1,
-        rotation: 'random(180, 360)',
-        repeatRefresh: true,
-        stagger: {
-          each: 0.52,
-          repeat: -1
-        },
-        scale: 0.1,
-        y: '-=30',
-        opacity: 0.1
-      }
-    )
-    .seek(100)
 
   const makeDrip = () => {
     const currentColor = gsap.utils.random(colorArray)
-    gsap.to(':root', { '--main-color': currentColor })
+    gsap.to(':root', {
+      '--main-color': currentColor
+    })
 
     const tl = gsap.timeline({
       defaults: {
@@ -410,25 +389,21 @@ function loadDropper () {
     })
 
     tl.fromTo(
-      '#pipette1',
-      {
-        x: 600,
+      '#pipette1', {
+        x: 250,
         opacity: 0
-      },
-      {
+      }, {
         duration: 1,
-        x: 376,
+        x: 160,
         opacity: 1,
         ease: 'expo.inOut'
       }
     )
       .fromTo(
-        '#pipette1',
-        {
+        '#pipette1', {
           rotation: -95,
           transformOrigin: '50% 100%'
-        },
-        {
+        }, {
           rotation: 0,
           transformOrigin: '50% 100%',
           duration: 1.5,
@@ -438,59 +413,44 @@ function loadDropper () {
       )
       .addLabel('pipetteReady')
       .fromTo(
-        '#drip',
-        {
+        '#drip', {
           scale: 0
-        },
-        {
+        }, {
           duration: 1,
-          scale: 1,
+          scale: 0.3,
           transformOrigin: '50% 0%',
           ease: 'elastic(1, 0.8)'
         }
       )
       .to(
-        '#level',
-        {
+        '#level', {
           duration: 1,
-          scaleY: 0.5,
+          scaleY: 0.2,
           ease: 'elastic(1, 0.8)'
         },
         'pipetteReady'
       )
       .fromTo(
-        '#drip',
-        {
-          x: 399,
-          y: 155
-        },
-        {
-          x: 399,
-          y: 430,
-          duration: 0.38,
+        '#drip', {
+          x: 165.5,
+          y: 23
+        }, {
+          x: 165.5,
+          y: 125,
+          duration: 0.35,
           ease: 'power1.in'
         }
       )
       .addLabel('splash')
       .to(
-        '.poly',
-        {
+        '.poly', {
           fill: currentColor,
           ease: 'sine'
         },
         'splash'
       )
       .to(
-        '#bubbleGroup',
-        {
-          stroke: currentColor,
-          ease: 'sine'
-        },
-        'splash'
-      )
-      .to(
-        pointArray,
-        {
+        pointArray, {
           duration: gsap.utils.random(3, 5),
           y: (i) => {
             return rippleAmount
@@ -503,17 +463,7 @@ function loadDropper () {
         'splash'
       )
       .to(
-        '#bubbleGroup',
-        {
-          duration: 4,
-          y: '+=random(5, 10)',
-          ease: 'wiggle({type:easeOut, wiggles:10})'
-        },
-        'splash'
-      )
-      .to(
-        '#droplet',
-        {
+        '#droplet', {
           duration: 0.23,
           y: 'random(-30, -60, 1)',
           rotation: 'random(20, 290)',
@@ -522,8 +472,7 @@ function loadDropper () {
         'splash'
       )
       .to(
-        '#droplet',
-        {
+        '#droplet', {
           duration: 0.23,
           y: 0,
           rotation: '+=30',
@@ -532,11 +481,9 @@ function loadDropper () {
         'splash+=0.23'
       )
       .fromTo(
-        '#droplet',
-        {
+        '#droplet', {
           scale: 1
-        },
-        {
+        }, {
           duration: 0.23,
           scale: 0,
           transformOrigin: '50% 100%',
@@ -545,8 +492,7 @@ function loadDropper () {
         'splash+=0.23'
       )
       .to(
-        '#level',
-        {
+        '#level', {
           duration: 1,
           scaleY: 1,
           ease: 'expo.in'
@@ -554,8 +500,7 @@ function loadDropper () {
         'splash'
       )
       .to(
-        '#pipette1',
-        {
+        '#pipette1', {
           duration: 1,
           rotation: 23,
           x: 100,
