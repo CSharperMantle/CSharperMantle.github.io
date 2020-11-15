@@ -1,51 +1,51 @@
-(function() {
+(function () {
   const AsyncScriptLoader = {
-      loadScript: function(url, baseElem, resolveWhen, isWithIntegrity, integrity, crossorigin) {
-          return new Promise(function(resolve, reject) {
-              const scriptElem = document.createElement('script')
-              scriptElem.setAttribute('src', url)
-              if (isWithIntegrity) {
-                  scriptElem.setAttribute('integrity', integrity)
-                  scriptElem.setAttribute('crossorigin', crossorigin)
-              }
-              scriptElem.addEventListener('load', function() {
-                  while (!resolveWhen());
-                  resolve()
-              })
-              scriptElem.addEventListener('error', function() {
-                  reject(`AsyncScriptLoader: ${url} fails to load`)
-              })
-              baseElem.insertAdjacentElement('afterbegin', scriptElem)
-          })
-      }
+    loadScript: function (url, baseElem, resolveWhen, isWithIntegrity, integrity, crossorigin) {
+      return new Promise(function (resolve, reject) {
+        const scriptElem = document.createElement('script')
+        scriptElem.setAttribute('src', url)
+        if (isWithIntegrity) {
+          scriptElem.setAttribute('integrity', integrity)
+          scriptElem.setAttribute('crossorigin', crossorigin)
+        }
+        scriptElem.addEventListener('load', function () {
+          while (!resolveWhen());
+          resolve()
+        })
+        scriptElem.addEventListener('error', function () {
+          reject(`AsyncScriptLoader: ${url} fails to load`)
+        })
+        baseElem.insertAdjacentElement('afterbegin', scriptElem)
+      })
+    }
   }
   window.AsyncScriptLoader = AsyncScriptLoader
 })();
 
-(function() {
+(function () {
   // HACK: bypass script tag filtering, inserting tags for script, one linked by one, with promise chains
   const body = document.getElementsByTagName('body')[0]
-  
-  AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => { return (typeof $ !== 'undefined'); },
+
+  AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', body, () => { return (typeof $ !== 'undefined') },
     true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
-  .then(() => {
-    return AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => { return (typeof gsap !== 'undefined'); },
-      false, null, null)
-  })
-  .then(() => {
-    return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => { return (typeof CustomEase !== 'undefined'); },
-      false, null, null)
-  })
-  .then(() => {
-    return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => { return (typeof CustomWiggle !== 'undefined'); },
-      false, null, null);
-  })
-  .then(() => {
-    loadDropper()
-  })
-  .catch((reason) => {
-    console.log(reason)
-  })
+    .then(() => {
+      return AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => { return (typeof gsap !== 'undefined') },
+        false, null, null)
+    })
+    .then(() => {
+      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomEase-3.5.1.min.js', body, () => { return (typeof CustomEase !== 'undefined') },
+        false, null, null)
+    })
+    .then(() => {
+      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/js/CustomWiggle-3.4.3.min.js', body, () => { return (typeof CustomWiggle !== 'undefined') },
+        false, null, null)
+    })
+    .then(() => {
+      loadDropper()
+    })
+    .catch((reason) => {
+      console.log(reason)
+    })
 })()
 
 const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
@@ -58,10 +58,10 @@ const SRC_TXT_FORTUNE = 'https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMant
 let isDeprecatedBannerShowing = false;
 
 // click-switching images
-(function() {
+(function () {
   'use strict'
 
-  function refreshSwitch(s) {
+  function refreshSwitch (s) {
     const currentSwitch = s.dataset.switchCurrent
 
     const switchAttrStr = 'switchSrc-' + currentSwitch
@@ -70,7 +70,7 @@ let isDeprecatedBannerShowing = false;
     s.setAttribute('src', currentSwitchSrc)
   }
 
-  function switchNext(s) {
+  function switchNext (s) {
     let currentSwitch = parseInt(s.dataset.switchCurrent, 10)
     const switchCases = parseInt(s.dataset.switchCases, 10)
 
@@ -82,7 +82,7 @@ let isDeprecatedBannerShowing = false;
     s.dataset.switchCurrent = currentSwitch
   }
 
-  function initializeSwitch() {
+  function initializeSwitch () {
     const switchables = document.getElementsByClassName('switchable')
     for (let i = 0; i < switchables.length; i += 1) {
       const switchable = switchables[i]
@@ -97,7 +97,7 @@ let isDeprecatedBannerShowing = false;
 })();
 
 // non-jquery sliders
-(function() {
+(function () {
   // ==GLOBAL VARS, CONSTS AND HELPERS==
 
   // create pager list items
@@ -105,7 +105,7 @@ let isDeprecatedBannerShowing = false;
   const sliderPagersElem = document.querySelector('.js__slider__pagers') // we will only fill the first pager element
 
   // HACK: fill in sliders in advance in order to get the total count of elements in LAST_ELEM_INDEX
-  function sliderPagePrefill() {
+  function sliderPagePrefill () {
     sliderImagesList.forEach((image, index) => {
       const buttonElem = document.createElement('button')
       const buttonText = document.createTextNode(index + 1)
@@ -113,7 +113,7 @@ let isDeprecatedBannerShowing = false;
       buttonElem.setAttribute('type', 'button')
       sliderPagersElem.insertAdjacentElement('beforeend', buttonElem)
 
-      // HACK: Chrome won't fire onload event for more than 1 time even the image's src has changed. This is to forcely rerun the event handler each time the image is loaded. Chrome's behaviour is non-standard and described at http://code.google.com/p/chromium/issues/detail?id=7731#c12
+      // HACK: Chrome won't fire onload event for more than 1 time even the image's src has changed. This is to forcedly rerun the event handler each time the image is loaded. Chrome's behaviour is non-standard and described at http://code.google.com/p/chromium/issues/detail?id=7731#c12
       const imageLoader = new Image()
       imageLoader.addEventListener('load', () => {
         checkImageHeight()
@@ -142,7 +142,7 @@ let isDeprecatedBannerShowing = false;
   let animationOngoing = false // HACK: Prevent from interrupting animations
   let isDocumentOnFocus = true // HACK: Prevent the blurring from interrupting the animation
 
-  function getFirstVisibleElem(iterable) {
+  function getFirstVisibleElem (iterable) {
     for (let i = 0; i < iterable.length; i++) {
       const elem = iterable[i]
       if (elem.style.display !== 'none' && elem.style.visibility !== 'hidden') {
@@ -151,7 +151,7 @@ let isDeprecatedBannerShowing = false;
     }
   }
 
-  function indexOf(iterable, elem) {
+  function indexOf (iterable, elem) {
     for (let i = 0; i < iterable.length; i++) {
       if (iterable[i] === elem) {
         return i
@@ -160,7 +160,7 @@ let isDeprecatedBannerShowing = false;
     return -1
   }
 
-  function fadeInOut(elemFadeIn, elemFadeOut, speed) {
+  function fadeInOut (elemFadeIn, elemFadeOut, speed) {
     animationOngoing = true
     const speed_ = speed || 20
     let currentInOpac = 0
@@ -183,7 +183,7 @@ let isDeprecatedBannerShowing = false;
     }, speed_)
   }
 
-  function initBlurDetection() {
+  function initBlurDetection () {
     document.addEventListener('blur', () => {
       isDocumentOnFocus = false
     })
@@ -194,7 +194,7 @@ let isDeprecatedBannerShowing = false;
   initBlurDetection()
 
   // transition function
-  function sliderResponse(sliderTarget) {
+  function sliderResponse (sliderTarget) {
     const items = document.getElementsByClassName('slider__images-item')
     fadeInOut(items[sliderTarget], getFirstVisibleElem(items), 5)
     const pagers = document.querySelectorAll(SELECTOR_SLIDER_PAGERS)
@@ -205,7 +205,7 @@ let isDeprecatedBannerShowing = false;
   }
 
   // add css height to slider images list
-  function checkImageHeight() {
+  function checkImageHeight () {
     const sliderHeight = getFirstVisibleElem(
       document.querySelectorAll('.slider__images-image')
     ).height
@@ -214,7 +214,7 @@ let isDeprecatedBannerShowing = false;
   }
 
   // slider timing
-  function sliderTiming() {
+  function sliderTiming () {
     if (!isDocumentOnFocus) {
       return
     }
@@ -230,7 +230,7 @@ let isDeprecatedBannerShowing = false;
 
   // ==SETUP FUNCTIONS==
 
-  function initSliderPage() {
+  function initSliderPage () {
     window.onresize = () => {
       checkImageHeight()
     }
@@ -238,7 +238,7 @@ let isDeprecatedBannerShowing = false;
   initSliderPage()
 
   // set up first slide
-  function initFirstSlide() {
+  function initFirstSlide () {
     document.querySelectorAll(SELECTOR_SLIDER_PAGERS)[0].classList.add('active')
     const slideImageItems = document.querySelectorAll(SELECTOR_SLIDER_IMAGES_ITEM)
     slideImageItems.forEach((elem) => {
@@ -249,7 +249,7 @@ let isDeprecatedBannerShowing = false;
   initFirstSlide()
 
   // pager controls
-  function initPageControl() {
+  function initPageControl () {
     document
       .querySelectorAll(SELECTOR_SLIDER_PAGERS)
       .forEach((elem, currentIndex) => {
@@ -305,112 +305,112 @@ let isDeprecatedBannerShowing = false;
     sliderTiming()
   }, SLIDER_SPEED)
 
-  function resetTiming() {
+  function resetTiming () {
     clearInterval(timingRun)
     timingRun = setInterval(() => {
       sliderTiming()
     }, SLIDER_SPEED)
   }
-})();
+})()
 
 // gsap animation
 // TODO: eslint this code
-function loadDropper() {
-  let select = (s) => document.querySelector(s),
-    selectAll = (s) => document.querySelectorAll(s),
-    mainSVG = select(".mainSVG"),
-    liquid = select("#liquid"),
-    pointArray = [],
-    pointValueXArray = [],
-    pointValueYArray = [],
-    liquidWidth = 300,
-    numPoints = 30,
-    dripOffset = 0.0258,
-    rippleDuration = 4.6,
-    rippleAmount = "+=8",
-    startValX = 250,
-    startValY = 400,
-    colorArray = [
-      "#E6098B",
-      "#FFBE0B",
-      "#FB5607",
-      "#8338EC",
-      "#3A86FF",
-      "#51E5FF",
-      "#04A777",
-      "#F75C03",
-      "#F71735"
-    ],
-    allBubbles = selectAll("#bubbleGroup rect");
+function loadDropper () {
+  const select = (s) => document.querySelector(s)
+  const selectAll = (s) => document.querySelectorAll(s)
+  const mainSVG = select('.mainSVG')
+  const liquid = select('#liquid')
+  const pointArray = []
+  const pointValueXArray = []
+  const pointValueYArray = []
+  const liquidWidth = 300
+  const numPoints = 30
+  const dripOffset = 0.0258
+  const rippleDuration = 4.6
+  const rippleAmount = '+=8'
+  let startValX = 250
+  const startValY = 400
+  const colorArray = [
+    '#E6098B',
+    '#FFBE0B',
+    '#FB5607',
+    '#8338EC',
+    '#3A86FF',
+    '#51E5FF',
+    '#04A777',
+    '#F75C03',
+    '#F71735'
+  ]
+  const allBubbles = selectAll('#bubbleGroup rect')
 
   gsap.set(mainSVG, {
-    visibility: "visible"
-  });
-  gsap.set(".darkLiquid", {
+    visibility: 'visible'
+  })
+  gsap.set('.darkLiquid', {
     scaleX: -1,
-    transformOrigin: "50% 50%"
-  });
+    transformOrigin: '50% 50%'
+  })
   for (let i = 0; i < numPoints; i++) {
-    let p = liquid.points.appendItem(mainSVG.createSVGPoint());
-    pointArray.push(p);
+    const p = liquid.points.appendItem(mainSVG.createSVGPoint())
+    pointArray.push(p)
     pointValueXArray.push(
-      i < numPoints - 2 ? startValX : i == numPoints - 2 ? 600 : 200
-    );
-    startValX += liquidWidth / (numPoints - 2);
-    pointValueYArray.push(i < numPoints - 2 ? startValY : 800);
+      i < numPoints - 2 ? startValX : i === numPoints - 2 ? 600 : 200
+    )
+    startValX += liquidWidth / (numPoints - 2)
+    pointValueYArray.push(i < numPoints - 2 ? startValY : 800)
   }
 
   gsap.set(pointArray, {
     x: gsap.utils.wrap(pointValueXArray),
     y: gsap.utils.wrap(pointValueYArray)
-  });
+  })
 
-  gsap.set("#level", {
-    transformOrigin: "50% 100%"
-  });
-  gsap.set("#bubbleGroup rect, #droplet", {
-    transformOrigin: "50% 50%"
-  });
+  gsap.set('#level', {
+    transformOrigin: '50% 100%'
+  })
+  gsap.set('#bubbleGroup rect, #droplet', {
+    transformOrigin: '50% 50%'
+  })
   gsap
     .fromTo(
       allBubbles,
       {
-        x: "random(0, 200)",
-        y: "random(0, 120)",
-        scale: "random(0.5, 3)",
-        rotation: "random(20, 180)",
+        x: 'random(0, 200)',
+        y: 'random(0, 120)',
+        scale: 'random(0.5, 3)',
+        rotation: 'random(20, 180)',
         opacity: 1
       },
       {
         duration: 1,
-        rotation: "random(180, 360)",
+        rotation: 'random(180, 360)',
         repeatRefresh: true,
         stagger: {
           each: 0.52,
           repeat: -1
         },
         scale: 0.1,
-        y: "-=30",
+        y: '-=30',
         opacity: 0.1
       }
     )
-    .seek(100);
+    .seek(100)
 
   const makeDrip = () => {
-    let currentColor = gsap.utils.random(colorArray);
-    gsap.to(":root", { "--main-color": currentColor });
+    const currentColor = gsap.utils.random(colorArray)
+    gsap.to(':root', { '--main-color': currentColor })
 
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       defaults: {
-        ease: CustomWiggle.create("", {
-          type: "easeOut",
+        ease: CustomWiggle.create('', {
+          type: 'easeOut',
           wiggles: gsap.utils.random(9, 12)
         })
       }
-    });
+    })
 
     tl.fromTo(
-      "#pipette1",
+      '#pipette1',
       {
         x: 600,
         opacity: 0
@@ -419,47 +419,47 @@ function loadDropper() {
         duration: 1,
         x: 376,
         opacity: 1,
-        ease: "expo.inOut"
+        ease: 'expo.inOut'
       }
     )
       .fromTo(
-        "#pipette1",
+        '#pipette1',
         {
           rotation: -95,
-          transformOrigin: "50% 100%"
+          transformOrigin: '50% 100%'
         },
         {
           rotation: 0,
-          transformOrigin: "50% 100%",
+          transformOrigin: '50% 100%',
           duration: 1.5,
-          ease: "elastic(1.5, 0.83)"
+          ease: 'elastic(1.5, 0.83)'
         },
         0
       )
-      .addLabel("pipetteReady")
+      .addLabel('pipetteReady')
       .fromTo(
-        "#drip",
+        '#drip',
         {
           scale: 0
         },
         {
           duration: 1,
           scale: 1,
-          transformOrigin: "50% 0%",
-          ease: "elastic(1, 0.8)"
+          transformOrigin: '50% 0%',
+          ease: 'elastic(1, 0.8)'
         }
       )
       .to(
-        "#level",
+        '#level',
         {
           duration: 1,
           scaleY: 0.5,
-          ease: "elastic(1, 0.8)"
+          ease: 'elastic(1, 0.8)'
         },
-        "pipetteReady"
+        'pipetteReady'
       )
       .fromTo(
-        "#drip",
+        '#drip',
         {
           x: 399,
           y: 155
@@ -468,118 +468,117 @@ function loadDropper() {
           x: 399,
           y: 430,
           duration: 0.38,
-          ease: "power1.in"
+          ease: 'power1.in'
         }
       )
-      .addLabel("splash")
+      .addLabel('splash')
       .to(
-        ".poly",
+        '.poly',
         {
           fill: currentColor,
-          ease: "sine"
+          ease: 'sine'
         },
-        "splash"
+        'splash'
       )
       .to(
-        "#bubbleGroup",
+        '#bubbleGroup',
         {
           stroke: currentColor,
-          ease: "sine"
+          ease: 'sine'
         },
-        "splash"
+        'splash'
       )
       .to(
         pointArray,
         {
           duration: gsap.utils.random(3, 5),
           y: (i) => {
-            return rippleAmount;
+            return rippleAmount
           },
           stagger: {
             each: dripOffset,
-            from: "center"
+            from: 'center'
           }
         },
-        "splash"
+        'splash'
       )
       .to(
-        "#bubbleGroup",
+        '#bubbleGroup',
         {
           duration: 4,
-          y: "+=random(5, 10)",
-          ease: "wiggle({type:easeOut, wiggles:10})"
+          y: '+=random(5, 10)',
+          ease: 'wiggle({type:easeOut, wiggles:10})'
         },
-        "splash"
+        'splash'
       )
       .to(
-        "#droplet",
+        '#droplet',
         {
           duration: 0.23,
-          y: "random(-30, -60, 1)",
-          rotation: "random(20, 290)",
-          ease: "power1"
+          y: 'random(-30, -60, 1)',
+          rotation: 'random(20, 290)',
+          ease: 'power1'
         },
-        "splash"
+        'splash'
       )
       .to(
-        "#droplet",
+        '#droplet',
         {
           duration: 0.23,
           y: 0,
-          rotation: "+=30",
-          ease: "power1.in"
+          rotation: '+=30',
+          ease: 'power1.in'
         },
-        "splash+=0.23"
+        'splash+=0.23'
       )
       .fromTo(
-        "#droplet",
+        '#droplet',
         {
           scale: 1
         },
         {
           duration: 0.23,
           scale: 0,
-          transformOrigin: "50% 100%",
-          ease: "expo.in"
+          transformOrigin: '50% 100%',
+          ease: 'expo.in'
         },
-        "splash+=0.23"
+        'splash+=0.23'
       )
       .to(
-        "#level",
+        '#level',
         {
           duration: 1,
           scaleY: 1,
-          ease: "expo.in"
+          ease: 'expo.in'
         },
-        "splash"
+        'splash'
       )
       .to(
-        "#pipette1",
+        '#pipette1',
         {
           duration: 1,
           rotation: 23,
           x: 100,
           opacity: 0,
-          ease: "expo.in"
+          ease: 'expo.in'
         },
-        "splash"
-      );
+        'splash'
+      )
 
-    gsap.delayedCall(4, makeDrip);
-  };
+    gsap.delayedCall(4, makeDrip)
+  }
 
-  makeDrip();
+  makeDrip()
 };
 
-
 // other interactive elements
-(function() {
+(function () {
   'use strict'
-  
-  function getRandomInt(max) {
+
+  function getRandomInt (max) {
     return Math.floor(Math.random() * Math.floor(max))
   }
-  
+
   document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent
   document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener('click', () => {
     const deprecatedBannerElem = document.getElementById(ELEMID_H2_DEPRECATED_BANNER)
@@ -604,10 +603,10 @@ function loadDropper() {
   const fortuneXhr = new XMLHttpRequest()
   fortuneXhr.onload = () => {
     // fortune quotes are splitted with %
-    const responseList = fortuneXhr.responseText.split("%")
+    const responseList = fortuneXhr.responseText.split('%')
     const randQuote = responseList[getRandomInt(responseList.length - 1)].trim()
     document.getElementById(ELEMID_SPAN_RANDOM_QUOTE).innerText = randQuote
   }
-  fortuneXhr.open("GET", SRC_TXT_FORTUNE)
+  fortuneXhr.open('GET', SRC_TXT_FORTUNE)
   fortuneXhr.send()
 })()
