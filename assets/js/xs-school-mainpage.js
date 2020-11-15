@@ -433,7 +433,7 @@ function loadDropper () {
       .fromTo(
         '#drip', {
           x: 165.5,
-          y: 23
+          y: 21
         }, {
           x: 165.5,
           y: 125,
