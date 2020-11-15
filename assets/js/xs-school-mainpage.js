@@ -525,6 +525,25 @@ function loadDropper () {
   }
 
   document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent
+  document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener('click', () => {
+    const deprecatedBannerElem = document.getElementById(ELEMID_H2_DEPRECATED_BANNER)
+    if (isDeprecatedBannerShowing) {
+      // hide
+      deprecatedBannerElem.setAttribute('hidden', '')
+      isDeprecatedBannerShowing = false
+      const asteroidScript = document.getElementById(ELEMID_SCRIPT_ASTEROID)
+      document.body.removeChild(asteroidScript)
+    } else {
+      // show
+      deprecatedBannerElem.removeAttribute('hidden')
+      isDeprecatedBannerShowing = true
+      const asteroidScript = document.createElement('script')
+      asteroidScript.type = 'text/javascript'
+      asteroidScript.setAttribute('id', ELEMID_SCRIPT_ASTEROID)
+      document.body.appendChild(asteroidScript)
+      asteroidScript.src = SRC_SCRIPT_ASTEROID
+    }
+  })
   // load fortune
   const fortuneXhr = new XMLHttpRequest()
   fortuneXhr.onload = () => {
