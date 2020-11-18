@@ -1,3 +1,25 @@
+/*
+ * xs-school-mainpage.js
+ *
+ * Libraries in use:
+ *
+ * async-script-loader:
+ *  https://github.com/CSharperMantle/async-script-loader
+ *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle)
+ * Click-switch Images:
+ *  https://codepen.io/CSharperMantle/pen/yLOrJQQ
+ *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle)
+ * Really simple non-jQuery slider:
+ *  https://codepen.io/CSharperMantle/pen/OJXLzVV
+ *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle) and Ben Wellby
+ * Animated D2303 Class Flag:
+ *  https://codepen.io/CSharperMantle/pen/MWeLxWY
+ *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle)
+ * canvas-confetti:
+ *  https://github.com/catdad/canvas-confetti
+ *  ISC License. Copyright (c) 2020, Kiril Vatev
+ */
+
 (function () {
   const AsyncScriptLoader = {
     loadScript: function (url, baseElem, resolveWhen, isWithIntegrity, integrity, crossorigin) {
