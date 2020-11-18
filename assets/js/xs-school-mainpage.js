@@ -49,6 +49,12 @@
       false, null, null)
     })
     .then(() => {
+      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2/dist/confetti.browser.min.js', body, () => {
+        return (typeof confetti === 'function')
+      },
+      false, null, null)
+    })
+    .then(() => {
       loadDropper()
     })
     .catch((reason) => {
@@ -326,6 +332,8 @@ function loadDropper () {
   const select = (s) => document.querySelector(s)
   const mainSVG = select('.mainSVG')
   const liquid = select('#liquid')
+  const flask = select('#flask')
+  const confettiCanvas = select('#canvas-dropper-confetti')
   const pointArray = []
   const pointValueXArray = []
   const pointValueYArray = []
@@ -514,6 +522,19 @@ function loadDropper () {
   }
 
   makeDrip()
+  
+  // confetti
+  const confettiInstance = confetti.create(confettiCanvas, {
+    resize: true,
+    useWorker: true
+  })
+  flask.addEventListener("click", () => {
+    confettiInstance({
+      particleCount: 100,
+      spread: 100,
+      startVelocity: 30
+    })
+  })
 };
 
 // other interactive elements
