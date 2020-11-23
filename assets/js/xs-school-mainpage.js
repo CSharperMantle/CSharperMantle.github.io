@@ -3,6 +3,9 @@
  *
  * Libraries in use:
  *
+ * jquery:
+ *  https://github.com/jquery/jquery
+ *  MIT License. Copyright OpenJS Foundation and other contributors, https://openjsf.org/
  * async-script-loader:
  *  https://github.com/CSharperMantle/async-script-loader
  *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle)
@@ -18,6 +21,12 @@
  * canvas-confetti:
  *  https://github.com/catdad/canvas-confetti
  *  ISC License. Copyright (c) 2020, Kiril Vatev
+ * lodash:
+ *  https://github.com/lodash/lodash/
+ *  MIT License. Copyright JS Foundation and other contributors <https://js.foundation/>
+ * gsap:
+ *  https://greensock.com
+ *  OTHER. Copyright 2020, GreenSock. All rights reserved. Subject to the terms at https://greensock.com/standard-license or for Club GreenSock members, the agreement issued with that membership.
  */
 
 (function () {
