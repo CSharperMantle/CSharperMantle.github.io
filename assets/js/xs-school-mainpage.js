@@ -35,7 +35,7 @@
           resolve()
         })
         scriptElem.addEventListener('error', function () {
-          reject(`AsyncScriptLoader: ${url} fails to load`)
+          reject(new Error(`AsyncScriptLoader: ${url} fails to load`))
         })
         baseElem.insertAdjacentElement('afterbegin', scriptElem)
       })
@@ -52,6 +52,12 @@
     return (typeof $ !== 'undefined')
   },
   true, 'sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==', 'anonymous')
+    .then(() => {
+      return AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js', body, () => {
+        return (typeof _ === 'function')
+      },
+      true, 'sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==', 'anonymous')
+    })
     .then(() => {
       return AsyncScriptLoader.loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', body, () => {
         return (typeof gsap !== 'undefined')
@@ -544,18 +550,23 @@ function loadDropper () {
   }
 
   makeDrip()
-  
+
   // confetti
   const confettiInstance = confetti.create(confettiCanvas, {
     resize: true,
     useWorker: true
   })
-  flask.addEventListener("click", () => {
+
+  const createConfetti = _.throttle(() => {
     confettiInstance({
       particleCount: 100,
       spread: 100,
       startVelocity: 30
     })
+  }, 500)
+
+  flask.addEventListener('click', () => {
+    createConfetti()
   })
 };
 

@@ -19,6 +19,8 @@ module.exports = {
     gsap: 'readonly',
     CustomEase: 'readonly',
     CustomWiggle: 'readonly',
-    AsyncScriptLoader: 'readonly'
+    AsyncScriptLoader: 'readonly',
+    confetti: 'readonly',
+    _: 'readonly'
   }
 }
