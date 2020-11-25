@@ -13,7 +13,9 @@ module.exports = {
   rules: {
   },
   plugins: [
-    'html'
+    'html',
+    'node',
+    'promise'
   ],
   globals: {
     gsap: 'readonly',

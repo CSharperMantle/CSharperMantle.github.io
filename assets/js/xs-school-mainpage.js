@@ -583,10 +583,6 @@ function loadDropper () {
 (function () {
   'use strict'
 
-  function getRandomInt (max) {
-    return Math.floor(Math.random() * Math.floor(max))
-  }
-
   document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent
   document.getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION).addEventListener('click', () => {
     const deprecatedBannerElem = document.getElementById(ELEMID_H2_DEPRECATED_BANNER)
@@ -612,7 +608,7 @@ function loadDropper () {
   fortuneXhr.onload = () => {
     // fortune quotes are splitted with %
     const responseList = fortuneXhr.responseText.split('%')
-    const randQuote = responseList[getRandomInt(responseList.length - 1)].trim()
+    const randQuote = responseList[_.random(0, responseList.length - 1)].trim()
     document.getElementById(ELEMID_SPAN_RANDOM_QUOTE).innerText = randQuote
   }
   fortuneXhr.open('GET', SRC_TXT_FORTUNE)
