@@ -3,9 +3,6 @@
  *
  * Libraries in use:
  *
- * jquery:
- *  https://github.com/jquery/jquery
- *  MIT License. Copyright OpenJS Foundation and other contributors, https://openjsf.org/
  * async-script-loader:
  *  https://github.com/CSharperMantle/async-script-loader
  *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle)
