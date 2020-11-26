@@ -569,25 +569,27 @@ function loadDropper () {
   const createFlaskConfettiEffect = _.throttle(() => {
     fireConfetti(confettiInstance, 0.25, {
       spread: 26,
-      startVelocity: 55,
+      startVelocity: 30,
     })
     fireConfetti(confettiInstance, 0.2, {
       spread: 60,
+      startVelocity: 35,
     })
     fireConfetti(confettiInstance, 0.35, {
       spread: 100,
       decay: 0.91,
-      scalar: 0.8
+      scalar: 0.8,
+      startVelocity: 40,
     })
     fireConfetti(confettiInstance, 0.1, {
       spread: 120,
-      startVelocity: 25,
+      startVelocity: 15,
       decay: 0.92,
       scalar: 1.2
     })
     fireConfetti(confettiInstance, 0.1, {
       spread: 120,
-      startVelocity: 45,
+      startVelocity: 40,
     })
   }, 500)
 
