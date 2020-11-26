@@ -358,13 +358,14 @@ let isDeprecatedBannerShowing = false;
 // gsap animation
 function loadDropper () {
   // confetti helpers
+  const confettiCount = 200;
   const confettiDefaults = {
     origin: { y: 0.7 }
   }
   
   function fireConfetti(instance, particleRatio, opts) {
     instance(Object.assign({}, confettiDefaults, opts, {
-      particleCount: _.floor(count * particleRatio)
+      particleCount: _.floor(confettiCount * particleRatio)
     }))
   }
 
