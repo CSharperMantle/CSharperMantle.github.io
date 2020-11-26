@@ -357,6 +357,18 @@ let isDeprecatedBannerShowing = false;
 
 // gsap animation
 function loadDropper () {
+  // confetti helpers
+  const confettiDefaults = {
+    origin: { y: 0.7 }
+  }
+  
+  function fireConfetti(instance, particleRatio, opts) {
+    instance(Object.assign({}, confettiDefaults, opts, {
+      particleCount: _.floor(count * particleRatio)
+    }))
+  }
+
+  // gsap helpers
   const select = (s) => document.querySelector(s)
   const mainSVG = select('.mainSVG')
   const liquid = select('#liquid')
@@ -385,10 +397,6 @@ function loadDropper () {
 
   gsap.set(mainSVG, {
     visibility: 'visible'
-  })
-  gsap.set('.darkLiquid', {
-    scaleX: -1,
-    transformOrigin: '50% 50%'
   })
   for (let i = 0; i < numPoints; i++) {
     const p = liquid.points.appendItem(mainSVG.createSVGPoint())
@@ -557,16 +565,33 @@ function loadDropper () {
     useWorker: true
   })
 
-  const createConfetti = _.throttle(() => {
-    confettiInstance({
-      particleCount: 100,
+  const createFlaskConfettiEffect = _.throttle(() => {
+    fireConfetti(confettiInstance, 0.25, {
+      spread: 26,
+      startVelocity: 55,
+    })
+    fireConfetti(confettiInstance, 0.2, {
+      spread: 60,
+    })
+    fireConfetti(confettiInstance, 0.35, {
       spread: 100,
-      startVelocity: 30
+      decay: 0.91,
+      scalar: 0.8
+    })
+    fireConfetti(confettiInstance, 0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2
+    })
+    fireConfetti(confettiInstance, 0.1, {
+      spread: 120,
+      startVelocity: 45,
     })
   }, 500)
 
   flask.addEventListener('click', () => {
-    createConfetti()
+    createFlaskConfettiEffect()
   })
 };
 
