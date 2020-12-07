@@ -83,7 +83,7 @@
                 false, null, null)
         })
         .then(() => {
-            loadDropper()
+            loadComponents()
         })
         .catch((reason) => {
             console.log(reason)
@@ -100,7 +100,7 @@ const SRC_TXT_FORTUNE = 'https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMant
 let isDeprecatedBannerShowing = false;
 
 // click-switching images
-(function() {
+function loadSwitchableImg() {
     'use strict'
 
     function refreshSwitch(s) {
@@ -136,10 +136,10 @@ let isDeprecatedBannerShowing = false;
         }
     }
     initializeSwitch()
-})();
+}
 
 // non-jquery sliders
-(function() {
+function loadSliders() {
     // ==GLOBAL VARS, CONSTS AND HELPERS==
 
     // create pager list items
@@ -353,7 +353,7 @@ let isDeprecatedBannerShowing = false;
             sliderTiming()
         }, SLIDER_SPEED)
     }
-})()
+}
 
 // gsap animation
 function loadDropper() {
@@ -599,7 +599,7 @@ function loadDropper() {
 };
 
 // other interactive elements
-(function() {
+function loadMiscInteractiveElements() {
     'use strict'
 
     document.getElementById(ELEMID_PRE_USER_AGENT).innerText = navigator.userAgent
@@ -632,4 +632,11 @@ function loadDropper() {
     }
     fortuneXhr.open('GET', SRC_TXT_FORTUNE)
     fortuneXhr.send()
-})()
+}
+
+function loadComponents() {
+    loadDropper()
+    loadSwitchableImg()
+    loadSliders()
+    loadMiscInteractiveElements()
+}
