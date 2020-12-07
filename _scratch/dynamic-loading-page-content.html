@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="CSharperMantle">
+    <title>Dynamically-loaded Page</title>
+</head>
+
+<body>
+    <div id="div-content"></div>
+    <script>
+        const elemContent = document.getElementById('div-content')
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET',
+            'https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/src/example.res.html')
+        xhr.addEventListener('load', () => {
+            if (xhr.status === 200) {
+                const elemWrapper = document.createElement('div')
+                elemWrapper.innerHTML = xhr.responseText
+                elemContent.insertAdjacentElement('afterbegin', elemWrapper)
+            }
+        })
+        xhr.send()
+    </script>
+</body>
+
+</html>
