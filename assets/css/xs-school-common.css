@@ -1,0 +1,101 @@
+.no-selection {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.bordered-with-fieldset>fieldset {
+    border-color: #000000;
+}
+
+.bordered-with-fieldset>fieldset>legend {
+    font-size: 14pt;
+}
+
+/* Do the javascript's width adjusting jobs by CSS */
+img {
+    max-width: 740px;
+}
+
+/* These are for grids */
+.container-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: min-content;
+    grid-auto-columns: min-content;
+}
+
+.grid-row-1 {
+    grid-row: 1;
+}
+
+.grid-row-2 {
+    grid-row: 2;
+}
+
+.grid-row-3 {
+    grid-row: 3;
+}
+
+.grid-row-4 {
+    grid-row: 4;
+}
+
+.grid-row-5 {
+    grid-row: 5;
+}
+
+.grid-row-stretch {
+    grid-column: 1 / -1;
+}
+
+/* These are for flexbox modeling */
+.container-flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* These are for better image display */
+figure.gallery-fig {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    margin: auto;
+}
+
+figure.gallery-fig>figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+/* Text */
+.text {
+    font-family: Arial, Helvetica, 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+}
+
+.text-small {
+    font-size: small;
+}
+
+.text-large {
+    font-size: large;
+}
+
+/* Footers */
+.footer {
+    display: flex;
+    padding: 5px;
+    background-color: #dfdfdf;
+    color: #686868;
+    justify-content: center
+}
