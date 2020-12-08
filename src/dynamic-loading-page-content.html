@@ -9,11 +9,14 @@
 
 <body>
     <div id="div-content"></div>
+    <div id="div-page-source-url" hidden=""
+        data-page-source-url="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/html/example.res.html">
+    </div>
     <script>
         const elemContent = document.getElementById('div-content')
         const xhr = new XMLHttpRequest()
-        xhr.open('GET',
-            'https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@HEAD/assets/src/example.res.html')
+        const pageSrc = document.getElementById('div-page-source-url').dataset.pageSourceUrl
+        xhr.open('GET', pageSrc)
         xhr.addEventListener('load', () => {
             if (xhr.status === 200) {
                 const elemWrapper = document.createElement('div')
