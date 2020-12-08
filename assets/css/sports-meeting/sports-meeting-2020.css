@@ -1,5 +1,5 @@
 .hidden-content {
-    margin-top: 255px
+    margin-top: 255px;
 }
 
 .container-grid-one-column {
@@ -8,10 +8,14 @@
 
 .container-flex-row {
     display: flex;
-    flex-flow: row wrap
+    flex-flow: row wrap;
 }
 
 .container-flex-column {
     display: flex;
-    flex-flow: column wrap
+    flex-flow: column wrap;
+}
+
+.grayscale {
+    filter: grayscale(90%);
 }
