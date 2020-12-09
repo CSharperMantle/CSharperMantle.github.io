@@ -15,7 +15,3 @@
     display: flex;
     flex-flow: column wrap;
 }
-
-.grayscale {
-    filter: grayscale(90%);
-}

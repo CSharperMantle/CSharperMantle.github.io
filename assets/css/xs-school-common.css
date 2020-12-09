@@ -99,3 +99,12 @@ figure.gallery-fig>figcaption {
     color: #686868;
     justify-content: center
 }
+
+.grayscale-on-hover {
+    filter: unset;
+    transition: filter 0.2s linear;
+}
+
+.grayscale-on-hover:hover {
+    filter: grayscale(1);
+}
