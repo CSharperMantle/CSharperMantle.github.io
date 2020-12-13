@@ -6,12 +6,3 @@
     grid-template-columns: repeat(1, 1fr);
 }
 
-.container-flex-row {
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.container-flex-column {
-    display: flex;
-    flex-flow: column wrap;
-}

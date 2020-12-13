@@ -61,6 +61,16 @@ img {
     flex-flow: row wrap;
 }
 
+.container-flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container-flex-column {
+    display: flex;
+    flex-flow: column wrap;
+}
+
 /* These are for better image display */
 figure.gallery-fig {
     border: thin #c0c0c0 solid;
