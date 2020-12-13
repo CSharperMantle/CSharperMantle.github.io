@@ -23,6 +23,20 @@ img {
     max-width: 740px;
 }
 
+/* Image tweaks */
+.img-grayscale-on-hover {
+    filter: unset;
+    transition: filter 0.2s linear;
+}
+
+.img-grayscale-on-hover:hover {
+    filter: grayscale(1);
+}
+
+.img-brighter {
+    filter: brightness(1.3);
+}
+
 /* These are for grids */
 .container-grid {
     display: grid;
@@ -108,13 +122,4 @@ figure.gallery-fig>figcaption {
     background-color: #dfdfdf;
     color: #686868;
     justify-content: center
-}
-
-.grayscale-on-hover {
-    filter: unset;
-    transition: filter 0.2s linear;
-}
-
-.grayscale-on-hover:hover {
-    filter: grayscale(1);
 }
