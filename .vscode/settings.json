@@ -3,6 +3,7 @@
         "afterbegin",
         "beforeend",
         "consts",
+        "crossorigin",
         "csharpermantle",
         "elemid",
         "gsap",
