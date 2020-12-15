@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://use.sevencdn.com/css?family=Noto+Sans+SC:200,300,400,600,700"
   crossorigin="anonymous">
 <link rel="stylesheet"
@@ -137,12 +138,13 @@
         crossorigin="anonymous">
       <span class="center text text-large">THE&ensp;END</span>
     </section>
-    <section class="grid-row-4 container-flex-column hidden-content">
+    <section class="grid-row-4 container-flex-column hidden-content" id="section-hidden-content">
       <span class="center text">对不起还没完</span>
       <span class="center text">再来夹带亿点点私货&ensp;/色/色/色/</span>
-      <img class="center img-grayscale-on-hover"
+      <img class="center" id="img-hidden-content"
         src="https://cdn.jsdelivr.net/gh/CSharperMantle/CSharperMantle.github.io@master/assets/img/01ce7d65a70058601b32a088bd636c4ca28fea3f.jpg"
         crossorigin="anonymous">
+      <canvas id="canvas-confetti-overlay" class="confetti-overlay"></canvas>
     </section>
   </article>
 </main>
