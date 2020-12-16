@@ -85,6 +85,7 @@ function loadComponents () {
   const confettiDefaults = {
     origin: { y: 0.7 }
   }
+  const confettiIsUseWorker = window.location.hostname.lastIndexOf('10.24') === -1 // prevent displaying with Workers when viewed from EClassBoard
 
   function fireConfettiIntern (instance, particleRatio, opts) {
     instance(Object.assign({}, confettiDefaults, opts, {
@@ -94,7 +95,7 @@ function loadComponents () {
 
   const confettiInstance = confetti.create(confettiCanvas, {
     resize: true,
-    useWorker: true
+    useWorker: confettiIsUseWorker
   })
 
   const fireConfetti = function () {
