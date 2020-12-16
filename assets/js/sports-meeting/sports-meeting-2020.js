@@ -85,7 +85,7 @@ function loadComponents () {
   const confettiDefaults = {
     origin: { y: 0.7 }
   }
-  const confettiIsUseWorker = window.location.hostname.lastIndexOf('10.24') === -1 // prevent displaying with Workers when viewed from EClassBoard
+  const confettiIsUseWorker = (window.location.hostname.lastIndexOf('10.24') === -1) // prevent displaying with Workers when viewed from EClassBoard
 
   function fireConfettiIntern (instance, particleRatio, opts) {
     instance(Object.assign({}, confettiDefaults, opts, {
@@ -125,12 +125,16 @@ function loadComponents () {
     })
   }
 
-  $('#img-hidden-content:visible').on('inview', function (event, isInView) {
+  $('#img-hidden-content:visible').on('inview', function (_, isInView) {
     if (isInView) {
       // element is now visible in the viewport
       fireConfetti()
     } else {
       // element has gone out of viewport
     }
+  })
+
+  $('#img-hidden-content:visible').parent().on('click', function () {
+    fireConfetti()
   })
 }
