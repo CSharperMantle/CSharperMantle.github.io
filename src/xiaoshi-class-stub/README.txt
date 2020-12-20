@@ -1,1 +1,0 @@
-Only hard-to-update pages are stubbed, that is, only script-heavy pages are stubbed.
