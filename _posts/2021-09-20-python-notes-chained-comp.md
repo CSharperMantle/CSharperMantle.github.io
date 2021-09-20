@@ -2,6 +2,7 @@
 layout: post
 title: "Python随笔（2）：连锁比较操作 Chained Comparisons"
 date: 2021-09-20 18:29:31 +0800
+lang: zh-Hans
 categories: python-notes
 ---
 
