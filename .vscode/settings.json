@@ -19,5 +19,6 @@
     "eslint.validate": [
         "javascript",
         "html"
-    ]
+    ],
+    "python.pythonPath": "K:\\Python\\Python38-32\\python.exe"
 }
