@@ -221,7 +221,7 @@ PS >
 
 结论：观察到`SENTRY_RET_VAL`被返回，原命题得证。
 
-#### 2.4. CPython字节码中的证据
+### 2.4. CPython字节码中的证据
 
 CPython*字节码*（bytecode）是CPython对于已解析的Python*源码*（source）的一种的内部表示。CPython字节码的具体内容与*CPython实现细节*（CPython implementation detail）有关，故没有跨平台性。通过字节码，用户可以从执行的底层观察代码的解析情况。
 
