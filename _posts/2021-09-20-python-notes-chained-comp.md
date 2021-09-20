@@ -160,7 +160,7 @@ print("my_three < my_one < my_two: {}".format(
 结果：
 
 ```plain
-PS > py -3 chaining-comp-2-3-1.py
+PS > py -3 .\chaining-comp-2-3-1.py
 MyInt.__lt__() called with self=1 another=2
 MyInt.__lt__() called with self=2 another=3
 my_one < my_two < my_three: True
