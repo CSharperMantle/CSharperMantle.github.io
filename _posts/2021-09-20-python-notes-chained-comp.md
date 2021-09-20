@@ -187,7 +187,7 @@ SENTRY_RET_VAL = 1000
 class MyInt:
     """
     A user-defined class similar to int.
-    Every self.__lt__() call is logged.
+    SENTRY_RET_VAL is returned when SENTRY is compared against any value.
     """
 
     def __init__(self, n: int):
