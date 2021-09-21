@@ -195,7 +195,7 @@ class MyInt:
     def __init__(self, n: int):
         self._n = n
     
-    def __lt__(self, another) -> bool:
+    def __lt__(self, another):
         return (SENTRY_RET_VAL
             if another._n == SENTRY
             else self._n < another._n
