@@ -283,7 +283,7 @@ dis.dis(is_ascending_chained)
 >>>
 ```
 
-`is_ascending_simple()`的字节码相对简单，不再赘述。下面将对`is_ascending_chained()`的运行栈情况进行简要分析。
+`is_ascending_simple()`的字节码相对简单，不再赘述。下面将对`is_ascending_chained()`的运行栈情况进行简要分析。提示：`COMPARE_OP`的功能是将栈顶的头两个元素弹出，再压入比较的结果。
 
 以下分析抽象的格式如下：`LineNo(("b" DescriptionOfBranch)|(["y""n"]))? ("Return("RetVal")")? ("Stack("StackDescription")")?`
 
@@ -291,18 +291,20 @@ dis.dis(is_ascending_chained)
 2 Stack(Bottom a b Top)
 4 Stack(Bottom a b b Top)
 6 Stack(Bottom b a b Top)
-8b a < b?
-8 Stack(Bottom b a b a<b Top)
+8 a<b?
+8 Stack(Bottom b a<b Top)
 
-8n Not taking JMP
-10 Stack(Bottom b a b Top)
-12 Stack(Bottom b a b c Top)
-14 Stack(Bottom b a b c b<c Top)
+10b Top is false?
+
+10n Not taking JMP
+10 Stack(Bottom b Top)
+12 Stack(Bottom b c Top)
+14 Stack(Bottom b<c Top)
 16 Return(b<c)
 
 8y Taking JMP
-18 Stack(Bottom b a a<b b Top)
-20 Stack(Bottom b a a<b Top)
+18 Stack(Bottom a<b b Top)
+20 Stack(Bottom a<b Top)
 22 Return(a<b)
 ```
 
