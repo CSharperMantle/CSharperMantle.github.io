@@ -125,6 +125,11 @@
   @include relative-font-size(0.9375);
   color: $grey-color;
   margin-left: -$spacing-unit / 2;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5px;
+
   @extend %clearfix;
 }
 
@@ -135,18 +140,15 @@
 }
 
 .footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
+  grid-column: 1;
 }
 
 .footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
+  grid-column: 2;
 }
 
 .footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
+  grid-column: 3;
 }
 
 @include media-query($on-laptop) {
