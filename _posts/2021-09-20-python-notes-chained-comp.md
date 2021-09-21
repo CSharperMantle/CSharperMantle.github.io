@@ -283,7 +283,7 @@ dis.dis(is_ascending_chained)
 >>>
 ```
 
-`is_ascending_simple()`的字节码相对简单，不再赘述。下面将对`is_ascending_chained()`的运行栈情况进行简要分析。提示：`COMPARE_OP`的功能是将栈顶的头两个元素弹出，再压入比较的结果。
+`is_ascending_simple()`的字节码相对简单，不再赘述。下面将对`is_ascending_chained()`的运行栈情况进行简要分析。
 
 以下分析抽象的格式如下：`LineNo(("b" DescriptionOfBranch)|(["y""n"]))? ("Return("RetVal")")? ("Stack("StackDescription")")?`
 
@@ -307,6 +307,8 @@ dis.dis(is_ascending_chained)
 20 Stack(Bottom a<b Top)
 22 Return(a<b)
 ```
+
+**提示：**`COMPARE_OP`的功能是将栈顶的头两个元素弹出，再压入比较的结果。
 
 对`dis`产生的具体指令详见[文档](https://docs.python.org/3.8/library/dis.html)。
 
