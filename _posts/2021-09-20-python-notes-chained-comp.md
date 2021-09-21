@@ -302,7 +302,7 @@ dis.dis(is_ascending_chained)
 14 Stack(Bottom b<c Top)
 16 Return(b<c)
 
-8y Taking JMP
+10y Taking JMP
 18 Stack(Bottom a<b b Top)
 20 Stack(Bottom a<b Top)
 22 Return(a<b)
