@@ -59,7 +59,7 @@ is_ascending_chained(1, 3, 2): False
 
 ## 2. 解决方案与讨论
 
-[Python 3.8 References 6.10. Comparisons](https://docs.python.org/3.8/reference/expressions.html#comparisons)一章对连锁比较操作进行了如下定义：
+[Python 3.8 Reference 6.10. Comparisons](https://docs.python.org/3.8/reference/expressions.html#comparisons)一章对连锁比较操作进行了如下定义：
 
 > Comparisons can be chained arbitrarily, e.g., `x < y <= z` is equivalent to `x < y and y <= z`, except that y is evaluated only once (but in both cases `z` is not evaluated at all when `x < y` is found to be false).
 > 
@@ -69,7 +69,7 @@ is_ascending_chained(1, 3, 2): False
 
 1. `x < y <= z`一类的连锁比较表达式通常情况下与`x < y and y <= z`等价；
 2. 在由`a op1 b op2 c ... y opN z`描述的一般性连锁表达式中，类似`a`至`z`的子表达式**至多**被*求值*（evaluate）一次；
-3. 连锁表达式存在*短路*（short-circuiting）现象，且与[Python 3.8 References 6.11. Boolean operations](https://docs.python.org/3.8/reference/expressions.html#boolean-operations)中的描述一致。
+3. 连锁表达式存在*短路*（short-circuiting）现象，且与[Python 3.8 Reference 6.11. Boolean operations](https://docs.python.org/3.8/reference/expressions.html#boolean-operations)中的描述一致。
 
 说人话（但并不normative）：连锁表达式可以按照`a op1 b op2 c ... y opN z => a op1 b and b op2 c and ... y opN z`的形式展开，但是每一个子表达式都最多被算一次。
 
@@ -219,7 +219,7 @@ my_one < my_two < my_sentry: 1000
 PS >
 ```
 
-原理：通过与2.3.1.节中相同的方法自定义`__lt__()`特殊函数，在遇到第二操作数为`SENTRY`时，返回`SENTRY_RET_VAL`而不是正常的布尔值，以检测连锁比较操作是否会有[Python 3.8 References 6.11. Boolean operations](https://docs.python.org/3.8/reference/expressions.html#boolean-operations)中描述的一般布尔操作行为。
+原理：通过与2.3.1.节中相同的方法自定义`__lt__()`特殊函数，在遇到第二操作数为`SENTRY`时，返回`SENTRY_RET_VAL`而不是正常的布尔值，以检测连锁比较操作是否会有[Python 3.8 Reference 6.11. Boolean operations](https://docs.python.org/3.8/reference/expressions.html#boolean-operations)中描述的一般布尔操作行为。
 
 结论：观察到`SENTRY_RET_VAL`被返回，原命题得证。
 
