@@ -140,13 +140,13 @@ PS >
 
 Python中将标识符称作*名称*（name）：
 
-> *Names* refer to objects. [1]
+> *Names* refer to objects. (1)
 > 
-> Identifiers (also referred to as *names*) are described by the following lexical definitions. [2]
+> Identifiers (also referred to as *names*) are described by the following lexical definitions. (2)
 > 
-> [1]: [Python 3.7 Reference 4.2.1. Binding of names](https://docs.python.org/3.7/reference/executionmodel.html#binding-of-names)
+> (1): [Python 3.7 Reference 4.2.1. Binding of names](https://docs.python.org/3.7/reference/executionmodel.html#binding-of-names)
 > 
-> [2]: [Python 3.7 Reference 2.3. Identifiers and keywords](https://docs.python.org/3.7/reference/lexical_analysis.html?highlight=identifier#identifiers)
+> (2): [Python 3.7 Reference 2.3. Identifiers and keywords](https://docs.python.org/3.7/reference/lexical_analysis.html?highlight=identifier#identifiers)
 
 为了方便起见，我们将沿用“标识符”这一称呼。
 
