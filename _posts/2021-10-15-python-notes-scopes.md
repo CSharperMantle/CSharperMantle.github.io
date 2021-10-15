@@ -9,7 +9,7 @@ categories: python-notes
 
 ## 0. 前言
 
-变量与其*作用域*（scope）是所有OO语言入门所不能回避的问题。但是，在传统C-like语言中存在的“作用域”概念并不适用于Python。本文将对Python的作用域与生命周期机制进行分析。
+变量与其*作用域*（scope）是大部分计算机语言入门所不能回避的问题。但是，在传统C-like语言中存在的“作用域”概念并不完全适用于Python。本文将对Python的作用域机制进行分析。
 
 **本文中使用的软件环境**：
 * **Python Interpreter**: `Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)] on win32` （CPython）
