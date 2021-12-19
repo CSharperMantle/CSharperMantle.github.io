@@ -200,4 +200,83 @@ PS >
 
 ## 3. 讨论
 
-**TODO.**
+Python中，能使对象支持索引操作的是以下三个成员函数：
+
+* `__getitem__(self, index)`，实现`my_var = my_list[idx]`；
+* `__setitem__(self, index, value)`，实现`my_list[idx] = my_var`；
+* `__delitem__(self, index)`，实现`del my_list[idx]`。
+
+比如下面这个样例中的三个对象：
+
+```python
+# indexers.py
+class GetList:
+    def __getitem__(self, index):
+        print("GetList.__getitem__, index=", index)
+        return 0
+
+
+class GetSetList:
+    def __getitem__(self, index):
+        print("GetSetList.__getitem__, index=", index)
+        return 0
+
+    def __setitem__(self, index, value):
+        print("GetSetList.__setitem__, index=", index, "value=", value)
+
+
+class GetSetDelList:
+    def __getitem__(self, index):
+        print("GetSetDelList.__getitem__, index=", index)
+        return 0
+
+    def __setitem__(self, index, value):
+        print("GetSetDelList.__getitem__, index=", index, "value=", value)
+
+    def __delitem__(self, index):
+        print("GetSetDelList.__delitem__, index=", index)
+
+
+if __name__ == "__main__":
+    get_list = GetList()
+    tmp = get_list[0]
+    try:
+        get_list[0] = 1
+    except Exception as ex:
+        print(ex)
+
+    get_set_list = GetSetList()
+    tmp = get_set_list[0]
+    get_set_list[0] = 100
+
+    get_set_del_list = GetSetDelList()
+    tmp = get_set_del_list[0]
+    get_set_del_list[0] = 200
+    del get_set_del_list[1]
+    print()
+
+```
+
+运行结果：
+
+```plain
+PS > py -3 .\indexers.py
+GetList.__getitem__, index= 0
+'GetList' object does not support item assignment
+GetSetList.__getitem__, index= 0
+GetSetList.__setitem__, index= 0 value= 100
+GetSetDelList.__getitem__, index= 0
+GetSetDelList.__getitem__, index= 0 value= 200
+GetSetDelList.__delitem__, index= 1
+
+PS >
+```
+
+其中`index`可以是任意对象，不一定是传统的`int`类型（或更精确地说，`SupportsIndex`类型）。十分著名的*切片*（slicing）操作，会将一个`slice`对象传入索引器函数：
+
+```python
+GetList()[0:10:2]
+# prints GetList.__getitem__, index= slice(0, 10, 2)
+```
+
+鉴于索引器可以传入任意值，我们就可以通过自定义比较操作符来达到查询的目的，具体实现见“解决方案”一节。
