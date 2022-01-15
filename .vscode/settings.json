@@ -17,7 +17,8 @@
         "printf",
         "rustc",
         "switchable",
-        "switchables"
+        "switchables",
+        "zhihu"
     ],
     "eslint.options": {
         "configFile": ".eslintrc.js"
