@@ -23,7 +23,7 @@ df = pandas.DataFrame(data)
 
 print("Mantle has 5 yuan so he can afford the following stuff:")
 print(df[df["Price"] < 5.0])
-print("... but the he can only buy things in stock so he can actually get:")
+print("... but he can only buy things in stock so he can actually get:")
 print(df[(df["Price"] <= 5.0) & (df["InStock"] == True)])
 
 ```
@@ -36,8 +36,9 @@ Mantle has 5 yuan so he can afford the following stuff:
      Name  Price  InStock
 0  pencil    1.5    False
 1   ruler    4.3     True
-... but the he can only buy things in stock so he can actually get:
-    Name  Price  InStock                                1  ruler    4.3     True
+... but he can only buy things in stock so he can actually get:
+    Name  Price  InStock
+1  ruler    4.3     True
 mantlebao@mantletmx:~#
 ```
 
