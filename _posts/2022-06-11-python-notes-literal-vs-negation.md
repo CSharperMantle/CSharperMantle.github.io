@@ -80,7 +80,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ------
 
-**JavaScript on Node.js**
+#### JavaScript on Node.js
 
 JavaScript的处理是最严格的，直接以语法错误拒绝计算该表达式，要求用户在乘方中使用一元运算符时必须添加括号以消除歧义。
 
@@ -97,7 +97,7 @@ SyntaxError: Unary operator used immediately before exponentiation expression. P
 >
 ```
 
-**bash on Cygwin64**
+#### bash on Cygwin64
 
 bash显然把-3当作了一整个字面量处理，得出9的结果。
 
@@ -108,7 +108,7 @@ $ echo $((-3 ** 2))
 $
 ```
 
-**PHP**
+#### PHP
 
 与Python相同，乘方的优先级高于取反。
 
@@ -121,7 +121,7 @@ php > echo -3 ** 2;
 php >
 ```
 
-**Visual Basic .NET**
+#### Visual Basic .NET
 
 与Python相同，乘方的优先级高于取反。
 
@@ -142,7 +142,7 @@ PS > main.exe
 PS >
 ```
 
-**MATLAB on GNU Octave**
+#### MATLAB on GNU Octave
 
 ```plain
 PS > octave
