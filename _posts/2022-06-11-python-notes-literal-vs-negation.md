@@ -17,6 +17,7 @@ categories: python-notes
 * **bash**：`GNU bash, version 4.4.12(3)-release (x86_64-unknown-cygwin)`
 * **php**：`PHP 7.2.9 (cli) (built: Aug 15 2018 23:10:01) ( ZTS MSVC15 (Visual C++ 2017) x64 )`
 * **vbc**：`Microsoft (R) Visual Basic Compiler version 3.4.0-beta4-19562-05 (ff930dec)`
+* **octave**：`GNU Octave, version 7.1.0`
 
 ## 1. 问题描述
 
@@ -72,6 +73,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 * Python
 * PHP
 * Visual Basic .NET
+* MATLAB
 
 **其他**：
 * JavaScript（报告`SyntaxError`）
@@ -138,4 +140,29 @@ PS > main.exe
 -9
 
 PS >
+```
+
+**MATLAB on GNU Octave**
+
+```plain
+PS > octave
+GNU Octave, version 7.1.0
+Copyright (C) 1993-2022 The Octave Project Developers.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  For details, type 'warranty'.
+
+Octave was configured for "x86_64-w64-mingw32".
+
+Additional information about Octave is available at https://www.octave.org.
+
+Please contribute if you find this software useful.
+For more information, visit https://www.octave.org/get-involved.html
+
+Read https://www.octave.org/bugs.html to learn how to submit bug reports.
+For information about changes from previous versions, type 'news'.
+
+octave:1> -3 ^ 2
+ans = -9
+octave:2>
 ```
