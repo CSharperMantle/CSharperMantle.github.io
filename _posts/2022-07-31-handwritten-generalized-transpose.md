@@ -111,7 +111,9 @@ T *permute(T *tensor, const std::array<size_t, D> &dims,
 
 int main(int, char **)
 {
-    double arr[2][3] = {{0.1, 0.2, 0.3}, {0.4, 0.5, 0.6}};
+    double arr[2][3] = {
+        {0.1, 0.2, 0.3}, {0.4, 0.5, 0.6}
+    };
 
     std::cout << "Before permutation:\n";
     for (size_t i = 0; i < 6; i++)
