@@ -146,11 +146,11 @@ foreach ($d in Get-ChildItem -Path $MusicPath -Directory -Filter "music*") {
 Remove-Item $tmp_dir -Recurse
 ```
 
-You will find that various folders are created under `<OUTDIR>` with the names like `^music[0-9]{6}$`.
+You will find that various folders are created under `<OUTDIR>\\maiout\\` with the names like `^music[0-9]{6}$`.
 
 **Expected artifacts:**
 
-* `^<OUTDIR>\\music[0-9]{6}\\$`: Generated song packs.
+* `^<OUTDIR>\\maiout\\music[0-9]{6}\\$`: Generated song packs.
 
 ## 5. Sort and import
 
