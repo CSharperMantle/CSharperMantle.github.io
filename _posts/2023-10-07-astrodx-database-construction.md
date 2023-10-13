@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Say bye-bye to laundries: Building score database for AstroDX"
+title: "Say bye-bye to laundries: Building chart database for AstroDX"
 date: 2023-10-07 21:25:28 +0800
 lang: en
-description: This post is a brief walkthrough and guide for building score database for AstroDX.
+description: This post is a brief walkthrough and guide for building chart database for AstroDX.
 categories: games maimai
 ---
 
@@ -37,11 +37,11 @@ This part is quite straightforward if you know where to find. The process of sea
 
 * `^.+\.vhd$`: Hard disk image in `vhd` format.
 
-## 2. Create scores files
+## 2. Create chart files
 
 Mount `vhd` file you have obtained above. We assume that you mount it as `X:` hereafter.
 
-Download and build MaichartConverter. Run this command to convert `.ma2` files to `^(.+)\\maidata.txt$` Simai scores, where the first capture here is the score name:
+Download and build MaichartConverter. Run this command to convert `.ma2` files to `^(.+)\\maidata.txt$` Simai charts, where the first capture here is the score name:
 
 ```powershell
 PS > MaichartConverter.exe CompileDatabase -p="X:\Package\Sinmai_Data\StreamingAssets\A000\" -o "<OUTDIR>" -f="simai" -g=6
@@ -51,7 +51,7 @@ See the help of MaichartConverter for more info about these parameters. Basicall
 
 **Expected artifacts:**
 
-* `<OUTDIR>\\chart\\[1-9][0-9]*_.+\\\maidata.txt$`: Generated scores.
+* `<OUTDIR>\\chart\\[1-9][0-9]*_.+\\\maidata.txt$`: Generated charts.
 
 ## 3. Obtain magic key
 
@@ -160,6 +160,6 @@ Run `Sort-Maidata-Scores-By-Genre.ps1` from script-collection:
 PS > ./Sort-Maidata-Scores-By-Genre.ps1 -Path <OUTDIR>
 ```
 
-You can see all these scores are categorized into folders. Now copy all these files to your platform according to instructions given by <https://github.com/beerpiss/astrodx-guide>.
+You can see all these charts are categorized into folders. Now copy all these files to your platform according to instructions given by <https://github.com/beerpiss/astrodx-guide>.
 
 Congratulations! You have a working database now. Try to play with it at home without hassles!
