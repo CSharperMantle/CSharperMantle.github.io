@@ -6,65 +6,47 @@ I hereby claim:
 
   * I am an admin of https://csharpermantle.github.io
   * I am csharpermantle (https://keybase.io/csharpermantle) on keybase.
-  * I have a public key with fingerprint C307 71EA 55BE B790 1695  DD7F 24CB 30C4 625D 2170
+  * I have a public key ASD1YTzOZZOAW8nCuTINXnriwONitR0cmOKh4UEfpoE4lgo
 
 To do so, I am signing this object:
 
 {
   "body": {
     "key": {
-      "eldest_kid": "0101365f046d0b6c692da65df122bbc7b8abc1ada9ecf1c93f6ccf2519cfc7bc3d990a",
-      "fingerprint": "c30771ea55beb7901695dd7f24cb30c4625d2170",
+      "eldest_kid": "0120f5613cce6593805bc9c2b9320d5e7ae2c0e362b51d1c98e2a1e1411fa68138960a",
       "host": "keybase.io",
-      "key_id": "24cb30c4625d2170",
-      "kid": "0101365f046d0b6c692da65df122bbc7b8abc1ada9ecf1c93f6ccf2519cfc7bc3d990a",
+      "kid": "0120f5613cce6593805bc9c2b9320d5e7ae2c0e362b51d1c98e2a1e1411fa68138960a",
       "uid": "c9061b3c45c30455c76ffc44fe66b619",
       "username": "csharpermantle"
     },
+    "merkle_root": {
+      "ctime": 1702131727,
+      "hash": "6a3f668043ab249c1f0ec2236b5eef88ffed487a3f8d4f756f632a9607c2f9a3e11ed2b8d537156e068549954c214cff348f21a97c603286b7d4fb258475c521",
+      "hash_meta": "e8cac7d776ec04170b95a8fe5e02f08c48d88bd9bdcc6b4d547e26597af5521d",
+      "seqno": 25224298
+    },
     "service": {
+      "entropy": "R31L4D7ECJ/ecq/n+HXemyMq",
       "hostname": "csharpermantle.github.io",
       "protocol": "https:"
     },
     "type": "web_service_binding",
-    "version": 1
+    "version": 2
   },
-  "ctime": 1598706439,
-  "expire_in": 157680000,
-  "prev": "b120b2ee334cb077e0d312be07d36232f6f3d807402298e5547cc14336a6f912",
-  "seqno": 13,
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.1.0"
+  },
+  "ctime": 1702131740,
+  "expire_in": 504576000,
+  "prev": "21d4e8b0bb14ec19f7bf9d7a8fc9549c296d32924b2233fa353b30c944073340",
+  "seqno": 23,
   "tag": "signature"
 }
 
 which yields the signature:
 
------BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.1.13
-Comment: https://keybase.io/crypto
-
-yMNEAnicrVJtUFRVGF6+B2YoBkmdEJRrTTrBdj/P3btY8hEUMk2JyZip2/04l70D
-7C733gUWAg3lQzAYJwtzAsqRWCEz1MLJoZHCwQJFhigUVCIgZmUkhGgQse6l+ufP
-zp8z57zP87zP+5zTGexjCPJ6qhvt5HZHOby6O5qdBsuWbQGFCGcXXIi5EMmEyxvM
-EqCiWjIlATEjKIZiBKBElAQCygEeMLjAAkoQMRznOJ7mTCzHY6zAMpAXMZ4hRMDz
-Ik5hDC9qVZ4QGAZlkWhElGwZUHbIkk3VZHkCpWkMshTFQY5mUAwwlCDQIk7yHIHy
-JMApAcdoVCNa7YrO0MxxrAKNkl270w6WZXuPwP/Pvp3LcjyDAowjeJLSnJMUxdNA
-FHmSFCEAHMAYHahA2cZmQx2tWFnZAeVs1qZmQaQoGtFquRIP9Xj1eR6JM2ZIqtXJ
-/TOhQ7ardt6epaGsqupQzLqK6nLotDzIWf4VtHCSTdCS1Ri5UFYkuw0xYxqSVyW9
-A0YxJhoFJMFEIzDfIcnQIukIigYmVFt6H5irSXIYjnI4hAShBao9DUQFAsM5iNIC
-AXACF4FICCaUJlEcZ0yQokia5zGSIAALRAbDEX3EHJtd0yY0n2yGpqlIGTZWdcpa
-AN927PI1eAUZ/P289S9nCAoM+e8jRr70+F9CTfm7XeddSsrzg3GDLaLP0cHFFweG
-jcaQE9Hu1OyqzIdnZ/epU+ujwPtVtzeX7jekVAfWH9821zNx6svv/H6qiwsP2Isx
-JabKB5vjzLk/b8kPHIl3+SYLS1tb/EKmTi+UJV/bEwlNzxlr8x9OJ/x+o3X8l5H+
-0QW6LOfu24bIQXvS6o3KgbzYrh/TF3KXGgtMHXuGQMz1vtPGBe/iGCTxGd/ES71j
-a+/L8wcbVk4d7wsVipTJ+bqx/Y2V/ottoc1Z7rAbOfsmbPaBsE2RZ/pKQpDiwJEn
-Xj+3dMw5V+H0rk0C/v3JjxUNvFC3wv3VxoorBxKGjd9f+PyL4gsf3zp0p35ve486
-mt54tNrTfyLl6owX/DR+uzq+9Eat5+wrX78667q363Dd9tA1csSdQ7FwfO2V2I9i
-L4ZZJ8bSqE050xFdrc1/oAmWgu6h7vqLdHUv5U5owBYnzznxUzvWhde+lr2+BK8q
-zdtaeM0WUbpuTdPuGHfczG+XfDzzQtKT6PQ8UZFgRZ+9viE8wHib/TAzvamNSP3m
-YHx+Yw07GzfjMgdcboPvBXs+of3KsXbDztGdZeXO8x+03ix4y91wc+7wydX3Mu77
-Dos1d8uL5qfegb0KWJVibvis8kjn0ytrNlQ/uPWmMzA9tXDyao/lh7Rj+WlRLava
-g4mhxCaPh2y5/PKvO07+eWbkbzM9zUc=
-=+r7b
------END PGP MESSAGE-----
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg9WE8zmWTgFvJwrkyDV564sDjYrUdHJjioeFBH6aBOJYKp3BheWxvYWTESpcCF8QgIdTosLsU7Bn3v516j8lUnCltMpJLIjP6NTswyUQHM0DEIPksJl29LFsC2XXrpM+WHlMZuyIezgtdjCwJq3eMUJSoAgHCo3NpZ8RAvRGnYYTSlAd0vdRCEONq9my9jLyvMVt/36s2DlK2F67YrT+vvu/83NR/MtDn37kRzXCG2fWrYrATApQ/FVTSCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIK2xhwQxkWg6K9LoJAuD3N8FG3NrFuWjMLeaqS1p9FnDo3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
