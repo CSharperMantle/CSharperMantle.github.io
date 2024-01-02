@@ -1,4 +1,4 @@
-# Aboylut
+# About
 
 I am Rong "Mantle" Bao, a Chinese student and amateur coder.
 
