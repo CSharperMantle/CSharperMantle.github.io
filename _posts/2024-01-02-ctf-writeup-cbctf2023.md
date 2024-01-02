@@ -13,6 +13,8 @@ categories: ctf wp
 
 <https://mp.weixin.qq.com/s/M6hdEf4thXjYwVF0QlAH7A>
 
+**官方仓库及 Writeup**: [0RAYS/2023-CBCTF](https://github.com/0RAYS/2023-CBCTF)
+
 ## 1. 最终结果
 
 * **Rank**: 1
