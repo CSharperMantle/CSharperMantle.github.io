@@ -11,7 +11,7 @@ categories: ctf wp
 
 杭州电子科技大学网络安全赛博协会 0RAYS 战队第七届 "赛博杯" 网络安全大赛 (CBCTF 2023)
 
-https://mp.weixin.qq.com/s/M6hdEf4thXjYwVF0QlAH7A
+<https://mp.weixin.qq.com/s/M6hdEf4thXjYwVF0QlAH7A>
 
 ## 1. 最终结果
 
@@ -22,4 +22,4 @@ https://mp.weixin.qq.com/s/M6hdEf4thXjYwVF0QlAH7A
 
 ## 2. Writeup
 
-https://vidar-team.feishu.cn/docx/BlJFd0xs0oNYHExOJiAcpzFXnQf
+<https://vidar-team.feishu.cn/docx/BlJFd0xs0oNYHExOJiAcpzFXnQf>
