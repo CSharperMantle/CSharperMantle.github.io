@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Far-away `file:`s"
+title: "简短的问候"
 date: 2024-04-24 17:36:45 +0800
 lang: zh-Hans
 description: >-
