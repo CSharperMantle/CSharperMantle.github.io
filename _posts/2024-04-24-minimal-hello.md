@@ -19,7 +19,7 @@ exit(0)
 
 ## 2. 解决方案
 
-目前实现的最好效果为152 bytes.
+本文中实现的最小ELF文件落盘大小为152字节.
 
 ### 2.1. 888KB
 
@@ -67,7 +67,15 @@ $ ls -Fsh ./hello.c.elf
 
 ### 2.3. 8.3KB
 
-手动调用POSIX Syscall完成功能. 这样可以省去`main`函数和大部分函数调用的空间.
+手动调用POSIX syscall完成功能. 这样可以省去`main`函数和大部分包装函数的空间. 使用`strace`等工具可以观察到关键的系统调用.
+
+```python
+S_HELLO = "Hello!\n"
+syscall(0x1, 0, S_HELLO, len(S_HELLO))  # write(stdout, S_HELLO, len(S_HELLO))
+syscall(0x3C, 0)  # exit(0)
+```
+
+可以方便地将其转换为NASM汇编. 注意这里并不需要任何栈空间.
 
 ```asm
 [bits 64]
@@ -243,3 +251,7 @@ $ ll ./hello
 $ ./hello
 Hello!
 ```
+
+## 3. 结论与讨论
+
+通过手动触发syscall, 手动优化重叠代码段, 并利用加载至内存的ELF header的空闲padding区域, 能够将最终ELF文件压缩至152字节. 如果使用更激进的压缩方式, 蔽日搜索已加载共享库区段中的可用gadget等方法, 可能达到进一步压缩代码字节数的效果.
