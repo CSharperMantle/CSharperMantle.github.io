@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What can I `scanf`? Buffer out"
+title: "What can I scanf? Buffer out"
 date: 2024-05-07 20:12:34 +0800
 lang: en
 description: >-
@@ -144,7 +144,7 @@ The cause of this behavior is that `-` may signify a start of a negative decimal
 
 Input buffers and input functions are fundamental to I/O, though some edge cases may be easily ignored. [Ju Hong Kim](https://zakuarbor.github.io/portfolio/) wrote in their blog post (<https://zakuarbor.github.io/blog/a-look-at-input-buffer-using-scanf/>) about the behavior described in [Section 2.1](#21-input-group-1) and [Section 2.2](#22-input-group-2). Even the glibc authors (or rather the Standards Committee) had made mistakes implementing their `scanf`s (see [glibc bug 1765](https://sourceware.org/bugzilla/show_bug.cgi?id=1765) and [glibc bug 12701](https://sourceware.org/bugzilla/show_bug.cgi?id=12701)).
 
-I have not noticed the behavior in [Section 2.3](#23-input-group-3) until a recent introductory CTF game named Mini-L CTF 2024 (*links to be added*). The critical part of a Pwn challenge named "Ottoshop♿" is like this:
+I have not noticed the behavior in [Section 2.3](#23-input-group-3) until a recent introductory CTF game named Mini-L CTF 2024 (*link to be added*). The critical part of a Pwn challenge named "Ottoshop♿" is like this:
 
 ```c
 long x;  // `x` is at the bottom of the stack
