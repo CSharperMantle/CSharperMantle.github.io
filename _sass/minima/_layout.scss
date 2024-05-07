@@ -127,7 +127,7 @@
   margin-left: -$spacing-unit / 2;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 3fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr);
   column-gap: 5px;
 
   @extend %clearfix;
@@ -151,18 +151,12 @@
   grid-column: 3;
 }
 
-@include media-query($on-laptop) {
-  .footer-col-wrapper {
-    grid-template-columns: 1fr 1fr 2fr;
-  }
-}
-
 @include media-query($on-palm) {
   .footer-col {
     float: none;
   }
   .footer-col-wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -248,4 +242,9 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+a {
+  word-break: break-all;
+  line-break: anywhere;
 }
