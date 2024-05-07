@@ -14,17 +14,21 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Mantle's Potato Bakery
-email: baorong2005@126.com
-description: >- # this means to ignore newlines until "baseurl:"
+tagline: >-
     Rong "Mantle" Bao's personal blog
+email: baorong2005@126.com
+description: >-
+    A repository of my thoughts and ideas, organized and unorganized,
+    up-to-date and outdated, and everything in between.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://csharpermantle.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  CSharperMantle
 twitter_username: CSMantle3
 social:
-  name: Rong "Mantle" Bao (CSharperMantle)
+  name: Rong "Mantle" Bao (CSharperMantle; CSMantle)
   links:
     - https://github.com/CSharperMantle
+    - https://twitter.com/CSMantle3
 
 # Build settings
 markdown: kramdown
