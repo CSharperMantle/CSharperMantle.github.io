@@ -138,7 +138,7 @@ ret=0; x=-9876
 $
 ```
 
-The cause of this behavior is that `-` may signify a start of a negative decimal. Without consuming its next character, it is not possible to know whether it is a negative sign or an ordinary hyphen. Once consumed, `scanf` will not push it back to the stream. Thus, though the match eventually fails when reading `"-"`, the buffer will still underflow on the next call to `scanf` (since `"-"` is already consumed).
+The cause of this behavior is that `-` may signify a start of a negative decimal. Without consuming its next character, it is not possible to know whether it is a negative sign or an ordinary hyphen. Once consumed, `"-"` will not be pushed back to the stream. Thus, though the match always fails when reading `"-"`, the buffer will still underflow on the next call to `scanf` (since `"-"` is already consumed).
 
 ## 3. Discussion
 
