@@ -154,7 +154,7 @@ You will find that various folders are created under `<OUTDIR>\\maiout\\` with t
 
 ## 5. Sort and import
 
-Run `Sort-Maidata-Scores-By-Genre.ps1` from script-collection:
+Run `Sort-Maidata-Scores-By-Genre.ps1` from my [script-collection](https://github.com/CSharperMantle/script-collection):
 
 ```powershell
 PS > ./Sort-Maidata-Scores-By-Genre.ps1 -Path <OUTDIR>
