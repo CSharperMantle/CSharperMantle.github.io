@@ -127,7 +127,7 @@
   margin-left: -$spacing-unit / 2;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr);
+  grid-template-areas: "a b c c";
   column-gap: 5px;
 
   @extend %clearfix;
@@ -143,25 +143,28 @@
    line-break: anywhere;
   }
 
-  .footer-col-1 {
-    grid-column: 1;
+  &.footer-col-1 {
+    grid-area: a;
   }
 
-  .footer-col-2 {
-    grid-column: 2;
+  &.footer-col-2 {
+    grid-area: b;
   }
 
-  .footer-col-3 {
-    grid-column: 3;
+  &.footer-col-3 {
+    grid-area: c;
   }
 }
 
 @include media-query($on-palm) {
+  .footer-col-wrapper {
+    grid-template-areas:
+      "a c"
+      "b c";
+  }
+
   .footer-col {
     float: none;
-  }
-  .footer-col-wrapper {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -189,6 +192,10 @@
 
   > li {
     margin-bottom: $spacing-unit;
+    
+    > .post-excerpt {
+      color: #7c7c7c;
+    }
   }
 }
 

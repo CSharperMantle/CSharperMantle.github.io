@@ -1,12 +1,16 @@
-# About
+---
+layout: post
+title: About
+---
 
-I am Rong "Mantle" Bao, a Chinese student and amateur coder.
+I am Rong "Mantle" Bao, a Computer Science student at [Hangzhou Dianzi University](https://www.hdu.edu.cn/).
 
 Feel free to reach me in 中文/English.
 
-- :telescope: Currently working on [MIXture](https://github.com/CSharperMantle/mixture) :desktop_computer: and [Periotris.js](https://github.com/CSharperMantle/periotrisjs) :joystick:
-- :seedling: Learning analog circuits :electric_plug:
-- :boy: Pronoun: he/him
+- :telescope: Current focus is [YSYX](https://ysyx.oscc.cc/) (lit. "each student gets a chip") :desktop_computer:
+- :seedling: Working on course reports
+- :fountain_pen: Cramming for mid-term exams
+- :raising_hand_man: Pronoun: he/him
 
 <p align="center">
   <img alt="CSharperMantle's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=CSharperMantle&theme=dracula&show_icons=true&count_private=true" />
@@ -29,11 +33,7 @@ Thanks for stopping by and considering supporting me!
 
 As you can probably tell, I write software mostly out of interest, and if any of my projects can be useful to you, entertain you or support your life in any way, I will be happy to hear that!
 
-If it is possible for you to donate to my works, it will be easier for me to continue devoting to FOSS projects in my spare time.
-
-There are 2 ways to fund me:
-- By **Liberapay**: https://liberapay.com/CSharperMantle
-- By **Ai Fa Dian**: https://afdian.net/@CSharperMantle (strongly recommended for Chinese users as it is native to China and supports WeChat Pay and Alipay)
+**Update**: Donations are not accepted at this time. Thanks!
 
 </p>
 </details>
