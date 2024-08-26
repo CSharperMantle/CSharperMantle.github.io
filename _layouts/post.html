@@ -11,7 +11,7 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      &bull; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
   </header>
 
@@ -21,3 +21,14 @@ layout: default
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+<hr>
+
+<script src="https://utteranc.es/client.js"
+  repo="CSharperMantle/CSharperMantle.github.io"
+  issue-term="pathname"
+  label="utterances"
+  theme="preferred-color-scheme"
+  crossorigin="anonymous"
+  async>
+</script>
