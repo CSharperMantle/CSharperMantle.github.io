@@ -4,6 +4,7 @@ title: "Python随笔（4）：自定义索引器 Custom Indexers"
 date: 2021-10-15 07:58:46 +0800
 lang: zh-Hans
 description: 本文介绍了如何创建多样的自定义索引器。
+author: Rong "Mantle" Bao
 categories: python-notes
 ---
 

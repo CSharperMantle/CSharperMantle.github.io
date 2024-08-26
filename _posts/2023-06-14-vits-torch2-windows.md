@@ -4,6 +4,7 @@ title: "Upgrading VITS to PyTorch 2 on Windows"
 date: 2023-06-14 07:08:25 +0800
 lang: en
 description: This blog analyzes frequent pitfalls and workarounds for running VITS on Windows with PyTorch 2.
+author: Rong "Mantle" Bao
 categories: machine-learning
 ---
 

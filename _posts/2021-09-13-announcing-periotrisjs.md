@@ -2,6 +2,7 @@
 layout: post
 title: "Announcing Periotris.js"
 date: 2021-09-13 12:27:38 +0800
+author: Rong "Mantle" Bao
 categories: games periotrisjs
 ---
 

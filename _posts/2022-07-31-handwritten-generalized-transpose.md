@@ -4,6 +4,7 @@ title: "Code Snippet: Generalized Transpose in C++"
 date: 2022-07-31 12:47:32 +0800
 lang: en
 description: An implementation of generalized transpose in C++.
+author: Rong "Mantle" Bao
 categories: snippets
 ---
 

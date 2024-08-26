@@ -4,6 +4,7 @@ title: "Python随笔（5）：数值字面量与一元取反操作符 Numeric Li
 date: 2022-06-11 19:51:42 +0800
 lang: zh-Hans
 description: 本文讨论了一元取反操作符在Python中的地位与常见疑问。
+author: Rong "Mantle" Bao
 categories: python-notes
 ---
 

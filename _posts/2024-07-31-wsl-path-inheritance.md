@@ -8,6 +8,7 @@ description: >-
     the inheritance of $PATH on the host environment into guests. Inherited
     $PATH may lead to significantly-low performance on certain scenarios, such as
     tab completion and shell theming.
+author: Rong "Mantle" Bao
 categories: misc
 ---
 

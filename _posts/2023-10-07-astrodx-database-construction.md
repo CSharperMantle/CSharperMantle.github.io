@@ -4,6 +4,7 @@ title: "Good bye, Crowded-Up Laundries: Building chart database for AstroDX"
 date: 2023-10-07 21:25:28 +0800
 lang: en
 description: This post is a brief walkthrough and guide for building chart database for AstroDX.
+author: Rong "Mantle" Bao
 categories: games maimai
 ---
 

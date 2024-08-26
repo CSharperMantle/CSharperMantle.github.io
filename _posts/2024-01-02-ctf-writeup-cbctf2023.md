@@ -4,6 +4,7 @@ title: "CBCTF 2023 Writeup - csmantle"
 date: 2024-01-02 14:21:03 +0800
 lang: zh-Hans
 description: 本文提供了 HDU CBCTF 2023 新生赛的个人 writeup 。
+author: Rong "Mantle" Bao
 categories: ctf wp
 ---
 

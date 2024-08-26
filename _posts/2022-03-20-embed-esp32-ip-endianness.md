@@ -4,6 +4,7 @@ title: "Endianness in ESP32/Arduino IPAddress"
 date: 2022-03-20 07:42:14 +0800
 lang: en-US
 description: This small text tells readers how to deal with endianness with IPAddress on ESP32/Arduino to prevent quirky issues while communicating cross-platform.
+author: Rong "Mantle" Bao
 categories: embed esp32
 ---
 
