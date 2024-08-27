@@ -4,7 +4,7 @@ title: "简短的问候"
 date: 2024-04-24 17:36:45 +0800
 lang: zh-Hans
 description: >-
-    本文介绍了一种在x86-64下构造尽量小的输出一个常量字符串ELF程序的案例. 本文中的最好结果为152 bytes.
+    本文介绍了一种在x86-64下构造尽量小的输出一个常量字符串ELF程序的案例. 本文中的最好结果为144 bytes.
 author: Rong "Mantle" Bao
 categories: misc
 ---
@@ -142,7 +142,7 @@ _start:
 L_NEXT:
     syscall
     mov al, 0x3c
-    xor dx, dx
+    xor edi, edi
     jmp L_NEXT
 
 s_hello:
@@ -216,7 +216,7 @@ _start:
 L_NEXT:
     syscall
     mov al, 0x3c
-    xor dx, dx
+    xor edi, edi
     jmp L_NEXT
 
 _CODE_END:
@@ -256,3 +256,77 @@ Hello!
 ## 3. 结论与讨论
 
 通过手动触发syscall, 手动优化重叠代码段, 并利用加载至内存的ELF header的空闲padding区域, 能够将最终ELF文件压缩至152字节. 如果使用更激进的压缩方式, 蔽日搜索已加载共享库区段中的可用gadget等方法, 可能达到进一步压缩代码字节数的效果.
+
+------
+
+## Ex. 增补
+
+借助x86-64 implicit zero extension的特性可以继续压缩代码. 目前最好结果为144字节.
+
+```asm
+[bits 64]
+
+C_VA_LOAD: equ 0x400000
+
+_ELF_HDR:
+    db 0x7f, 'E', 'L', 'F'
+    db 2
+    db 1
+    db 1
+    db 0
+    db 0
+L_S_HELLO:
+    db 'H', 'e', 'l', 'l', 'o', '!', 0x0a
+C_LEN_S_HELLO: equ $-L_S_HELLO
+    dw 2
+    dw 0x3e
+    dd 1
+    dq C_VA_LOAD+_start
+    dq _PROG_HDR
+    dq 0
+    dd 0
+    dw 64
+    dw 0x38
+    dw 1
+    dw 0x40
+    dw 0
+    dw 0
+
+_PROG_HDR:
+    dd 1
+    dd 5
+    dq 0
+    dq C_VA_LOAD
+    dq C_VA_LOAD
+    dq _END
+    dq _END
+    dq 0x200000
+
+_start:
+    xor rax, rax
+    inc al
+    mov edi, eax
+    mov esi, C_VA_LOAD+L_S_HELLO
+    mov edx, eax
+    mov dl, C_LEN_S_HELLO
+L_NEXT:
+    syscall
+    mov al, 0x3c
+    xor edi, edi
+    jmp L_NEXT
+
+_CODE_END:
+
+_END:
+```
+
+```text
+$ nasm -f bin hello.S -o hello && chmod +x ./hello
+$ ./hello
+Hello!
+$ size ./hello
+   text    data     bss     dec     hex filename
+      0       0       0       0       0 ./hello
+$ cat ./hello | wc -c -
+144 -
+```
