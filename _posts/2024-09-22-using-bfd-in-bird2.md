@@ -41,7 +41,7 @@ protocol bfd {
 
 更详细的配置说明见 [BIRD2 文档](https://bird.network.cz/doc/bird-6.html#ss6.2).
 
-需要注意的是, 直到目前版本的 BIRD2 (2.15.1) 不支持使用多个 `protocol bfd`. 实际上, 尝试使用多个 `protocol bfd` 会导致其无法正常工作, 如以下的配置**无法正常工作**:
+需要注意的是, 直到目前版本的 BIRD2 (2.15.1) [不支持使用多个 `protocol bfd`](https://bird.network.cz/doc/bird-6.html#:~:text=Note%20that%20BFD%20implementation%20in%20BIRD%20is%20currently,at%20most%20one%20protocol%20instance.). 尝试使用多个 `protocol bfd` 会导致所有 BFD 协议无法正常工作, 如:
 
 ```plain-text
 # 警告: 至 BIRD 2.15.1 无法正常工作!
