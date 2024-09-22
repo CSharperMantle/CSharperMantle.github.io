@@ -9,7 +9,7 @@ author: Rong "Mantle" Bao
 categories: misc networking
 ---
 
-> 本文为 [DN11](https://dn11.top/) 项目的内网互联编写.
+> 本文为 [DN11](https://dn11.top/) 项目编写.
 
 ## 1. 前言
 
