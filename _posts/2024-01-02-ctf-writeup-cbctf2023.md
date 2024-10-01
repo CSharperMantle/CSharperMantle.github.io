@@ -21,28 +21,38 @@ categories: ctf wp
 ## 竞赛结果与个人信息
 
 > **Name**: [REDACTED]
+> 
 > **Student ID**: [REDACTED]
+> 
 > **Alias**: csmantle
+> 
 > **Mail**: [REDACTED]
+> 
 > **QQ**: [REDACTED]
+> 
 > **Rank**: 1
+> 
 > **Score**: 14377
+> 
 > **Breakdown**: Misc*3; Web*4; RE*9 (AK); Pwn*2; 签到 *1; PyJail*9
+> 
 > **Achievements**: FB*5
 
 ![Rank screenshot](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/I37YbFSnZofo6pxegtFcaazDnVc.png)
 
 ## 竞赛信息
 
-> [!TIP]
 > **URL**: <https://training.0rays.club/challenges>
+> 
 > **Username**: csmantle (Individual participation)
+> 
 > **Password**: N/A
+> 
 > **Start Time**: 2023-12-30 09:00
+> 
 > **End Time**: 2024-01-01 20:00
+> 
 > **Writeup Submission Deadline**: 2024-01-01 23:00
-
----
 
 ## Web
 
