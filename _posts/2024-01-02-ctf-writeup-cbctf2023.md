@@ -165,6 +165,7 @@ Jadx 打开提供的 jar 文件，发现使用了一个有漏洞的 Beetl 版本
 
 那么解法是显然的。
 
+{% raw %}
 ```python
 import urllib.parse as up
 
@@ -217,6 +218,7 @@ while True:
         info("KeyboardInterrupt")
         exit(0)
 ```
+{% endraw %}
 
 ```
 (pwnenv) PS D:\Workspace\rev\cbctf2023> & d:/Workspace/pwnenv/Scripts/python.exe d:/Workspace/rev/cbctf2023/hackBeetl/sol.py
