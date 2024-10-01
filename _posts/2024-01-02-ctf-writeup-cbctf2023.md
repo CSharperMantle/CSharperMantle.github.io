@@ -75,8 +75,9 @@ categories: ctf wp
 ### Another_Signin | Done
 
 > 这不是道 web 题，有没有仔细看宣传海报上的内容呢？
-> Hint 1: 关注一下域名 （可能有些谜语人了
-> Hint 2: dns
+> 
+> * Hint 1: 关注一下域名 （可能有些谜语人了
+> * Hint 2: dns
 
 想到 DNS 的 TXT 记录。
 
@@ -161,7 +162,8 @@ then: !<tag:yaml.org,2002:js/function> >-
 ### hackBeetl | Done
 
 > /?username=jbnrz
-> Hint 1: beetl 版本 3.15.12.RELEASE <https://gitee.com/xiandafu/beetl>
+> 
+> * Hint 1: beetl 版本 3.15.12.RELEASE <https://gitee.com/xiandafu/beetl>
 
 Jadx 打开提供的 jar 文件，发现使用了一个有漏洞的 Beetl 版本。
 
@@ -472,8 +474,6 @@ PS D:\Workspace\rev\cbctf2023\heap1>
 `CBCTF{1ca5db12-36d7-4d8f-bbf0-5d0a7e916c64}`
 
 ### The Legend of Shellcode | Done
-
->
 
 受限的 shellcode 构造
 
@@ -2167,9 +2167,10 @@ success("".join(map(chr, result)))
 ### 大地之母 | Done
 
 > 请找到这张图片的作者，flag 为 CBCTF{md5(作者账号名)}
-> Hint 1: md5 为 32 位小写 作者名全大写无空格，英文字母
-> Hint 2: 图片随手截的
-> Hint 3: 不涉及任何 misc 操作，图片未做任何处理
+> 
+> * Hint 1: md5 为 32 位小写 作者名全大写无空格，英文字母
+> * Hint 2: 图片随手截的
+> * Hint 3: 不涉及任何 misc 操作，图片未做任何处理
 
 珠穆朗玛峰，但是不知道是谁拍的
 
@@ -2189,10 +2190,9 @@ success("".join(map(chr, result)))
 
 > 想必你们都看到了上次赛博杯 JBN 画的 flag，这次也是如此。不过，JBN 为了挽回他的颜面，偷偷把自己从代码中删掉了。。。
 >
->> Hint 1: 你了解 CNN 吗
->> Hint 2: 或许去看看 Just Painting 会给你很大的帮助
->> Hint 3: 你知道如何查看 pth 模型结构吗
->>
+> * Hint 1: 你了解 CNN 吗
+> * Hint 2: 或许去看看 Just Painting 会给你很大的帮助
+> * Hint 3: 你知道如何查看 pth 模型结构吗
 
 解包 zip，得到 pth 文件和不全的训练脚本。
 
@@ -2609,8 +2609,6 @@ PS D:\Workspace\rev\cbctf2023>
 `CBCTF{501cc578-2474-4af2-bb9c-facd6225d04a}`
 
 ### Level 10 | Done
-
->
 
 ```
 PS D:\Workspace\rev\cbctf2023> ncat training.0rays.club 10076
