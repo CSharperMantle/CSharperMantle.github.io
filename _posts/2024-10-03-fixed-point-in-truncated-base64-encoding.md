@@ -18,13 +18,13 @@ use_mathjax: true
 
 ## 1. Introduction
 
-Base64 ([Wikipedia](https://en.wikipedia.org/wiki/Base64), [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648)) is a well-known encoding for turing arbitrary binary data into an alphanumeric ASCII string. It's basic idea is to reinterpret original data as characters in a \(2^6 = 64\)-membered alphabet. Due to the input characters being 6-bits and output ones being 8-bits (ASCII characters), the length of encoded data will be different from that of the original one. If we consider only the common part of input and output, it is possible to construct a \(N\)-membered string \(S\) whose Base64-encoding \(\mathrm{Base64}(S)\) has \(S\) as its prefix, i.e. \(\mathrm{Base64}(S)[0..N] = S\). We call such \(S\)'es "\(N\)-truncated fixed points" for Base64 in this blog post.
+Base64 ([Wikipedia](https://en.wikipedia.org/wiki/Base64), [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648)) is a well-known encoding for turing arbitrary binary data into an alphanumeric ASCII string. It's basic idea is to reinterpret original data as characters in a $2^6 = 64$-membered alphabet. Due to the input characters being 6-bits and output ones being 8-bits (ASCII characters), the length of encoded data will be different from that of the original one. If we consider only the common part of input and output, it is possible to construct a $N$-membered string $S$ whose Base64-encoding $\mathrm{Base64}(S)$ has $S$ as its prefix, i.e. $\mathrm{Base64}(S)[0..N] = S$. We call such $S$'es "$N$-truncated fixed points" for Base64 in this blog post.
 
-For a continuous transformation \(T(\cdot): X \to X\), it is natural that if a recursive sequence \(x_n = T(x_{n-1})\) converges to some value \(x_\infty\), an *attracting fixed point* is located at that value. This is called the *fixed point iteration*. For \(\mathrm{Base64}(\cdot)\), however, its domain (in bytes, \(\mathbb{B}^N\)) is very different from its codomain (\(\mathbb{B}^{4\lceil N/3 \rceil}\)), thus we cannot directly apply the fixed point concept above to it. If we only care about the first \(N\) bytes of its output (*truncation*), we could reduce said problem to a normal fixed-point finding on a \(N\)-membered string space.
+For a continuous transformation $T(\cdot): X \to X$, it is natural that if a recursive sequence $x_n = T(x_{n-1})$ converges to some value $x_\infty$, an *attracting fixed point* is located at that value. This is called the *fixed point iteration*. For $\mathrm{Base64}(\cdot)$, however, its domain (in bytes, $\mathbb{B}^N$) is very different from its codomain ($\mathbb{B}^{4\lceil N/3 \rceil}$), thus we cannot directly apply the fixed point concept above to it. If we only care about the first $N$ bytes of its output (*truncation*), we could reduce said problem to a normal fixed-point finding on a $N$-membered string space.
 
-Drawing the conclusion from [Section 2](#2-experimental-analysis), one 72-membered fixed point is `Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYy`. The first 72 bytes of its encoding result is identical to itself. This can be verified manually; such an example using [CyberChef](https://github.com/gchq/CyberChef/) is given at <https://gchq.github.io/CyberChef/#recipe=To_Base64('A-Za-z0-9%2B/%3D')Drop_bytes(72,64,true)&input=Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5>.
+Drawing the conclusion from [Section 2](#2-experimental-analysis), one 72-truncated fixed point is `Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYy`. The first 72 bytes of its encoding result is identical to itself. This can be verified manually; such an example using [CyberChef](https://github.com/gchq/CyberChef/) is given by [this snippet](https://gchq.github.io/CyberChef/#recipe=To_Base64('A-Za-z0-9%2B/%3D')Drop_bytes(72,64,true)&input=Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5).
 
-A few others do notice this phenomena when iterating \(\mathrm{Base64}(\cdot)\). One of such examples is the one discovered by [@V1ll4n](https://github.com/VillanCh) in his guest post at [a paid knowledge base](https://t.zsxq.com/EhZSb). He described utilizing such fixed point as a probe in a vulnerability discovery context, where one can reliably spot controlled Base64 output without prior knowledge of original \(S\), given enough encoding iterations. Still, analysis of this fixed point phenomenon is limited in both quantity and depth.
+A few others do notice this phenomena when iterating $\mathrm{Base64}(\cdot)$. One of such examples is the one discovered by [@V1ll4n](https://github.com/VillanCh) in his guest post at [a paid knowledge base](https://t.zsxq.com/EhZSb). He described utilizing such fixed point as a probe in a vulnerability discovery context, where one can reliably spot controlled Base64 output without prior knowledge of original $S$, given enough encoding iterations. Still, analysis of this fixed point phenomenon is limited in both quantity and depth.
 
 ## 2. Experimental analysis
 
@@ -169,7 +169,7 @@ O0 = (I5&I4&I3&I0) | (!I4&I2&I1&!I0) | (I5&!I3&!I2&I1&!I0) | (I5&I4&I3&I2
     I5&!I4&!I1&!I0) | (!I5&!I0);
 ```
 
-We create symbolic constraints in Python and feed them to Z3. In the following code, we try to solve for a fixed point with \(N = 72\). In fact, we can successfully find a fixed point for every \(N\).
+We create symbolic constraints in Python and feed them to Z3. In the following code, we try to solve for a fixed point with $N = 72$. In fact, we can successfully find a fixed point for every $N$.
 
 The solving script is given below.
 
@@ -319,7 +319,7 @@ for d in m.decls():
 success(bytes(result).decode("ascii"))
 ```
 
-We will now list all \(N\)-truncated fixed points for \(N\) values between 1 and 72.
+We will now list all $N$-truncated fixed points for $N$ values between 1 and 72.
 
 ```plain-text
  1 V
@@ -398,17 +398,17 @@ We will now list all \(N\)-truncated fixed points for \(N\) values between 1 and
 
 ## 3. Theoretical analysis
 
-If we consider all \(N\)-truncated fixed points as prefixes of a fixed point with an infinite length, we will be able to discuss the existence and uniqueness of this "prime" fixed point, shedding some lights on the structure of Base64 transformation.
+If we consider all $N$-truncated fixed points as prefixes of a fixed point with an infinite length, we will be able to discuss the existence and uniqueness of this "prime" fixed point, shedding some lights on the structure of Base64 transformation.
 
-**Existence.** From a view of functions, the alphabet lookup process of Base64 \(f(\cdot): \{0, 1\}^6 \to \mathbb{B}\) is a bijection, thus invertible, which means every component in its input can be expressed as some Boolean expression of its output. By writing out these expressions we can solve them as any other Boolean equations, which is exactly what we have done in [Section 2](#2-experimental-analysis).
+**Existence.** From a view of functions, the alphabet lookup process of Base64 $f(\cdot): \{0, 1\}^6 \to \mathbb{B}$ is a bijection, thus invertible, which means every component in its input can be expressed as some Boolean expression of its output. By writing out these expressions we can solve them as any other Boolean equations, which is exactly what we have done in [Section 2](#2-experimental-analysis).
 
 **Uniqueness.** The uniqueness of this fixed point can be proved in an inductive approach.
 
-For every integer \(i \in [0, N)\), we try to state the uniquess of the solution to
+For every integer $i \in [0, N)$, we try to state the uniquess of the solution to
 
 $$\mathrm{Base64}(S)[i] = S[i].$$
 
-Recall that the reinterpretation process is (rewriting group number \(m = \lfloor i/4 \rfloor\), and symbol \(\mathbin\Vert\) stands for bit-string concatenation):
+Recall that the reinterpretation process is (rewriting group number $m = \lfloor i/4 \rfloor$, and symbol $\mathbin\Vert$ stands for bit-string concatenation):
 
 $$
 \mathrm{Base64}(S)[i] = \begin{cases}
@@ -419,9 +419,9 @@ $$
 \end{cases}
 $$
 
-It is not difficult to discover that \(\mathrm{Base64}(S)[i]\) only depends on \(S[j]\) for some \(j \le i\). In this fixed point analysis, this is also equal to \(\mathrm{Base64}(S)[j]\). If the Base64 sequence prior to \(i\) is uniquely determined, then \(\mathrm{Base64}(S)[i]\) will also be uniquely determined.
+It is not difficult to discover that $\mathrm{Base64}(S)[i]$ only depends on $S[j]$ for some $j \le i$. In this fixed point analysis, this is also equal to $\mathrm{Base64}(S)[j]$. If the Base64 sequence prior to $i$ is uniquely determined, then $\mathrm{Base64}(S)[i]$ will also be uniquely determined.
 
-We now continue to prove that \(\mathrm{Base64}(S)[0] = S[0]\) has a unique solution by contradiction.
+We now continue to prove that $\mathrm{Base64}(S)[0] = S[0]$ has a unique solution by contradiction.
 
 ```python
 def base64_encode(...):
@@ -446,4 +446,4 @@ Therefore, the first character of the fixed point is unique, and so are all subs
 
 ## 4. Conclusion
 
-In this blog post, we elaborate the existence and uniqueness of a fixed point in truncated Base64 encoding. We also provide a working proof-of-concept for finding \(N\)-truncated fixed point with arbitrary \(N\). This fixed point of truncated Base64 has already seen application in some areas, such as serving as a blind probe in application vulnerability analysis. Nevertheless, this interesting phenomenon's full potential is yet to be exploited, and we would leave this task to future works.
+In this blog post, we elaborate the existence and uniqueness of a fixed point in truncated Base64 encoding. We also provide a working proof-of-concept for finding $N$-truncated fixed point with arbitrary $N$. This fixed point of truncated Base64 has already seen application in some areas, such as serving as a blind probe in application vulnerability analysis. Nevertheless, this interesting phenomenon's full potential is yet to be exploited, and we would leave this task to future works.
