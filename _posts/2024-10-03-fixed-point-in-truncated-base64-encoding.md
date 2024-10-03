@@ -418,10 +418,10 @@ Recall that the reinterpretation process is (rewriting group number $m = \lfloor
 
 $$
 \mathrm{Base64}(S)[i] = \begin{cases}
-    f\left(S\left[m\right]\left(7,2\right)\right) & \text{if}\ i \equiv 0 \pmod{4}\\
-    f\left(S\left[m\right]\left(1,0\right) \mathbin\Vert S\left[m+1\right]\left(7,4\right)\right) & \text{if}\ i \equiv 1 \pmod{4}\\
-    f\left(S\left[m+1\right]\left(3,0\right) \mathbin\Vert S\left[m+2\right]\left(7,6\right)\right) & \text{if}\ i \equiv 2 \pmod{4}\\
-    f\left(S\left[m+2\right]\left(5,0\right)\right) & \text{if}\ i \equiv 3 \pmod{4}
+    f\left(S\left[3m\right]\left(7,2\right)\right) & \text{if}\ i \equiv 0 \pmod{4}\\
+    f\left(S\left[3m\right]\left(1,0\right) \mathbin\Vert S\left[3m+1\right]\left(7,4\right)\right) & \text{if}\ i \equiv 1 \pmod{4}\\
+    f\left(S\left[3m+1\right]\left(3,0\right) \mathbin\Vert S\left[3m+2\right]\left(7,6\right)\right) & \text{if}\ i \equiv 2 \pmod{4}\\
+    f\left(S\left[3m+2\right]\left(5,0\right)\right) & \text{if}\ i \equiv 3 \pmod{4}
 \end{cases}
 $$
 
