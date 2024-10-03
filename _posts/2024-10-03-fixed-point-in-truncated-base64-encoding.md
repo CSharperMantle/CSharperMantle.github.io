@@ -22,7 +22,13 @@ Base64 ([Wikipedia](https://en.wikipedia.org/wiki/Base64), [RFC 4648](https://da
 
 For a continuous transformation $T(\cdot): X \to X$, it is natural that if a recursive sequence $x_n = T(x_{n-1})$ converges to some value $x_\infty$, an *attracting fixed point* is located at that value. This is called the *fixed point iteration*. For $\mathrm{Base64}(\cdot)$, however, its domain (in bytes, $\mathbb{B}^N$) is very different from its codomain ($\mathbb{B}^{4\lceil N/3 \rceil}$), thus we cannot directly apply the fixed point concept above to it. If we only care about the first $N$ bytes of its output (*truncation*), we could reduce said problem to a normal fixed-point finding on a $N$-membered string space.
 
-Drawing the conclusion from [Section 2](#2-experimental-analysis), one 72-truncated fixed point is `Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYy`. The first 72 bytes of its encoding result is identical to itself. This can be verified manually; such an example using [CyberChef](https://github.com/gchq/CyberChef/) is given by [this snippet](https://gchq.github.io/CyberChef/#recipe=To_Base64('A-Za-z0-9%2B/%3D')Drop_bytes(72,64,true)&input=Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5).
+Drawing the conclusion from [Section 2](#2-experimental-analysis), one 72-truncated fixed point is 
+
+```plain-text
+Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYy
+```
+
+The first 72 bytes of its encoding result is identical to itself. This can be verified manually; such an example using [CyberChef](https://github.com/gchq/CyberChef/) is given by [this snippet](https://gchq.github.io/CyberChef/#recipe=To_Base64('A-Za-z0-9%2B/%3D')Drop_bytes(72,64,true)&input=Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5).
 
 A few others do notice this phenomena when iterating $\mathrm{Base64}(\cdot)$. One of such examples is the one discovered by [@V1ll4n](https://github.com/VillanCh) in his guest post at [a paid knowledge base](https://t.zsxq.com/EhZSb). He described utilizing such fixed point as a probe in a vulnerability discovery context, where one can reliably spot controlled Base64 output without prior knowledge of original $S$, given enough encoding iterations. Still, analysis of this fixed point phenomenon is limited in both quantity and depth.
 
