@@ -400,7 +400,7 @@ We will now list all $N$-truncated fixed points for $N$ values between 1 and 72.
 
 If we consider all $N$-truncated fixed points as prefixes of a fixed point with an infinite length, we will be able to discuss the existence and uniqueness of this "prime" fixed point, shedding some lights on the structure of Base64 transformation.
 
-**Existence.** From a view of functions, the alphabet lookup process of Base64 $f(\cdot): \{0, 1\}^6 \to \mathbb{B}$ is a bijection, thus invertible, which means every component in its input can be expressed as some Boolean expression of its output. By writing out these expressions we can solve them as any other Boolean equations, which is exactly what we have done in [Section 2](#2-experimental-analysis).
+**Existence.** From a view of functions, the alphabet lookup process of Base64 $f(\cdot): \\\{0, 1\\\}^6 \to \mathbb{B}$ is a bijection, thus invertible, which means every component in its input can be expressed as some Boolean expression of its output. By writing out these expressions we can solve them as any other Boolean equations, which is exactly what we have done in [Section 2](#2-experimental-analysis).
 
 **Uniqueness.** The uniqueness of this fixed point can be proved in an inductive approach.
 
