@@ -438,8 +438,9 @@ assert solver.check() == z3.sat
 m = solver.model()
 x_0 = m[m.decls()[0]]
 
+# Introducing contradiction
 solver.add(x[0] != x_0)
-assert solver.check() != z3.sat, "Not unique"
+assert solver.check() == z3.unsat, "Not unique"
 ```
 
 Therefore, the first character of the fixed point is unique, and so are all subsequent characters in the fixed point.
