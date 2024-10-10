@@ -1,46 +1,43 @@
 ---
 layout: post
-title: "Fixed point in truncated Base64 encoding: analysis and proof with Z3"
-date: 2024-10-03 16:05:08 +0800
-lang: en
+title: "截断Base64编码的不动点: 借助Z3的分析与证明"
+date: 2024-10-10 08:07:54 +0800
+lang: zh
 description: >-
-    Base64 is a well-known encoding for turing arbitrary binary data into an alphanumeric
-    ASCII string. It's basic idea is to reinterpret original data as characters in a
-    2^6=64-membered alphabet. Due to the input characters being 6-bits and output ones being
-    8-bits (ASCII characters), the length of encoded data will be different from that of
-    the original one. If we consider only the common part of input and output, it is possible
-    to construct a N-membered string S whose Base64-encoding Base64(S) has S as its prefix,
-    i.e. Base64(S)[0:N] == S. We call such S'es "truncated fixed points" for Base64 encoding.
+    Base64编码是相当常见的编码格式, 可以将任意二进制数据至一个ASCII码子集, 其原理为将原始数据中的位视为2^6=64元字母
+    表中的元素下标. 显然, 由于输入为6位元素而输出为8位元素 (ASCII字符), 数据在编码后会比原来更长. 若只考虑输入输出
+    相同长度的部分, 我们能够构造一个N元串S, 使得它的Base64编码结果Base64(S)以S为前缀, 即Base64(S)[0:N] == S.
+    我们称此种S为Base64编码的 "N截断不动点". 我们将在本文中使用Z3对其特性进行分析和证明.
 author: Rong "Mantle" Bao
 categories: misc
 use_mathjax: true
 ---
 
-> 中文版本[见此](/misc/2024/10/10/fixed-point-in-truncated-base64-encoding-zh.html).
+> An English version is available [here](/misc/2024/10/03/fixed-point-in-truncated-base64-encoding.html).
 
-## 1. Introduction
+## 1. 导语
 
-Base64 ([Wikipedia](https://en.wikipedia.org/wiki/Base64), [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648)) is a well-known encoding for turing arbitrary binary data into an alphanumeric ASCII string. It's basic idea is to reinterpret original data as characters in a $2^6 = 64$-membered alphabet. Due to the input characters being 6-bits and output ones being 8-bits (ASCII characters), the length of encoded data will be different from that of the original one. If we consider only the common part of input and output, it is possible to construct a $N$-membered string $S$ whose Base64-encoding $\mathrm{Base64}(S)$ has $S$ as its prefix, i.e. $\mathrm{Base64}(S)[0..N] = S$. We call such $S$'es "$N$-truncated fixed points" for Base64 in this blog post.
+Base64 ([Wikipedia](https://en.wikipedia.org/wiki/Base64), [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648)) 是相当常见的编码格式, 可以将任意二进制数据至一个 ASCII 码子集, 其原理为将原始数据中的位视为 $2^6 = 64$ 元字母表中的元素下标. 显然, 由于输入为6位元素而输出为8位元素 (ASCII 字符), 数据在编码后会比原来更长. 若只考虑相同长度的部分 (前缀), 我们能够构造一个 $N$ 元串 $S$ 使得它的 Base64 编码结果 $\mathrm{Base64}(S)$ 以 $S$ 为前缀, 即 $\mathrm{Base64}(S)[0..N] = S$. 我们称此种 $S$ 为 Base64 编码的 "$N$ 截断不动点".
 
-For a continuous transformation $T(\cdot): X \to X$, it is natural that if a recursive sequence $x_n = T(x_{n-1})$ converges to some value $x_\infty$, an *attracting fixed point* is located at that value. This is called the *fixed point iteration*. For $\mathrm{Base64}(\cdot)$, however, its domain (in bytes, $\mathbb{B}^N$) is very different from its codomain ($\mathbb{B}^{4\lceil N/3 \rceil}$), thus we cannot directly apply the fixed point concept above to it. If we only care about the first $N$ bytes of its output (*truncation*), we could reduce said problem to a normal fixed-point finding on a $N$-membered string space.
+对于一个连续变换 $T(\cdot): X \to X$, 如果数列 $x_n = T(x_{n-1})$ 收敛于值 $x_\infty$, 我们能够自然地说该变换存在一个*吸引不动点*. 上述过程也被称为*不动点迭代*. 但是, 变换 $\mathrm{Base64}(\cdot)$ 的值域 ($\mathbb{B}^N$, 以字节计) 和它的陪域 ($\mathbb{B}^{4\lceil N/3 \rceil}$) 并不相同, 因此我们不能直接将分析中不动点的概念借用过来. 但如果我们只关心输出的前 $N$ 字节 (*截断*), 我们能够将上述问题转化为在 $N$ 元串空间上求一个变换的不动点的常规问题.
 
-Drawing the conclusion from [Section 2](#2-experimental-analysis), one 72-truncated fixed point is 
+提前引用[第 2 节](#2-实验分析)的结论, 72 截断的不动点为
 
 ```plain-text
 Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYy
 ```
 
-The first 72 bytes of its encoding result is identical to itself. This can be verified manually; such an example using [CyberChef](https://github.com/gchq/CyberChef/) is given by [this snippet](https://gchq.github.io/CyberChef/#recipe=To_Base64('A-Za-z0-9%2B/%3D')Drop_bytes(72,64,true)&input=Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5).
+上述串经编码后的前 72 字节与它本身相同. 读者可亲自验证该结论; 我们也提供了使用 [CyberChef](https://github.com/gchq/CyberChef/) 的[验证示例](https://gchq.github.io/CyberChef/#recipe=To_Base64('A-Za-z0-9%2B/%3D')Drop_bytes(72,64,true)&input=Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5).
 
-A few others do notice this phenomena when iterating $\mathrm{Base64}(\cdot)$. One of such examples is the one discovered by [@V1ll4n](https://github.com/VillanCh) in his guest post at [a paid knowledge base](https://t.zsxq.com/EhZSb). He described utilizing such fixed point as a probe in a vulnerability discovery context, where one can reliably spot controlled Base64 output without prior knowledge of original $S$, given enough encoding iterations. A [post](https://codegolf.stackexchange.com/questions/257680/base64-fixed-point) on StackExchange Code Golf challenges to find the most efficient way to calculate the $n$th character in this fixed point. Still, analysis of this fixed point phenomenon is limited in both quantity and depth.
+目前已有在迭代 $\mathrm{Base64}(\cdot)$ 时对该现象的报道. 其中一个例子是 [@V1ll4n](https://github.com/VillanCh) 在[一个付费知识星球](https://t.zsxq.com/EhZSb)的嘉宾帖中提到的现象. 该帖中展示, 在漏洞发现过程中可以利用此不动点作为探针, 能够在不知道待编码 $S$ 原始内容的前提下可靠地发现攻击者可控的 Base64 输出. StackExchange Code Golf 网站上的一个[帖子](https://codegolf.stackexchange.com/questions/257680/base64-fixed-point)尝试找出高效计算该不动点中第 $n$ 个字符的算法. 遗憾的是, 对该现象的分析总体而言在数量和深度上均有待提升.
 
-## 2. Experimental analysis
+## 2. 实验分析
 
-We try to solve for such a fixed point after truncation with [Z3 Theorem Prover](https://github.com/Z3Prover/z3/wiki).
+我们首先尝试使用 [Z3 定理证明器](https://github.com/Z3Prover/z3/wiki)求解该不动点.
 
-Firstly, we need to implement Base64 lookup table with Boolean logic. In that way, we can easily describe constraints in terms of Boolean equations, without the use of array selection, which are both hard to write and hard to solve.
+我们的第一步操作是用布尔逻辑实现 Base64 的查表过程, 这样我们就可以直接用布尔表达式描述待求解的约束, 不需要引入既难以编写又难以求解的数组元素选择语法.
 
-We generate a truth table for this lookup process with Python. Then we use [espresso](https://en.wikipedia.org/wiki/Espresso_heuristic_logic_minimizer) minimizer to produce the minimal SOP expression for each output bit.
+我们首先使用 Python 生成查表过程的真值表, 然后使用 [espresso](https://en.wikipedia.org/wiki/Espresso_heuristic_logic_minimizer) 逻辑化简器来产生每个输出位的最简与或式.
 
 ```python
 TEMPLATE = """.i 6
@@ -61,7 +58,7 @@ with open("tt.espresso.in", "wt") as f:
     f.write(table)
 ```
 
-The resulting truth table and SOP expressions are as follows.
+该脚本输出的真值表与化简后的最简与或式如下.
 
 ```plain-text
 .i 6
@@ -177,9 +174,7 @@ O0 = (I5&I4&I3&I0) | (!I4&I2&I1&!I0) | (I5&!I3&!I2&I1&!I0) | (I5&I4&I3&I2
     I5&!I4&!I1&!I0) | (!I5&!I0);
 ```
 
-We create symbolic constraints in Python and feed them to Z3. In the following code, we try to solve for a fixed point with $N = 72$. In fact, we can successfully find a fixed point for every $N$.
-
-The solving script is given below.
+我们在 Python 中构造符号约束, 将其导入 Z3. 下列代码中我们求解 $N = 72$ 时的不动点. 实际上, 我们将在[第 3 节](#3-理论分析)中证明, 对于任意的 $N$ 均可解出唯一的不动点.
 
 ```python
 import typing as ty
@@ -327,7 +322,7 @@ for d in m.decls():
 success(bytes(result).decode("ascii"))
 ```
 
-We will now list all $N$-truncated fixed points for $N$ values between 1 and 72.
+为方便读者参考, 我们同时列出 $N$ 为 1 至 72 时的每个 $N$ 截断不动点.
 
 ```plain-text
  1 V
@@ -404,19 +399,19 @@ We will now list all $N$-truncated fixed points for $N$ values between 1 and 72.
 72 Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYy
 ```
 
-## 3. Theoretical analysis
+## 3. 理论分析
 
-If we consider all $N$-truncated fixed points as prefixes of a fixed point with an infinite length, we will be able to discuss the existence and uniqueness of this "prime" fixed point, shedding some lights on the structure of Base64 transformation.
+如果我们将所有 $N$ 截断不动点视为一个无穷长度不动点串的前缀, 就可以更直接地讨论这个"原"不动点的存在性与唯一性, 以此反映 Base64 变换的一些特性.
 
-**Existence.** From a view of functions, the alphabet lookup process of Base64 $f(\cdot): \\\{0, 1\\\}^6 \to \mathbb{A} \subset \mathbb{B}$ is a bijection, thus invertible, which means every component in its input can be expressed as some Boolean expression of its output. By writing out these expressions we can solve them as any other Boolean equations, which is exactly what we have done in [Section 2](#2-experimental-analysis).
+**存在性.** 从函数视角看, Base64 的查表过程 $f(\cdot): \\\{0, 1\\\}^6 \to \mathbb{A} \subset \mathbb{B}$ 是一个双射, 因此它可逆. 这意味着输入中的每一个布尔分量都可以表示为关于输出中各分量的布尔表达式, 因此我们可以应用普通的布尔等式求解法进行求解. 实际上, 我们在[第 2 节](#2-实验分析)中已经通过求解的方式证明了至少存在一个原不动点.
 
-**Uniqueness.** The uniqueness of this fixed point can be proved in an inductive approach.
+**唯一性.** 使用数学归纳法证明.
 
-For every integer $i \in [0, N)$, we try to state the uniquess of the solution to
+对任意整数 $i \in [0, N)$, 待证
 
 $$\mathrm{Base64}(S)[i] = S[i].$$
 
-Recall that the reinterpretation process is (rewriting group number $m = \lfloor i/4 \rfloor$, and symbol $\mathbin\Vert$ stands for bit-string concatenation):
+Base64 的编码过程可以下式表示 (记组号 $m = \lfloor i/4 \rfloor$, 符号 $\mathbin\Vert$ 意为位串的拼接):
 
 $$
 \mathrm{Base64}(S)[i] = \begin{cases}
@@ -427,9 +422,9 @@ $$
 \end{cases}
 $$
 
-It is not difficult to discover that $\mathrm{Base64}(S)[i]$ only depends on $S[j]$ for some $j \le i$. In this fixed point analysis, this is also equal to $\mathrm{Base64}(S)[j]$. If the Base64 sequence prior to $i$ is uniquely determined, then $\mathrm{Base64}(S)[i]$ will also be uniquely determined.
+不难发现 $\mathrm{Base64}(S)[i]$ 仅依赖于某些 $S[j]$ 且 $j \le i$. 由于研究的是不动点, 上述表达式也等价于 $\mathrm{Base64}(S)[j]$. 那么, 如果 $i$ 之前的 Base64 输出都是唯一的, 那么 $\mathrm{Base64}(S)[i]$ 也是唯一的.
 
-We now continue to prove that $\mathrm{Base64}(S)[0] = S[0]$ has a unique solution by contradiction.
+下面我们使用反证法说明 $\mathrm{Base64}(S)[0] = S[0]$ 有且仅有一个解.
 
 ```python
 def base64_encode(...):
@@ -451,8 +446,8 @@ solver.add(x[0] != x_0)
 assert solver.check() == z3.unsat, "Not unique"
 ```
 
-Therefore, the first character of the fixed point is unique, and so are all subsequent characters in the fixed point.
+综上所述, 该不动点中的第一个字符是唯一的, 因此之后的所有字符也是唯一的.
 
-## 4. Conclusion
+## 4. 结论
 
-In this blog post, we elaborate the existence and uniqueness of a fixed point in truncated Base64 encoding. We also provide a working proof-of-concept for finding $N$-truncated fixed point with arbitrary $N$. This fixed point of truncated Base64 has already seen application in some areas, such as serving as a blind probe in application vulnerability analysis. Nevertheless, this interesting phenomenon's full potential is yet to be exploited, and we would leave this task to future works.
+在本文中, 我们详细说明了截断 Base64 编码中存在一个唯一的不动点, 并提供了求解任意 $N$ 截断不动点的可运行脚本. 该不动点已经在软件漏洞分析等领域得到了应用. 尽管如此, 这个有趣现象的深层潜力依然值得进一步挖掘, 我们期待有更多感兴趣者能够在这个方向做出更深入的工作.
