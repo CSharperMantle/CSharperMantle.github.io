@@ -13,6 +13,10 @@ categories: ctf wp
 use_mathjax: true
 ---
 
+## Forewords
+
+First time player, first time finisher. Thank you [FLARE team](https://cloud.google.com/security/mandiant-services)/[MANDIANT](https://www.mandiant.com) for these great challenges that really satisfied my appetite for high-quality inspirations of what could still be done in reverse engineering.
+
 > * **URL**: [https://flare-on11.ctfd.io/](https://flare-on11.ctfd.io/)
 > * **Username**: csmantle (Individual participation)
 > * **Start Time**: Sept. 27th 2024 at 8pm EST
@@ -24,6 +28,7 @@ use_mathjax: true
 
 ---
 
+- [Forewords](#forewords)
 - [1 - frog](#1---frog)
 - [2 - checksum](#2---checksum)
 - [3 - aray](#3---aray)
@@ -34,7 +39,6 @@ use_mathjax: true
 - [8 - clearlyfake](#8---clearlyfake)
 - [9 - serpentine](#9---serpentine)
 - [10 - CatbertRansomware](#10---catbertransomware)
-- [Afterwords](#afterwords)
 
 ---
 
@@ -2818,9 +2822,3 @@ while True:
 ![catbert final image](/assets/posts/2024-11-09-ctf-writeup-flareon11/KuYnbD1cFozW8ExQQIOcjUgVntb.jpg)
 
 `th3_ro4d_t0_succ3ss_1s_alw4ys_und3r_c0nstructi0n@flare-on.com`
-
----
-
-## Afterwords
-
-First time player, first time finisher. Thank you [FLARE team](https://cloud.google.com/security/mandiant-services)/[MANDIANT](https://www.mandiant.com) for these great challenges that really satisfied my appetite for high-quality inspirations of what could still be done in reverse engineering.
