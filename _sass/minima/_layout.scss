@@ -29,7 +29,7 @@
   line-height: $base-line-height * $base-font-size * 2.25;
 
   .nav-trigger {
-      display: none;
+    display: none;
   }
 
   .menu-icon {
@@ -100,8 +100,6 @@
   }
 }
 
-
-
 /**
  * Site footer
  */
@@ -138,9 +136,10 @@
   margin-bottom: $spacing-unit / 2;
   padding-left: $spacing-unit / 2;
 
-  .u-email, .username {
-   word-break: break-all;
-   line-break: anywhere;
+  .u-email,
+  .username {
+    word-break: break-all;
+    line-break: anywhere;
   }
 
   &.footer-col-1 {
@@ -168,8 +167,6 @@
   }
 }
 
-
-
 /**
  * Page content
  */
@@ -192,7 +189,7 @@
 
   > li {
     margin-bottom: $spacing-unit;
-    
+
     > .post-excerpt {
       color: #7c7c7c;
     }
@@ -208,8 +205,6 @@
   display: block;
   @include relative-font-size(1.5);
 }
-
-
 
 /**
  * Posts
@@ -253,5 +248,11 @@
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
     }
+  }
+
+  code.language-plaintext:not(pre > *) {
+    // Inline code should break at any character
+    word-break: break-all;
+    line-break: anywhere;
   }
 }
