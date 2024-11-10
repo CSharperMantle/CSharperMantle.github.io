@@ -2066,7 +2066,7 @@ print(marker)
 This handout could be run with QEMU as follows:
 
 ```bash
-$ qemu-system-x86_64 -L . --bios .\bios.bin .\disk.img
+$ qemu-system-x86_64 -L . --bios ./bios.bin ./disk.img
 ```
 
 We can see that this challenge is based on [tianocore/edk2](https://github.com/tianocore/edk2) UEFI project. Finding modified binaries (e.g. `Shell.exe`) is relatively easy.
