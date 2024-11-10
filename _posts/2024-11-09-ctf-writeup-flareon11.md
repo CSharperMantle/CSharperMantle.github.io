@@ -1594,7 +1594,7 @@ Invoke-Expression $command
 
 Trap-based SMC and control flow obfuscation. Requires labor to extract all constraints from tracing. I would like to know whether an automated solution is possible.
 
-References: [RtlInstallFunctionTableCallback function (winnt.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/api/winnt/nf-winnt-rtlinstallfunctiontablecallback); [x64 exception handling | Microsoft Learn](https://learn.microsoft.com/en-us/cpp/build/exception-handling-x64?view=msvc-170#unwind-procedure)
+References: [RtlInstallFunctionTableCallback function (winnt.h) - Win32 apps](https://learn.microsoft.com/en-us/windows/win32/api/winnt/nf-winnt-rtlinstallfunctiontablecallback); [x64 exception handling](https://learn.microsoft.com/en-us/cpp/build/exception-handling-x64?view=msvc-170#unwind-procedure)
 
 This challenge is solved by firstly patching all re-obfuscation code to `nop`s, then patching all equality checking `cmovnz`s to `cmovz` so that we can get a full trace of all equations. Patching is done with [010 Editor](https://www.sweetscape.com/010editor/).
 
