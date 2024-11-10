@@ -15,12 +15,13 @@ First time player, first time finisher. Thank you [FLARE team](https://cloud.goo
 
 > * **URL**: [https://flare-on11.ctfd.io/](https://flare-on11.ctfd.io/)
 > * **Username**: csmantle (Individual participation)
-> * **Start Time**: Sept. 27th 2024 at 8pm EST
 > * **Status:** Done, #179
 
 ![congratulations](/assets/posts/2024-11-09-ctf-writeup-flareon11/Euwcbxu8Goqs31xaZ3XckYMqnLg.png)
 
 ![ranking](/assets/posts/2024-11-09-ctf-writeup-flareon11/UkoJb9DbjojWfyxWP2Zchx1dnhA.png)
+
+A small number of long scripts in this post has been snipped out of actual data definitions for brevity and bandwidth, yet I am very glad to provide complete code if PM'd (via email, comments, etc. :wink:).
 
 ---
 
@@ -1340,82 +1341,7 @@ function testStr(string str) public payable {
         if (bytes1(v0[0] >> 248 << 248) == 0x6700000000000000000000000000000000000000000000000000000000000000) {
             require(1 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
             if (bytes1(v0[1] >> 248 << 248) == 0x6900000000000000000000000000000000000000000000000000000000000000) {
-                require(2 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                if (bytes1(v0[2] >> 248 << 248) == 0x5600000000000000000000000000000000000000000000000000000000000000) {
-                    require(3 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                    if (bytes1(v0[3] >> 248 << 248) == 0x3300000000000000000000000000000000000000000000000000000000000000) {
-                        require(4 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                        if (bytes1(v0[4] >> 248 << 248) == 0x5f00000000000000000000000000000000000000000000000000000000000000) {
-                            require(5 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                            if (bytes1(v0[5] >> 248 << 248) == 0x4d00000000000000000000000000000000000000000000000000000000000000) {
-                                require(6 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                if (bytes1(v0[6] >> 248 << 248) == 0x3300000000000000000000000000000000000000000000000000000000000000) {
-                                    require(7 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                    if (bytes1(v0[7] >> 248 << 248) == 0x5f00000000000000000000000000000000000000000000000000000000000000) {
-                                        require(8 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                        if (bytes1(v0[8] >> 248 << 248) == 0x7000000000000000000000000000000000000000000000000000000000000000) {
-                                            require(9 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                            if (bytes1(v0[9] >> 248 << 248) == 0x3400000000000000000000000000000000000000000000000000000000000000) {
-                                                require(10 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                                if (bytes1(v0[10] >> 248 << 248) == 0x7900000000000000000000000000000000000000000000000000000000000000) {
-                                                    require(11 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                                    if (bytes1(v0[11] >> 248 << 248) == 0x4c00000000000000000000000000000000000000000000000000000000000000) {
-                                                        require(12 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                                        if (bytes1(v0[12] >> 248 << 248) == 0x3000000000000000000000000000000000000000000000000000000000000000) {
-                                                            require(13 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                                            if (bytes1(v0[13] >> 248 << 248) == 0x3400000000000000000000000000000000000000000000000000000000000000) {
-                                                                require(14 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                                                if (bytes1(v0[14] >> 248 << 248) == 0x6400000000000000000000000000000000000000000000000000000000000000) {
-                                                                    require(15 < v0.length, Panic(50)); _// access an out-of-bounds or negative index of bytesN array or slice_
-                                                                    if (bytes1(v0[15] >> 248 << 248) == 0x2100000000000000000000000000000000000000000000000000000000000000) {
-                                                                        v2 = v3.data;
-                                                                        v4 = bytes20(0x5324eab94b236d4d1456edc574363b113cebf09d000000000000000000000000);
-                                                                        if (v3.length < 20) {
-                                                                            v4 = v5 = bytes20(v4);
-                                                                        }
-                                                                        v6 = v7 = v4 >> 96;
-                                                                    } else {
-                                                                        v6 = v8 = 0;
-                                                                    }
-                                                                } else {
-                                                                    v6 = v9 = 0xce89026407fb4736190e26dcfd5aa10f03d90b5c;
-                                                                }
-                                                            } else {
-                                                                v6 = v10 = 0x506dffbcdaf9fe309e2177b21ef999ef3b59ec5e;
-                                                            }
-                                                        } else {
-                                                            v6 = v11 = 0x26b1822a8f013274213054a428bdbb6eba267eb9;
-                                                        }
-                                                    } else {
-                                                        v6 = v12 = 0xf7fc7a6579afa75832b34abbcf35cb0793fce8cc;
-                                                    }
-                                                } else {
-                                                    v6 = v13 = 0x83c2cbf5454841000f7e43ab07a1b8dc46f1cec3;
-                                                }
-                                            } else {
-                                                v6 = v14 = 0x632fb8ee1953f179f2abd8b54bd31a0060fdca7e;
-                                            }
-                                        } else {
-                                            v6 = v15 = 0x3bd70e10d71c6e882e3c1809d26a310d793646eb;
-                                        }
-                                    } else {
-                                        v6 = v16 = 0xe2e3dd883af48600b875522c859fdd92cd8b4f54;
-                                    }
-                                } else {
-                                    v6 = v17 = 0x4b9e3b307f05fe6f5796919a3ea548e85b96a8fe;
-                                }
-                            } else {
-                                v6 = v18 = 0x6371b88cc8288527bc9dab7ec68671f69f0e0862;
-                            }
-                        } else {
-                            v6 = v19 = 0x53fbb505c39c6d8eeb3db3ac3e73c073cd9876f8;
-                        }
-                    } else {
-                        v6 = v20 = 0x84abec6eb54b659a802effc697cdc07b414acc4a;
-                    }
-                } else {
-                    v6 = v21 = 0x87b6cf4edf2d0e57d6f64d39ca2c07202ab7404c;
-                }
+                ... // Snipped for brevity
             } else {
                 v6 = v22 = 0x53387f3321fd69d1e030bb921230dfb188826aff;
             }
@@ -1668,11 +1594,23 @@ Invoke-Expression $command
 
 Trap-based SMC and control flow obfuscation. Requires labor to extract all constraints from tracing. I would like to know whether an automated solution is possible.
 
-This script is used to filter relevant rows from a sea of tracing outputs by IDA.
+References: [RtlInstallFunctionTableCallback function (winnt.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/api/winnt/nf-winnt-rtlinstallfunctiontablecallback); [x64 exception handling | Microsoft Learn](https://learn.microsoft.com/en-us/cpp/build/exception-handling-x64?view=msvc-170#unwind-procedure)
+
+This challenge is solved by firstly patching all re-obfuscation code to `nop`s, then patching all equality checking `cmovnz`s to `cmovz` so that we can get a full trace of all equations. Patching is done with [010 Editor](https://www.sweetscape.com/010editor/).
+
+```plaintext
+cmovnz R1, R2
+jmp R1
+Regex: ([\x40-\x4f])\x0f\x45(.[\x40-\x4f]?\xff.?)
+    ->
+cmovz R1, R2
+jmp R1
+Replaced with: $1\x0f\x44$2
+```
+
+The following script is used to filter relevant rows from a sea of tracing outputs by IDA.
 
 ```python
-# filter.py
-
 import re
 
 from tqdm import tqdm
@@ -1758,7 +1696,113 @@ with open("serpentine/filtered.txt", "wt") as f:
         f.write(l + "\n")
 ```
 
-After extracting related rows, I use the next script to calculate the coefficients in the equation.
+Running said script on an IDA trace will produce output like this:
+
+```asm
+...
+  	      	mov     cs:dword_6C24D49, eax
+  	      	mov     r11, 10ADD7F49h         	R11=000000010ADD7F49
+  	      	add     qword ptr [rsp+18h], 35AC399Fh	AF=1
+  	      	movzx   rdi, dil                	RDI=0000000000000065
+  	      	mov     rax, [r8+0B0h]          	RAX=0000000000000065
+  	      	add     r10, 47B805E5h          	R10=0000000000EF7A8C CF=1
+* 	      	mul     qword ptr [rsp]         	RAX=000000005E7B593C RDX=0000000000000000 CF=0 PF=1
+  	      	movzx   rbx, bl                 	RBX=000000000000003C
+  	      	add     r14, 6BC64375h          	R14=00000001400962C0 PF=1 AF=1
+  	addc  	add     r14, [r15+90h]          	R14=00000001400621FC AF=0
+  	      	movzx   rsi, sil                	RSI=0000000000000000
+  	      	shl     rsi, 8                  	ZF=1
+  	      	add     [r15+0F0h], rsi         	ZF=0
+  	      	add     rbx, 0C212EDDh          	RBX=0000000140095AC0 AF=1
+  	      	mov     r11d, [rbx+34h]         	R11=000000000000003C
+  	addr  	add     r11, [rbx+0E0h]         	R11=00000001400620FC
+  	      	movzx   rbx, bl                 	RBX=0000000000000059
+  	      	add     rsi, 2EE276C1h          	RSI=00000001400962C0 AF=1
+  	addc  	add     rsi, [r14+90h]          	RSI=000000014004D219 PF=0 AF=0
+  	      	movzx   rbp, bpl                	RBP=0000000000000000
+  	      	shl     rbp, 10h                	PF=1 ZF=1
+  	      	add     [r14+0B0h], rbp         	ZF=0
+  	      	add     rbp, 58336C6Bh          	RBP=0000000140095AC0 AF=1
+  	      	mov     eax, [r13+34h]          	RAX=0000000000000059
+  	addr  	add     rax, [r13+0E0h]         	RAX=000000014004D119
+  	      	mov     r14, 0FFh               	R14=00000000000000FF
+  	      	shl     r14, 8                  	R14=000000000000FF00 PF=1
+  	      	and     rbp, r14                	RBP=000000005E7B00C9
+  	      	movzx   r14, r15b               	R14=00000000000000B6
+  	      	shl     r14, 8                  	R14=000000000000B600
+^ 	      	or      rbp, r14                	RBP=000000005E7BB6C9
+  	      	movzx   r15, r15b               	R15=000000000000007B
+  	      	add     rbp, 40267844h          	RBP=00000001400962C0 PF=1 AF=1
+  	addc  	add     rbp, [r15+0F0h]         	RBP=000000014005F13B PF=0 AF=0
+  	      	movzx   rcx, cl                 	RCX=0000000000000001
+  	      	shl     rcx, 18h                	RCX=0000000001000000 PF=1
+  	      	add     [r15+0B0h], rcx
+  	      	add     r14, 31E11989h          	R14=0000000140095AC0 AF=1
+  	      	mov     r10d, [rsi+34h]         	R10=000000000000007B
+  	addr  	add     r10, [rsi+0E0h]         	R10=000000014005F03B PF=0
+  	      	mov     r12b, [r10]             	R12=0000000000000001
+  	      	mov     rbx, 0FFh               	RBX=00000000000000FF
+  	      	shl     rbx, 10h                	RBX=0000000000FF0000 PF=1
+  	      	and     rbp, rbx                	RBP=000000005F00B6C9
+  	      	movzx   rbx, r12b               	RBX=0000000000000001
+  	      	shl     rbx, 10h                	RBX=0000000000010000
+^ 	      	or      rbp, rbx                	RBP=000000005F01B6C9
+  	      	movzx   rbp, bpl                	RBP=000000000000005F
+  	      	add     r11, 753F2AC9h          	R11=00000001400962C0 AF=1
+  	addc  	add     r11, [rdx+0A0h]         	R11=000000014006921F PF=0 AF=0
+  	      	movzx   rdi, dil
+  	      	shl     rdi, 20h ; ' '          	PF=1 ZF=1
+  	      	add     [rdx+0D8h], rdi         	ZF=0
+  	      	add     qword ptr [rsp+20h], 26880FA6h	AF=1
+  	      	mov     ecx, [r8+34h]           	RCX=000000000000005F
+  	addr  	add     rcx, [r8+0B0h]          	RCX=000000014006911F
+  	      	mov     r12, 0FFh               	R12=00000000000000FF
+  	      	shl     r12, 18h                	R12=00000000FF000000 PF=1
+  	      	and     r15, r12                	R15=000000000001B6C9
+  	      	movzx   r12, r8b                	R12=00000000000000FC
+  	      	shl     r12, 18h                	R12=00000000FC000000
+^ 	      	or      r15, r12                	R15=00000000FC01B6C9
+  	      	movzx   r13, r13b               	R13=0000000000000000
+  	      	add     rsi, 43F75781h          	RSI=00000001400962C0 PF=1 AF=1
+  	      	add     rsi, [rbp+0E0h]         	PF=0 AF=0
+  	      	movzx   rbx, bl
+  	      	shl     rbx, 28h ; '('          	PF=1 ZF=1
+  	      	add     [rbp+0A8h], rbx         	ZF=0
+  	      	add     rsi, 7C0510D2h          	RSI=0000000140095AC0 AF=1
+  	addr  	add     r14, [r8+0E0h]          	R14=00000001400247C0
+  	      	mov     rcx, 0FFh               	RCX=00000000000000FF
+  	      	shl     rcx, 20h ; ' '          	RCX=000000FF00000000
+  	      	and     r13, rcx
+  	      	movzx   rcx, r12b               	RCX=0000000000000000
+  	      	shl     rcx, 20h ; ' '          	ZF=1
+^ 	      	or      r13, rcx                	ZF=0
+  	      	movzx   r15, r15b               	R15=0000000000000000
+  	      	add     rax, 2E858FBh           	RAX=00000001400962C0 AF=1
+  	      	add     rax, [rdi+0F0h]         	PF=0 AF=0
+  	      	movzx   r10, r10b
+  	      	shl     r10, 38h ; '8'          	PF=1 ZF=1
+  	      	add     [rdi+0A8h], r10         	ZF=0
+  	      	add     qword ptr [rsp+20h], 10A577B5h	AF=1
+  	      	mov     ecx, [r8+34h]           	RCX=0000000000000000
+  	addr  	add     rcx, [r8+0B0h]          	RCX=00000001400247C0 PF=1
+  	      	mov     rbp, 0FFh               	RBP=00000000000000FF
+  	      	shl     rbp, 30h ; '0'          	RBP=00FF000000000000
+  	      	and     r15, rbp
+  	      	movzx   rbp, r14b               	RBP=0000000000000000
+  	      	shl     rbp, 30h ; '0'          	ZF=1
+^ 	      	or      r15, rbp                	ZF=0
+  	      	add     r14, 16951716h          	R14=000000014089B8E8 PF=1
+...
+```
+
+... which performs the following calculation with lots of table lookups:
+
+```python
+v = var64("e") * const64(0x00EF7A8C)
+v += const64(0x9D865D8D)
+```
+
+After extracting all these related rows, I use the next script to calculate the coefficients in the equation.
 
 ```python
 # param.py
@@ -1972,561 +2016,7 @@ v -= const64(0xFFFFFFFF81647A79)
 v |= const64(0x00000000)
 solver.add(v == 0)
 
-v = var64("k") * const64(0x0048C500)
-v -= const64(0x8FDAA1BC)
-v -= var64("O") * const64(0x00152887)
-v += const64(0x65F04E48)
-v -= var64("o") * const64(0x00AA4247)
-v ^= const64(0x3D63EC69)
-v ^= var64("G") * const64(0x0038D82D)
-v ^= const64(0x872ECA8F)
-v ^= var64("K") * const64(0x00F120AC)
-v += const64(0x803DBDCF)
-v += var64("c") * const64(0x00254DEF)
-v ^= const64(0xEE380DB3)
-v ^= var64("C") * const64(0x009EF3E7)
-v -= const64(0x6DEAA90B)
-v += var64("g") * const64(0x0069C573)
-v -= const64(0xC9AC5C5D)
-v -= const64(0xFFFFFFFDF3BA3F0D)
-solver.add(v == 0)
-
-v = var64("l") * const64(0x0067DDA4)
-v += const64(0xF4753AFC)
-v += var64("P") * const64(0x005BB860)
-v ^= const64(0xC1D47FC9)
-v ^= var64("H") * const64(0x00AB0CE5)
-v += const64(0x544FF977)
-v += var64("h") * const64(0x00148E94)
-v -= const64(0x9CB3E419)
-v -= var64("p") * const64(0x009E06AE)
-v -= const64(0xADC62064)
-v ^= var64("d") * const64(0x00FB9DE1)
-v ^= const64(0x4E3633F7)
-v -= var64("L") * const64(0x00A8A511)
-v ^= const64(0xA61F9208)
-v += var64("D") * const64(0x00D3468D)
-v += const64(0x4A5D7B48)
-v -= const64(0xEF6412A2)
-v &= const64(0xFFFFFFFF)
-solver.add(v == 0)
-
-v = var64(0x6D) * const64(0x640BA9)
-v += const64(0x516C7A5C)
-v -= var64(0x61) * const64(0xF1D9E5)
-v += const64(0x8B424D6B)
-v += var64(0x4D) * const64(0xD3E2F8)
-v += const64(0x3802BE78)
-v += var64(0x49) * const64(0xB558CE)
-v -= const64(0x33418C8E)
-v -= var64(0x69) * const64(0x2F03A7)
-v ^= const64(0xE050B170)
-v += var64(0x41) * const64(0xB8FA61)
-v ^= const64(0x1FC22DF6)
-v -= var64(0x45) * const64(0xE0C507)
-v ^= const64(0xD8376E57)
-v += var64(0x65) * const64(0x8E354E)
-v -= const64(0xD2CB3108)
-v -= const64(0x100E79080)
-v &= const64(0xFFFFFFFFFFFFFFFF)
-solver.add(v == 0)
-
-v = var64(0x47) * const64(0x0000000000A6EDF9)
-v ^= const64(0x77C58017)
-v -= var64(0x43) * const64(0x0000000000E87BF4)
-v -= const64(0x999BD740)
-v -= var64(0x63) * const64(0x000000000019864D)
-v -= const64(0x41884BED)
-v += var64(0x67) * const64(0x0000000000901524)
-v ^= const64(0x247BF095)
-v ^= var64(0x6B) * const64(0x0000000000C897CC)
-v ^= const64(0xEFF7EEA8)
-v ^= var64(0x6F) * const64(0x0000000000731197)
-v += const64(0x67A0D262)
-v += var64(0x4F) * const64(0x00000000005F591C)
-v += const64(0x316661F9)
-v += var64(0x4B) * const64(0x0000000000579D0E)
-v -= const64(0x3427FA1C)
-v -= const64(0x900D744B)
-v &= const64(0xFFFFFFFFFFFFFFFF)
-solver.add(v == 0)
-
-v = var64(0x48) * const64(0x00000000009AFAF6)
-v ^= const64(0xDB895413)
-v += var64(0x44) * const64(0x00000000007D1A12)
-v -= const64(0xC679FC44)
-v += var64(0x6C) * const64(0x00000000004D84B1)
-v += const64(0xA30387DC)
-v -= var64(0x70) * const64(0x0000000000552B78)
-v ^= const64(0xF54A725E)
-v ^= var64(0x68) * const64(0x0000000000F372A1)
-v -= const64(0x4C5103AD)
-v += var64(0x50) * const64(0x0000000000B40EB5)
-v ^= const64(0x16FA70D2)
-v ^= var64(0x64) * const64(0x00000000009E5C18)
-v += const64(0x38784353)
-v ^= var64(0x4C) * const64(0x0000000000F2513B)
-v += const64(0xA1FC09F0)
-v -= const64(0x101D6E408)  # TODO: verify!
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x4D) * const64(0x0000000000AC70B9)
-v += const64(0xDAE0A932)
-v ^= var64(0x65) * const64(0x0000000000C42B6F)
-v ^= const64(0xBC03104C)
-v -= var64(0x61) * const64(0x0000000000867193)
-v += const64(0xDC48C63A)
-v -= var64(0x6D) * const64(0x00000000006D31FE)
-v ^= const64(0x4BAEB6D0)
-v -= var64(0x41) * const64(0x0000000000AAAE58)
-v -= const64(0xCD7121F8)
-v += var64(0x45) * const64(0x00000000009FAA7A)
-v += const64(0xBE0A2C9C)
-v += var64(0x49) * const64(0x0000000000354AC6)
-v ^= const64(0xD8AD17F1)
-v -= var64(0x69) * const64(0x00000000003F2ACB)
-v -= const64(0x8B6B7D89)
-v -= const64(0x263C13793)
-solver.add(v == 0)
-
-v = var64(0x4F) * const64(0x0000000000D14F3E)
-v ^= const64(0xA06C215B)
-v -= var64(0x4B) * const64(0x0000000000C5ECBF)
-v += const64(0xB197C5C0)
-v ^= var64(0x67) * const64(0x000000000019FF9C)
-v ^= const64(0x66E7D06C)
-v += var64(0x63) * const64(0x0000000000E3288B)
-v ^= const64(0x80AF4325)
-v ^= var64(0x6B) * const64(0x0000000000CFB18C)
-v -= const64(0xE13C8393)
-v ^= var64(0x43) * const64(0x0000000000D208E5)
-v += const64(0xF96D2B51)
-v += var64(0x6F) * const64(0x000000000042240F)
-v -= const64(0x8732273D)
-v -= var64(0x47) * const64(0x00000000001C6098)
-v -= const64(0xD3D45C5A)
-v -= const64(0xB3D7E5B)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x6C) * const64(0x00000000003768CC)
-v ^= const64(0x19F61419)
-v -= var64(0x64) * const64(0x000000000043BE16)
-v += const64(0x566CC6A8)
-v ^= var64(0x70) * const64(0x0000000000B7CCA5)
-v += const64(0x6DB0599E)
-v += var64(0x4C) * const64(0x0000000000F6419F)
-v ^= const64(0xBD613538)
-v ^= var64(0x44) * const64(0x0000000000AE52FC)
-v += const64(0x717A44DD)
-v -= var64(0x48) * const64(0x00000000005EEB81)
-v += const64(0xDD02182D)
-v ^= var64(0x68) * const64(0x0000000000EC1845)
-v ^= const64(0xEF8E5416)
-v += var64(0x50) * const64(0x000000000061A3BE)
-v ^= const64(0x9288D4FA)
-v -= const64(0x281BDBE05)
-v &= const64(0xFFFFFFFFFFFFFFFF)
-solver.add(v == 0)
-
-v = var64(0x41) * const64(0x336E91)
-v += const64(0xA1EB20E3)
-v -= var64(0x65) * const64(0xD45DE9)
-v -= const64(0x381AC71A)
-v += var64(0x69) * const64(0x76C8F8)
-v ^= const64(0xD8CAA2CD)
-v -= var64(0x45) * const64(0x945339)
-v += const64(0x524D7EFA)
-v += var64(0x6D) * const64(0x4474EC)
-v -= const64(0xE47E82CD)
-v ^= var64(0x61) * const64(0x51054F)
-v ^= const64(0x3321C9B1)
-v -= var64(0x49) * const64(0xD7EB3B)
-v += const64(0x36F6829D)
-v -= var64(0x4D) * const64(0xAD52E1)
-v ^= const64(0x6CE2181A)
-v -= const64(0xFFFFFFFFF39B4443)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x63) * const64(0x4A5E95)
-v += const64(0x5ED7A1F1)
-v += var64(0x47) * const64(0x3A7B49)
-v ^= const64(0x87A91310)
-v -= var64(0x67) * const64(0xF27038)
-v ^= const64(0xF64A0F19)
-v += var64(0x4F) * const64(0xA187D0)
-v -= const64(0xBBCC735D)
-v -= var64(0x43) * const64(0xFC991A)
-v ^= const64(0xF9DDD08F)
-v -= var64(0x4B) * const64(0x4E947A)
-v -= const64(0x59A9172E)
-v ^= var64(0x6F) * const64(0x324EAD)
-v -= const64(0x969A7A64)
-v -= var64(0x6B) * const64(0x656B1B)
-v += const64(0x8C112543)
-v -= const64(0xFFFFFFFDC1DB45C7)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x6C) * const64(0x251B86)
-v += const64(0xA751192C)
-v -= var64(0x68) * const64(0x743927)
-v ^= const64(0xF851DA43)
-v ^= var64(0x50) * const64(0x9A3479)
-v ^= const64(0x335087A5)
-v ^= var64(0x64) * const64(0x778A0D)
-v ^= const64(0x4BFD30D3)
-v -= var64(0x4C) * const64(0x7E04B5)
-v -= const64(0x5D540495)
-v ^= var64(0x44) * const64(0xF1C3EE)
-v += const64(0x460C48A6)
-v += var64(0x70) * const64(0x883B8A)
-v += const64(0x7B2FFBDC)
-v += var64(0x48) * const64(0x993DB1)
-v += const64(0xA98B28FA)
-v -= const64(0x222087CD4)
-v &= const64(0xFFFFFFFFFFFFFFFF)
-solver.add(v == 0)
-
-v = var64(0x41) * const64(0xBAE081)
-v += const64(0x2359766F)
-v ^= var64(0x49) * const64(0xC2483B)
-v += const64(0xEA986A57)
-v -= var64(0x4D) * const64(0x520EE2)
-v ^= const64(0xA6FF8114)
-v += var64(0x69) * const64(0x9864BA)
-v += const64(0x42833507)
-v -= var64(0x61) * const64(0x7CD278)
-v ^= const64(0x360BE811)
-v ^= var64(0x65) * const64(0xBE6605)
-v -= const64(0x4C927A8D)
-v += var64(0x45) * const64(0x3BD2E8)
-v += const64(0xB790CFD3)
-v -= var64(0x6D) * const64(0x548C2B)
-v += const64(0x2A0E04CC)
-v -= const64(0x221328792)
-solver.add(v == 0)
-
-v = var64(0x6B) * const64(0x52F44D)
-v ^= const64(0x33B3D0E4)
-v ^= var64(0x4F) * const64(0xE6E66E)
-v -= const64(0x275D79B0)
-v -= var64(0x67) * const64(0xF98017)
-v ^= const64(0x456E6C1D)
-v -= var64(0x6F) * const64(0x34FCB0)
-v ^= const64(0x28709CD8)
-v ^= var64(0x63) * const64(0x4D8BA9)
-v += const64(0xB5482F53)
-v ^= var64(0x43) * const64(0x6C7E92)
-v += const64(0x2AF1D741)
-v += var64(0x47) * const64(0xA4711E)
-v ^= const64(0x22E79AF6)
-v += var64(0x4B) * const64(0x33D374)
-v -= const64(0x117EFC0E)
-v -= const64(0x9379438E)
-v &= const64(0xFFFFFFFFFFFFFFFF)
-solver.add(v == 0)
-
-v = var64(0x4C) * const64(0x65AC37)
-v += const64(0x15E586B0)
-v ^= var64(0x50) * const64(0xC6DDE0)
-v ^= const64(0x2354CAD4)
-v ^= var64(0x70) * const64(0x154ABD)
-v ^= const64(0xFEE57FD5)
-v ^= var64(0x44) * const64(0xA5E467)
-v += const64(0x315624EF)
-v ^= var64(0x48) * const64(0xB6BED6)
-v -= const64(0x5285B0A5)
-v -= var64(0x68) * const64(0x832AE7)
-v += const64(0xE961BEDD)
-v += var64(0x6C) * const64(0xC46330)
-v -= const64(0x4A9E1D65)
-v ^= var64(0x64) * const64(0x3F8467)
-v ^= const64(0x95A6A1C4)
-v -= const64(0x1110E3519)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x49) * const64(0xB74A52)
-v ^= const64(0x8354D4E8)
-v ^= var64(0x65) * const64(0xF22ECD)
-v -= const64(0x34CBF23B)
-v += var64(0x45) * const64(0xBEF4BE)
-v ^= const64(0x60A6C39A)
-v ^= var64(0x69) * const64(0x7FE215)
-v += const64(0xB14A7317)
-v -= var64(0x41) * const64(0xDB9F48)
-v -= const64(0xBCA905F2)
-v -= var64(0x4D) * const64(0xBB4276)
-v -= const64(0x920E2248)
-v ^= var64(0x61) * const64(0xA3FBEF)
-v += const64(0x4C22D2D3)
-v ^= var64(0x6D) * const64(0xC5E883)
-v ^= const64(0x50A6E5C9)
-v -= const64(0xFFFFFFFFD8E5BDC6)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x67) * const64(0x608D19)
-v -= const64(0x2EEE62EC)
-v -= var64(0x6F) * const64(0xBE18F4)
-v ^= const64(0xB86F9B72)
-v ^= var64(0x4F) * const64(0x88DEC9)
-v += const64(0xAF5CD797)
-v ^= var64(0x43) * const64(0xB68150)
-v -= const64(0x3D073BA5)
-v += var64(0x47) * const64(0x4D166C)
-v += const64(0xBB1E1039)
-v -= var64(0x63) * const64(0x495E3F)
-v += const64(0xE727B98E)
-v -= var64(0x6B) * const64(0x5CABA1)
-v -= const64(0x1A3CF6C1)
-v += var64(0x4B) * const64(0x183A4D)
-v -= const64(0xCA0397E1)
-v -= const64(0x6684A31D)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x6C) * const64(0xFFD0CA)
-v -= const64(0x8F26CEE8)
-v ^= var64(0x68) * const64(0xBF2B59)
-v += const64(0xC76BAD6E)
-v += var64(0x48) * const64(0x29DF01)
-v += const64(0xEEF034A2)
-v ^= var64(0x4C) * const64(0xBBDA1D)
-v += const64(0x5923194E)
-v -= var64(0x50) * const64(0x5D24A5)
-v -= const64(0x81100799)
-v += var64(0x70) * const64(0x3DC505)
-v -= const64(0x69BAEE91)
-v ^= var64(0x44) * const64(0x4E25A6)
-v += const64(0x2468B30A)
-v -= var64(0x64) * const64(0xAE1920)
-v ^= const64(0xD3DB6142)
-v -= const64(0x1BB7AF00F)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x65) * const64(0xF56C62)
-v ^= const64(0x6C7D1F41)
-v += var64(0x41) * const64(0x615605)
-v += const64(0x5B52F6EE)
-v += var64(0x45) * const64(0x828456)
-v ^= const64(0x6F059759)
-v -= var64(0x4D) * const64(0x50484B)
-v += const64(0x84E222AF)
-v ^= var64(0x69) * const64(0x89D640)
-v += const64(0xFD21345B)
-v -= var64(0x49) * const64(0xE4B191)
-v += const64(0xFE15A789)
-v ^= var64(0x61) * const64(0x8C58C1)
-v ^= const64(0x4C49099F)
-v += var64(0x6D) * const64(0xA13C4C)
-v ^= const64(0x27C5288E)
-v -= const64(0x30098DB0B)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x6F) * const64(0xCA894B)
-v += const64(0xA34FE406)
-v += var64(0x43) * const64(0x11552B)
-v += const64(0x3764ECD4)
-v ^= var64(0x47) * const64(0x7DC36B)
-v += const64(0xB45E777B)
-v ^= var64(0x4B) * const64(0xCEC5A6)
-v ^= const64(0x2D59BC15)
-v += var64(0x4F) * const64(0xB6E30D)
-v ^= const64(0xFAB9788C)
-v ^= var64(0x6B) * const64(0x859C14)
-v += const64(0x41868E54)
-v += var64(0x67) * const64(0xD178D3)
-v += const64(0x958B0BE3)
-v ^= var64(0x63) * const64(0x61645C)
-v += const64(0x9DC814CF)
-v -= const64(0x47B801542)  # TODO: check this!
-solver.add(v == 0)
-
-v = var64(0x4C) * const64(0x7239E9)
-v -= const64(0x760E5ADA)
-v -= var64(0x64) * const64(0xF1C3D1)
-v -= const64(0xEF28A068)
-v ^= var64(0x6C) * const64(0x1B1367)
-v ^= const64(0x31E00D5A)
-v ^= var64(0x44) * const64(0x8038B3)
-v += const64(0xB5163447)
-v += var64(0x50) * const64(0x65FAC9)
-v += const64(0xE04A889A)
-v -= var64(0x48) * const64(0xD845CA)
-v -= const64(0xAB7D1C58)
-v += var64(0x70) * const64(0xB2BBBC)
-v ^= const64(0x3A017B92)
-v ^= var64(0x68) * const64(0x33C8BD)
-v += const64(0x540376E3)
-v -= const64(0xFFFFFFFFB0E80C93)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x61) * const64(0x53A4E0)
-v -= const64(0x6061803E)
-v -= var64(0x41) * const64(0x9BBFDA)
-v += const64(0x69B383F1)
-v -= var64(0x49) * const64(0x6B38AA)
-v -= const64(0x971317A0)
-v += var64(0x45) * const64(0x5D266F)
-v += const64(0x5A4B0E60)
-v -= var64(0x69) * const64(0xEDC3D3)
-v ^= const64(0x93E59AF6)
-v -= var64(0x65) * const64(0xB1F16C)
-v ^= const64(0xE8D2B9A9)
-v += var64(0x6D) * const64(0x1C8E5B)
-v -= const64(0x68839283)
-v += var64(0x4D) * const64(0x78F67B)
-v -= const64(0xF53DD889)
-v -= const64(0xFFFFFFFE4EAB225D)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x4F) * const64(0x8C6412)
-v ^= const64(0xC08C361C)
-v ^= var64(0x6F) * const64(0xB253C4)
-v += const64(0x21BB1147)
-v += var64(0x63) * const64(0x8F0579)
-v -= const64(0xFA691186)
-v -= var64(0x47) * const64(0x7AC48A)
-v += const64(0xBB787DD5)
-v += var64(0x6B) * const64(0x2737E6)
-v ^= const64(0xA2BB7683)
-v -= var64(0x43) * const64(0x4363B9)
-v ^= const64(0x88C45378)
-v ^= var64(0x67) * const64(0xB38449)
-v -= const64(0x209DC078)
-v += var64(0x4B) * const64(0x6E1316)
-v += const64(0x1343DEE9)
-v -= const64(0xE3699527)
-solver.add(v == 0)
-
-# group 2
-v = var64(0x42) * const64(0x99AA81)
-v -= const64(0x74EDEA51)
-v ^= var64(0x66) * const64(0x4ABA22)
-v += const64(0x598015BF)
-v ^= var64(0x46) * const64(0x91A68A)
-v ^= const64(0x6DF18E52)
-v ^= var64(0x62) * const64(0x942FDE)
-v += const64(0x15C825EE)
-v -= var64(0x6E) * const64(0xFE2FBE)
-v += const64(0xD5682B64)
-v -= var64(0x4E) * const64(0xD7E52F)
-v += const64(0x798BD018)
-v ^= var64(0x4A) * const64(0xE44F6A)
-v -= const64(0xE66D523E)
-v += var64(0x6A) * const64(0xAF71D6)
-v += const64(0x921122D3)
-v -= const64(0xE1148BAE)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x42) * const64(0xA9B448)
-v ^= const64(0x9F938499)
-v += var64(0x66) * const64(0x906550)
-v += const64(0x407021AF)
-v ^= var64(0x6E) * const64(0xAA5AD2)
-v ^= const64(0x77CF83A7)
-v ^= var64(0x4E) * const64(0xC49349)
-v ^= const64(0x3067F4E7)
-v += var64(0x6A) * const64(0x314F8E)
-v += const64(0xCD975F3B)
-v ^= var64(0x46) * const64(0x81968B)
-v += const64(0x893D2E0B)
-v -= var64(0x4A) * const64(0x5FFBAC)
-v ^= const64(0xF3378E3A)
-v -= var64(0x62) * const64(0xF63C8E)
-v -= const64(0x1C1D882B)
-v -= const64(0x28E5EB48D)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x4E) * const64(0xE9D18A)
-v ^= const64(0xCB5557EA)
-v ^= var64(0x4A) * const64(0x8AA5B9)
-v ^= const64(0x9125A906)
-v -= var64(0x42) * const64(0x241997)
-v += const64(0x6E46FCB8)
-v += var64(0x66) * const64(0xE3DA0F)
-v += const64(0x442800EC)
-v += var64(0x6E) * const64(0xA5F9EB)
-v += const64(0xBDE8F9AF)
-v += var64(0x46) * const64(0xD6E0FB)
-v -= const64(0xC9D97243)
-v += var64(0x62) * const64(0x8DC36E)
-v += const64(0xC54B7D21)
-v ^= var64(0x6A) * const64(0xB072EE)
-v -= const64(0x2A1AB0C1)
-v -= const64(0x2BF2044DB)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x4E) * const64(0x725059)
-v ^= const64(0xA8B69F6B)
-v += var64(0x42) * const64(0x6DCFE7)
-v ^= const64(0x653C249A)
-v += var64(0x62) * const64(0x8F4C44)
-v ^= const64(0x68E87685)
-v -= var64(0x6A) * const64(0xD2F4CE)
-v -= const64(0x87238DC5)
-v ^= var64(0x6E) * const64(0xE99D3F)
-v += const64(0xED16797A)
-v += var64(0x66) * const64(0xADA536)
-v -= const64(0x95A05AA9)
-v -= var64(0x4A) * const64(0xE0B352)
-v ^= const64(0x43C00020)
-v += var64(0x46) * const64(0x8675B6)
-v += const64(0x34A29213)
-v -= const64(0x20196A7E)
-v |= const64(0x0)
-solver.add(v == 0)
-
-v = var64(0x42) * const64(0xFB213B)
-v -= const64(0x6773D643)
-v ^= var64(0x6A) * const64(0xDE6876)
-v ^= const64(0x8649FDE3)
-v ^= var64(0x4E) * const64(0x629FF7)
-v ^= const64(0xA0EEB203)
-v -= var64(0x4A) * const64(0xDBB107)
-v ^= const64(0x94AA6B62)
-v -= var64(0x62) * const64(0x262675)
-v -= const64(0xDFCF5488)
-v += var64(0x66) * const64(0xD691C5)
-v -= const64(0x5B3EE746)
-v -= var64(0x6E) * const64(0xCAFC93)
-v -= const64(0x111BDE22)
-v -= var64(0x46) * const64(0x81F945)
-v -= const64(0x90033B08)
-v -= const64(0xFFFFFFFD6349D7CF)
-v &= const64(0xFFFFFFFFFFFFFFFF)
-solver.add(v == 0)
-
-v = var64(0x62) * const64(0x73AAF0)
-v ^= const64(0xA04E34F1)
-v += var64(0x4E) * const64(0xF61E43)
-v += const64(0xD09B66F3)
-v += var64(0x4A) * const64(0x8CB5F0)
-v += const64(0xC11C9B4B)
-v ^= var64(0x42) * const64(0x4F53A8)
-v -= const64(0x6465672E)
-v += var64(0x6A) * const64(0xB2E1FA)
-v ^= const64(0x77C07FD8)
-v -= var64(0x46) * const64(0xB8B7B3)
-v -= const64(0x882C1521)
-v += var64(0x6E) * const64(0x13B807)
-v ^= const64(0x758DD142)
-v ^= var64(0x66) * const64(0xDD40C4)
-v -= const64(0x449786E6)
-v -= const64(0x1B05DD93C)
-v |= const64(0x0)
-solver.add(v == 0)
+... # Many constraints snipped for brevity; 64 groups in total
 
 v = var64(0x42) * const64(0x87184C)
 v -= const64(0x72A15AD8)
@@ -2565,8 +2055,6 @@ print(marker)
 ```
 
 ![serpentine result](/assets/posts/2024-11-09-ctf-writeup-flareon11/O9VKbRKGQonQmtxJ4sWcEeCunyh.png)
-
-`$$_4lway5_k3ep_mov1ng_and_m0ving`
 
 `$$_4lway5_k3ep_mov1ng_and_m0ving@flare-on.com`
 
@@ -2852,6 +2340,7 @@ var_17 = z3.Concat(z3.Extract(15, 0, var_12), z3.Extract(15, 0, var_11))
 var_17 &= var_1e
 solver.add(var_17 == 0x0F910374)
 
+# FNV hash; do not try to solve it ;)
 # var_a = 0x193
 # var_b = 0x100
 # var_c = (var_b << 0x10) | var_a
