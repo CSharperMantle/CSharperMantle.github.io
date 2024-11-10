@@ -4,11 +4,7 @@ title: "Flare-On 11 Writeup - csmantle"
 date: 2024-11-09 22:49:15 +0800
 lang: en
 description: >-
-    Flare-On capture-the-flag event organized by MANDIANT is an annual reverse
-    engineering event featuring creative challenges, a dazzling show-off of various
-    techniques and a broad range of real-world scenarios. The author, as finisher #179 of
-    Flare-On 11, presents the challenges's writeup in this post.
-author: Rong "Mantle" Bao
+    Flare-On capture-the-flag event organized by MANDIANT is an annual reverse engineering event featuring creative challenges, a dazzling show-off of various techniques and a broad range of real-world scenarios. The author, as finisher #179 of Flare-On 11, presents the challenges's writeup in this post.
 categories: ctf wp
 use_mathjax: true
 ---

@@ -3,9 +3,6 @@ layout: post
 title: "在 BIRD2 中使用 BFD 协议"
 date: 2024-09-22 18:04:31 +0800
 lang: zh
-description: >-
-    BIRD2 路由软件支持在链路上搭建 BFD 故障检测协议, 能够以流量为代价实现灵敏的故障检测, 为其他路由协议提供邻居状态的辅助性信息.
-author: Rong "Mantle" Bao
 categories: misc networking
 ---
 

@@ -3,10 +3,6 @@ layout: post
 title: "Comments with utteranc.es"
 date: 2024-08-26 18:27:32 +0800
 lang: en
-description: >-
-    You can now leave comments on site. The feature is backed
-    by awesome app utteranc.es.
-author: Rong "Mantle" Bao
 categories: site
 ---
 

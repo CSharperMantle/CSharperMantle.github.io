@@ -3,9 +3,6 @@ layout: post
 title: "简短的问候"
 date: 2024-04-24 17:36:45 +0800
 lang: zh-Hans
-description: >-
-    本文介绍了一种在x86-64下构造尽量小的输出一个常量字符串ELF程序的案例. 本文中的最好结果为144 bytes.
-author: Rong "Mantle" Bao
 categories: misc
 ---
 

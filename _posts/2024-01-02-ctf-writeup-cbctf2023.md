@@ -3,10 +3,6 @@ layout: post
 title: "CBCTF 2023 Writeup - csmantle"
 date: 2024-01-02 14:21:03 +0800
 lang: zh-Hans
-description: >-
-    笔者于近日参加杭州电子科技大学网络安全赛博协会0RAYS战队第七届"赛博杯"网络安全大赛
-    并拿到了rank 1的成绩, 将赛中编写的解题报告(Writeup)整理发布供成绩核验、参考与赛后复盘之用.
-author: Rong "Mantle" Bao
 categories: ctf wp
 ---
 

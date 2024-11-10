@@ -3,8 +3,6 @@ layout: post
 title: "Python随笔（3）：作用域 Scopes"
 date: 2021-10-15 07:58:46 +0800
 lang: zh-Hans
-description: 本文对Python中的作用域概念作了简要的分析。
-author: Rong "Mantle" Bao
 categories: python-notes
 ---
 

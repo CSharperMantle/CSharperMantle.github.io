@@ -3,8 +3,6 @@ layout: post
 title: "Python随笔（i1）：DataFrame多条件“与”选择 Parallel Criteria Selection in DataFrame"
 date: 2022-01-22 13:15:23 +0800
 lang: zh-Hans
-description: 本文提供了一种在pandas DataFrame中进行多条件筛选的方法。
-author: Rong "Mantle" Bao
 categories: python-notes informal
 ---
 

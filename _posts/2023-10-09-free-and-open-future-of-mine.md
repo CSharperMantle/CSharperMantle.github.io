@@ -3,8 +3,6 @@ layout: post
 title: "自由与开放：在HDU思想道德与法制课上的分享"
 date: 2023-10-07 21:25:28 +0800
 lang: zh-Hans
-description: 本文阐述了作者对自由（free）和开放（open）发展方向的理解。
-author: Rong "Mantle" Bao
 categories: ideas
 ---
 

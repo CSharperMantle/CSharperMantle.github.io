@@ -6,7 +6,6 @@ lang: en
 description: >-
     In this short blog, we discuss the specs-defined, yet largely-ignored buffer behavior of C
     standard library function `scanf` when it fails to match.
-author: Rong "Mantle" Bao
 categories: misc
 ---
 

@@ -3,12 +3,6 @@ layout: post
 title: "截断Base64编码的不动点: 借助Z3的分析与证明"
 date: 2024-10-10 08:07:54 +0800
 lang: zh
-description: >-
-    Base64编码是相当常见的编码格式, 可以将任意二进制数据至一个ASCII码子集, 其原理为将原始数据中的位视为2^6=64元字母
-    表中的元素下标. 显然, 由于输入为6位元素而输出为8位元素 (ASCII字符), 数据在编码后会比原来更长. 若只考虑输入输出
-    相同长度的部分, 我们能够构造一个N元串S, 使得它的Base64编码结果Base64(S)以S为前缀, 即Base64(S)[0:N] == S.
-    我们称此种S为Base64编码的 "N截断不动点". 我们将在本文中使用Z3对其特性进行分析和证明.
-author: Rong "Mantle" Bao
 categories: misc
 use_mathjax: true
 ---

@@ -6,14 +6,18 @@ description: >-
     A repository of my thoughts and ideas, organized and unorganized,
     up-to-date and outdated, and everything in between.
 baseurl: "/"
-url: "https://csmantle.top"
+url: https://csmantle.top
 github_username: CSharperMantle
 twitter_username: CSMantle3
 social:
-  name: Rong "Mantle" Bao
+  name: Rong Bao
   links:
     - https://github.com/CSharperMantle
     - https://twitter.com/CSMantle3
+author:
+  name: Rong Bao
+  twitter: CSMantle3
+  url: https://csmantle.top
 show_excerpts: true
 
 markdown: kramdown

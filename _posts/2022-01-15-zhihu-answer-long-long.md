@@ -3,8 +3,8 @@ layout: post
 title: "知乎回答草稿箱：long long"
 date: 2022-01-15 07:58:46 +0800
 lang: zh-Hans
-description: 本文是一篇知乎回答的草稿。
-author: Rong "Mantle" Bao
+description: >-
+    本文是一篇知乎回答的草稿。
 categories: zhihu-answer
 ---
 

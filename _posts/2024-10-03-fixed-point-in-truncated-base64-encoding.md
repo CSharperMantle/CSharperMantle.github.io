@@ -3,15 +3,6 @@ layout: post
 title: "Fixed point in truncated Base64 encoding: analysis and proof with Z3"
 date: 2024-10-03 16:05:08 +0800
 lang: en
-description: >-
-    Base64 is a well-known encoding for turing arbitrary binary data into an alphanumeric
-    ASCII string. It's basic idea is to reinterpret original data as characters in a
-    2^6=64-membered alphabet. Due to the input characters being 6-bits and output ones being
-    8-bits (ASCII characters), the length of encoded data will be different from that of
-    the original one. If we consider only the common part of input and output, it is possible
-    to construct a N-membered string S whose Base64-encoding Base64(S) has S as its prefix,
-    i.e. Base64(S)[0:N] == S. We call such S'es "truncated fixed points" for Base64 encoding.
-author: Rong "Mantle" Bao
 categories: misc
 use_mathjax: true
 ---
