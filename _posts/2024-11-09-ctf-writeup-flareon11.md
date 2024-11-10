@@ -2591,6 +2591,154 @@ The encrypted `.c4tb` (which I guess means "Catbert") contains metadata, encrypt
 
 UEFI symbol recovery -> VM reverse engineering -> symbolic constraints solving
 
+```c
+UINT32 __fastcall func_crc32_mpeg2()
+{
+  // [COLLAPSED LOCAL DECLARATIONS. PRESS KEYPAD CTRL-"+" TO EXPAND]
+
+  p = g_buf_input_char;
+  result = 0xFFFFFFFF;
+  i = 16;
+  do
+  {
+    v3 = *p++;
+    result = LOOKUP_CRC32MPEG2[v3 ^ ((unsigned __int64)result >> 24)] ^ (result << 8);
+    --i;
+  }
+  while ( i );
+  return result;
+}
+
+int __fastcall handler_decrypt_file(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
+{
+  // [COLLAPSED LOCAL DECLARATIONS. PRESS KEYPAD CTRL-"+" TO EXPAND]
+
+  ...
+  // Open, allocate and read file parts: metadata, ciphertext, VM bytecode
+  ...
+  v17 = (unsigned int *)g_buf_file;
+  file_magic = *(_DWORD *)g_buf_file;
+  g_file_info->magic = *(_DWORD *)g_buf_file;
+  if ( file_magic != 0x42543443 )
+  {
+    ((void (__fastcall *)(EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL *, __int64))gST->ConOut->SetAttribute)(gST->ConOut, 64i64);
+    my_printf(-1, -1, L"Oh, you thought you could just waltz in here and decrypt ANY file, did you?\r\n");
+    my_printf(-1, -1, L"Newsflash: Only .c4tb encrypted JPEGs are worthy of my decryption powers.\r\n");
+    ((void (__fastcall *)(EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL *, __int64))gST->ConOut->SetAttribute)(gST->ConOut, 71i64);
+    goto LABEL_9;
+  }
+  file_u32_0x4 = v17[1];
+  v16->len0 = file_u32_0x4;
+  file_u32_0x8 = v17[2];
+  v16->off_vm_code = file_u32_0x8;
+  v16->len_vm_code = v17[3];
+  // More copies...
+  ...
+  // Insert user input into VM code
+  g_file_vm_code[5] = *(_BYTE *)g_buf_input_wchar;
+  v29[4] = v28[2];
+  v29[0xC] = v28[4];
+  v29[0xB] = v28[6];
+  v29[0x13] = v28[8];
+  v29[0x12] = v28[10];
+  v29[0x1A] = v28[12];
+  v29[0x19] = v28[14];
+  v29[0x21] = v28[16];
+  v29[0x20] = v28[18];
+  v29[0x28] = v28[20];
+  v29[0x27] = v28[22];
+  v29[0x2F] = v28[24];
+  v29[0x2E] = v28[26];
+  v29[0x36] = v28[28];
+  v29[0x35] = v28[30];
+  func_run_vm();
+  if ( !g_vm_state.okay )
+  {
+LABEL_72:
+    sub_31B14();
+    goto LABEL_9;
+  }
+  g_filename_1 = (CHAR16 *)AllocateReservedPool(v30, 0x208ui64);
+  if ( !g_filename_1 )
+    goto LABEL_74;
+  g_buf_input_char = (unsigned __int8 *)AllocateReservedPool(v31, 0x104ui64);
+  if ( !g_buf_input_char )
+    goto LABEL_74;
+  func_input_wchar_2_char();
+  StrCpyS(g_filename_1, 0x104ui64, g_filename);
+  v32 = StrStr(g_filename_1, L".c4tb");
+  if ( v32 )
+    *v32 = 0;
+  input_hash = func_crc32_mpeg2();
+  if ( input_hash == 0x8AE981A5 )
+  {
+    ZeroPool = AllocateZeroPool(0x100ui64);
+    g_buf_0x8ae981a5 = ZeroPool;
+    goto LABEL_44;
+  }
+  if ( input_hash == 0x92918788 )
+  {
+    ZeroPool = AllocateZeroPool(0x100ui64);
+    g_buf_0x92918788 = ZeroPool;
+    goto LABEL_44;
+  }
+  if ( input_hash != 0x80076040 )
+  {
+LABEL_46:
+    sub_31A54();
+    v35 = g_file_info;
+    func_rc4(
+      g_buf_input_char,
+      v36,
+      (unsigned __int8 *)g_file_info->buf0,
+      g_file_info->len0,
+      (unsigned __int8 *)g_file_info->buf0);
+    buf0 = v35->buf0;
+    if ( buf0[6] != 'J' || buf0[7] != 'F' || buf0[8] != 'I' || buf0[9] != 'F' )
+    {
+      my_printf(-1, -1, L"is that what you think you're doing? Trying to crack something?\r\n");
+      my_printf(-1, -1, L"Well, let me tell you, you're wasting your time.\r\n");
+      goto LABEL_9;
+    }
+    len0 = v35->len0;
+    v2 = ShellOpenFileByName(g_filename_1, &g_handle_file, 0x8000000000000003ui64, 0i64);
+    if ( v2 < 0 )
+      return v2;
+    v2 = FileFunctionMap.WriteFile(g_handle_file, &len0, g_file_info->buf0);
+    if ( v2 < 0 )
+      return v2;
+    ((void (__fastcall *)(EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL *, __int64))gST->ConOut->SetAttribute)(gST->ConOut, 79i64);
+    my_printf(-1, -1, L"0x%x bytes successfully written to %s.\r\n", g_file_info->len0, g_filename_1);
+    ((void (__fastcall *)(EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL *, __int64))gST->ConOut->SetAttribute)(gST->ConOut, 71i64);
+    v2 = FileFunctionMap.CloseFile(g_handle_file);
+    if ( v2 < 0 )
+      return v2;
+    v2 = FileFunctionMap.DeleteFile(g_file_handle);
+    LODWORD(v4) = v2;
+    if ( v2 < 0 )
+      return v2;
+    if ( g_buf_0x8ae981a5 && g_buf_0x92918788 && g_buf_0x80076040 && !byte_E8590 )
+    {
+      ((void (__fastcall *)(EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL *, __int64))gST->ConOut->SetAttribute)(gST->ConOut, 64i64);
+      my_printf(-1, -1, L"Oh, you think you're so smart, huh? Decrypting JPEGs? Big deal.\r\n");
+      my_printf(-1, -1, L"As a special favor, I'll let you enjoy the thrill of watching me\r\n");
+      my_printf(-1, -1, L"decrypt the UEFI driver. Consider yourself lucky.\r\n");
+      ((void (__fastcall *)(EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL *, __int64))gST->ConOut->SetAttribute)(gST->ConOut, 71i64);
+      // Decrypt DilbootApp.efi.enc
+      ...
+    }
+    ...
+LABEL_22:
+    ...
+  }
+  ...
+}
+```
+
+The input key for each `.c4tb` file need to satisfy both a VM-based check and a CRC32-MPEG2 digest.
+
+The first meme uses a simple invertible transformation on some locations of input.
+
 ```python
 # solve_meme1.py
 
@@ -2617,6 +2765,8 @@ print(plaintext)
 # Da4ubicle1ifeb0b -> DaCubicleLife101
 ```
 
+The second meme uses an OTP generated by a PRNG to encrypt the content.
+
 ```python
 # solve_meme2.py
 def gen_keystream():
@@ -2637,6 +2787,8 @@ print(plaintext)
 
 # Y\xa0Mj#\xde\xc0$\xe2d\xb1Y\x07r\\\x7f -> G3tDaJ0bD0neM4te
 ```
+
+The third meme uses three checksums, the last one of which is a [Fowler–Noll–Vo hash](https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function). Despite its cryptographic weaknesses, we need a constrained solution rather than a collision, which rendered directly solving this FNV highly infeasible. Luckily, the CRC32-MPEG2 is still a applicable constraint. Identifying its polynomial and finding a non-lookup implementation [took](https://community.st.com/t5/stm32-mcus-products/how-do-i-resolve-the-different-hardware-crc-calculation-when/td-p/419059) [some](https://www.itu.int/rec/T-REC-H.222.0) [time](https://reveng.sourceforge.io/crc-catalogue/all.htm#crc.cat.crc-32-mpeg-2).
 
 ```python
 # solve_meme3.py
@@ -2751,6 +2903,8 @@ while True:
 
 # b"VerYDumBpassword"
 ```
+
+Afterwards, the journey onwards was already paved properly.
 
 ![catbert meme 1](/assets/posts/2024-11-09-ctf-writeup-flareon11/AcPRbU6EZoishAxky8xcikH3nVe.jpg)
 
