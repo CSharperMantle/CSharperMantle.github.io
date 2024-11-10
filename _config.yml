@@ -14,10 +14,6 @@ social:
   links:
     - https://github.com/CSharperMantle
     - https://twitter.com/CSMantle3
-author:
-  name: Rong Bao
-  twitter: CSMantle3
-  url: https://csmantle.top
 show_excerpts: true
 
 markdown: kramdown
