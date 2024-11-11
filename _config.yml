@@ -1,7 +1,7 @@
 title: Mantle's Potato Bakery
 tagline: >-
     Rong "Mantle" Bao's personal blog
-email: baorong2005@126.com
+email: webmaster@csmantle.top
 description: >-
     A repository of my thoughts and ideas, organized and unorganized,
     up-to-date and outdated, and everything in between.
@@ -9,6 +9,7 @@ baseurl: "/"
 url: https://csmantle.top
 github_username: CSharperMantle
 twitter_username: CSMantle3
+rss: RSS feed
 social:
   name: Rong Bao
   links:
