@@ -1,0 +1,21 @@
+@mixin break-anywhere {
+  word-break: break-all;
+  line-break: anywhere;
+}
+
+.footer-col {
+  .u-email,
+  .username {
+    @include break-anywhere;
+  }
+}
+
+.post-content {
+  code.language-plaintext:not(pre > *) {
+    @include break-anywhere;
+  }
+}
+
+.break-anywhere {
+  @include break-anywhere;
+}

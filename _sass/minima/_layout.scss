@@ -136,12 +136,6 @@
   margin-bottom: $spacing-unit / 2;
   padding-left: $spacing-unit / 2;
 
-  .u-email,
-  .username {
-    word-break: break-all;
-    line-break: anywhere;
-  }
-
   &.footer-col-1 {
     grid-area: a;
   }
@@ -248,11 +242,5 @@
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
     }
-  }
-
-  code.language-plaintext:not(pre > *) {
-    // Inline code should break at any character
-    word-break: break-all;
-    line-break: anywhere;
   }
 }
