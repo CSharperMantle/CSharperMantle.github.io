@@ -11,7 +11,7 @@ use_mathjax: true
 
 ## Forewords
 
-First time player, first time finisher. Thank you [FLARE team](https://cloud.google.com/security/mandiant-services)/[MANDIANT](https://www.mandiant.com) for these great challenges that really satisfied my appetite for high-quality inspirations of what could still be done in reverse engineering.
+First time player, first time finisher. Thank you [FLARE team](https://cloud.google.com/security/mandiant-services)/[MANDIANT](https://www.mandiant.com) for these great challenges in Flare-On 11 that really satisfied my appetite for high-quality inspirations of what could still be done in reverse engineering.
 
 > * **URL**: [https://flare-on11.ctfd.io/](https://flare-on11.ctfd.io/)
 > * **Username**: csmantle (Individual participation)
