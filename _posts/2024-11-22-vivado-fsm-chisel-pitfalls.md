@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Finite state machine caveats with Chisel, SystemVerilog and Vivado"
+title: "Finite state machine pitfalls with Chisel, SystemVerilog and Vivado"
 date: 2024-11-22 21:10:41 +0800
 lang: en
 categories: ee digital-logics
