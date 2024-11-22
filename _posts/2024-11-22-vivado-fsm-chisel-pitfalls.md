@@ -23,7 +23,7 @@ TL;DR: Vivado 2024.1 fails to infer FSMs from Chisel-generated SystemVerilog fil
 
 ## 1. Background
 
-[*Finite state machines*](https://en.wikipedia.org/wiki/Finite-state_machine) (FSMs), or more specifically *deterministic* finite state machines, are crucial to digital circuits. In such context, it could be generalized to a sequential logic unit whose current state is determined by equation $Q^n = F_Q(Q^{n-1}, \boldsymbol{x}) \in S$, where $\boldsymbol{x}$ is a Boolean vector and $S$ is a finite set of all valid states. It is also worth mentioning that the output $\boldsymbol{y}$ of such unit could be either $\boldsymbol{y} = F_y(Q^n)$ (*Moore* machine) or $\boldsymbol{y} = F_y(Q^n, \boldsymbol{x})$ (*Mealy* machine).
+[*Finite state machines*](https://en.wikipedia.org/wiki/Finite-state_machine) (FSMs), or more specifically *deterministic* finite state machines, are crucial to digital circuits. In such context, it could be generalized to a sequential logic unit whose current state is determined by equation $Q^{n+1} = F_Q(Q^n, \boldsymbol{x}) \in S$, where $\boldsymbol{x}$ is a Boolean vector and $S$ is a finite set of all valid states. It is also worth mentioning that the output $\boldsymbol{y}$ of such unit could be either $\boldsymbol{y} = F_y(Q^n)$ (*Moore* machine) or $\boldsymbol{y} = F_y(Q^n, \boldsymbol{x})$ (*Mealy* machine).
 
 When implementing an FSM in SystemVerilog, we would usually write code in the style as below:
 
