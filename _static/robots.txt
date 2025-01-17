@@ -1,0 +1,7 @@
+---
+---
+
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.url | append: "/sitemap.xml" | absolute_url }}
