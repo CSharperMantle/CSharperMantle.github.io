@@ -26,7 +26,7 @@ categories: ctf wp
 > * **Breakdown**: Misc\*3; Web\*4; RE\*9 (AK); Pwn\*2; 签到\*1; PyJail\*9
 > * **Achievements**: FB\*5
 
-![Rank screenshot](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/I37YbFSnZofo6pxegtFcaazDnVc.png)
+![Rank screenshot](./I37YbFSnZofo6pxegtFcaazDnVc.png)
 
 ## 竞赛信息
 
@@ -43,13 +43,13 @@ categories: ctf wp
 
 > 送一血咯 先到先得
 
-![BeginnerTetris 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/CUwPbrJ9ToiHrtxYSj8cB0Srnqh.png)
+![BeginnerTetris 1](./CUwPbrJ9ToiHrtxYSj8cB0Srnqh.png)
 
-![BeginnerTetris 2](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/KDYcbX17jolnZjxGGhmcS6Vnn1c.png)
+![BeginnerTetris 2](./KDYcbX17jolnZjxGGhmcS6Vnn1c.png)
 
-![BeginnerTetris 3](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/WIKHbYFLpofGzwxm2vyccWyOnlg.png)
+![BeginnerTetris 3](./WIKHbYFLpofGzwxm2vyccWyOnlg.png)
 
-![BeginnerTetris 4](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/OcquboInLotmAJxNBDfceYXTnzc.png)
+![BeginnerTetris 4](./OcquboInLotmAJxNBDfceYXTnzc.png)
 
 <https://cyberchef.org/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)&input=Wm14aFozdFpUM1V4Y21WZlpuSXdiblE9ClgwVnVaRjl0UVhOME1YSmZObDQyZlE9PQ>
 
@@ -109,7 +109,7 @@ import path from 'path';
 
 打开链接发现一个 poc：
 
-![Uninvited Guest 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/IoYZbzduWoFQ82xmncmc9QPcn9f.png)
+![Uninvited Guest 1](./IoYZbzduWoFQ82xmncmc9QPcn9f.png)
 
 观察提供的代码发现 app 本身没有回显，但是服务器将所有 `/app/static/` 下的文件都 serve 了，那么我们可以用这个目录来回显。
 
@@ -136,9 +136,9 @@ then: !<tag:yaml.org,2002:js/function> >-
   }
 ```
 
-![Uninvited Guest 2](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/VcBQbsM3So19W0xLquKcI668nLd.png)
+![Uninvited Guest 2](./VcBQbsM3So19W0xLquKcI668nLd.png)
 
-![Uninvited Guest 3](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/Q5LFbkTy2oTmuRx3KuJc2ZVknKd.png)
+![Uninvited Guest 3](./Q5LFbkTy2oTmuRx3KuJc2ZVknKd.png)
 
 `CBCTF{07d950c9-01e2-4d58-a35f-d85f216a2212}`
 
@@ -150,7 +150,7 @@ then: !<tag:yaml.org,2002:js/function> >-
 
 Jadx 打开提供的 jar 文件，发现使用了一个有漏洞的 Beetl 版本。
 
-![hackBeetl 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/UdXibPs5FoRCQJxRKSrckhlcnYf.png)
+![hackBeetl 1](./UdXibPs5FoRCQJxRKSrckhlcnYf.png)
 
 那么就是经典 SpEL 注入，但是可调用的方法有限。
 
@@ -299,7 +299,7 @@ __int64 __fastcall main(__int64 a1, char **a2, char **a3)
 }
 ```
 
-![heap1 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/FcALb3aN1o4Fcax9mYEcXvXfnse.png)
+![heap1 1](./FcALb3aN1o4Fcax9mYEcXvXfnse.png)
 
 覆盖 `g_target`，使程序正常运行，即可 getshell。
 
@@ -711,9 +711,9 @@ INFO - Output file has been saved at 'unpacked_target.exe'
 PS D:\Workspace\rev\cbctf2023\原来你也玩原神\attachment>
 ```
 
-![原来你也玩原神 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/CP3KbNu43osFDYxkUO4cnIzpnyc.png)
+![原来你也玩原神 1](./CP3KbNu43osFDYxkUO4cnIzpnyc.png)
 
-![原来你也玩原神 2](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/HOkjbo6tkoD3Lyx3FIXccVkjnUb.png)
+![原来你也玩原神 2](./HOkjbo6tkoD3Lyx3FIXccVkjnUb.png)
 
 `CBCTF{I_hate_Genshin_Impact_and_Two_spiny_newts}`
 
@@ -1048,7 +1048,7 @@ print(f"Fitness value of the best solution = {solution_fitness}")
 
 很像 GUID 啊
 
-![Misc 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/FMwpbYqm2okGFZxAFGVc7owYnue.png)
+![Misc 1](./FMwpbYqm2okGFZxAFGVc7owYnue.png)
 
 那么缩小 fuzz 范围，格式 +"abcdef"+ 数字
 
@@ -1295,7 +1295,7 @@ mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/cbctf2023/rev_pwn$
 
 观察代码发现是一个商店，而且可以购买 flag。
 
-![Pwn 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/ScCUbNzu8ohLfwxC80BcjxD2nHv.png)
+![Pwn 1](./ScCUbNzu8ohLfwxC80BcjxD2nHv.png)
 
 问题在于它读入的是一个 signed int 而不是 unsigned int。所以购买负数商品会给你加钱。显然可以直接购买-1 个 flag。
 
@@ -2143,7 +2143,7 @@ success("".join(map(chr, result)))
 
 ### Real_Signin | Done
 
-![Real_Signin 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/T44eb2gb4oIdodxKpWVcjYx4nnh.png)
+![Real_Signin 1](./T44eb2gb4oIdodxKpWVcjYx4nnh.png)
 
 `CBCTF{We1c0m3_t0_CBCTF_$njoy!!!}`
 
@@ -2263,7 +2263,7 @@ with t.no_grad():
     pred_img.save("just_painting_revenge/pred.png")
 ```
 
-![Just Painting's Revenge 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/ISfrbr8uxo8BfUxg1FtceNf5nmb.png)
+![Just Painting's Revenge 1](./ISfrbr8uxo8BfUxg1FtceNf5nmb.png)
 
 读出后半段 flag 为 `15840fd2ef79519f}`。与前半段拼接即为完整 flag。
 
@@ -2273,7 +2273,7 @@ with t.no_grad():
 
 ### Level 1 | Done
 
-![Level 1 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/Zvhxbi1O1o0MZrxx3dUcPvdBn3C.png)
+![Level 1 1](./Zvhxbi1O1o0MZrxx3dUcPvdBn3C.png)
 
 ```python
 import os
@@ -2866,9 +2866,9 @@ void __fastcall add(__int64 *a1)
 3. 构造参数。暂时没想到怎么做
 4. ret2libc。但是暂时没想到怎么绕过 BPF。
 
-![reg 1](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/TucHbpNRrosqMoxfTSEcJvrCnVJ.png)
+![reg 1](./TucHbpNRrosqMoxfTSEcJvrCnVJ.png)
 
-![reg 2](/assets/posts/2024-01-02-ctf-writeup-cbctf2023/D0Zjbo6IDoVwmCxCtBycn4aQnMc.png)
+![reg 2](./D0Zjbo6IDoVwmCxCtBycn4aQnMc.png)
 
 `_IO_file_setbuf` 这个函数看起来不错。试一下。`_IO_file_setbuf + 0xD` 的地址在 `a1[25]`。需要使用 add 函数减去 `0x3983Dll==235581ll`~~，也就是加上 uint64_t 的~~~~0xFFFFFFFFFFFC67C3ull == 18446744073709316035ull~~ 不必要。因为输入的时候是个 `%lld`。
 

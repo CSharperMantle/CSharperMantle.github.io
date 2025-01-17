@@ -16,10 +16,17 @@ social:
     - https://github.com/CSharperMantle
     - https://twitter.com/CSMantle3
 show_excerpts: true
+permalink: date
+
+collections:
+  static:
+    output: true
+    permalink: /:path:output_ext
 
 markdown: kramdown
 theme: minima
 plugins:
+  - jekyll-postfiles
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
