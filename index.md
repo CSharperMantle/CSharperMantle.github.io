@@ -3,7 +3,7 @@ layout: home
 title: Home
 ---
 
-I am Rong "Mantle" Bao, a second-year Computer Science student at 杭州电子科技大学/Hangzhou Dianzi University. 
+I am Rong "Mantle" Bao, a second-year Computer Science student. Welcome to my personal blog site, where I bake all my potatoes.
 
 - :raising_hand_man: Pronoun: he/him
 - :link: <https://github.com/CSharperMantle/>
