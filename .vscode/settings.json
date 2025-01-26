@@ -1,31 +1,31 @@
 {
-    "cSpell.words": [
-        "afterbegin",
-        "beforeend",
-        "blaz",
-        "builtins",
-        "consts",
-        "crossorigin",
-        "csharpermantle",
-        "elemid",
-        "getitem",
-        "gsap",
-        "mainpage",
-        "nonlocal",
-        "opac",
-        "prefill",
-        "printf",
-        "rustc",
-        "switchable",
-        "switchables",
-        "zhihu"
-    ],
-    "eslint.options": {
-        "configFile": ".eslintrc.js"
-    },
-    "eslint.validate": [
-        "javascript",
-        "html"
-    ],
-    "python.pythonPath": "K:\\Python\\Python38-32\\python.exe"
+  "cSpell.words": [
+    "afterbegin",
+    "beforeend",
+    "blaz",
+    "builtins",
+    "consts",
+    "crossorigin",
+    "csharpermantle",
+    "elemid",
+    "getitem",
+    "gsap",
+    "mainpage",
+    "nonlocal",
+    "opac",
+    "prefill",
+    "printf",
+    "rustc",
+    "switchable",
+    "switchables",
+    "zhihu"
+  ],
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
+  "eslint.validate": ["javascript", "html"],
+  "markdownlint.config": {
+    "default": true,
+    "MD033": false
+  }
 }
