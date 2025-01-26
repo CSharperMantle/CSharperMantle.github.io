@@ -7,7 +7,9 @@ categories: misc translation
 ---
 
 > 原标题：Be mindful of temporal terms in documents: What is the reference point in time?
+> 
 > 作者：Raymond Chen
+> 
 > 地址：<https://devblogs.microsoft.com/oldnewthing/20250122-00/?p=110797>
 
 ------
@@ -17,6 +19,7 @@ categories: misc translation
 例如，在pull request中也许会有如下的对话：
 
 > 甲：“如果文件不存在会发生什么？”
+> 
 > 乙：“目前来说，如果文件不存在它会崩溃。”
 
 此处“目前”所指代的时刻具有歧义。
