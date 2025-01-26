@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python随笔（i1）：DataFrame多条件“与”选择 Parallel Criteria Selection in DataFrame"
-date: 2022-01-22 13:15:23 +0800
+date: 2022-01-22T13:15:23+08:00
 lang: zh-Hans
 categories: python-notes informal
 ---

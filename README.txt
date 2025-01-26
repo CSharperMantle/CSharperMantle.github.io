@@ -2,6 +2,7 @@ Personal blog repository.
 ------
 
 Current post categories:
+
 - ctf
     - wp
 - ee
@@ -15,6 +16,7 @@ Current post categories:
 - machine-learning
 - misc
     - networking
+    - translation
 - python-notes
     - informal
 - site

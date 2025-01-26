@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python随笔（1）：int常量池 Constant Pooling of int"
-date: 2020-08-24 17:51:24 +0800
+date: 2020-08-24T17:51:24+08:00
 lang: zh-Hans
 categories: python-notes
 ---

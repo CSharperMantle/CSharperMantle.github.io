@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "简短的问候"
-date: 2024-04-24 17:36:45 +0800
+date: 2024-04-24T17:36:45+08:00
 lang: zh-Hans
 categories: misc
 ---

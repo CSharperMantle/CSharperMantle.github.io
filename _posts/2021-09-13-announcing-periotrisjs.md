@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing Periotris.js"
-date: 2021-09-13 12:27:38 +0800
+date: 2021-09-13T12:27:38+08:00
 categories: games periotrisjs
 ---
 

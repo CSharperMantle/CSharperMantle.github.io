@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Upgrading VITS to PyTorch 2 on Windows"
-date: 2023-06-14 07:08:25 +0800
+date: 2023-06-14T07:08:25+08:00
 lang: en
 categories: machine-learning
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What can I scanf? Buffer out"
-date: 2024-05-07 20:12:34 +0800
+date: 2024-05-07T20:12:34+08:00
 lang: en
 description: >-
     In this short blog, we discuss the specs-defined, yet largely-ignored buffer behavior of C

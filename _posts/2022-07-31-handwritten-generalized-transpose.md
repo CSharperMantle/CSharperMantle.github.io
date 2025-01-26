@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Code Snippet: Generalized Transpose in C++"
-date: 2022-07-31 12:47:32 +0800
+date: 2022-07-31T12:47:32+08:00
 lang: en
 categories: snippets
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A single fmtstr away from shell"
-date: 2024-02-04 17:00:25 +0800
+date: 2024-02-04T17:00:25+08:00
 lang: en
 description: >-
     In this article we describe a special kind of Pwn challenge in which

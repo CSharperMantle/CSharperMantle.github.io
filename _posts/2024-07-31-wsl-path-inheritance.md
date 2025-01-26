@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Turning off $PATH inheritance in a WSL2 guest"
-date: 2024-07-31 14:10:02 +0800
+date: 2024-07-31T14:10:02+08:00
 lang: en
 description: >-
     For Windows builds higher than 17713, there is a convenient way to prevent

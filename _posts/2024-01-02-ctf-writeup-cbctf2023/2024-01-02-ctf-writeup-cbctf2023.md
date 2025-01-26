@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CBCTF 2023 Writeup - csmantle"
-date: 2024-01-02 14:21:03 +0800
+date: 2024-01-02T14:21:03+08:00
 lang: zh-Hans
 categories: ctf wp
 ---
