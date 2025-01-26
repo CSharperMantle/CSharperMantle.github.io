@@ -17,12 +17,4 @@ I am Rong "Mantle" Bao, a second-year Computer Science student at 杭州电子�
   <img alt="CSharperMantle's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=CSharperMantle&theme=dracula&show_icons=true&count_private=true" />
 </p>
 
-<p align="center">
-  <img alt="CSharperMantle's languages" src="https://github-readme-stats.vercel.app/api/top-langs?username=CSharperMantle&size_weight=0.5&count_weight=0.5&show_icons=true&theme=dracula" />
-</p>
-
-<p align="center">
-  <img alt="CSharperMantle's GitHub trophies" src="https://github-profile-trophy.vercel.app/?username=CSharperMantle&theme=onedark" />
-</p>
-
 ------
