@@ -1,0 +1,21 @@
+/* https://github.com/adobe-fonts/source-sans/blob/82818d477056d06ae48f9c68970f9bffd56ce139/source-sans-3VF.css */
+
+@font-face {
+  font-family: "Source Sans 3 VF";
+  font-weight: 200 900;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("/assets/fonts/SourceSans3VF/Upright.ttf.woff2") format("woff2-variations"),
+    url("/assets/fonts/SourceSans3VF/Upright.ttf.woff") format("woff-variations"),
+    url("/assets/fonts/SourceSans3VF/Upright.ttf") format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Source Sans 3 VF";
+  font-weight: 200 900;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("/assets/fonts/SourceSans3VF/Italic.ttf.woff2") format("woff2-variations"),
+    url("/assets/fonts/SourceSans3VF/Italic.ttf.woff") format("woff-variations"),
+    url("/assets/fonts/SourceSans3VF/Italic.ttf") format("truetype-variations");
+}

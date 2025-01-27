@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Cascadia Code VF";
+  font-weight: 200 900;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("/assets/fonts/CascadiaCode-2407.24/Normal.woff2") format("woff2-variations"),
+    url("/assets/fonts/CascadiaCode-2407.24/Normal.ttf") format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Cascadia Code VF";
+  font-weight: 200 900;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("/assets/fonts/CascadiaCode-2407.24/Italic.woff2") format("woff2-variations"),
+    url("/assets/fonts/CascadiaCode-2407.24/Italic.ttf") format("truetype-variations");
+}
