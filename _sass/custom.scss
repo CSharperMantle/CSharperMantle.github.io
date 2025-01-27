@@ -19,3 +19,8 @@
 .break-anywhere {
   @include break-anywhere;
 }
+
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
