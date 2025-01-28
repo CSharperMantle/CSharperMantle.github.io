@@ -35,21 +35,26 @@ ul.post-tags-list {
   gap: 0.5em;
   flex-wrap: wrap;
 
-  >li {
+  > li {
     border: thin solid $grey-color;
     border-radius: 5px;
     padding: 0.1em 0.5em;
     font-size: $small-font-size;
+    > a {
+      color: inherit;
+      text-decoration: none;
+      font: inherit;
+    }
   }
 
-  >li.primary {
-    font-weight: bold;
+  > li:hover {
+    background-color: $grey-color-dark;
   }
 }
 
 ul.post-list {
-  >li {
-    >h3 {
+  > li {
+    > h3 {
       margin: 0;
     }
     .post-excerpt {

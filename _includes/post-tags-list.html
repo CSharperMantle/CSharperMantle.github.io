@@ -1,14 +1,14 @@
 <ul class="post-tags-list">
   {%- for tag in include.page_object.tags -%}
     {%- assign tag_is_primary = tag | start_with: 'topic:' -%}
-    {%- if tag_is_primary -%}
-      <li class="primary">
-        <span>{{ tag | split: ':' | last }}</span>
-      </li>
-    {%- else -%}
       <li>
-        <span>{{ tag }}</span>
+        <a href="{% link tags.html %}#li-tagged-pages-{{ tag }}">
+          {%- if tag_is_primary == true -%}
+          <strong>{{ tag | strip_tag_type }}</strong>
+          {%- else -%}
+          {{ tag }}
+          {%- endif -%}
+        </a>
       </li>
-    {%- endif -%}
   {%- endfor -%}
 </ul>

@@ -1,0 +1,65 @@
+---
+layout: post
+title: Tags
+nav_priority: 10
+---
+{%- assign sorted_tags = site.tags | sort -%}
+<section>
+  <h2>Topic tags</h2>
+  <p>These tags describe each post's primary topic. Each post is assigned exactly one topic tag. Click on each tag to view associated pages.</p>
+  <ul>
+    {%- for tag in sorted_tags -%}
+      {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
+      {%- if tag_is_topic == true -%}
+      <li id="li-tags-{{ tag[0] }}">
+        <a href="#li-tagged-pages-{{ tag[0] }}">{{ tag[0] | strip_tag_type }}</a>
+      </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</section>
+<section>
+  <h2>Secondary tags</h2>
+  <p>These are tags for minor topics and keywords in each post. This list grows constantly as now posts are added. As above, click on each tag to view associated pages.</p>
+  <ul>
+    {%- for tag in sorted_tags -%}
+      {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
+      {%- if tag_is_topic == false -%}
+      <li id="li-tags-{{ tag[0] }}">
+        <a href="#li-tagged-pages-{{ tag[0] }}">{{ tag[0] }}</a>
+      </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</section>
+<hr>
+<section>
+  <h2>Tagged pages</h2>
+  <p>This section lists all pages associated with a specific tag in chronologically ascending order. Bolded tags are topic tags. The upward arrow next to each tag name is for quick navigation back to the tag index.</p>
+  <ul>
+    {%- for tag in sorted_tags -%}
+    {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
+    <li id="li-tagged-pages-{{ tag[0] }}">
+      {%- if tag_is_topic == true -%}
+      <span><strong>{{ tag[0] | strip_tag_type }}</strong></span>
+      {%- else -%}
+      <span>{{ tag[0] }}</span>
+      {%- endif -%}
+      <a href="#li-tags-{{ tag[0] }}">&uarr;</a>
+      <ul>
+        {%- assign sorted_posts = tag[1] | sort: "date" | reverse -%}
+        {%- for post in sorted_posts -%}
+        <li>
+          <p>
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            (<time datetime="{{ post.date | date_to_xmlschema }}">
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              {{- post.date | date: date_format -}}</time>)
+          </p>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
