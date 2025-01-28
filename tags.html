@@ -10,9 +10,11 @@ nav_priority: 10
   <ul>
     {%- for tag in sorted_tags -%}
       {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
+      {%- assign n_pages = tag[1] | length -%}
       {%- if tag_is_topic == true -%}
       <li id="li-tags-{{ tag[0] }}">
         <a href="#li-tagged-pages-{{ tag[0] }}">{{ tag[0] | strip_tag_type }}</a>
+        <span>({{ n_pages }} page{%- if n_pages != 1 -%}s{%- endif -%})</span>
       </li>
       {%- endif -%}
     {%- endfor -%}
@@ -24,9 +26,11 @@ nav_priority: 10
   <ul>
     {%- for tag in sorted_tags -%}
       {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
+      {%- assign n_pages = tag[1] | length -%}
       {%- if tag_is_topic == false -%}
       <li id="li-tags-{{ tag[0] }}">
         <a href="#li-tagged-pages-{{ tag[0] }}">{{ tag[0] }}</a>
+        <span>({{ n_pages }} page{%- if n_pages != 1 -%}s{%- endif -%})</span>
       </li>
       {%- endif -%}
     {%- endfor -%}
@@ -39,7 +43,6 @@ nav_priority: 10
   <ul>
     {%- for tag in sorted_tags -%}
     {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
-    {%- assign n_pages = tag[1] | length -%}
     <li id="li-tagged-pages-{{ tag[0] }}">
       {%- if tag_is_topic == true -%}
       <span><strong>{{ tag[0] | strip_tag_type }}</strong></span>
@@ -47,7 +50,6 @@ nav_priority: 10
       <span>{{ tag[0] }}</span>
       {%- endif -%}
       <a href="#li-tags-{{ tag[0] }}">&uarr;</a>
-      <span>({{ n_pages }} page{%- if n_pages != 1 -%}s{%- endif -%})</span>
       <ul>
         {%- assign sorted_posts = tag[1] | sort: "date" | reverse -%}
         {%- for post in sorted_posts -%}
