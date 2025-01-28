@@ -55,7 +55,7 @@ tags: topic:ctf writeup hgame-2024
 
 > HTTP Protocol Basics
 
-```text-plain
+```plain-text
 PS D:\Workspace\rev\hgame_2024> curl -v http://139.196.200.143:30264
 *   Trying 139.196.200.143:30264...
 * Connected to 139.196.200.143 (139.196.200.143) port 30264
@@ -185,7 +185,7 @@ PS D:\Workspace\rev\hgame_2024>
 
 不是 X-Forwarded-For，那么是 X-Real-IP，虽然这东西很少见，资料也不多。
 
-```text-plain
+```plain-text
 PS D:\Workspace\rev\hgame_2024> curl -v -H "Referer: vidar.club" -H "User-Agent: Mozilla/5.0 (Vidar; VidarOS x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" -H "X-Real-IP: 127.0.0.1" http://139.196.200.143:30264
 *   Trying 139.196.200.143:30264...
 * Connected to 139.196.200.143 (139.196.200.143) port 30264
@@ -314,7 +314,7 @@ if __name__ == "__main__":
     success(check_result)
 ```
 
-```text-plain
+```plain-text
 mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$ python ./Select\ Courses/sol.py
 [*] Selecting course 2
 [+] Selected 1 courses
@@ -346,7 +346,7 @@ mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$
 
 直接 curl 一份网页下来。
 
-```text-plain
+```plain-text
 PS D:\Workspace\rev\hgame_2024> curl -v http://47.100.245.185:31910/register_page.php
 *   Trying 47.100.245.185:31910...
 * Connected to 47.100.245.185 (47.100.245.185) port 31910
@@ -401,7 +401,7 @@ PS D:\Workspace\rev\hgame_2024>
 
 构造一个 form 提交上去。
 
-```text-plain
+```plain-text
 PS D:\Workspace\rev\hgame_2024> curl -v -X POST -d "username=phpIsManure&password=phpIsManure&register=1" http://47.100.245.185:31910/register.php
 Note: Unnecessary use of -X or --request, POST is already inferred.
 *   Trying 47.100.245.185:31910...
@@ -571,7 +571,7 @@ with remote("47.100.139.115", 32676) as r:
     r.interactive()
 ```
 
-```text-plain
+```plain-text
 mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$ python ./ezshellcode/sol.py
 [*] '/mnt/d/Workspace/rev/hgame_2024/ezshellcode/attachment/vuln'
     Arch:     amd64-64-little
@@ -722,7 +722,7 @@ with remote("47.100.137.175", 30511) as r:
     r.interactive()
 ```
 
-```text-plain
+```plain-text
 mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$ python ./Elden\ Ring\ 1/sol.py
 [*] '/mnt/d/Workspace/rev/hgame_2024/Elden Ring 1/attachment/vuln'
     Arch:     amd64-64-little
@@ -836,7 +836,7 @@ int main(void) {
 
 先放 gadget
 
-```text-plain
+```plain-text
 mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$ one_gadget ./Elden\ Random\ Challenge/attachment/libc.so.6
 0xe3afe execve("/bin/sh", r15, r12)
 constraints:
@@ -898,7 +898,7 @@ with remote("47.100.137.175", 30766) as r:
     r.interactive()
 ```
 
-```text-plain
+```plain-text
 D:\Workspace\pwnenv\Lib\site-packages\pwnlib\log.py:396: BytesWarning: Bytes is not text; assuming ISO-8859-1, no guarantees. See https://docs.pwntools.com/#bytes   
   self._log(logging.INFO, message, args, kwargs, 'info')
 [*] aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaaï¾­Þ#@@@´@]@
@@ -977,7 +977,7 @@ void __fastcall vuln()
 
 找 offset：
 
-```text-plain
+```plain-text
 mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$ ./ezfmt/attachment/attachment/vuln
 the shit is ezfmt, M3?
 make strings and getshell
@@ -1017,7 +1017,7 @@ with remote("47.100.137.175", 31709) as r:
 
 多试一试就出了。
 
-```text-plain
+```plain-text
 mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$ python ./ezfmt/sol.py
 [*] '/mnt/d/Workspace/rev/hgame_2024/ezfmt/attachment/attachment/vuln'
     Arch:     amd64-64-little
@@ -1068,7 +1068,7 @@ check_flag:
 
 简单异或。
 
-```text-plain
+```plain-text
 (pwnenv) PS D:\Workspace\rev\hgame_2024> python
 Python 3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
@@ -1087,7 +1087,7 @@ hgame{ASM_Is_Imp0rt4nt_4_Rev3rs3}
 
 直接 pycdc 失败。
 
-```text-plain
+```plain-text
 (pwnenv) PS D:\Workspace\rev\hgame_2024\ezPYC> D:\bdist\pyinstxtractor-ng.exe .\ezPYC.exe
 [+] Processing .\ezPYC.exe
 [+] Pyinstaller version: 2.1+
@@ -1113,7 +1113,7 @@ Unsupported opcode: JUMP_BACKWARD
 
 直接看字节码。
 
-```text-plain
+```plain-text
 (pwnenv) PS D:\Workspace\rev\hgame_2024\ezPYC> D:\bdist\pycdc\Release\pycdas.exe .\ezPYC.exe_extracted\ezPYC.pyc
 ezPYC.pyc (Python 3.11)
 [Code]
@@ -1208,7 +1208,7 @@ ezPYC.pyc (Python 3.11)
 
 解密代码如下：
 
-```text-plain
+```plain-text
 PS D:\Workspace\rev\hgame_2024> python
 Python 3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
@@ -1241,7 +1241,7 @@ VIDAR{Python_R3vers3_1s_1nter3st1ng!}
 
 直接 dump 出来然后解密即可。注意密文常量数组的长度。
 
-```text-plain
+```plain-text
 PS D:\Workspace\rev\hgame_2024\ezUPX> python
 Python 3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
@@ -1318,7 +1318,7 @@ m = pow(c, d, n)
 success(long_to_bytes(m))
 ```
 
-```text-plain
+```plain-text
 (pwnenv) PS D:\Workspace\rev\hgame_2024> & d:/Workspace/pwnenv/Scripts/python.exe d:/Workspace/rev/hgame_2024/ezRSA/sol.py
 D:\Workspace\pwnenv\Lib\site-packages\pwnlib\log.py:347: BytesWarning: Bytes is not text; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
   self._log(logging.INFO, message, args, kwargs, 'success')
@@ -1443,7 +1443,7 @@ dec = cipher.decrypt(enc)
 success(dec)
 ```
 
-```text-plain
+```plain-text
 (pwnenv) PS D:\Workspace\rev\hgame_2024> & d:/Workspace/pwnenv/Scripts/python.exe d:/Workspace/rev/hgame_2024/ezMath/sol.py
 D:\Workspace\pwnenv\Lib\site-packages\pwnlib\log.py:347: BytesWarning: Bytes is not text; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
   self._log(logging.INFO, message, args, kwargs, 'success')
@@ -1479,7 +1479,7 @@ D:\Workspace\pwnenv\Lib\site-packages\pwnlib\log.py:347: BytesWarning: Bytes is 
 
 用 bandizip 以不同压缩程度（1-3）压缩题目给的图片，然后依次尝试。
 
-```text-plain
+```plain-text
 PS D:\bdist\bkcrack-1.5.0-win64> .\bkcrack.exe -L D:\Workspace\rev\hgame_2024\simple_attack\src\103223779_p0_1.zip
 bkcrack 1.5.0 - 2022-07-07
 Archive: D:\Workspace\rev\hgame_2024\simple_attack\src\103223779_p0_1.zip
@@ -1615,7 +1615,7 @@ done
 
 还真行
 
-```text-plain
+```plain-text
 ┌──(kali㉿kali)-[~]
 └─$ stegseek --crack ~/secret.jpg -wl ~/wordlist.txt
 StegSeek 0.6 - https://github.com/RickdeJager/StegSeek
