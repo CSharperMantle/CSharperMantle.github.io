@@ -1,0 +1,14 @@
+<ul class="post-tags-list">
+  {%- for tag in include.page_object.tags -%}
+    {%- assign tag_is_primary = tag | start_with: 'topic:' -%}
+    {%- if tag_is_primary -%}
+      <li class="primary">
+        <span>{{ tag | split: ':' | last }}</span>
+      </li>
+    {%- else -%}
+      <li>
+        <span>{{ tag }}</span>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>

@@ -5,20 +5,7 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <ul class="post-tags-list">
-      {%- for tag in page.tags -%}
-        {%- assign tag_is_primary = tag | start_with: 'topic:' -%}
-        {%- if tag_is_primary -%}
-          <li class="primary">
-            <span>{{ tag | split: ':' | last }}</span>
-          </li>
-        {%- else -%}
-          <li>
-            <span>{{ tag }}</span>
-          </li>
-        {%- endif -%}
-      {%- endfor -%}
-    </ul>
+    {%- include post-tags-list.html page_object=page -%}
     <span class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
