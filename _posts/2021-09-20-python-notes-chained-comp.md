@@ -3,7 +3,7 @@ layout: post
 title: "Python随笔（2）：连锁比较操作 Chained Comparisons"
 date: 2021-09-20T18:29:31+08:00
 lang: zh-Hans
-tags: topic:dev prog-lang
+tags: topic:dev programming-language python
 ---
 
 ## 0. 前言

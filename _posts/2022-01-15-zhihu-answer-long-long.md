@@ -5,7 +5,7 @@ date: 2022-01-15T07:58:46+08:00
 lang: zh-Hans
 description: >-
     本文是一篇知乎回答的草稿。
-tags: topic:misc
+tags: topic:misc zhihu-answer c programming-language
 ---
 
 有意思的问题。我们先来看看`long long`的发展历史。

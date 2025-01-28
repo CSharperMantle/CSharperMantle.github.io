@@ -3,7 +3,7 @@ layout: post
 title: "Python随笔（5）：数值字面量与一元取反操作符 Numeric Literals vs. Unary Negation Operator"
 date: 2022-06-11T19:51:42+08:00
 lang: zh-Hans
-tags: topic:dev prog-lang
+tags: topic:dev programming-language python
 ---
 
 ## 0. 前言

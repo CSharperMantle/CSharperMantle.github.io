@@ -3,7 +3,7 @@ layout: post
 title: "Comments with utteranc.es"
 date: 2024-08-26T18:27:32+08:00
 lang: en
-tags: topic:site
+tags: topic:site utteranc.es
 ---
 
 You can now leave comments on each post with your GitHub account! This is achieved through service provided by <https://utteranc.es/>. Slide to the bottom to see the comment area, or [quickly go there now!](#utterances-comments)

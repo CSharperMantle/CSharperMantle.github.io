@@ -3,7 +3,7 @@ layout: post
 title: "CBCTF 2023 Writeup - csmantle"
 date: 2024-01-02T14:21:03+08:00
 lang: zh-Hans
-tags: topic:ctf writeup
+tags: topic:ctf writeup cbctf-2023
 ---
 
 杭州电子科技大学网络安全赛博协会 0RAYS 战队第七届 "赛博杯" 网络安全大赛 (CBCTF 2023) (<https://mp.weixin.qq.com/s/M6hdEf4thXjYwVF0QlAH7A>)

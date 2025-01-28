@@ -3,7 +3,7 @@ layout: post
 title: "Python随笔（1）：int常量池 Constant Pooling of int"
 date: 2020-08-24T17:51:24+08:00
 lang: zh-Hans
-tags: topic:dev prog-lang
+tags: topic:dev programming-language python
 ---
 ## 0. 前言
 浙江省新版高中技术教材将采用Python 3作为信息技术教学语言。作为一名高一学生，笔者开始复习自己的Python知识。复习之余，特意开设这个系列，来记录自己的复习所得。
