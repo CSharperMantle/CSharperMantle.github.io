@@ -7,7 +7,7 @@ tags: topic:research encoding
 use_mathjax: true
 ---
 
-> 中文版本[见此](/misc/2024/10/10/fixed-point-in-truncated-base64-encoding-zh.html).
+> 中文版本[见此]({% link _posts/2024-10-10-fixed-point-in-truncated-base64-encoding-zh.md %}).
 
 ## 1. Introduction
 

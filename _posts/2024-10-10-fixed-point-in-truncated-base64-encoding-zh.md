@@ -7,7 +7,7 @@ tags: topic:research encoding translation
 use_mathjax: true
 ---
 
-> An English version is available [here](/misc/2024/10/03/fixed-point-in-truncated-base64-encoding.html).
+> An English version is available [here]({% link _posts/2024-10-03-fixed-point-in-truncated-base64-encoding.md %}).
 
 ## 1. 导语
 
