@@ -3,7 +3,7 @@ layout: post
 title: "Code Snippet: Generalized Transpose in C++"
 date: 2022-07-31T12:47:32+08:00
 lang: en
-categories: snippets
+tags: topic:dev snippet
 ---
 
 Generalized transpose, or 'permutation' sometimes, reorders the dimensions of a tensor.

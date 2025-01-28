@@ -3,7 +3,7 @@ layout: post
 title: "Fixed point in truncated Base64 encoding: analysis and proof with Z3"
 date: 2024-10-03T16:05:08+08:00
 lang: en
-categories: misc
+tags: topic:research encoding
 use_mathjax: true
 ---
 

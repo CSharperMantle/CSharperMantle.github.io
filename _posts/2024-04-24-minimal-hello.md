@@ -3,7 +3,7 @@ layout: post
 title: "简短的问候"
 date: 2024-04-24T17:36:45+08:00
 lang: zh-Hans
-categories: misc
+tags: topic:dev
 ---
 
 ## 1. 问题描述

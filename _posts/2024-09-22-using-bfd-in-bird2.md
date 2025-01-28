@@ -3,7 +3,7 @@ layout: post
 title: "在 BIRD2 中使用 BFD 协议"
 date: 2024-09-22T18:04:31+08:00
 lang: zh
-categories: misc networking
+tags: topic:misc networking
 ---
 
 > 本文为 [DN11](https://dn11.top/) 项目编写.

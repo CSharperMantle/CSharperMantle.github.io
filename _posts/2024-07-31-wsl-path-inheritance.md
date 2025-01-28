@@ -8,7 +8,7 @@ description: >-
     the inheritance of $PATH on the host environment into guests. Inherited
     $PATH may lead to significantly-low performance on certain scenarios, such as
     tab completion and shell theming.
-categories: misc
+tags: topic:misc wsl
 ---
 
 ## 1. Description of problem

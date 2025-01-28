@@ -2,7 +2,7 @@
 layout: post
 title: "Announcing Periotris.js"
 date: 2021-09-13T12:27:38+08:00
-categories: games periotrisjs
+tags: topic:misc game periotrisjs announcement
 ---
 
 **[Periotris.js](https://github.com/CSharperMantle/periotrisjs/)** is a Progressive Web App-compliant [Periotris](https://github.com/CSharperMantle/Periotris.Net/) game built with [React](https://reactjs.org/) in TypeScript, [Gatsby](https://www.gatsbyjs.com/) and [Material UI](https://material-ui.com/). Aimed to be played directly on modern browsers, Periotris.js is a great tool for teaching periodic table in a fun way.

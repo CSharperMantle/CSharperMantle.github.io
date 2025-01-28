@@ -3,7 +3,7 @@ layout: post
 title: "Finite state machine pitfalls with Chisel, SystemVerilog and Vivado"
 date: 2024-11-22T21:10:41+08:00
 lang: en
-categories: ee digital-logics
+tags: topic:dev ee digital-logics
 use_mathjax: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "Good bye, Crowded-Up Laundries: Building chart database for AstroDX"
 date: 2023-10-07T21:25:28+08:00
 lang: en
-categories: games maimai
+tags: topic:misc game maimai-dx astrodx
 ---
 
 ## 0. Introduction

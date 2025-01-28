@@ -3,7 +3,7 @@ layout: post
 title: "Endianness in ESP32/Arduino IPAddress"
 date: 2022-03-20T07:42:14+08:00
 lang: en-US
-categories: embed esp32
+tags: topic:dev embedded
 ---
 
 ## 0. Introduction

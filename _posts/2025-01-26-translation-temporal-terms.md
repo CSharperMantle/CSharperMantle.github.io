@@ -3,7 +3,7 @@ layout: post
 title: "翻译：《留意文档中的时间用语：参照时刻为何？》"
 date: 2025-01-26T13:50:47+08:00
 lang: zh
-categories: misc translation
+tags: topic:misc translation old-new-thing
 ---
 
 > 原标题：Be mindful of temporal terms in documents: What is the reference point in time?

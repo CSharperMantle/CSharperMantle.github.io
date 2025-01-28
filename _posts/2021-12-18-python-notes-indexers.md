@@ -3,7 +3,7 @@ layout: post
 title: "Python随笔（4）：自定义索引器 Custom Indexers"
 date: 2021-10-15T07:58:46+08:00
 lang: zh-Hans
-categories: python-notes
+tags: topic:dev prog-lang
 ---
 
 ## 0. 前言

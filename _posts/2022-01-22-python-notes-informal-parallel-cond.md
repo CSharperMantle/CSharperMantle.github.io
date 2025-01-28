@@ -3,7 +3,7 @@ layout: post
 title: "Python随笔（i1）：DataFrame多条件“与”选择 Parallel Criteria Selection in DataFrame"
 date: 2022-01-22T13:15:23+08:00
 lang: zh-Hans
-categories: python-notes informal
+tags: topic:dev prog-lang
 ---
 
 可以使用`&`操作符连接由形为`dataframe_obj[col] Op arg`的语句所创建的布尔值`Series`。
