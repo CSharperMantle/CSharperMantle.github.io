@@ -144,7 +144,7 @@ func GetUserByUsernameOrToken(username string, token string) (*User, error) {
 
 可以看到 SQL 被很好地包装了起来，所以不存在 SQLi。
 
-同时，实现一遍项目中使用的 session 库的 HMAC 算法（见 [https://github.com/gorilla/securecookie/blob/v1.1.2/securecookie.go#L259](https://github.com/gorilla/securecookie/blob/v1.1.2/securecookie.go#L259)）后，发现代码中提供的 session_secret 也并不是服务端使用的，所以不能伪造 cookies。
+同时，实现一遍项目中使用的 session 库的 HMAC 算法（见 <https://github.com/gorilla/securecookie/blob/v1.1.2/securecookie.go#L259>）后，发现代码中提供的 session_secret 也并不是服务端使用的，所以不能伪造 cookies。
 
 ```ini
 [sqlite]
@@ -184,7 +184,7 @@ PS D:\Workspace\rev\hgame_2024\week_3>
 
 那么只剩下逻辑漏洞一种可能。
 
-这个应用提供了用户信息查询功能，首页的 memory 查询首先从后端获取用户所有的列，再在前端选取需要的列进行展示。同时，我们**不难注意**到 GORM 库文档（[https://gorm.io/docs/query.html#Struct-amp-Map-Conditions](https://gorm.io/docs/query.html#Struct-amp-Map-Conditions)）中的这样一句话：
+这个应用提供了用户信息查询功能，首页的 memory 查询首先从后端获取用户所有的列，再在前端选取需要的列进行展示。同时，我们**不难注意**到 GORM 库文档（<https://gorm.io/docs/query.html#Struct-amp-Map-Conditions>）中的这样一句话：
 
 > **NOTE** When querying with struct, GORM will only query with non-zero fields, that means if your field’s value is `0`, `''`, `false` or other <u>zero values</u>, it won’t be used to build query conditions, for example:
 >
@@ -385,7 +385,7 @@ public class BackdoorController {
 }
 ```
 
-hack 函数将 URL 参数 fname 与 `"file:///non_exists/"` 和 `".xml"` 拼接。不难发现这里存在一个目录穿越漏洞，~~如果能够绕过 file:协议的限制就可以读取远程文件。~~不需要绕过 file:协议，因为其本身就支持从 FTP 服务器获取文件，详见 [https://web.archive.org/web/20051219043731/http://archive.ncsa.uiuc.edu/SDG/Software/Mosaic/Demo/url-primer.html](https://web.archive.org/web/20051219043731/http://archive.ncsa.uiuc.edu/SDG/Software/Mosaic/Demo/url-primer.html)。Mosaic（Netscape 的前身）实现了这个特性，所以在 Mosaic 的生命周期后期发布的 JDK 1.0“兼容”这个特性应该很合理...... 吧？
+hack 函数将 URL 参数 fname 与 `"file:///non_exists/"` 和 `".xml"` 拼接。不难发现这里存在一个目录穿越漏洞，~~如果能够绕过 file:协议的限制就可以读取远程文件。~~不需要绕过 file:协议，因为其本身就支持从 FTP 服务器获取文件，详见 <https://web.archive.org/web/20051219043731/http://archive.ncsa.uiuc.edu/SDG/Software/Mosaic/Demo/url-primer.html>。Mosaic（Netscape 的前身）实现了这个特性，所以在 Mosaic 的生命周期后期发布的 JDK 1.0“兼容”这个特性应该很合理...... 吧？
 
 接下来是一个明显的 XXE，但是有白名单。考虑文件编码绕过。
 
@@ -485,7 +485,7 @@ pwndbg>
 
 GLIBC 2.27 具有 tcache double free 检查。我们需要先填满该块大小的 tcache，以将目标块的一个引用副本直接放到 fastbin 里面，再清空 tcache，将另一个副本正常放入 tcache。
 
-[https://github.com/stong/how-to-exploit-a-double-free](https://github.com/stong/how-to-exploit-a-double-free)
+<https://github.com/stong/how-to-exploit-a-double-free>
 
 于是不难编写最终的 exp 脚本：
 
@@ -1618,7 +1618,7 @@ for i in range(1, n + 2):
 
 从中选取合适的结果就是 flag。
 
-[https://cyberchef.org/#recipe=From_Hex('None')&input=ZmZmZmZmZmZmZmZmNWY2ODY3NjE2ZDY1N2I0ODMxNjQ2NDMzNmU1ZjRlNzU2ZDYyMzM3MjVmNTA3MjMwNjI2YzMzNmQ1ZjY4NjE3MzVmNjQ2OTY2NjYzMzcyNjU2ZTc0NWY3MzMxNzQ3NTYxNzQ2OTMwNmU3ZGZmZmZmZmZm](https://cyberchef.org/#recipe=From_Hex('None')&input=ZmZmZmZmZmZmZmZmNWY2ODY3NjE2ZDY1N2I0ODMxNjQ2NDMzNmU1ZjRlNzU2ZDYyMzM3MjVmNTA3MjMwNjI2YzMzNmQ1ZjY4NjE3MzVmNjQ2OTY2NjYzMzcyNjU2ZTc0NWY3MzMxNzQ3NTYxNzQ2OTMwNmU3ZGZmZmZmZmZm)
+<https://cyberchef.org/#recipe=From_Hex('None')&input=ZmZmZmZmZmZmZmZmNWY2ODY3NjE2ZDY1N2I0ODMxNjQ2NDMzNmU1ZjRlNzU2ZDYyMzM3MjVmNTA3MjMwNjI2YzMzNmQ1ZjY4NjE3MzVmNjQ2OTY2NjYzMzcyNjU2ZTc0NWY3MzMxNzQ3NTYxNzQ2OTMwNmU3ZGZmZmZmZmZm>
 
 `hgame{H1dd3n_Numb3r_Pr0bl3m_has_diff3rent_s1tuati0n}`
 
@@ -1627,7 +1627,7 @@ for i in range(1, n + 2):
 ### 与 AI 聊天
 
 > 跟他聊一聊吧，从他嘴里翘出 flag
-> [https://udify.app/chat/oRajccxObXREMLlO](https://udify.app/chat/oRajccxObXREMLlO)
+> <https://udify.app/chat/oRajccxObXREMLlO>
 > 注意请不要过快提问
 
 基础 prompt engineering。
@@ -1650,7 +1650,7 @@ for i in range(1, n + 2):
 
 ![](./KDcWb7mdyou8UVxGYGYcAQI4n6d.png)
 
-[https://cyberchef.org/#recipe=From_Decimal('Line%20feed',false)Reverse('Character')&input=MTI1CjEwMgo1MAoxMDIKOTcKNTYKNTAKNTcKNTMKOTkKNTYKNTEKMTAwCjQ1CjU0Cjk5Cjk3Cjk4CjQ1CjU2CjU3CjEwMQo1Mgo0NQo1Mwo1MAo1NQo0OQo0NQo1NQoxMDEKMTAyCjk3Cjk4Cjk3Cjk4Cjk5CjEyMwoxMDMKOTcKMTA4CjEwMgo0NA](https://cyberchef.org/#recipe=From_Decimal('Line%20feed',false)Reverse('Character')&input=MTI1CjEwMgo1MAoxMDIKOTcKNTYKNTAKNTcKNTMKOTkKNTYKNTEKMTAwCjQ1CjU0Cjk5Cjk3Cjk4CjQ1CjU2CjU3CjEwMQo1Mgo0NQo1Mwo1MAo1NQo0OQo0NQo1NQoxMDEKMTAyCjk3Cjk4Cjk3Cjk4Cjk5CjEyMwoxMDMKOTcKMTA4CjEwMgo0NA)
+<https://cyberchef.org/#recipe=From_Decimal('Line%20feed',false)Reverse('Character')&input=MTI1CjEwMgo1MAoxMDIKOTcKNTYKNTAKNTcKNTMKOTkKNTYKNTEKMTAwCjQ1CjU0Cjk5Cjk3Cjk4CjQ1CjU2CjU3CjEwMQo1Mgo0NQo1Mwo1MAo1NQo0OQo0NQo1NQoxMDEKMTAyCjk3Cjk4Cjk3Cjk4Cjk5CjEyMwoxMDMKOTcKMTA4CjEwMgo0NA>
 
 `flag{cbabafe7-1725-4e98-bac6-d38c5928af2f}`
 
@@ -1662,9 +1662,9 @@ for i in range(1, n + 2):
 > 附件下载：
 > 链接：
 >
-> - 百度网盘： [https://pan.baidu.com/s/1IYeZ1oRjo2zO-Wf6mB2TVA](https://pan.baidu.com/s/1IYeZ1oRjo2zO-Wf6mB2TVA) 提取码：vics
-> - OneDrive: https://1drv.ms/u/s!ApqEx2DdrD-aoZAr04PLsH2cZESgHA?e=H41gaj
-> - 夸克云盘： [https://pan.quark.cn/s/2b03994942f1#/list/share](https://pan.quark.cn/s/2b03994942f1#/list/share)
+> - 百度网盘： <https://pan.baidu.com/s/1IYeZ1oRjo2zO-Wf6mB2TVA> 提取码：vics
+> - OneDrive: <https://1drv.ms/u/s!ApqEx2DdrD-aoZAr04PLsH2cZESgHA?e=H41gaj>
+> - 夸克云盘： <https://pan.quark.cn/s/2b03994942f1#/list/share>
 
 Mount，dump 出注册表文件，然后使用 impacket-secretsdump 即可获取 NT Hash。
 
@@ -1696,7 +1696,7 @@ SUPPORT_388945a0:1002:aad3b435b51404eeaad3b435b51404ee:f9a0ee136422ce87371cf1666
 
 NT hash 转大写拼接即可。
 
-[https://cyberchef.org/#recipe=To_Upper_case('All')&input=ZGFjM2EyOTMwZmMxOTYwMDFmM2FlYWI5NTk3NDg0NDg](https://cyberchef.org/#recipe=To_Upper_case('All')&input=ZGFjM2EyOTMwZmMxOTYwMDFmM2FlYWI5NTk3NDg0NDg)
+<https://cyberchef.org/#recipe=To_Upper_case('All')&input=ZGFjM2EyOTMwZmMxOTYwMDFmM2FlYWI5NTk3NDg0NDg>
 
 `hgame{DAC3A2930FC196001F3AEAB959748448_Admin1234}`
 
@@ -1704,7 +1704,7 @@ NT hash 转大写拼接即可。
 
 > 找到 veracrypt 的文件，拿到 flag 吧
 > 补充附件：
-> 链接：[https://pan.baidu.com/s/19pj-juLLE4BY0lVxFyO4iQ](https://pan.baidu.com/s/19pj-juLLE4BY0lVxFyO4iQ)  提取码：ccyk
+> 链接：<https://pan.baidu.com/s/19pj-juLLE4BY0lVxFyO4iQ>  提取码：ccyk
 > **Hint1 **备注：需要与另一道取证题的附件结合起来看
 
 上一题中的用户桌面上存在一个图片：

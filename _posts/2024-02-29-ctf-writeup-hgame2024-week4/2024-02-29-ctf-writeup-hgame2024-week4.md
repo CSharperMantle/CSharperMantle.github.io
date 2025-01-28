@@ -800,7 +800,7 @@ pub fn message_page(
 
 仅仅伪造签名并不够，因为当且仅当 JWT 中的字段 `id` 和 `username` 对应时，这个 JWT 才有意义。为了找到 `Liki4` 的 ID（的大致范围），我们创建一个新用户以确定其上界。
 
-[https://cyberchef.org/#recipe=JWT_Decode()&input=ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnBaQ0k2TVRjek1pd2lkWE5sY201aGJXVWlPaUowWlhOMElpd2laWGh3SWpveE56QTRPRFk0T1RneWZRLjI0MWpSbUJqNzdZZkpEUjdDelJWWUs0Q3ZmR1lvM0NkYm9PNVAtNmFIOFU](https://cyberchef.org/#recipe=JWT_Decode()&input=ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnBaQ0k2TVRjek1pd2lkWE5sY201aGJXVWlPaUowWlhOMElpd2laWGh3SWpveE56QTRPRFk0T1RneWZRLjI0MWpSbUJqNzdZZkpEUjdDelJWWUs0Q3ZmR1lvM0NkYm9PNVAtNmFIOFU)
+<https://cyberchef.org/#recipe=JWT_Decode()&input=ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnBaQ0k2TVRjek1pd2lkWE5sY201aGJXVWlPaUowWlhOMElpd2laWGh3SWpveE56QTRPRFk0T1RneWZRLjI0MWpSbUJqNzdZZkpEUjdDelJWWUs0Q3ZmR1lvM0NkYm9PNVAtNmFIOFU>
 
 ```json
 {
@@ -1611,7 +1611,7 @@ mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024/week_4/crackme2$
 
 起手一个 XOR。
 
-[https://cyberchef.org/#recipe=XOR(%7B'option':'Hex','string':'27'%7D,'Standard',false)](https://cyberchef.org/#recipe=XOR(%7B'option':'Hex','string':'27'%7D,'Standard',false))
+<https://cyberchef.org/#recipe=XOR(%7B'option':'Hex','string':'27'%7D,'Standard',false)
 
 有密码，~~考虑爆破。~~ 考虑已知明文攻击。~~但是压缩方式是 deflate 而不是 store，而且没有提供相应的明文。~~
 

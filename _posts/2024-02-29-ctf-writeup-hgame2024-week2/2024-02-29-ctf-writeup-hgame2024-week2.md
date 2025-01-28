@@ -246,7 +246,7 @@ public class SearchController {
 
 `http://106.14.57.14:32143/?keyword=web%27+OR+%27%25%27%3D%27`
 
-[https://www.sonarsource.com/blog/dotcms515-sqli-to-rce/](https://www.sonarsource.com/blog/dotcms515-sqli-to-rce/)
+<https://www.sonarsource.com/blog/dotcms515-sqli-to-rce/>
 
 Stacked queries 可解。
 
@@ -273,7 +273,7 @@ web%'; INSERT INTO member(id, intro, blog) VALUES ('Mantle2', 'Hacker2', RCE3('c
 
 需要爆破弱密码。字典选 SecLists 里面随意一个。
 
-[https://github.com/danielmiessler/SecLists](https://github.com/danielmiessler/SecLists)
+<https://github.com/danielmiessler/SecLists>
 
 ![](./IknCbuyN6oHCSfxobRgcsquqnzf.png)
 
@@ -470,7 +470,7 @@ PS C:\Users\Mantle Bao>
 
 Golang SSTI + XSS
 
-[https://www.onsecurity.io/blog/go-ssti-method-research/](https://www.onsecurity.io/blog/go-ssti-method-research/)
+<https://www.onsecurity.io/blog/go-ssti-method-research/>
 
 测试 Payload：
 
@@ -529,7 +529,7 @@ for i in range(64):
 
 ![](./E3Qvb5lYNoVlwAxBM39cmcTOnGg.png)
 
-[https://cyberchef.org/#recipe=From_Decimal('Line%20feed',false)URL_Decode()&input=MTA0CjEwMwo5NwoxMDkKMTAxCjM3CjU1CjY2CjU2CjEwMAoxMDAKNTMKNTMKNTAKMTAyCjQ5CjEwMAo5OQo1NQoxMDIKNTcKNTIKNDgKNTYKNTUKMTAxCjUzCjk4CjEwMAo0OQo0OAoxMDIKOTcKMTAxCjUwCjU1CjU3CjUwCjUzCjk5CjUzCjU0CjU3CjUxCjUxCjU0CjU1CjUyCjM3CjU1CjY4CjM3CjQ4CjY1](https://cyberchef.org/#recipe=From_Decimal('Line%20feed',false)URL_Decode()&input=MTA0CjEwMwo5NwoxMDkKMTAxCjM3CjU1CjY2CjU2CjEwMAoxMDAKNTMKNTMKNTAKMTAyCjQ5CjEwMAo5OQo1NQoxMDIKNTcKNTIKNDgKNTYKNTUKMTAxCjUzCjk4CjEwMAo0OQo0OAoxMDIKOTcKMTAxCjUwCjU1CjU3CjUwCjUzCjk5CjUzCjU0CjU3CjUxCjUxCjU0CjU1CjUyCjM3CjU1CjY4CjM3CjQ4CjY1)
+<https://cyberchef.org/#recipe=From_Decimal('Line%20feed',false)URL_Decode()&input=MTA0CjEwMwo5NwoxMDkKMTAxCjM3CjU1CjY2CjU2CjEwMAoxMDAKNTMKNTMKNTAKMTAyCjQ5CjEwMAo5OQo1NQoxMDIKNTcKNTIKNDgKNTYKNTUKMTAxCjUzCjk4CjEwMAo0OQo0OAoxMDIKOTcKMTAxCjUwCjU1CjU3CjUwCjUzCjk5CjUzCjU0CjU3CjUxCjUxCjU0CjU1CjUyCjM3CjU1CjY4CjM3CjQ4CjY1>
 
 `hgame{8dd552f1dc7f94087e5bd10fae27925c56933674}`
 
@@ -717,7 +717,7 @@ void __fastcall delete_note()
 
 tcache poisoning 技巧可用。
 
-[https://github.com/shellphish/how2heap/blob/master/glibc_2.31/tcache_poisoning.c](https://github.com/shellphish/how2heap/blob/master/glibc_2.31/tcache_poisoning.c)
+<https://github.com/shellphish/how2heap/blob/master/glibc_2.31/tcache_poisoning.c>
 
 构造指向 puts 的 GOT 项的 note，打印其内容，计算得到 libc 基址，然后将其覆写为 system 的实际地址。由于 puts 和 system 的签名非常类似，所以可以靠 show 一个内容为 `b"/bin/sh\x00"` 的 note 来 getshell。
 
@@ -1433,7 +1433,7 @@ PS D:\Workspace\rev\hgame_2024\week_2>
 
 MD5 即可得到 flag。
 
-[https://cyberchef.org/#recipe=MD5()&input=MTExMTExMTIyMjIyMTExMTExMTEyMjExMTIyMTExMjIyMjIxMjIxMTExMTEyMjIxMTIxMTIxMTIxMTEyMjIyMTIyMjExMTIyMjIxMjExMTIyMTIyMjIyMjExMjExMTExMjEyMjIyMTExMjExMTIyMjEyMjIyMjExMTExMTEyMTExMTExMTIxMTIxMjIxMTEyMjIyMTExMjExMTIxMTIxMTExMTIxMjIyMjIxMjEyMTExMTExMTEyMTIyMjIyMTIxMjExMTExMTIxMjIxMTEyMTExMTIyMjIxMTIyMTIyMTEyMjIxMjIyMjEyMTIyMjIxMTIxMTIxMjEyMTIyMjIyMjEyMTEyMjExMjEyMjIyMTExMTIxMjExMTIyMTEyMTEyMjExMjExMTEyMjIxMjIyMTIxMTExMTIxMTEyMTEyMTExMjIyMjIyMjEyMjEyMTIyMjIyMjExMTExMjIyMjExMjEyMTExMTEyMTIyMTExMjIxMTExMTExMjExMTEyMjIxMTExMjExMTIyMTEyMTIyMTExMjIxMjIxMTIxMTExMTIyMjIyMTIyMTEyMjEyMjIyMjIxMjIyMjEyMTIxMjExMTIyMTEyMTExMTIyMjEyMjIxMTEyMTIyMjEyMTIyMjIyMjEyMjEyMjEyMTIxMTIxMTIxMQ](https://cyberchef.org/#recipe=MD5()&input=MTExMTExMTIyMjIyMTExMTExMTEyMjExMTIyMTExMjIyMjIxMjIxMTExMTEyMjIxMTIxMTIxMTIxMTEyMjIyMTIyMjExMTIyMjIxMjExMTIyMTIyMjIyMjExMjExMTExMjEyMjIyMTExMjExMTIyMjEyMjIyMjExMTExMTEyMTExMTExMTIxMTIxMjIxMTEyMjIyMTExMjExMTIxMTIxMTExMTIxMjIyMjIxMjEyMTExMTExMTEyMTIyMjIyMTIxMjExMTExMTIxMjIxMTEyMTExMTIyMjIxMTIyMTIyMTEyMjIxMjIyMjEyMTIyMjIxMTIxMTIxMjEyMTIyMjIyMjEyMTEyMjExMjEyMjIyMTExMTIxMjExMTIyMTEyMTEyMjExMjExMTEyMjIxMjIyMTIxMTExMTIxMTEyMTEyMTExMjIyMjIyMjEyMjEyMTIyMjIyMjExMTExMjIyMjExMjEyMTExMTEyMTIyMTExMjIxMTExMTExMjExMTEyMjIxMTExMjExMTIyMTEyMTIyMTExMjIxMjIxMTIxMTExMTIyMjIyMTIyMTEyMjEyMjIyMjIxMjIyMjEyMTIxMjExMTIyMTEyMTExMTIyMjEyMjIxMTEyMTIyMjEyMTIyMjIyMjEyMjEyMjEyMTIxMTIxMTIxMQ)
+<https://cyberchef.org/#recipe=MD5()&input=MTExMTExMTIyMjIyMTExMTExMTEyMjExMTIyMTExMjIyMjIxMjIxMTExMTEyMjIxMTIxMTIxMTIxMTEyMjIyMTIyMjExMTIyMjIxMjExMTIyMTIyMjIyMjExMjExMTExMjEyMjIyMTExMjExMTIyMjEyMjIyMjExMTExMTEyMTExMTExMTIxMTIxMjIxMTEyMjIyMTExMjExMTIxMTIxMTExMTIxMjIyMjIxMjEyMTExMTExMTEyMTIyMjIyMTIxMjExMTExMTIxMjIxMTEyMTExMTIyMjIxMTIyMTIyMTEyMjIxMjIyMjEyMTIyMjIxMTIxMTIxMjEyMTIyMjIyMjEyMTEyMjExMjEyMjIyMTExMTIxMjExMTIyMTEyMTEyMjExMjExMTEyMjIxMjIyMTIxMTExMTIxMTEyMTEyMTExMjIyMjIyMjEyMjEyMTIyMjIyMjExMTExMjIyMjExMjEyMTExMTEyMTIyMTExMjIxMTExMTExMjExMTEyMjIxMTExMjExMTIyMTEyMTIyMTExMjIxMjIxMTIxMTExMTIyMjIyMTIyMTEyMjEyMjIyMjIxMjIyMjEyMTIxMjExMTIyMTEyMTExMTIyMjEyMjIxMTEyMTIyMjEyMTIyMjIyMjEyMjEyMjEyMTIxMTIxMTIxMQ>
 
 `hgame{934f7f68145038b3b81482b3d9f3a355}`
 
@@ -2030,7 +2030,7 @@ PS D:\Workspace\rev\hgame_2024\week_2> & d:/Workspace/pwnenv/Scripts/python.exe 
 PS D:\Workspace\rev\hgame_2024\week_2>
 ```
 
-[https://github.com/evilpan/jni_helper](https://github.com/evilpan/jni_helper)
+<https://github.com/evilpan/jni_helper>
 
 ```plain-text
 (pwnenv) PS D:\Workspace\rev\hgame_2024\week_2\babyAndroid> python D:\dist\jni_helper-master\extract_jni.py .\attachment.1.apk
@@ -2101,7 +2101,7 @@ Analyzing Dex... ━━━━━━━━━━━━━━━━━━━━━
 
 dump 出来后进行解密。
 
-[https://cyberchef.org/#recipe=From_Hex('Auto')AES_Decrypt(%7B'option':'Latin1','string':'G%3EIkH%3CaHu5FE3GSV'%7D,%7B'option':'Hex','string':''%7D,'ECB/NoPadding','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=MHg2NCwgMHhBMiwgMHg4MCwgMHhGRCwgMHgxQiwgMHgyMCwgMHhEMiwgMHg4RSwgMHhGQywgMHg1MiwgMHg5RSwgMHgxMywgMHhFRSwgMHhBMSwgMHhGRCwgMHgxRSwgMHg2NiwgMHgwQiwgMHg3QSwgMHg3MiwgMHhBMywgMHgxQiwgMHhEOCwgMHgzNiwgMHg2RiwgMHhEQywgMHgzRCwgMHhFRSwgMHgzQywgMHgwMSwgMHg1NywgMHg2Mw](https://cyberchef.org/#recipe=From_Hex('Auto')AES_Decrypt(%7B'option':'Latin1','string':'G%3EIkH%3CaHu5FE3GSV'%7D,%7B'option':'Hex','string':''%7D,'ECB/NoPadding','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=MHg2NCwgMHhBMiwgMHg4MCwgMHhGRCwgMHgxQiwgMHgyMCwgMHhEMiwgMHg4RSwgMHhGQywgMHg1MiwgMHg5RSwgMHgxMywgMHhFRSwgMHhBMSwgMHhGRCwgMHgxRSwgMHg2NiwgMHgwQiwgMHg3QSwgMHg3MiwgMHhBMywgMHgxQiwgMHhEOCwgMHgzNiwgMHg2RiwgMHhEQywgMHgzRCwgMHhFRSwgMHgzQywgMHgwMSwgMHg1NywgMHg2Mw)
+<https://cyberchef.org/#recipe=From_Hex('Auto')AES_Decrypt(%7B'option':'Latin1','string':'G%3EIkH%3CaHu5FE3GSV'%7D,%7B'option':'Hex','string':''%7D,'ECB/NoPadding','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=MHg2NCwgMHhBMiwgMHg4MCwgMHhGRCwgMHgxQiwgMHgyMCwgMHhEMiwgMHg4RSwgMHhGQywgMHg1MiwgMHg5RSwgMHgxMywgMHhFRSwgMHhBMSwgMHhGRCwgMHgxRSwgMHg2NiwgMHgwQiwgMHg3QSwgMHg3MiwgMHhBMywgMHgxQiwgMHhEOCwgMHgzNiwgMHg2RiwgMHhEQywgMHgzRCwgMHhFRSwgMHgzQywgMHgwMSwgMHg1NywgMHg2Mw>
 
 `hgame{df3972d1b09536096cc4dbc5c}`
 
@@ -2162,9 +2162,9 @@ PS D:\Workspace\rev\hgame_2024\week_2>
 
 Coppersmith's attack。
 
-[https://github.com/ashutosh1206/Crypton/blob/master/RSA-encryption/Attack-Coppersmith/README.md](https://github.com/ashutosh1206/Crypton/blob/master/RSA-encryption/Attack-Coppersmith/README.md)
+<https://github.com/ashutosh1206/Crypton/blob/master/RSA-encryption/Attack-Coppersmith/README.md>
 
-[https://crypto.stackexchange.com/questions/54822/coppersmiths-method-implementation](https://crypto.stackexchange.com/questions/54822/coppersmiths-method-implementation)
+<https://crypto.stackexchange.com/questions/54822/coppersmiths-method-implementation>
 
 ```python
 from sage.all import *
@@ -2638,7 +2638,7 @@ OCR 能得到结果。
 
 ~~https://ryan.govost.es/2018/03/09/deepsound.html~~
 
-~~[https://github.com/openwall/john/blob/bleeding-jumbo/run/deepsound2john.py](https://github.com/openwall/john/blob/bleeding-jumbo/run/deepsound2john.py)~~
+~~<https://github.com/openwall/john/blob/bleeding-jumbo/run/deepsound2john.py>~~
 
 DeepSound 密钥破解。
 
@@ -2665,19 +2665,19 @@ DeepSound 密钥破解。
 
 > 通过破译图片的水印来解开文档里的秘密吧！
 
-解包 Word 文件发现一些附件：一个加密的 ZIP，两张初音的图片（原图来自 pixiv [https://www.pixiv.net/en/artworks/100191209](https://www.pixiv.net/en/artworks/100191209)）和一份说明。
+解包 Word 文件发现一些附件：一个加密的 ZIP，两张初音的图片（原图来自 pixiv <https://www.pixiv.net/en/artworks/100191209>）和一份说明。
 
 考虑 PNG 隐写。
 
-[https://github.com/chishaxie/BlindWaterMark](https://github.com/chishaxie/BlindWaterMark)
+<https://github.com/chishaxie/BlindWaterMark>
 
 ![](./AeZub88kaoxVq8x96t2cIEqtncf.png)
 
 ZIP 压缩文件密码为 `T1hi3sI4sKey`。解开后得到另一个文件。
 
-[https://forums.anandtech.com/threads/not-spam.712117/](https://forums.anandtech.com/threads/not-spam.712117/)
+<https://forums.anandtech.com/threads/not-spam.712117/>
 
-[https://www.spammimic.com/decode.shtml](https://www.spammimic.com/decode.shtml)
+<https://www.spammimic.com/decode.shtml>
 
 解码后得到很多 utf-8 编码的 CJK 字符。
 
@@ -2685,7 +2685,7 @@ ZIP 压缩文件密码为 `T1hi3sI4sKey`。解开后得到另一个文件。
 
 观察到其前五项的 Unicode codepoint 相对差值与 `b"hgame"` 类似，考虑加法解密。编写脚本计算偏移并解码。
 
-[https://cyberchef.org/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,true)To_Charcode('Comma',10)&input=NTdHeDU3R3c1N0dxNTdHMjU3R3U1N0tFNTdDNTU3RzA1N0dvNTdLQzU3RzQ1N0crNTdHbzU3Rzg1N0M1NTdHMTU3Ry81N0d1NTdHbzU3R3E1N0cxNTdDNjU3R281N0c5NTdHeDU3Qzg1N0dvNTdHODU3R3U1N0dzNTdHNzU3Qzg1N0c5NTdLRw](https://cyberchef.org/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,true)To_Charcode('Comma',10)&input=NTdHeDU3R3c1N0dxNTdHMjU3R3U1N0tFNTdDNTU3RzA1N0dvNTdLQzU3RzQ1N0crNTdHbzU3Rzg1N0M1NTdHMTU3Ry81N0d1NTdHbzU3R3E1N0cxNTdDNjU3R281N0c5NTdHeDU3Qzg1N0dvNTdHODU3R3U1N0dzNTdHNzU3Qzg1N0c5NTdLRw)
+<https://cyberchef.org/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,true)To_Charcode('Comma',10)&input=NTdHeDU3R3c1N0dxNTdHMjU3R3U1N0tFNTdDNTU3RzA1N0dvNTdLQzU3RzQ1N0crNTdHbzU3Rzg1N0M1NTdHMTU3Ry81N0d1NTdHbzU3R3E1N0cxNTdDNjU3R281N0c5NTdHeDU3Qzg1N0dvNTdHODU3R3U1N0dzNTdHNzU3Qzg1N0c5NTdLRw>
 
 ```plain-text
 PS D:\Workspace\rev\hgame_2024\week_2> python

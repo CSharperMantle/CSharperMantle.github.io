@@ -1046,7 +1046,7 @@ mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$
 
 `hgame{0e67c884a988192e3ff7d19e31f49525161cc271}`
 
-写了篇文章讲这道题：[https://csharpermantle.github.io/ctf/2024/02/04/a-single-fmtstr-away-from-shell.html](https://csharpermantle.github.io/ctf/2024/02/04/a-single-fmtstr-away-from-shell.html)
+写了篇文章讲这道题：<https://csharpermantle.github.io/ctf/2024/02/04/a-single-fmtstr-away-from-shell.html>
 
 ## Reverse
 
