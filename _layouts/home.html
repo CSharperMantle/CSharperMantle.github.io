@@ -1,16 +1,13 @@
 ---
 layout: default
 ---
-
 <div class="home">
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
-
   <section id="section-content-index">
     {{ content }}
   </section>
-
   {%- if site.posts.size > 0 -%}
     <section id="section-posts">
       <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
@@ -38,8 +35,6 @@ layout: default
         {%- endfor -%}
       </ul>
     </section>
-
     <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
-
 </div>

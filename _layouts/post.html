@@ -2,7 +2,6 @@
 layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     {%- include post-tags-list.html page_object=page -%}
@@ -16,16 +15,12 @@ layout: default
       {%- endif -%}
     </span>
   </header>
-
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
-
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
-
 <hr>
-
 <div id="utterances-comments">
   <script src="https://utteranc.es/client.js"
     repo="CSharperMantle/CSharperMantle.github.io"
@@ -36,7 +31,6 @@ layout: default
     async>
   </script>
 </div>
-
 {% if page.use_mathjax %}
 <script>
   window.MathJax = {
