@@ -1,7 +1,6 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {%- assign page_paths = site.pages | where_exp: "item", "item.nav_priority >= 0" | sort: "nav_priority" | map: "path" -%}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     {%- if page_paths -%}
       <nav class="site-nav">

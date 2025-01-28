@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Friends
+nav_priority: 20
 ---
 
 * Woshiluo (<https://woshiluo.com/>)
