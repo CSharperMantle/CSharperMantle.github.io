@@ -4,6 +4,7 @@ title: "HGAME 2024 Writeup - Mantle - Week 3"
 date: 2024-02-29T12:00:02+08:00
 lang: zh
 tags: topic:ctf writeup hgame-2024
+use_mathjax: true
 ---
 
 原地址为<https://vidar-team.feishu.cn/docx/PtIjdxitiotao0xU7eXcBA4onwh>。
@@ -1505,7 +1506,7 @@ print(f'res={res}')
 
 问题复述如下：有一未知数$m$，给定质数$p$和$n$个数对$(r_i,t_i)$，满足$r_i \equiv t_i m\mod p \pmod{2^n+1}$。求$m$。
 
-由于 HNP 求解问题形式为$\beta_i - t_i m + a_i \equiv 0 \pmod p$ s.t. $\left|\beta_i\right| \lt B$，我们将上式重写为以下形式：$k_i(2^n+1)-(-t_im)+r_i \equiv 0 \pmod p$。设$l=2^n+1$，对$l$求$\mathbb{Z}_p$上的逆元即可把它放到已知量中。$B$的值需要多尝试几次，但是我们知道它的上界是$p\mathbin{/}2^K$，其中$K=\left\lceil\sqrt{\log p}\right\rceil+\left\lceil\log\log p\right\rceil=16$，所以多试几个大于 16 的$K$就可以。做完这些处理后就可以用格上的 SVP 求解了。
+由于 HNP 求解问题形式为$\beta_i - t_i m + a_i \equiv 0 \pmod p$ s.t. $\left\|\beta_i\right\| \lt B$，我们将上式重写为以下形式：$k_i(2^n+1)-(-t_im)+r_i \equiv 0 \pmod p$。设$l=2^n+1$，对$l$求$\mathbb{Z}_p$上的逆元即可把它放到已知量中。$B$的值需要多尝试几次，但是我们知道它的上界是$p\mathbin{/}2^K$，其中$K=\left\lceil\sqrt{\log p}\right\rceil+\left\lceil\log\log p\right\rceil=16$，所以多试几个大于 16 的$K$就可以。做完这些处理后就可以用格上的 SVP 求解了。
 
 （感谢这篇文章，梅开二度）
 

@@ -1385,7 +1385,7 @@ for i in range(4):
     finals += result_hex
 
 flag = str(uuid.UUID(finals))
-success(f"flag = hgame{{{flag}}}")
+success(f"flag = hgame{% raw %}{{{flag}}}{% endraw %}")
 ```
 
 ```bash

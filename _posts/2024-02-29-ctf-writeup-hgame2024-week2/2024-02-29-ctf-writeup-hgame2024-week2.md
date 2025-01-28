@@ -4,6 +4,7 @@ title: "HGAME 2024 Writeup - Mantle - Week 2"
 date: 2024-02-29T12:00:01+08:00
 lang: zh
 tags: topic:ctf writeup hgame-2024
+use_mathjax: true
 ---
 
 原地址为<https://vidar-team.feishu.cn/docx/TgRvdflpdosvCjxizpxcs7wqnOb>。
@@ -475,7 +476,7 @@ Golang SSTI + XSS
 测试 Payload：
 
 ```plain-text
-tmpl={{.Query `hack`}}
+tmpl={% raw %}{{.Query `hack`}}{% endraw %}
 hack=<script>alert(1)</script>
 ```
 
@@ -2335,7 +2336,7 @@ import hashlib
 from pwn import *
 
 flag_int = input("flag_int = ")
-success(f"flag: hgame{{{hashlib.sha256(flag_int.encode()).hexdigest()}}}")
+success(f"flag: hgame{% raw %}{{{hashlib.sha256(flag_int.encode()).hexdigest()}}}{% endraw %}")
 ```
 
 ```bash
