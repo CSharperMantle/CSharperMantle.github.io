@@ -35,12 +35,27 @@ ul.post-tags-list {
   gap: 0.5em;
   flex-wrap: wrap;
 
-  li {
-    border: thin solid $border-color;
+  >li {
+    border: thin solid $grey-color;
     border-radius: 5px;
     padding: 0.1em 0.5em;
     font-size: $small-font-size;
-    color: $grey-color;
+  }
+
+  >li.primary {
+    font-weight: bold;
+  }
+}
+
+ul.post-list {
+  >li {
+    >h3 {
+      margin: 0;
+    }
+    .post-excerpt {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
   }
 }
 

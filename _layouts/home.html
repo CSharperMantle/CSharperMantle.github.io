@@ -17,20 +17,31 @@ layout: default
       <ul class="post-list">
         {%- for post in site.posts -%}
         <li>
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-          <ul class="post-tags-list">
-            {%- for tag in post.tags -%}
-              <li class="post-tags-list-item">
-                <span>{{ tag }}</span>
-              </li>
-            {%- endfor -%}
-          </ul>
+          <span class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              {{ post.date | date: date_format }}
+            </time>
+          </span>
           <h3>
             <a class="post-link" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}
             </a>
           </h3>
+          <ul class="post-tags-list">
+            {%- for tag in post.tags -%}
+              {%- assign tag_is_primary = tag | start_with: 'topic:' -%}
+              {%- if tag_is_primary -%}
+                <li class="primary">
+                  <span>{{ tag | split: ':' | last }}</span>
+                </li>
+              {%- else -%}
+                <li>
+                  <span>{{ tag }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
           {%- if site.show_excerpts -%}
             <p class="post-excerpt">
               {{ post.content | strip_html | truncate: 250 }}
