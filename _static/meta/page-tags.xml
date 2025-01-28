@@ -1,0 +1,19 @@
+---
+---
+<?xml version="1.0" encoding="utf-8"?>
+<tags>
+  {% for tag in site.tags %}
+  <tag>
+    <name>{{ tag[0] }}</name>
+    <posts>
+      {% for post in tag[1] %}
+      <post>
+        <title>{{ post.title | escape }}</title>
+        <url>{{ post.url }}</url>
+        <date>{{ post.date }}</date>
+      </post>
+      {% endfor %}
+    </posts>
+  </tag>
+  {% endfor %}
+</tags>

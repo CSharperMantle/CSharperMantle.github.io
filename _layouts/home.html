@@ -19,6 +19,13 @@ layout: default
         <li>
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
           <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <ul class="post-tags-list">
+            {%- for tag in post.tags -%}
+              <li class="post-tags-list-item">
+                <span>{{ tag }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
           <h3>
             <a class="post-link" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}

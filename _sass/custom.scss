@@ -25,4 +25,23 @@ hr {
   margin-bottom: 1.5em;
 }
 
+ul.post-tags-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  flex-wrap: wrap;
+
+  li {
+    border: thin solid $border-color;
+    border-radius: 5px;
+    padding: 0.1em 0.5em;
+    font-size: $small-font-size;
+    color: $grey-color;
+  }
+}
+
 @import "fonts/all";
