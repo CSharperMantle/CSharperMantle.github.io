@@ -9,10 +9,11 @@ layout: default
     {{ content }}
   </section>
   {%- if site.posts.size > 0 -%}
-    <section id="section-posts">
+    <section id="section-recent-posts">
       <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
       <ul class="post-list">
-        {%- for post in site.posts -%}
+        {%- assign recent_15_posts = site.posts | slice: 0, 15 -%}
+        {%- for post in recent_15_posts -%}
         <li>
           <span class="post-meta">
             <time datetime="{{ post.date | date_to_xmlschema }}">
@@ -33,6 +34,7 @@ layout: default
           {%- endif -%}
         </li>
         {%- endfor -%}
+        <li><a href="{% link tags.html %}">... See all posts organized by tag.</a></li>
       </ul>
     </section>
     <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
