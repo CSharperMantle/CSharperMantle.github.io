@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Mantle's Potato Bar
+title: Home
 list_title: Recent 15 posts
 nav_priority: 0
 ---
