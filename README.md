@@ -31,14 +31,4 @@ These tags are prefixed with `topic:`.
 
 #### Detailed tags
 
-These tags are not pre-defined and not prefixed. The list below is non-exhaustive.
-
-* `announcement`: Generic announcements
-* `embedded`: Embedded system development
-* `game`: Gaming-related posts
-* `machine-learning`: Machine learning related posts
-* `networking`: Networking posts
-* `prog-lang`: Posts dedicated to the analysis, usage, and discussions of a certain programming language and its features. These posts usually don't focus on concrete applications
-* `snippet`: Code snippets
-* `translation`: A translation of some other content
-* `writeup`: A "write-up", or solution, to some CTF-style challenge
+See generated <https://csmantle.top/tags.html> for an up-to-date listing.
