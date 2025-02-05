@@ -4,8 +4,7 @@ title: "What can I scanf? Buffer out"
 date: 2024-05-07T20:12:34+08:00
 lang: en
 description: >-
-    In this short blog, we discuss the specs-defined, yet largely-ignored buffer behavior of C
-    standard library function `scanf` when it fails to match.
+    When we fail to pay attention to the specified behavior of failure.
 tags: topic:dev libc c
 ---
 
