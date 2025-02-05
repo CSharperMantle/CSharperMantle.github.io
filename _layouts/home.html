@@ -6,7 +6,7 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
   <section id="section-content-index">
-    {{ content }}
+    {{- content -}}
   </section>
   {%- if site.posts.size > 0 -%}
     <section id="section-recent-posts">
@@ -29,7 +29,11 @@ layout: default
           {%- include post-tags-list.html page_object=post -%}
           {%- if site.show_excerpts -%}
             <p class="post-excerpt">
-              {{ post.content | strip_html | truncate: 250 }}
+              {%- if post.description -%}
+                {{- post.description | escape -}}
+              {%- else -%}
+                {{- post.content | strip_html | truncate: 250 -}}
+              {%- endif -%}
             </p>
           {%- endif -%}
         </li>
