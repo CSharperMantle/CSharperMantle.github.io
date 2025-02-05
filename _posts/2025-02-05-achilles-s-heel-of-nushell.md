@@ -103,7 +103,7 @@ def get_codes []: record<left: any, right: any, syms: list<int>, weight: int> ->
 }
 ```
 
-The Nushell pros rationalize this as being [gradually typed](https://www.nushell.sh/lang-guide/chapters/types/00_types_overview.html). A mix of statically-typed and dynamically-typed values makes up the Nushell language. But it just defers the problem to run time. Allowing this compromise to exist is just like admitting defeat to bugs, a regression both to its functional syntax and today's trends of fast-failing.
+The Nushell pros rationalize this as being [gradually typed](https://www.nushell.sh/lang-guide/chapters/types/00_types_overview.html). A mix of statically-typed and dynamically-typed values makes up the Nushell language. But it just defers the problem to run time. Allowing this compromise to exist is just like admitting defeat to bugs, a regression in terms of both its functional semantics and today's trends of fast-failing.
 
 In a nutshell, the inability to designate user-specialized types is the Achilles's heel of Nushell. If you seek a purely functional experience in Nushell, you'd better learn to coexist with some jarring `any`.
 
