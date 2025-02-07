@@ -67,7 +67,7 @@ nop qword ptr [rbx+rcx*8+0x12340000]
 
 It's really an extended family thanks to the CISC architecture!
 
-Some other architectures have special registers that can be utilized to perform a nop. One example is the `x0` register in RISC-V RV32/64, whose ABI name is `zero`. It is hardwired to unsigned 0, and all writes to it are ignored[^5]. This feature leads to an intuitive implementation of nop: writing `x0` to `x0`. In RV32 assembly, it  is written as:
+Some other architectures have special registers that can be utilized to perform a nop. One example is the `x0` register in RISC-V RV32/64, whose ABI name is `zero`. [It is hardwired to unsigned 0, and all writes to it are ignored.](https://riscv-software-src.github.io/riscv-unified-db/manual/html/isa/isa_20240411/chapters/rv32.html#_programmers_model_for_base_integer_isa) This feature leads to an intuitive implementation of nop: writing `x0` to `x0`. In RV32 assembly, it is written as:
 
 ```asm
 mv x0, x0
@@ -170,17 +170,20 @@ PCs and laptops have to balance energy and performance. The Advanced Configurati
 
 The power consumption decreases as the power state transits from C0 to Cn, while the entry/exit latency increases.
 
-Some processor uses advanced architectures to support dynamic power adjustment. Intel Turbo Boost[^6] throttles or boosts clock frequency according to many factors. When under light load, some cores will "park"[^7], saving energy for these cores.
+Some processor uses advanced architectures to support dynamic power adjustment. Intel Turbo Boost[^5] throttles or boosts clock frequency according to many factors. When under light load, some cores will "park"[^6], saving energy for these cores.
 
 ## End of journey
 
-In this post, we have explored only the surface of doing nothing at all. So, next time when you plan to slack off, think it over. Sometimes it is just an innocuous rest, while sometimes you'd better be prepared for some unforeseen consequences[^8].
+In this post, we have explored only the surface of doing nothing at all. So, next time when you plan to slack off, think it over. Sometimes it is just an innocuous rest, while sometimes you'd better be prepared for some unforeseen consequences[^7].
+
+------
+
+### Footnotes
 
 [^1]: It's similar to many other Microsoft products.
 [^2]: P. Yosifovich, A. Ionescu, M. E. Russinovich, D. A. Solomon. *Windows Internals*, Seventh Edition. Part 1, Chapter 4, "Thread scheduling", "Idle threads". pp 260-263.
 [^3]: Intel Corporation. *Intel&reg; 64 and IA-32 Architectures Software Developer's Manual*, March 2023, Order Number: 253668-079US. Volume 2D: "Instruction Set Reference, W-Z". Chapter 6.1 "Instructions (W-Z)", "XCHG--Exchange Register/Memory With Register". pp 6-28.
 [^4]: Intel Corporation. *Intel&reg; 64 and IA-32 Architectures Software Developer's Manual*, March 2023, Order Number: 253668-079US. Volume 2B: "Instruction Set Reference, M-U". Chapter 4.3 "Instructions (M-U)", "NOP--No Operation". pp 4-165.
-[^5]: <https://riscv-software-src.github.io/riscv-unified-db/manual/html/isa/isa_20240411/chapters/rv32.html#_programmers_model_for_base_integer_isa>
-[^6]: Intel Corporation. *Intel&reg; Turbo Boost Technology in Intel&reg; Core&trade; Microarchitecture (Nehalem) Based Processors*, November 2008.
-[^7]: Yet Another Windowspeak&trade;
-[^8]: Thanks, G-Man!
+[^5]: Intel Corporation. *Intel&reg; Turbo Boost Technology in Intel&reg; Core&trade; Microarchitecture (Nehalem) Based Processors*, November 2008.
+[^6]: Yet Another Windowspeak&trade;
+[^7]: Thanks, G-Man!

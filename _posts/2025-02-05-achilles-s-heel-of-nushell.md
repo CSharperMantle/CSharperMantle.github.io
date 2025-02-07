@@ -107,4 +107,8 @@ The Nushell pros rationalize this as being [gradually typed](https://www.nushell
 
 In a nutshell, the inability to designate user-specialized types is the Achilles's heel of Nushell. If you seek a purely functional experience in Nushell, you'd better learn to coexist with some jarring `any`.
 
+------
+
+### Footnotes
+
 [^1]: Similar to [other](https://doc.rust-lang.org/nomicon/) [Rust](https://doc.rust-lang.org/book/) [projects](https://doc.rust-lang.org/cargo/index.html), the Nu Book is Nushell's compilation of documentation and guides, covering basic, intermediate and advanced chapters.
