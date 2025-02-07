@@ -170,7 +170,7 @@ PCs and laptops have to balance energy and performance. The Advanced Configurati
 
 The power consumption decreases as the power state transits from C0 to Cn, while the entry/exit latency increases.
 
-Some processor uses advanced architectures to support dynamic power adjustment. Intel Turbo Boost[^5] throttles or boosts clock frequency according to many factors. When under light load, some cores will "park"[^6], saving energy for these cores.
+Some processor uses advanced architectures to support dynamic power adjustment. Intel Turbo Boost[^5] throttles or boosts clock frequency according to many factors. When under light load, some cores will "park"[^6], saving energy for other active ones.
 
 ## End of journey
 
