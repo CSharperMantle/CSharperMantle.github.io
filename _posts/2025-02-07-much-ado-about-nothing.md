@@ -182,8 +182,8 @@ In this post, we have explored only the surface of doing nothing at all. So, nex
 
 [^1]: It's similar to many other Microsoft products.
 [^2]: P. Yosifovich, A. Ionescu, M. E. Russinovich, D. A. Solomon. *Windows Internals*, Seventh Edition. Part 1, Chapter 4, "Thread scheduling", "Idle threads". pp 260-263.
-[^3]: Intel Corporation. *Intel&reg; 64 and IA-32 Architectures Software Developer's Manual*, March 2023, Order Number: 253668-079US. Volume 2D: "Instruction Set Reference, W-Z". Chapter 6.1 "Instructions (W-Z)", "XCHG--Exchange Register/Memory With Register". pp 6-28.
-[^4]: Intel Corporation. *Intel&reg; 64 and IA-32 Architectures Software Developer's Manual*, March 2023, Order Number: 253668-079US. Volume 2B: "Instruction Set Reference, M-U". Chapter 4.3 "Instructions (M-U)", "NOP--No Operation". pp 4-165.
+[^3]: Intel Corporation. *Intel&reg; 64 and IA-32 Architectures Software Developer's Manual*, March 2023, Order Number: 334569-079US. Volume 2D: "Instruction Set Reference, W-Z". Chapter 6.1 "Instructions (W-Z)", "XCHG--Exchange Register/Memory With Register". pp 6-28.
+[^4]: Intel Corporation. *Intel&reg; 64 and IA-32 Architectures Software Developer's Manual*, March 2023, Order Number: 253667-079US. Volume 2B: "Instruction Set Reference, M-U". Chapter 4.3 "Instructions (M-U)", "NOP--No Operation". pp 4-165.
 [^5]: Intel Corporation. *Intel&reg; Turbo Boost Technology in Intel&reg; Core&trade; Microarchitecture (Nehalem) Based Processors*, November 2008.
 [^6]: Yet Another Windowspeak&trade;
 [^7]: Thanks, G-Man!
