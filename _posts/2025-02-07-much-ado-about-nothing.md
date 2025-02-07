@@ -81,13 +81,13 @@ addi x0, x0, 0
 
 ... which is exactly [the definition of `nop` in the ISA manual](https://riscv-software-src.github.io/riscv-unified-db/manual/html/isa/isa_20240411/chapters/rv32.html#_nop_instruction).
 
-Despite being a RISC architecture, the design of RV32 leaves room for other encodings of `nop`. It's not hard to see that `mv`-ing any register to `x0` would result in no effect. And since flags and comparison results are not encoded in RV32 ISA states but represented by conditional branches (e.g. `beq x1, zero, $imm`), almost all arithmetic instructions could be nop, as long as its destination register is `zero`.
+Despite being a RISC architecture, the design of RV32 leaves room for other nops. It's not hard to see that `mv`-ing any register to `x0` would result in no effect. And since flags and comparison results are not encoded in RV32 ISA states but represented by conditional branches (e.g. `beq x1, zero, $imm`), almost all arithmetic instructions could be nop, as long as its destination register is `zero`.
 
-Conditional branches can also be nops. Unsatisfiable conditions, and an always-taken jump to its static successor. Namely, the two following instructions are all nops:
+Conditional branches can also be nops. These typically include unsatisfiable conditions, and always-taken jumps to their static successors. For instance, the two following instructions are both nops:
 
 ```asm
 bne zero, zero, $imm
-beq zero, zero, 4
+beq zero, zero, 4  ; All RV32 instructions are 4 bytes long
 ```
 
 But some instructions can never be considered nops. See the following exercise for an example.
@@ -151,6 +151,17 @@ bne zero, zero, -0x40
 ```
 
 Here, Sequence 2 contains a branch never taken since `zero` always equals `zero`. However, the processor will predict it as taken since it jumps backward. It will have started running instructions at `-0x40` before it calculates that the branch is not taken. It will then have to discard all instructions fetched from `-0x40`, and start all over again at the correct place.
+
+Some multiple-issuing processors have a limited amount of multipliers and dividers. Assuming a four issue processor with two ALUs for integer arithmetic, one DSP for multiplications and divisions, and one memory port for loads and stores. Let's say that the designer doesn't add special cases for `zero` destination. If the following four instructions are fetched in one *fetch group*, they will fill up the issue queue, because although their operands are all ready, the processor can only issue `mul`s or `div`s at most once per cycle:
+
+```asm
+mul zero, x1, x2
+mul zero, x3, x4
+mul zero, x5, x6
+mul zero, x7, x8
+```
+
+In reality, these instructions will undergo *register renaming*, mapping architectural registers (e.g. `x0`) to physical registers. On committing, a reverse mapping is performed. This *write after write* hazard will occur at the commit stage, but not execution stage. However, this does not affect our analysis of a congested issue queue.
 
 From these examples, we can see that even if both you and your coworker are doing nothing, the price you pay for slacking off is still probably different.
 
