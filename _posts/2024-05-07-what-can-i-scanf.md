@@ -5,7 +5,7 @@ date: 2024-05-07T20:12:34+08:00
 lang: en
 description: >-
     When we fail to pay attention to the specified behavior of failure.
-tags: topic:dev libc c
+tags: topic:dev libc c/c++
 ---
 
 ## 1. Description of problem

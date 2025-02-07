@@ -3,7 +3,7 @@ layout: post
 title: "简短的问候"
 date: 2024-04-24T17:36:45+08:00
 lang: zh-Hans
-tags: topic:dev os c assembly
+tags: topic:dev os c/c++ assembly
 ---
 
 ## 1. 问题描述

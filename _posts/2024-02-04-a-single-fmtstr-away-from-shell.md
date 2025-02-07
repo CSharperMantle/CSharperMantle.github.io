@@ -7,7 +7,7 @@ description: >-
     In this article we describe a special kind of Pwn challenge in which
     only a single fmtstr is needed to get shell without overwriting returning
     address.
-tags: topic:ctf pwn c
+tags: topic:ctf pwn c/c++
 ---
 
 ## 0. Background
