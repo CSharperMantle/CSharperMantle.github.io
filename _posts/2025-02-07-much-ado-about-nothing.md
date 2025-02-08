@@ -152,7 +152,7 @@ bne zero, zero, -0x40
 
 Here, Sequence 2 contains a branch never taken since `zero` always equals `zero`. However, the processor will predict it as taken since it jumps backward. It will have started running instructions at `-0x40` before it calculates that the branch is not taken. It will then have to discard all instructions fetched from `-0x40`, and start all over again at the correct place.
 
-Some multiple-issuing processors have a limited amount of multipliers and dividers. Assuming a four-issue processor with two ALUs for integer arithmetic, one DSP for multiplications and divisions, and one memory port for loads and stores. Let's say that the designer doesn't add special cases for `zero` destinatiosn. If the following four instructions are fetched in one *fetch group*, they will fill up the issue queue, because although their operands are all ready, the processor can only issue `mul`s or `div`s at most once per cycle:
+Some multiple-issuing processors have a limited amount of multipliers and dividers. Assuming a four-issue processor with two ALUs for integer arithmetic, one DSP for multiplications and divisions, and one memory port for loads and stores. Let's say that the designer doesn't add special cases for `zero` destinations. If the following four instructions are fetched in one *fetch group*, they will fill up the issue queue, because although their operands are all ready, the processor can only issue `mul`s or `div`s at most once per cycle:
 
 ```asm
 mul zero, x1, x2
