@@ -80,11 +80,10 @@ for l in filter(lambda l: len(l) > 0, map(lambda l: l.strip(), sys.stdin.readlin
                 insns.append((mnemonic, args, bit_pat))
             state = State.MNEMONIC if rem_bits == 0 else State.BITS
 
-with io.StringIO(newline="") as f:
-    writer = csv.writer(f)
+with io.TextIOWrapper(sys.stdout.buffer, newline="") as stdout:
+    writer = csv.writer(stdout)
     writer.writerow(["mnemonic", "args", "bit_pat"])
     writer.writerows(insns)
-    print(f.getvalue())
 
 ```
 
