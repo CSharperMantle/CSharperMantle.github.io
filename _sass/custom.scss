@@ -1,3 +1,10 @@
+:root {
+  font-synthesis: style weight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @mixin break-anywhere {
   word-break: break-all;
   line-break: anywhere;
