@@ -6,7 +6,7 @@ lang: en
 description: >-
     Turn an AsciiDoc table of LoongArch instruction encodings into a
     machine-readable format.
-tags: topic:dev snippet python loongarch
+tags: topic:dev snippet python architecture loongarch
 ---
 
 This script turns [the AsciiDoc source of "Appendix A: Table of Instruction Encoding"](https://github.com/loongson/LoongArch-Documentation/blob/e2fb720ef303fd57c27eb1c80d4722dc6b5763c9/docs/LoongArch-Vol1-EN/table-of-instruction-encoding.adoc) in the *LoongArch Reference Manual, Volume 1: Basic Architecture* (a rendered version can be found [here](https://loongson.github.io/LoongArch-Documentation/LoongArch-Vol1-EN.html#table-of-instruction-encoding)) into machine-readable CSV lines containing mnemonic name, args, and bit patterns. It is also available as [a GitHub Gist](https://gist.github.com/CSharperMantle/97bb92f8f9e3689b5c19e4c64ee56aeb).
