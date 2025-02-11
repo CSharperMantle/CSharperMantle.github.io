@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A parser for LoongArch instruction encoding table"
-date: 2025-02-07T09:45:05+08:00
+date: 2025-02-09T22:39:48+08:00
 lang: en
 description: >-
     Turn an AsciiDoc table of LoongArch instruction encodings into a
