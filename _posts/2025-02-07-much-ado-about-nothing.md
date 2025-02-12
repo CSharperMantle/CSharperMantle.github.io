@@ -53,7 +53,7 @@ nop
 xchg rax, rax
 ```
 
-I guess most of us would the first line of each pair.
+I guess most of us would prefer the first in each pair.
 
 Curiously, x86-64 has a CPUID flag for "multi-byte NOPs", extending `nop` with stride-index-base memory access encoding[^4]. Thus, all of these are valid:
 
@@ -98,7 +98,7 @@ But some instructions can never be considered nops. See the following exercise f
 lw zero, 4(x1)
 ```
 
-Why is it **not** considered a nop, even though its destination is `zero`?
+Why is it **not** considered a nop, even though its destination is `zero`? Propose a possible use case for loads like this.
 
 ## A microscopic view
 
