@@ -13,7 +13,7 @@ Some deployed web apps:
 
 * [Periotris.js](/periotrisjs) ([repository](https://github.com/CSharperMantle/periotrisjs)): Variant of Tetris based on the periodic table of elements.
 * [la32r-instr-stats](/la32r-instr-stats) ([repository](https://github.com/CSharperMantle/la32r-instr-stats)): Count instructions in LoongArch32 Reduced binaries.
-* [ysyx-chip-area-visualizer](/ysyx-chip-area-visualizer) ([repository](https://github.com/CSharperMantle/ysyx-chip-area-visualizer)): Visualize [OSCPU/yosys-sta](https://github.com/OSCPU/yosys-sta) area reports.
+* [Y Chip Area Visualizer](/ysyx-chip-area-visualizer) ([repository](https://github.com/CSharperMantle/ysyx-chip-area-visualizer)): Visualize [Yosys](https://github.com/YosysHQ/yosys) [`stat`](https://yosyshq.readthedocs.io/projects/yosys/en/stable/cmd/stat.html) reports.
 
 
 ------
