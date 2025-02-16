@@ -28,7 +28,6 @@ theme: minima
 plugins:
   - jekyll-postfiles
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
   - jemoji
 
@@ -46,3 +45,9 @@ sass:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Extra URLs for reference in sitemap.xml
+extra_urls:
+  - url: /periotrisjs/
+  - url: /la32r-instr-stats/
+  - url: /ysyx-chip-area-visualizer
