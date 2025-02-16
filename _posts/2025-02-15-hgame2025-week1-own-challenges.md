@@ -18,20 +18,20 @@ HGAME 2025 ([Hello-CTF链接](https://github.com/ProbiusOfficial/Hello-CTFtime/i
 
 * **方向：** 逆向工程（RE）
 * **预期难度：** 简单
-* **正解/提交：**
+* **正解数/提交数：**
   * **校内：** 26/58 = 44.83%
   * **总计：** 453/762 = 59.45%
 * **仓库：** <https://github.com/CSharperMantle/hgame2025_compress_nu_public>
 
-简单的赛题，鼓励选手与AI交互以快速掌握新的语言与概念。值得一提的是，命题过程中我遇到了Nushell类型系统的一些缺陷，这点在[我的一篇短文]({% link _posts/2025-02-05-achilles-s-heel-of-nushell.md %})中有更详细的描述。
+一道简单的热身赛题，鼓励选手与AI交互以快速掌握新的概念、写出解题脚本。有趣的是，在命题过程中我发现Nushell类型系统难以表达递归类型，这大概是这个几乎函数式Shell语言的一点缺陷。[我的另一篇短文]({% link _posts/2025-02-05-achilles-s-heel-of-nushell.md %})中对此有更详细的描述。
 
 ## Two wires
 
 * **方向：** 杂项（Misc）、物联网（Internet-of-Things）
 * **预期难度：** 困难
-* **正解/提交：**
+* **正解数/提交数：**
   * **校内：** 3/71 = 4.23%
   * **总计：** 17/179 = 9.50%
 * **仓库：** <https://github.com/CSharperMantle/hgame2025_two_wires_public>
 
-综合了波形分析、固件逆向和文档检索的IoT赛题。由于HGAME不设IoT专项方向，因此本题归为Misc分类。
+综合了波形分析、固件逆向和文档检索的IoT赛题。由于HGAME不设IoT专项方向，因此本题归为Misc分类。当选手能够正确分析中断事件引起的状态变化时，离解出这道题也就不远了。当然，对AVR指令集的熟悉程度（或者快速查阅文档的能力）也是非常关键的。
