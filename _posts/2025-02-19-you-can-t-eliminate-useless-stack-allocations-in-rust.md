@@ -56,7 +56,7 @@ But the main idea is: Although the object is quite large and may vary in behavio
 
 ```rust
 struct VeryLargeButStaticallySizedObject {
-    data: [u8; {2 * 1024 * 1024}],
+    data: [u8; 2 * 1024 * 1024],
 }
 
 type MyObject = VeryLargeButStaticallySizedObject;
@@ -173,10 +173,12 @@ And this is the intended behavior.
 
 Is there a way to permanently enable this "move elision"? Unfortunately, no. There are many discussions already on Rust forums:
 
-* ["How to create large objects directly in heap"](https://users.rust-lang.org/t/how-to-create-large-objects-directly-in-heap/26405): Same problem in this 2019 post. The provided solution is basically "alloc, then do every field construction manually by filling in raw `u8`s." This is `unsafe`. Also, although it might be feasible for shallow objects, it will be a nightmare for deeper ones like those in my project.
-* ["How to boxed struct with large size without stack-overflow?"](https://users.rust-lang.org/t/how-to-boxed-struct-with-large-size-without-stack-overflow/94961): Same question in this 2023 post. The solution given is basically the same as above.
+* ["Remove all unstable placement features" (#48333)](https://github.com/rust-lang/rust/pull/48333): A 2018 pull request that basically rejects candidate placement new RFCs at that time.
+* ["How to create large objects directly in heap"](https://users.rust-lang.org/t/how-to-create-large-objects-directly-in-heap/26405): A 2019 Rust Users Forum thread with the same problem. The provided solution is basically "alloc, then do every field construction manually by filling in raw bytes." This is `unsafe`. Also, although it might be feasible for shallow objects, it will be a nightmare for deeper ones like those in my project.
+* ["Will Box::new() make a copy from stack to heap?"](https://stackoverflow.com/questions/77934697/will-boxnew-make-a-copy-from-stack-to-heap): A 2024 StackOverflow question for constructing an large array directly on the heap. The accepted answer is essentially the same as the previous one.
+* ["How to boxed struct with large size without stack-overflow?"](https://users.rust-lang.org/t/how-to-boxed-struct-with-large-size-without-stack-overflow/94961): A 2023 Rust Users Forum thread with the same problem. The solution given is similar to the previous one.
 
-Very interestingly, in the latter thread, one guy replied [the following reply](https://users.rust-lang.org/t/how-to-boxed-struct-with-large-size-without-stack-overflow/94961/14):
+Very interestingly, in the last thread, one user "khimru" replied [the following](https://users.rust-lang.org/t/how-to-boxed-struct-with-large-size-without-stack-overflow/94961/14):
 
 > "khimru" wrote in Jun 2023:
 > 
@@ -192,7 +194,7 @@ Later, in reply to a user named "kpreid", "khimru" wrote [these](https://users.r
 >
 > That's why I asked if that's an attempt to show that Rust is not yet "done" (is there any language which is actually 100% done?) or some kind of practical issue.
 
-Well, here I give you a practical case as you have requested. *This does happen from time to time, and Rust is surely not yet "done".*
+Well, here I give you a practical case as you have requested. *This does happen from time to time, and yes, Rust is surely not yet "done".*
 
 In the end, I gave up and told all my users to adjust stack space as needed.
 
