@@ -124,6 +124,10 @@ blockquote {
   border-left: 4px solid $grey-color-light;
   padding-left: math.div($spacing-unit, 2);
 
+  > :not(:last-child) {
+    margin-bottom: math.div($spacing-unit, 4);
+  }
+
   > :last-child {
     margin-bottom: 0;
   }
