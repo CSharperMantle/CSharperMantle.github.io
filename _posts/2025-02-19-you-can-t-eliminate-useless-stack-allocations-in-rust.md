@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "You can't eliminate useless stack allocations in Rust"
-date: 2025-02-1908:14:26+08:00
+date: 2025-02-19T08:14:26+08:00
 lang: en
 description: >-
     The shiny "language of the year" lacks such an important and widely-used feature.
