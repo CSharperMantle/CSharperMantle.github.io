@@ -11,6 +11,8 @@ A while ago, I wrote about [how Chisel's early optimization breaks common heuris
 Instead of following [Chisel's "advised way"](https://www.chisel-lang.org/docs/cookbooks/cookbook#how-do-i-create-a-finite-state-machine-fsm), you need to wrap every next state expression with [`dontTouch`](https://www.chisel-lang.org/api/latest/chisel3/dontTouch$.html) optimization barrier. Some wrappers are helpful in making this step more elegant, such as the following `MuxDontTouch`:
 
 ```scala
+import chisel3._
+
 object MuxDontTouch {
   def apply[T <: Data](cond: Bool, con: T, alt: T): T = {
     val conWire = WireInit(con)
@@ -143,4 +145,30 @@ Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:2
 ---------------------------------------------------------------------------------
 ```
 
-So I guess for now I will wrap every FSM with this helper object. After all, the synthesizer can optimize as well as (or maybe better than?) source-level compilers!
+So, for now, I will start wrapping every FSM with these helper objects. After all, the synthesizer can optimize as well as (and even better than) source-level compilers!
+
+**After story.** If you don't care about names of generated wires, you can simplify the wrapper objects into one single line.
+
+```scala
+import chisel3._
+
+object MuxDontTouch {
+  def apply[T <: Data](cond: Bool, con: T, alt: T): T = {
+    Mux(cond, dontTouch(WireInit(con)), dontTouch(WireInit(alt)))
+  }
+}
+```
+
+Writing other wrappers for `MuxLookup`s, `MuxCase`s, and `MuxCase1H`s is rather straightforward thanks to Scala's complete functional facilities. For example, this is a `MuxCaseDontTouch`:
+
+```scala
+import chisel3._
+
+object MuxCaseDontTouch {
+  def apply[T <: Data](default: T, mapping: Seq[(Bool, T)]): T = {
+    MuxCase(
+      dontTouch(WireInit(default)),
+      mapping.map((pair) => pair._1 -> dontTouch(WireInit(pair._2))))
+  }
+}
+```
