@@ -6,7 +6,7 @@ nav_priority: 10
 {%- assign sorted_tags = site.tags | sort -%}
 <section>
   <h2>Topic tags</h2>
-  <p>These tags describe each post's primary topic. Each post is assigned exactly one topic tag. Click on each tag to view associated pages.</p>
+  <p>These tags describe each post&apos;s primary topic. Each post is assigned exactly one topic tag. Click on each tag to view associated pages.</p>
   <ul>
     {%- for tag in sorted_tags -%}
       {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
@@ -22,7 +22,7 @@ nav_priority: 10
 </section>
 <section>
   <h2>Secondary tags</h2>
-  <p>These are tags for minor topics and keywords in each post. This list grows constantly as now posts are added. As above, click on each tag to view associated pages.</p>
+  <p>These are tags for minor topics and keywords in each post. This list grows constantly as new posts are added. As above, click on each tag to view associated pages.</p>
   <ul>
     {%- for tag in sorted_tags -%}
       {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
