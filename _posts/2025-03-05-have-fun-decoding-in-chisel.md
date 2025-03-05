@@ -28,6 +28,8 @@ Chisel's experimental public APIs often lack usage information. This post is als
 
 Suppose we are making an automatic burger maker and wish to use an FPGA as its controller. The stock contains these burgers:
 
+<div class="table-wrapper" markdown="block">
+
 | Burger           | ID  | Buns? | Cheese? | Bacon? | Patty? | Pickles? | Ketchup? |
 | ---------------- | --- | :---: | :-----: | :----: | :----: | :------: | :------: |
 | Classic Cheezy   | 0   |   Y   |    Y    |        |   Y    |    Y     |    Y     |
@@ -37,6 +39,8 @@ Suppose we are making an automatic burger maker and wish to use an FPGA as its c
 | Bacon Bliss      | 4   |   Y   |    Y    |   Y    |   Y    |          |    Y     |
 | Bunless Fury     | 5   |       |         |   Y    |   Y    |    Y     |          |
 | Ultimate Supreme | 6   |   Y   |    Y    |   Y    |   Y    |    Y     |    Y     |
+
+</div>
 
 The controller needs to know which burger contains what ingredients. That is, we are tasked to design a burger *decoder* that decodes a burger's ID into each ingredient's `enable` signal. When a burger contains a certain ingredient, its `en`[^1] signal should *assert* (go high).
 
