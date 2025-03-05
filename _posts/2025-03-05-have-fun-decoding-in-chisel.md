@@ -7,6 +7,14 @@ tags: topic:dev ee digital-logics chisel
 use_mathjax: true
 ---
 
+## 0. Introduction
+
+Decoders are everyday components in digital logic designs. Maintaining large, complex decoding circuits can be challenging in vanilla SystemVerilog. Today, we are exploring the utilities provided by [`chisel3.util.experimental.decode._`](https://javadoc.io/doc/org.chipsalliance/chisel_2.13/latest/chisel3/util/experimental/decode/index.html) to decode whatever we want elegantly. We'll see how Chisel's *circuit generator* nature contributes to its simplicity and extensibility.
+
+Chisel's experimental public APIs often lack usage information. This post is also intended to be an incomprehensive example of (in my view) important yet undocumented utilities.
+
+-----
+
 - [0. Introduction](#0-introduction)
 - [1. The problem](#1-the-problem)
 - [2. `TruthTable`: Programmatic logic generation](#2-truthtable-programmatic-logic-generation)
@@ -14,13 +22,7 @@ use_mathjax: true
   - [Extensibility](#extensibility)
 - [4. Conclusion](#4-conclusion)
 
-------
-
-## 0. Introduction
-
-Decoders are everyday components in digital logic designs. Maintaining large, complex decoding circuits can be challenging in vanilla SystemVerilog. Today, we are exploring the utilities provided by [`chisel3.util.experimental.decode._`](https://javadoc.io/doc/org.chipsalliance/chisel_2.13/latest/chisel3/util/experimental/decode/index.html) to decode whatever we want elegantly. We'll see how Chisel's *circuit generator* nature contributes to its simplicity and extensibility.
-
-Chisel's experimental public APIs often lack usage information. This post is also intended to be an incomprehensive example of (in my view) important yet undocumented utilities.
+-----
 
 ## 1. The problem
 
