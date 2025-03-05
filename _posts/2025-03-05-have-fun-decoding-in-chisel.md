@@ -319,7 +319,7 @@ It is logically equivalent to the Verilog versions. An optimizing synthesizer sh
 
 ## 3. `DecodeTable`: Combined truth tables
 
-In [Section 2](#2-truthtable-programmatic-logic-generation), we use `TruthTable`s to generate hardware circuits from Scala-land data. However, we instantiated 7 `TruthTable`s for each output field, and all of them have almost the same structure. Is there a way to deduplicate these?
+In [Section 2](#2-truthtable-programmatic-logic-generation), we use `TruthTable`s to generate hardware circuits from Scala-land data. However, we instantiated 7 `TruthTable`s, one for each output field. All of them have almost the same structure. Is there a way to deduplicate these?
 
 We can view this problem from the perspective of Boolean functions. We are given many decoders $f_i: X \rightarrow Y_i$ and all of them are defined over the same domain. Thus, it is natural to combine them into a single decoder $f: X \rightarrow \underset{i}{\times}Y_i$. Each $y \in Y_i$ is called a *field*, and the combined decoder $f$ is a *multi-field decoder*. The synthesizer is usually better at optimizing these combined decoders since their input-output relations are clearer.
 
@@ -723,6 +723,17 @@ module BurgerDecoder(
       &_result_andMatrixOutputs_T_3,
       &_result_andMatrixOutputs_T_4};
 endmodule
+```
+
+In conclusion, `DecodeTable`'s behavior can be modeled in this pseudocode program:
+
+```python
+def make_decode_table(patterns, fields):
+    truth_tables = [TruthTable() for i in range(0, len(fields))]
+    for i, f_i in enumerate(fields):
+        for j, p_j in enumerate(patterns):
+            truth_tables[i].add_entry(lhs = p_j.bitPat(), rhs = f_i.genTable(p_j))
+    return truth_tables
 ```
 
 ### Extensibility
