@@ -754,5 +754,7 @@ object IsBulkyField extends BoolDecodeField[BurgerPattern] {
 
 In this post, we have explored many ways to implement a complex decoder in Chisel with `DecodeTable` and friends. By understanding Chisel's generator nature and utilizing Scala's rich features, we can express the same logic much more efficiently, clearly, and extensibly.
 
+------
+
 [^1]: The abbreviation "en" could mean "enable" or "engage". Feel free to choose the one you like.
 [^2]: The same is true for most of Chisel's public APIs.
