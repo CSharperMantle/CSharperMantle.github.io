@@ -732,7 +732,7 @@ def make_decode_table(patterns, fields):
     truth_tables = [TruthTable() for i in range(0, len(fields))]
     for i, f_i in enumerate(fields):
         for j, p_j in enumerate(patterns):
-            truth_tables[i].add_entry(lhs = p_j.bitPat(), rhs = f_i.genTable(p_j))
+            truth_tables[i].add_entry(lhs = p_j.bitPat, rhs = f_i.genTable(p_j))
     return truth_tables
 ```
 
