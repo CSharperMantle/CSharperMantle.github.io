@@ -129,7 +129,9 @@
   margin-left: math.div(-$spacing-unit, 2);
 
   display: grid;
-  grid-template-areas: "a b c c";
+  grid-template-areas:
+    "a c"
+    "b c";
   column-gap: 5px;
 
   @extend %clearfix;
@@ -156,8 +158,9 @@
 @include media-query($on-palm) {
   .footer-col-wrapper {
     grid-template-areas:
-      "a c"
-      "b c";
+      "a"
+      "c"
+      "b";
   }
 
   .footer-col {
