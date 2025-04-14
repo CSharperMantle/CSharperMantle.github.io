@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building chart database for AstroDX: Revisited"
-date: 2023-04-13T08:19:48+08:00
+date: 2025-04-14T08:19:48+08:00
 lang: en
 tags: topic:misc game maimai-dx astrodx
 ---
