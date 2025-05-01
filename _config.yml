@@ -51,3 +51,13 @@ extra_urls:
   - url: /periotrisjs/
   - url: /la32r-instr-stats/
   - url: /ysyx-chip-area-visualizer/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /social.svg
+        height: 640
+        width: 1280
+        alt: Mantle's Potato Bakery
