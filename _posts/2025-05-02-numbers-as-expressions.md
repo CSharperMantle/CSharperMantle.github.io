@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Numbers as expressions: demo with Z3"
+title: "Numbers as expressions"
 date: 2025-05-02T19:08:57+08:00
 lang: zh
 tags: topic:misc snippet python
