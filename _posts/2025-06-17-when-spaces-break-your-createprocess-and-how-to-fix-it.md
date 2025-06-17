@@ -6,7 +6,7 @@ lang: en
 tags: topic:dev windows
 ---
 
-The username on my Windows laptop contains a space ("` `"). This little character is known to [cause](https://github.com/pypa/pip/issues/10114) [dozens](https://superuser.com/questions/119610/spaces-and-parenthesis-in-windows-path-variable-screws-up-batch-files) [of](https://forum.posit.co/t/spaces-in-library-path-names-on-windows-causes-problems-installing-packages-after-installing-r-3-5-0/8978) [software](https://superuser.com/questions/1420212/im-getting-an-error-indicating-that-the-file-path-has-a-space-in-the-name-when) [problems](https://github.com/espressif/esp-idf/issues/5576), and most of them are attributed to the existing codebase which does not apply proper quoting in all call sites.
+The username on my Windows laptop contains a space ("` `"). This little character is known to [cause](https://github.com/pypa/pip/issues/10114) [dozens](https://superuser.com/questions/119610/spaces-and-parenthesis-in-windows-path-variable-screws-up-batch-files) [of](https://forum.posit.co/t/spaces-in-library-path-names-on-windows-causes-problems-installing-packages-after-installing-r-3-5-0/8978) [software](https://superuser.com/questions/1420212/im-getting-an-error-indicating-that-the-file-path-has-a-space-in-the-name-when) [problems](https://github.com/espressif/esp-idf/issues/5576), and most of them are attributed to the existing codebase which does not properly quote file paths.
 
 Recently this space started troubling me more than before. Two pieces of software *suddenly* refused to work. I spent a while diagnosing the bugs, then filed bug reports and patches to the developers:
 
