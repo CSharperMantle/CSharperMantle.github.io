@@ -15,5 +15,6 @@ Some deployed web apps:
 * [LA32R Instruction Statistics](/la32r-instr-stats) ([repository](https://github.com/CSharperMantle/la32r-instr-stats)): Count instructions in LoongArch32 Reduced binaries.
 * [Y Chip Area Visualizer](/ysyx-chip-area-visualizer) ([repository](https://github.com/CSharperMantle/ysyx-chip-area-visualizer)): Visualize [Yosys](https://github.com/YosysHQ/yosys) [`stat`](https://yosyshq.readthedocs.io/projects/yosys/en/stable/cmd/stat.html) reports.
 
+[Read about JavaScript usage on this site.]({% link _posts/2025-06-17-csmantle-top-javascript-usage.md %})
 
 ------
