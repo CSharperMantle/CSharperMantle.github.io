@@ -34,7 +34,7 @@ Wait, did I say "suddenly"? Both software worked fine *up to a recent time point
 
 File #0 is an empty file and not an executable, thus the `ERROR_BAD_EXE_FORMAT`. So I proposed the three PRs to Nushell upstream that fixes the profile creation. They worked as intended, but one question remains: Why did they work before?
 
-Windows apps call `CreateProcess` series of functions to load and execute another image. Take `CreateProcessW` as an example, [the documentation on MSDN](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw#parameters), when an image name (`lpApplicationName`) is not specified, the command line (`lpCommandLine`) would be used to specify the executable to run. Here, Windows applies a curious strategy to *iteratively* determine which executable to run, literally:
+Windows apps call `CreateProcess` series of functions to load and execute another image. Take [`CreateProcessW`](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw#parameters) as an example. When an image name (`lpApplicationName`) is not specified, the command line (`lpCommandLine`) would be used to specify the executable to run. Here, Windows applies a curious strategy to *iteratively* determine which executable to run, literally:
 
 > For example, consider the string "c:\program files\sub dir\program name". This string can be interpreted in a number of ways. The system tries to interpret the possibilities in the following order:
 > 
@@ -49,8 +49,8 @@ Suppose an application named "My App" creates a data directory at `%APPDATA%\My 
 
 How to prevent these from happening? There are three common approaches:
 
-1. Tell the user that they cannot use any paths with spaces inside. When the app launches, it checks all used paths and complains about the spaces found in them. Effective, but some users find it annoying.
+1. Tell the user that they cannot use any paths with spaces inside. When the app launches, it checks all used paths and complains about the spaces found in them. It's effective, but some users may find it annoying.
 2. Quote every path when building `lpCommandLine`. This is safer and more user-friendly than the last approach.
-3. Pass the executable name in `lpApplicationName`, and use `lpCommandLine` solely for command line arguments. Some quotes may still be needed to help the callee parse the correct `argv[0]`. This is the safest, as it is now impossible to have the executable path truncated.
+3. Pass the executable name in `lpApplicationName`, and use `lpCommandLine` solely for command line arguments. Some quotes may still be needed to help the callee parse the correct `argv[0]`. This is the safest, as it's now impossible to have the executable path truncated.
 
 But as the developers review their codebase and take whatever approaches above, maybe it's time for me to switch my username.
