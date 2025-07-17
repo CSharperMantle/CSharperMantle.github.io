@@ -8,7 +8,7 @@ tags: topic:misc wsl
 
 > 本文可供大多数需要将USB设备直通至WSL2虚拟机内的场景参考，并不局限于Canokeys或USB智能卡等话题。
 
-WSL2支持使用[usbipd-win](https://github.com/dorssel/usbipd-win)实现USB设备直通，可以较为方便地将OpenPGP智能卡直通至虚拟机内供GPG使用，配置方法推荐阅读微软的文章：<https://learn.microsoft.com/en-us/windows/wsl/connect-usb>。一般而言，出现类似以下的输出，即可认为USB直通配置正确：
+WSL2支持使用[usbipd-win](https://github.com/dorssel/usbipd-win)实现USB设备直通，可以较为方便地将OpenPGP智能卡直通至虚拟机内供GPG使用，配置方法推荐阅读[微软的文章](https://learn.microsoft.com/en-us/windows/wsl/connect-usb)。一般而言，出现类似以下的输出，即可认为USB直通配置正确：
 
 ```sh
 $ lsusb
