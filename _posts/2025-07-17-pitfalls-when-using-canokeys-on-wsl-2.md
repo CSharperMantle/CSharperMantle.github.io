@@ -2,7 +2,7 @@
 layout: post
 title: "WSL2 上使用 Canokeys 踩坑"
 date: 2025-07-17T22:08:14+08:00
-lang: en
+lang: zh-Hans
 tags: topic:misc wsl
 ---
 
