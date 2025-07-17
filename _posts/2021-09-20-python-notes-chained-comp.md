@@ -33,6 +33,8 @@ print("is_ascending_chained(1, 3, 2): {}".format(is_ascending_chained(1, 3, 2)))
 
 在Python 3.8.0 shell中执行产生以下结果：
 
+<!-- seo-excerpt-separator -->
+
 ```plain
 >>>
 >>> def is_ascending_simple(a: int, b: int, c: int) -> bool:

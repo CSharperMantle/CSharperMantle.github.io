@@ -46,6 +46,8 @@ The controller needs to know which burger contains what ingredients. That is, we
 
 If you are a seasoned HDL designer, you may already have an approach in mind. For example, we may write a SystemVerilog module like this:
 
+<!-- seo-excerpt-separator -->
+
 ```verilog
 `define BURGER_CLASSIC_CHEEZY   3'b000
 `define BURGER_BACON_DELUXE     3'b001

@@ -12,6 +12,8 @@ We write programs that manage large data structures quite often. On occasions, s
 
 This is exactly what happened during my recent simulation project. The data structure I used is largely depicted in the following pseudo-Rust:
 
+<!-- seo-excerpt-separator -->
+
 ```rust
 struct SubSub1 {
     t: u32,

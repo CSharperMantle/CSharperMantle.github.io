@@ -24,6 +24,8 @@ $ echo $PATH | wc -m -
 3058 -
 ```
 
+<!-- seo-excerpt-separator -->
+
 ## 2. Solution
 
 Open `/etc/wsl.conf` and append these lines:

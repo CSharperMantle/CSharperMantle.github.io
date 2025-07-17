@@ -22,6 +22,8 @@ Tired of going to the laundry house every day? You can play with the washing mac
 * AssetStudio (<https://github.com/Perfare/AssetStudio>): Finding magic keys
 * script-collection (<https://github.com/CSharperMantle/script-collection>): One of these script will be used
 
+<!-- seo-excerpt-separator -->
+
 **Resources may be helpful:**
 
 * <https://www.94joy.cn/maimai/267>: (Chinese) Various resources

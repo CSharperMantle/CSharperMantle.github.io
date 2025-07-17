@@ -38,6 +38,8 @@ example123
 -
 ```
 
+<!-- seo-excerpt-separator -->
+
 Compilation command:
 
 ```bash

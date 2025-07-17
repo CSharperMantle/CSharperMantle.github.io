@@ -21,6 +21,8 @@ These revised scripts utilize [MaichartConverter](https://github.com/Neskol/Maic
 
 The function `New-TemporaryDirectory` comes from [a StackOverflow answer](https://stackoverflow.com/questions/34559553/create-a-temporary-directory-in-powershell).
 
+<!-- seo-excerpt-separator -->
+
 ### Prepare-Maichart-Sound.ps1
 
 ```powershell

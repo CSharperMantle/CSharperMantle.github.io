@@ -26,6 +26,8 @@ Since CIRCT won't be happy if you apply `dontTouch` annotations to constants, tw
 
 Let's take the 5-bit burst detector as an example once more. Make the following edits to apply the workaround:
 
+<!-- seo-excerpt-separator -->
+
 ```diff
 diff --git a/Top.old.scala b/Top.scala
 index 1e66954..2df2a1a 100644

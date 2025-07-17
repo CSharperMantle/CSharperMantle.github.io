@@ -58,6 +58,8 @@ int main(int argc, char const *argv[])
 
 ```
 
+<!-- seo-excerpt-separator -->
+
 Rust:
 ```rust
 // scope_rust.rs

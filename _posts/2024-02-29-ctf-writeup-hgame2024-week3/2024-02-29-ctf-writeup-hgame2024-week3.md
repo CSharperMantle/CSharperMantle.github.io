@@ -51,6 +51,8 @@ use_mathjax: true
 
 JS 原型污染。
 
+<!-- seo-excerpt-separator -->
+
 ```javascript
 var userStorage = {
   username: {

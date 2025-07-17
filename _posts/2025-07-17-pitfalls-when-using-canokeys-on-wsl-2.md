@@ -36,6 +36,8 @@ SCardEstablishContext: Access denied.
 
 `scdaemon`的日志也有类似的问题：
 
+<!-- seo-excerpt-separator -->
+
 ```plain-text
 2025-07-17 21:29:29 scdaemon[112573] DBG: chan_7 <- learn
 2025-07-17 21:29:29 scdaemon[112573] ccid open error: skip

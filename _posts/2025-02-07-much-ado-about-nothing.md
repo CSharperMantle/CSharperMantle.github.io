@@ -19,6 +19,8 @@ Some of the most simple (but far from easy!) computer systems are bare-metal rea
 
 Here, a system is "idle" if no event occurs at a given moment. In the polling approach, our system periodically checks for events even if there are no pending ones. Of course, can either let the system *sleep* between every two checks, possibly reducing power consumption. The drawback is the reaction time would increase if it sleeps for too long. Or, we can just let the system wander about during this period, running a special task that represents "no tasks". It could be as simple as a tight loop.
 
+<!-- seo-excerpt-separator -->
+
 ```c
 for (unsigned i = 0; i < 10000; i++) {
     ;

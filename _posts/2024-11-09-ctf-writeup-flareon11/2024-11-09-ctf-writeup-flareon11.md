@@ -37,6 +37,8 @@ A small number of long scripts in this post has been snipped out of actual data 
 - [9 - serpentine](#9---serpentine)
 - [10 - CatbertRansomware](#10---catbertransomware)
 
+<!-- seo-excerpt-separator -->
+
 ---
 
 ## 1 - frog

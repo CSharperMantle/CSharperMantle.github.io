@@ -20,6 +20,8 @@ BFD 协议本身仅负责进行链路连通性检测, 其得到的结果如何�
 
 BIRD2 支持 BFD 协议. 在 BIRD2 中为一个链路搭建 BFD 协议非常简单.
 
+<!-- seo-excerpt-separator -->
+
 ### 2.1. 配置 BFD 协议
 
 ```plain-text

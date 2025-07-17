@@ -43,6 +43,8 @@ $ ls -Fsh ./hello.c.elf
 
 ### 2.2. 888KB
 
+<!-- seo-excerpt-separator -->
+
 绕过标准库, 使用POSIX标准提供的`write`函数. 这可以剩下一些包装函数的空间.
 
 ```c

@@ -39,6 +39,8 @@ print()
 
 其产生以下结果：
 
+<!-- seo-excerpt-separator -->
+
 ```plain
 PS > py -3 .\goods_list.py
 Names of goods:

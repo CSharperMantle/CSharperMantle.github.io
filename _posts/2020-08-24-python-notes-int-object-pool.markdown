@@ -27,6 +27,8 @@ print("var_c is var_d? {0}".format(var_c is var_d))
 
 在Python shell中执行产生如下结果：
 
+<!-- seo-excerpt-separator -->
+
 ```plain
 >>> 
 >>> var_a = 1

@@ -39,6 +39,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
+<!-- seo-excerpt-separator -->
+
 ## 3. 讨论
 
 ### 3.1. 负号的地位

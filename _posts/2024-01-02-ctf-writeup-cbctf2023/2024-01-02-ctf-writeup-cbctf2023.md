@@ -43,6 +43,8 @@ tags: topic:ctf writeup cbctf-2023
 
 > 送一血咯 先到先得
 
+<!-- seo-excerpt-separator -->
+
 ![BeginnerTetris 1](./CUwPbrJ9ToiHrtxYSj8cB0Srnqh.png)
 
 ![BeginnerTetris 2](./KDYcbX17jolnZjxGGhmcS6Vnn1c.png)

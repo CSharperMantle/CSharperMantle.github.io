@@ -22,6 +22,8 @@ tags: topic:misc zhihu-answer c/c++ programming-language
 
 随着应用的发展，64位操作的需求庞大起来，于是几个当时的编译器厂商都不约而同地实现了自己的64位扩展[^2]：
 
+<!-- seo-excerpt-separator -->
+
 > They are implemented by many vendors.  3 years ago, there was an informal working group that included many vendors, (addressing 64-bit C progrmaming models for machines that also had 32-bit models), and the general consensus was that as much as we despised the syntax, it was:
 > 
 > a) Already in CONVEX & Amdahl, at least

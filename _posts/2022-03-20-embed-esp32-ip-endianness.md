@@ -14,6 +14,8 @@ One scenario I have just experienced in ESP32 is a handshake protocol which util
 
 In this small article, we will see how this endianness issue is solved.
 
+<!-- seo-excerpt-separator -->
+
 My development environment is as follows.
 
 1. Hardware

@@ -14,6 +14,8 @@ For those unfamiliar with [Nushell](https://www.nushell.sh/): It is a cross-plat
 
 At first glance, Nushell's pipeline provides a very functional look and feel. Compare these two snippets that compute each symbol's prefix code from a given [Huffman's tree](https://en.wikipedia.org/wiki/Huffman_coding), the former in Haskell (sampled from <https://ryanriddle.github.io/haskell-huffman.html>) and the latter in Nushell:
 
+<!-- seo-excerpt-separator -->
+
 ```haskell
 encode :: Node -> Node -> [Symbol] -> [Bool]
 encode _ _ [] = []

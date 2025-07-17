@@ -23,6 +23,8 @@ Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYy
 
 The first 72 bytes of its encoding result is identical to itself. This can be verified manually; such an example using [CyberChef](https://github.com/gchq/CyberChef/) is given by [this snippet](https://gchq.github.io/CyberChef/#recipe=To_Base64('A-Za-z0-9%2B/%3D')Drop_bytes(72,64,true)&input=Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5).
 
+<!-- seo-excerpt-separator -->
+
 A few others do notice this phenomena when iterating $\mathrm{Base64}(\cdot)$. One of such examples is the one discovered by [@V1ll4n](https://github.com/VillanCh) in his guest post at [a paid knowledge base](https://t.zsxq.com/EhZSb). He described utilizing such fixed point as a probe in a vulnerability discovery context, where one can reliably spot controlled Base64 output without prior knowledge of original $S$, given enough encoding iterations. A [post](https://codegolf.stackexchange.com/questions/257680/base64-fixed-point) on StackExchange Code Golf challenges to find the most efficient way to calculate the $n$th character in this fixed point. Still, analysis of this fixed point phenomenon is limited in both quantity and depth.
 
 ## 2. Experimental analysis

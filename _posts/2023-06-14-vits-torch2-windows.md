@@ -21,6 +21,8 @@ In this blog, the following conventions will be used:
 
 Note that all outputs given here is only an example. Actual line numbers and target triplets may vary.
 
+<!-- seo-excerpt-separator -->
+
 ## 1. Common build issues
 
 ### `error: could not create 'monotonic_align\core.cp310-win_amd64.pyd': No such file or directory`

@@ -42,6 +42,8 @@ tags: topic:ctf writeup hgame-2024
 
 CVE-2023-46604 RCE，Linux 5.10 提权。
 
+<!-- seo-excerpt-separator -->
+
 <https://github.com/rootsecdev/CVE-2023-46604>
 
 <https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/misc/apache_activemq_rce_cve_2023_46604.rb>

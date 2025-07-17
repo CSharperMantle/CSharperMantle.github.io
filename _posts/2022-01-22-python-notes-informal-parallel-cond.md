@@ -27,6 +27,8 @@ print(df[(df["Price"] <= 5.0) & (df["InStock"] == True)])
 
 ```
 
+<!-- seo-excerpt-separator -->
+
 结果：
 
 ```plain

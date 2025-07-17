@@ -27,6 +27,8 @@ TL;DR: Vivado 2024.1 fails to infer FSMs from Chisel-generated SystemVerilog fil
 
 When implementing an FSM in SystemVerilog, we would usually write code in the style as below:
 
+<!-- seo-excerpt-separator -->
+
 ```verilog
 localparam S0 = ...;
 localparam S1 = ...;

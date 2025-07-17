@@ -55,6 +55,8 @@ tags: topic:ctf writeup hgame-2024
 
 > HTTP Protocol Basics
 
+<!-- seo-excerpt-separator -->
+
 ```plain-text
 PS D:\Workspace\rev\hgame_2024> curl -v http://139.196.200.143:30264
 *   Trying 139.196.200.143:30264...

@@ -14,10 +14,11 @@ tags: topic:misc game periotrisjs announcement
 
 ### Way One: Play in browsers directly
 
-An instance of Periotris.js is hosted on GitHub Pages as a Progressive Web Application ([PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)). Try it [here](https://csharpermantle.github.io/periotrisjs).
+An instance of Periotris.js is hosted on GitHub Pages as a Progressive Web Application ([PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)). Try it [here](https://csmantle.top/periotrisjs).
 
 **Tips:** The app runs best on screens larger than 1024*768. If you are using mobile browsers please switch to *landscape mode* for better experience.
 
+<!-- seo-excerpt-separator -->
 
 ### Way Two: Build the project
 

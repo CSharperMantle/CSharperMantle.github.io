@@ -37,6 +37,8 @@ mantlebao@LAPTOP-RONG-BAO:[...]$ checksec --file ./vuln
 mantlebao@LAPTOP-RONG-BAO:[...]$
 ```
 
+<!-- seo-excerpt-separator -->
+
 ```asm
 .text:0000000000401110 ; =============== S U B R O U T I N E =======================================
 .text:0000000000401110

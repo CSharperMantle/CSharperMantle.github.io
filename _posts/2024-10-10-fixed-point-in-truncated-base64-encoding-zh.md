@@ -17,6 +17,8 @@ Base64 ([Wikipedia](https://en.wikipedia.org/wiki/Base64), [RFC 4648](https://da
 
 提前引用[第 2 节](#2-实验分析)的结论, 72 截断的不动点为
 
+<!-- seo-excerpt-separator -->
+
 ```plain-text
 Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYy
 ```

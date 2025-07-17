@@ -58,6 +58,8 @@ use_mathjax: true
 
 OS 命令注入。
 
+<!-- seo-excerpt-separator -->
+
 测试：黑名单 WAF（过滤了"flag"等）
 
 backtick 构造字符串；tac 读取。
