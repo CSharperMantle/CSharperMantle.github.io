@@ -12,8 +12,8 @@ layout: default
     <section id="section-recent-posts">
       <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
       <ul class="post-list">
-        {%- assign recent_15_posts = site.posts | slice: 0, 15 -%}
-        {%- for post in recent_15_posts -%}
+        {%- assign recent_30_posts = site.posts | slice: 0, 30 -%}
+        {%- for post in recent_30_posts -%}
         <li>
           <span class="post-meta">
             <time datetime="{{ post.date | date_to_xmlschema }}">
