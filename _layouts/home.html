@@ -32,7 +32,7 @@ layout: default
               {%- if post.description -%}
                 {{- post.description | smartify | escape -}}
               {%- else -%}
-                {{- post.content | strip_html | smartify | truncate: 250 -}}
+                {{- post.content | strip_html | smartify | smart_truncate_words: 100 -}}
               {%- endif -%}
             </p>
           {%- endif -%}
