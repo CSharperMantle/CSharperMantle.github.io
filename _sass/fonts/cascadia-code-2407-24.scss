@@ -1,19 +1,16 @@
-@font-face {
-  font-family: "Cascadia Code VF";
-  font-weight: 200 900;
-  font-style: normal;
-  font-stretch: normal;
-  font-display: swap;
-  src: url("/assets/fonts/CascadiaCode-2407.24/Normal.woff2") format("woff2-variations"),
-    url("/assets/fonts/CascadiaCode-2407.24/Normal.ttf") format("truetype-variations");
-}
+$font-styles: (
+  "Normal": normal,
+  "Italic": italic
+);
 
-@font-face {
-  font-family: "Cascadia Code VF";
-  font-weight: 200 900;
-  font-style: italic;
-  font-stretch: normal;
-  font-display: swap;
-  src: url("/assets/fonts/CascadiaCode-2407.24/Italic.woff2") format("woff2-variations"),
-    url("/assets/fonts/CascadiaCode-2407.24/Italic.ttf") format("truetype-variations");
+@each $style-name, $style-value in $font-styles {
+  @font-face {
+    font-family: "Cascadia Code VF";
+    font-weight: 200 900;
+    font-style: $style-value;
+    font-stretch: normal;
+    font-display: swap;
+    src: url("/assets/fonts/CascadiaCode-2407.24/#{$style-name}.woff2") format("woff2-variations"),
+      url("/assets/fonts/CascadiaCode-2407.24/#{$style-name}.ttf") format("truetype-variations");
+  }
 }
