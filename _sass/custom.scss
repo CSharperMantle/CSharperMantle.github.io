@@ -75,6 +75,28 @@ ul.post-list {
   }
 }
 
+details {
+  border-top: 1px solid $grey-color;
+  border-bottom: 1px solid $grey-color;
+  padding: 0.5em 0.5em 0;
+
+  summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    user-select: none;
+  }
+
+  &[open] {
+    padding: 0.5em;
+
+    summary {
+      border-bottom: 1px dashed $grey-color;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
 .table-wrapper {
   overflow-x: auto;
 }
