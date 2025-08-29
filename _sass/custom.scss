@@ -103,32 +103,32 @@ abbr {
   cursor: help;
 
   &::after {
-    color-scheme: light;
-
     content: attr(title);
     font-size: 1rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-100%);
-    background: color.invert($background-color);
-    color: color.invert($text-color);
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.3rem;
-    border: 0.1rem solid color.invert($text-color);
+    text-align: center;
     white-space: nowrap;
 
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0s 0s, visibility 0s 0s;
+    position: absolute;
 
-    z-index: 10;
+    box-sizing: border-box;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 0.2rem));
+    padding: 0.2rem 0.5rem;
+
+    background: color.invert($background-color);
+    color: color.invert($text-color);
+    border-radius: 0.3rem;
+    border: 0.1rem solid color.invert($text-color);
+
+    display: none;
+
+    z-index: 100;
   }
 
   &:hover {
     &::after {
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 0s 0.5s, visibility 0s 0.5s;
+      display: block;
     }
   }
 }
