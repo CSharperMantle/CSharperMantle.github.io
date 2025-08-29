@@ -26,7 +26,7 @@ I am Rong "Mantle" Bao, a second-year Computer Science undergraduate at Hangzhou
     <li><span>I do use <abbr title="Large Language Model">LLM</abbr>s to brainstorm ideas.</span></li>
     <li><span>I do use <abbr title="Large Language Model">LLM</abbr>s to perform repetitive clerical work and typographical proofreading.</span></li>
     <li><span>I do chat with <abbr title="Large Language Model">LLM</abbr>s to have fun in my spare time.</span></li>
-    <li><span>I do use <abbr title="Large Language Model">LLM</abbr>s to craft images for imagined scenes for hobby use.</span></li>
+    <li><span>I do use generative models to craft images for hobby use.</span></li>
     <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write code for production use.</span></li>
     <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write casual articles, like blogs.</span></li>
     <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write academic articles or carry out research in place of myself.</span></li>
@@ -67,3 +67,4 @@ This site is built with [Jekyll](https://jekyllrb.com/) with a heavily-customize
 Not much <abbr title="Search Engine Optimization">SEO</abbr> is done on this site. Thank you for stopping by and taking a look.
 
 ------
+
