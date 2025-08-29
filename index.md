@@ -8,26 +8,6 @@ nav_priority: 0
 
 I am Rong "Mantle" Bao, a second-year Computer Science undergraduate at Hangzhou Dianzi University. Welcome to my blog, where I bake all my potatoes.
 
-## About this site
-
-Some of my most recent posts are listed near the end of this page for convenient indexing. This section is anchored by [#section-recent-posts](#section-recent-posts). Alternatively, scrolling down below can also reveal this section.
-
-All my posts are organized by one of more tags. A complete list of tags can be found at [/tags.html]({% link tags.html %}). A page search is usually sufficient to find the desired article.
-
-I have some web apps hosted on GitHub Pages as well. Some of these are:
-
-* [Periotris.js](/periotrisjs) ([repository](https://github.com/CSharperMantle/periotrisjs)): Variant of Tetris based on the periodic table of elements.
-* [LA32R Instruction Statistics](/la32r-instr-stats) ([repository](https://github.com/CSharperMantle/la32r-instr-stats)): Count instructions in LoongArch32 Reduced binaries.
-* [Y Chip Area Visualizer](/ysyx-chip-area-visualizer) ([repository](https://github.com/CSharperMantle/ysyx-chip-area-visualizer)): Visualize [Yosys](https://github.com/YosysHQ/yosys) [`stat`](https://yosyshq.readthedocs.io/projects/yosys/en/stable/cmd/stat.html) reports.
-
-I love static things. [No JavaScript is required for browsing my posts.]({% link _posts/2025-06-17-csmantle-top-javascript-usage.md %}) Animations are pure CSS and limited to the minimum. This site, same as most of my web apps, is statically generated and served. Therefore, your browser is not burdened with much rendering on the fly (which is often abused by React and other frameworks).
-
-I am a Firefox user and [contributor](https://bugzilla.mozilla.org/user_profile?user_id=774743), so my sites are mostly tested on Firefox ([aurora channel](https://mozilla.github.io/process-releases/draft/development_overview/#:~:text=mozilla-aurora)). I've also put efforts in making my site look consistent across modern Firefox and Chromium versions.
-
-This site is built with [Jekyll](https://jekyllrb.com/) with a heavily-customized version of the [Minima](https://github.com/jekyll/minima) theme. Its source code can be found at <https://github.com/CSharperMantle/CSharperMantle.github.io>.
-
-Not much <abbr title="Search Engine Optimization">SEO</abbr> is done on this site. Thank you for stopping by and taking a look.
-
 ## About me
 
 * :raising_hand_man: He/him
@@ -67,5 +47,25 @@ Not much <abbr title="Search Engine Optimization">SEO</abbr> is done on this sit
 * **Infosec:** Reverse engineering, messing around with <abbr title="Operating System">OS</abbr> and <abbr title="Instruction Set Architecture">ISA</abbr>
 * **Development:** Bare-metal, desktop native, web apps
 * **Architecture:** Experiences with x86-64 assembly, RISC-V/LoongArch <abbr title="Instruction Set Architecture">ISA</abbr>s and microarch implementation
+
+## About this site
+
+Some of my most recent posts are listed near the end of this page for convenient indexing. This section is anchored by [#section-recent-posts](#section-recent-posts). Alternatively, scrolling down below can also reveal this section.
+
+All my posts are organized by one of more tags. A complete list of tags can be found at [/tags.html]({% link tags.html %}). A page search is usually sufficient to find the desired article.
+
+I have some web apps hosted on GitHub Pages as well. Some of these are:
+
+* [Periotris.js](/periotrisjs) ([repository](https://github.com/CSharperMantle/periotrisjs)): Variant of Tetris based on the periodic table of elements.
+* [LA32R Instruction Statistics](/la32r-instr-stats) ([repository](https://github.com/CSharperMantle/la32r-instr-stats)): Count instructions in LoongArch32 Reduced binaries.
+* [Y Chip Area Visualizer](/ysyx-chip-area-visualizer) ([repository](https://github.com/CSharperMantle/ysyx-chip-area-visualizer)): Visualize [Yosys](https://github.com/YosysHQ/yosys) [`stat`](https://yosyshq.readthedocs.io/projects/yosys/en/stable/cmd/stat.html) reports.
+
+I love static things. [No JavaScript is required for browsing my posts.]({% link _posts/2025-06-17-csmantle-top-javascript-usage.md %}) Animations are pure CSS and limited to the minimum. This site, same as most of my web apps, is statically generated and served. Therefore, your browser is not burdened with much rendering on the fly (which is often abused by React and other frameworks).
+
+I am a Firefox user and [contributor](https://bugzilla.mozilla.org/user_profile?user_id=774743), so my sites are mostly tested on Firefox ([aurora channel](https://mozilla.github.io/process-releases/draft/development_overview/#:~:text=mozilla-aurora)). I've also put efforts in making my site look consistent across modern Firefox and Chromium versions.
+
+This site is built with [Jekyll](https://jekyllrb.com/) with a heavily-customized version of the [Minima](https://github.com/jekyll/minima) theme. Its source code can be found at <https://github.com/CSharperMantle/CSharperMantle.github.io>.
+
+Not much <abbr title="Search Engine Optimization">SEO</abbr> is done on this site. Thank you for stopping by and taking a look.
 
 ------
