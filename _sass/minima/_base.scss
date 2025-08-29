@@ -19,7 +19,8 @@ dl,
 dd,
 ol,
 ul,
-figure {
+figure,
+details {
   margin: 0;
   padding: 0;
 }
@@ -62,6 +63,7 @@ ul,
 ol,
 dl,
 figure,
+details,
 %vertical-rhythm {
   margin-bottom: math.div($spacing-unit, 2);
 }
