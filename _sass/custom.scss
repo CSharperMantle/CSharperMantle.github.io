@@ -9,6 +9,7 @@
 
 @mixin break-anywhere {
   word-break: break-all;
+  overflow-wrap: anywhere;
   line-break: anywhere;
 }
 
@@ -73,6 +74,10 @@ ul.post-list {
       margin-bottom: 1rem;
     }
   }
+}
+
+a {
+  overflow-wrap: break-word;
 }
 
 details {
