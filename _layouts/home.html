@@ -38,9 +38,13 @@ layout: default
           {%- endif -%}
         </li>
         {%- endfor -%}
-        <li><a href="{% link tags.html %}">... See all posts organized by tag.</a></li>
       </ul>
     </section>
-    <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    <section>
+      <div>
+        <p><a href="{% link posts.html %}">See all posts</a> | <a href="{% link tags.html %}">See all post tags</a></p>
+        <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+      </div>
+    </section>
   {%- endif -%}
 </div>
