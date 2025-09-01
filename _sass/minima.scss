@@ -47,7 +47,11 @@ $on-laptop: 800px !default;
 }
 
 @mixin relative-font-size($ratio) {
-  font-size: $ratio * 100%;
+  font-size: #{$ratio}em;
+}
+
+@mixin root-relative-font-size($ratio) {
+  font-size: #{$ratio}rem;
 }
 
 @import "minima/base";
