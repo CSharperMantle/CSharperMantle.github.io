@@ -17,7 +17,7 @@ I am Rong "Mantle" Bao, a second-year Computer Science undergraduate at Hangzhou
 * :beach_umbrella: Enjoying summer vacation
 
 <details id="details-ai-attitudes">
-  <summary>My attitudes towards AI</summary>
+  <summary>My attitudes towards <abbr title="Artificial Intelligence">AI</abbr></summary>
   <ul>
     <li><span>Machine learning problems are analytical and statistical problems.</span></li>
     <li><span>Neural networks are good at discovering patterns not obvious to traditional approaches.</span></li>
