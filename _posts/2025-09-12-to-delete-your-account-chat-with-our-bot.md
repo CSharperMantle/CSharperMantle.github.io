@@ -59,9 +59,9 @@ I guessed I need to "Send them a message" since Item 1 was not relevant, Item 2 
 > 
 > Groq • Just now
 >
-> < \[Account Question\] \[Technical Question\]
-> < \[Rate Limit Increase\] \[Report an Issue\]
-> < \[Request a Feature\] \[Other\]
+> \[Account Question\] \[Technical Question\]<br>
+> \[Rate Limit Increase\] \[Report an Issue\]<br>
+> \[Request a Feature\] \[Other\]
 
 I selected "Account Question".
 
@@ -69,8 +69,8 @@ I selected "Account Question".
 >
 > Groq • Just now
 >
-> \[Create an Account\] \[Upgrade Account\]
-> \[Account is Restricted\] \[Delete Account\]
+> \[Create an Account\] \[Upgrade Account\]<br>
+> \[Account is Restricted\] \[Delete Account\]<br>
 > \[Billing Questions\] \[Other\]
 
 I selected "Delete Account".
@@ -82,8 +82,8 @@ I selected "Delete Account".
 
 I typed in my "Organization ID" from far above.
 
-... Then, deafening silence.
+... Then, silence.
 
-They could have designed a deletion button straight into the Console. After all, nothing can prove the user's identity than a valid login.
+They could have designed a automated deletion button straight into the Console. After all, nothing can prove the user's identity more than a valid login.
 
-I haven't heard from Groq as of this writing. I think I'll just have to wait.
+I haven't heard from Groq as of this writing. I think I'll just have to wait until a real employee starts working.
