@@ -59,9 +59,9 @@ I guessed I need to "Send them a message" since Item 1 was not relevant, Item 2 
 > 
 > Groq • Just now
 >
-> < Account Question | Technical Question
-> < Rate Limit Increase | Report an Issue
-> < Request a Feature | Other
+> < \[Account Question\] \[Technical Question\]
+> < \[Rate Limit Increase\] \[Report an Issue\]
+> < \[Request a Feature\] \[Other\]
 
 I selected "Account Question".
 
@@ -69,9 +69,9 @@ I selected "Account Question".
 >
 > Groq • Just now
 >
-> < Create an Account | Upgrade Account
-> < Account is Restricted | Delete Account
-> < Billing Questions | Other
+> \[Create an Account\] \[Upgrade Account\]
+> \[Account is Restricted\] \[Delete Account\]
+> \[Billing Questions\] \[Other\]
 
 I selected "Delete Account".
 
