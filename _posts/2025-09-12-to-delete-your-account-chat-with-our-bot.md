@@ -29,7 +29,7 @@ I logged in on their "Console" at console\[.\]groq\[.\]com and went to the "Sett
 
 "Organization - General" contained a textbox to change the organization name, and another one to copy its ID. "Billing" offered an upgrade to "Developer tier" or "Enterprise tier". "Profile" allowed me to change my avatar and subscribe to their newsletter. "Data control" let me control how the platform stores and keeps my input to AI models. None of them contained a button to delete my account.
 
-"It's just hiding somewhere," I encouraged myself. I went to their "Docs" site at console\[.\]groq\[.\]com/docs, and searched the keywords "delete", "account deletion" and "delete account" using the built-in search. Nothing but API references.
+"It's just hiding somewhere," I encouraged myself. I went to their "Docs" site at console\[.\]groq\[.\]com/docs, and searched the keywords "delete", "account deletion" and "delete account" using the built-in search. Nothing but irrelevant API references.
 
 I turned to search engines and typed "groq delete account" into the searchbox. The first answer came from "Groq Community":
 
@@ -86,4 +86,4 @@ I typed in my "Organization ID" from far above.
 
 They could have designed a automated deletion button straight into the Console. After all, nothing can prove the user's identity more than a valid login.
 
-I haven't heard from Groq as of this writing. I think I'll just have to wait until a real employee starts working.
+I haven't heard from Groq as of this writing. I think I'll just have to wait until a real, human employee starts working.
