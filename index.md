@@ -6,15 +6,18 @@ list_title: >-
 nav_priority: 0
 ---
 
-I am Rong "Mantle" Bao, a second-year Computer Science undergraduate at Hangzhou Dianzi University. Welcome to my blog, where I bake all my potatoes.
+I am Rong "Mantle" Bao, a third-yyear Computer Science undergraduate at Hangzhou Dianzi University. Welcome to my blog, where I bake all my potatoes.
 
 ## About me
 
-* :raising_hand_man: He/him
-* :link: <https://github.com/CSharperMantle>
-* :telescope: Current project focus is [<abbr title="Open Source Promotion Plan">OSPP</abbr>](https://summer-ospp.ac.cn/) and [<abbr title="Yi Sheng Yi Xin, lit. &quot;each student gets a chip&quot;">YSYX</abbr>](https://ysyx.oscc.cc/)
-* :speaking_head: 中文（母语）, English (near native)
-* :beach_umbrella: Enjoying summer vacation
+* He/him
+* GitHub profile: <https://github.com/CSharperMantle>
+* Current project focus is [<abbr title="Open Source Promotion Plan">OSPP</abbr>](https://summer-ospp.ac.cn/) and [<abbr title="Yi Sheng Yi Xin, lit. &quot;each student gets a chip&quot;">YSYX</abbr>](https://ysyx.oscc.cc/)
+* Natural languages:
+  * `zh-cmn-Hans-CN` (native)
+  * `zh-wuu-Hans-CN` (native)
+  * `en` (near native)
+* Developing personal projects
 
 <details id="details-ai-attitudes">
   <summary>My attitudes towards <abbr title="Artificial Intelligence">AI</abbr></summary>
@@ -41,10 +44,11 @@ I am Rong "Mantle" Bao, a second-year Computer Science undergraduate at Hangzhou
 
 ### Skills
 
-* **Programming language:** Polyglot, most enjoy C/Rust/TypeScript
-* **Infosec:** Reverse engineering, messing around with <abbr title="Operating System">OS</abbr> and <abbr title="Instruction Set Architecture">ISA</abbr>
-* **Development:** Bare-metal, desktop native, web apps
-* **Architecture:** Experiences with x86-64 assembly, RISC-V/LoongArch <abbr title="Instruction Set Architecture">ISA</abbr>s and microarch implementation
+* Polyglot, most enjoy C/Rust/TypeScript
+* Reverse engineering, messing around with <abbr title="Operating System">OS</abbr> and <abbr title="Instruction Set Architecture">ISA</abbr>
+* Bare-metal, desktop native, single-pagge WebApps development
+* Experiences with x86-64 assembly, RISC-V/LoongArch <abbr title="Instruction Set Architecture">ISA</abbr>s and microarch implementation
+* [Mozilla Level 1 Commit Access](https://bugzilla.mozilla.org/user_profile?user_id=774743), active maintainer of SpiderMonkey's RV64 JIT backend.
 
 ## About this site
 
@@ -67,4 +71,3 @@ This site is built with [Jekyll](https://jekyllrb.com/) with a heavily-customize
 Not much <abbr title="Search Engine Optimization">SEO</abbr> is done on this site. Thank you for stopping by and taking a look.
 
 ------
-
