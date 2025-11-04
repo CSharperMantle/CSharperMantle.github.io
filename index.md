@@ -6,7 +6,7 @@ list_title: >-
 nav_priority: 0
 ---
 
-I am Rong "Mantle" Bao, a third-yyear Computer Science undergraduate at Hangzhou Dianzi University. Welcome to my blog, where I bake all my potatoes.
+I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou Dianzi University. Welcome to my blog, where I bake all my potatoes.
 
 ## About me
 
@@ -71,5 +71,6 @@ This site is built with [Jekyll](https://jekyllrb.com/) with a heavily-customize
 Not much <abbr title="Search Engine Optimization">SEO</abbr> is done on this site. Thank you for stopping by and taking a look.
 
 ------
+
 
 
