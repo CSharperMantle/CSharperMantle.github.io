@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "截断Base64编码的不动点: 借助Z3的分析与证明"
+title: "截断 Base64 编码的不动点: 借助 Z3 的分析与证明"
 date: 2024-10-10T08:07:54+08:00
 lang: zh
 tags: topic:research encoding translation
