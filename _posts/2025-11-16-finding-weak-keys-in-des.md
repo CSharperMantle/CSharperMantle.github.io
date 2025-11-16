@@ -7,6 +7,12 @@ tags: topic:research cryptography
 use_mathjax: true
 ---
 
+<style>
+.theorem-label {
+    padding-right: 1em;
+}
+</style>
+
 [DES 加密算法存在四个弱密钥](https://en.wikipedia.org/wiki/Weak_key#Weak_keys_in_DES)，分别为：
 
 * `0x0101010101010101`；
@@ -20,9 +26,9 @@ use_mathjax: true
 
 ------
 
-**引理1** $K$ 为弱密钥的充要条件为 $\mathrm{DESKeySched}(K)$ 构成回文。
+<span class="theorem-label"><strong>引理</strong></span>$K$ 为弱密钥的充要条件为 $\mathrm{DESKeySched}(K)$ 构成回文。
 
-**证明** 由于 DES 算法为 Feistel 结构，可将加密、解密过程改写为：
+<span class="theorem-label"><strong>证明</strong></span>由于 DES 算法为 Feistel 结构，可将加密、解密过程改写为：
 
 $$
 \begin{align}
