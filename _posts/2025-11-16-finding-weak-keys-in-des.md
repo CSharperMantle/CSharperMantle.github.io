@@ -16,7 +16,7 @@ use_mathjax: true
 
 它们均满足 $\forall x.\ \mathrm{DESEncrypt}(x, K_w) = \mathrm{DESDecrypt}(x, K_w)$。接下来我们将使用 [Z3](https://github.com/Z3Prover/z3/wiki) 求解所有的 $K_w$，以此证明弱密钥的存在性。
 
-证明的第一步是将弱密钥存在性问题简化至对密钥编排（key schedule）性质的研究上。记16个轮密钥按顺序组成序列 $\mathrm{DESKeySched}(K) = \{ k_i \}$，我们首先证明以下引理：
+证明的第一步是将弱密钥存在性问题简化至对密钥编排（key schedule）性质的研究上。记16个轮密钥按顺序组成序列 $\mathrm{DESKeySched}(K) = \\{ k_i \\}$，我们首先证明以下引理：
 
 ------
 
@@ -33,7 +33,7 @@ $$
 \end{align}
 $$
 
-其中 $\overline{\{ k_i \}}$ 表示逆序。那么显然 $\forall x.\ \mathrm{DESEncrypt}(x, K_w) = \mathrm{DESDecrypt}(x, K_w)$ 等价于 $\{ k_i \} = \overline{\{ k_i \}}$，即轮密钥组成的序列构成回文。
+其中 $\overline{\\{ k_i \\}}$ 表示逆序。那么显然 $\forall x.\ \mathrm{DESEncrypt}(x, K_w) = \mathrm{DESDecrypt}(x, K_w)$ 等价于 $\\{ k_i \\} = \overline{\\{ k_i \\}}$，即轮密钥组成的序列构成回文。
 
 ------
 
@@ -144,3 +144,4 @@ Solution 3: 0x1f1f1f1f0e0e0e0e
 ```
 
 之后借助引理即可推出 DES 弱密钥存在，且上述四个密钥即为全部弱密钥。
+
