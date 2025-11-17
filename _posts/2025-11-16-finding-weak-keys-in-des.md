@@ -45,6 +45,12 @@ $$
 
 其中 $\overline{\\{ k_i \\}}$ 表示逆序。那么显然 $\forall x.\ \mathrm{DESEncrypt}(x, K_w) = \mathrm{DESDecrypt}(x, K_w)$ 等价于 $\\{ k_i \\} = \overline{\\{ k_i \\}}$，即轮密钥组成的序列构成回文。
 
+<span class="theorem-label"><strong>备注</strong></span>维基百科上对弱密钥的描述如下：
+
+> DES weak keys produce sixteen identical subkeys.
+
+这个结论初看只是弱密钥的一个充分条件，但根据密钥编排轮函数的性质，可以证明其为充要条件，请读者自行思考。
+
 ------
 
 证明引理后，我们只需要研究是否有密钥能够产生回文轮密钥序列即可。如上文，由于 DES 的密钥编排仅涉及按位置换，可以较为平凡地使用 SMT 求解器实现，因此不难编写一个 Z3 脚本进行计算：
@@ -156,3 +162,4 @@ Solution 3: 0x1f1f1f1f0e0e0e0e
 ```
 
 之后借助引理即可推出 DES 弱密钥存在，且上述四个密钥即为全部弱密钥。
+
