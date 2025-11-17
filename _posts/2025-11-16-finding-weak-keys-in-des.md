@@ -20,9 +20,13 @@ use_mathjax: true
 * `0xE0E0E0E0F1F1F1F1`；
 * `0x1F1F1F1F0E0E0E0E`。
 
-它们均满足 $\forall x.\ \mathrm{DESEncrypt}(x, K_w) = \mathrm{DESDecrypt}(x, K_w)$。接下来我们将使用 [Z3](https://github.com/Z3Prover/z3/wiki) 求解所有的 $K_w$，以此证明弱密钥的存在性。
+它们均满足 $\forall x.\ \mathrm{DESEncrypt}(x, K_w) = \mathrm{DESDecrypt}(x, K_w)$。
 
-证明的第一步是将弱密钥存在性问题简化至对密钥编排（key schedule）性质的研究上。记16个轮密钥按顺序组成序列 $\mathrm{DESKeySched}(K) = \\{ k_i \\}$，我们首先证明以下引理：
+在记住结论之外，我们也可以使用 [Z3](https://github.com/Z3Prover/z3/wiki) 证明弱密钥的存在性，并借此求出所有 $K_w$。
+
+针对完整的 DES 网络直接使用符号求解是不现实的，因此证明的第一步是将弱密钥存在性问题简化至对密钥编排（key schedule）性质的研究上。DES 密钥编排仅包含循环左移与按位置换两种操作，结构较为简单，容易对其使用符号求解器。
+
+记16个轮密钥按顺序组成序列 $\mathrm{DESKeySched}(K) = \\{ k_i \\}$，我们首先证明以下引理：
 
 ------
 
@@ -43,7 +47,7 @@ $$
 
 ------
 
-由于 DES 的密钥编排仅涉及按位置换，可以较为平凡地使用 SMT 求解器实现，因此编写 Z3 脚本是不难的：
+证明引理后，我们只需要研究是否有密钥能够产生回文轮密钥序列即可。如上文，由于 DES 的密钥编排仅涉及按位置换，可以较为平凡地使用 SMT 求解器实现，因此不难编写一个 Z3 脚本进行计算：
 
 ```python
 #!/usr/bin/env python3
@@ -139,7 +143,9 @@ for i, s in enumerate(sol):
 
 ```
 
-运行后即可求得唯一的四个密钥，其产生的轮密钥序列构成回文：
+这里的 `des_keysched_round` 不是完整的轮函数。由于仅需要判断轮密钥间是否相等，可以在这里省略 PC-2 的置换部分，仅保留其抛弃部分比特的特性即可。
+
+运行求解脚本后即可得到如下四个能够产生回文轮密钥序列的 DES 密钥：
 
 ```plain-text
 > py.exe -3 ./des-weak-key.py
@@ -150,4 +156,3 @@ Solution 3: 0x1f1f1f1f0e0e0e0e
 ```
 
 之后借助引理即可推出 DES 弱密钥存在，且上述四个密钥即为全部弱密钥。
-
