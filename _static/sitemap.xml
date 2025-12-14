@@ -1,12 +1,13 @@
 ---
+xsl: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 {%- if page.xsl -%}
-  <?xml-stylesheet type="text/xsl" href="{{- "/sitemap.xsl" | absolute_url -}}"?>
+<?xml-stylesheet type="text/xsl" href="{{- "/sitemap.xsl" | absolute_url -}}"?>
 {%- endif -%}
-<!-- Adapted from https://github.com/jekyll/jekyll-sitemap/blob/99148a2255a2b3a8d2b31ba8216945262981b12c/lib/sitemap.xml -->
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Adapted from https://github.com/jekyll/jekyll-sitemap/blob/99148a2255a2b3a8d2b31ba8216945262981b12c/lib/sitemap.xml -->
   {%- assign collections = site.collections | where_exp:'collection','collection.output != false' -%}
   {%- for collection in collections -%}
     {%- assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' -%}
