@@ -10,10 +10,14 @@ layout: default
   </section>
   {%- if site.posts.size > 0 -%}
     <section id="section-recent-posts">
-      <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+      <h2 class="post-list-heading">{{ page.list_title | default: "Recent 10 Posts" }}</h2>
+      <p>
+        <a href="{% link posts.html %}">See all</a> |
+        <a href="{{ "/feed.xml" | relative_url }}" target="_blank">RSS Feed</a>
+      </p>
       <ul class="post-list">
-        {%- assign recent_30_posts = site.posts | slice: 0, 30 -%}
-        {%- for post in recent_30_posts -%}
+        {%- assign recent_posts = site.posts | slice: 0, 10 -%}
+        {%- for post in recent_posts -%}
         <li>
           <span class="post-meta">
             <time datetime="{{ post.date | date_to_xmlschema }}">
@@ -39,12 +43,6 @@ layout: default
         </li>
         {%- endfor -%}
       </ul>
-    </section>
-    <section>
-      <div>
-        <p><a href="{% link posts.html %}">See all posts</a> | <a href="{% link tags.html %}">See all post tags</a></p>
-        <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-      </div>
     </section>
   {%- endif -%}
 </div>
