@@ -12,7 +12,7 @@ I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou 
 
 * He/him
 * GitHub: <https://github.com/CSharperMantle>
-* Email: <rong.bao@csmantle.top>
+* Personal email: <rong.bao@csmantle.top>
 * Natural languages:
   * `zh-cmn-Hans-CN` (native)
   * `zh-wuu-Hans-CN` (native)
@@ -21,11 +21,11 @@ I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou 
 
 ### Skills
 
-* Polyglot, most enjoy C/Rust/TypeScript
-* Reverse engineering, messing around with <abbr title="Operating System">OS</abbr> and <abbr title="Instruction Set Architecture">ISA</abbr>
-* Bare-metal, desktop native, single-pagge WebApps development
-* Experiences with x86-64 assembly, RISC-V/LoongArch <abbr title="Instruction Set Architecture">ISA</abbr>s and microarch implementation
-* [Mozilla Level 1 Commit Access](https://bugzilla.mozilla.org/user_profile?user_id=774743), active maintainer of SpiderMonkey's RV64 JIT backend.
+* Polyglot, enjoy C/Rust/TypeScript most
+* Reverse engineering, messing around with <abbr title="Operating System">OS</abbr> and <abbr title="Instruction Set Architecture">ISA</abbr>. Member of [Vidar-Team](https://vidar.club/)
+* Bare-metal, desktop native, single-page WebApps development
+* Interested in x86-64 assembly, RISC-V/LoongArch <abbr title="Instruction Set Architecture">ISA</abbr>s and microarch implementation
+* [Mozilla Level 1 Commit Access](https://bugzilla.mozilla.org/user_profile?user_id=774743), active maintainer of SpiderMonkey's RV64 JIT backend
 
 <details id="details-ai-attitudes">
   <summary>My attitudes towards <abbr title="Artificial Intelligence">AI</abbr></summary>
