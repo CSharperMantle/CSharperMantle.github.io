@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="identicon-RongBao.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title118">Rong Bao - Identicon</title>
+  <defs
+     id="defs10">
+    <color-profile
+       name="sRGB-IEC61966-2.1"
+       xlink:href="file:///C:/windows/system32/spool/drivers/color/sRGB%20Color%20Space%20Profile.icm"
+       id="color-profile155" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     showgrid="true"
+     inkscape:current-layer="svg6">
+    <inkscape:grid
+       type="xygrid"
+       id="grid152" />
+  </sodipodi:namedview>
+  <path
+     fill="#59bec7"
+     d="M149 95.5L202.5 42L256 95.5L202.5 149ZM309.5 42L363 95.5L309.5 149L256 95.5ZM363 416.5L309.5 470L256 416.5L309.5 363ZM202.5 470L149 416.5L202.5 363L256 416.5ZM42 202.5L95.5 149L149 202.5L95.5 256ZM416.5 149L470 202.5L416.5 256L363 202.5ZM470 309.5L416.5 363L363 309.5L416.5 256ZM95.5 363L42 309.5L95.5 256L149 309.5ZM59.8 95.5a35.7,35.7 0 1,1 71.3,0a35.7,35.7 0 1,1 -71.3,0M380.8 95.5a35.7,35.7 0 1,1 71.3,0a35.7,35.7 0 1,1 -71.3,0M380.8 416.5a35.7,35.7 0 1,1 71.3,0a35.7,35.7 0 1,1 -71.3,0M59.8 416.5a35.7,35.7 0 1,1 71.3,0a35.7,35.7 0 1,1 -71.3,0"
+     id="path2" />
+  <path
+     fill="#464646"
+     d="M256 202.5L256 256L202.5 256ZM309.5 256L256 256L256 202.5ZM256 309.5L256 256L309.5 256ZM202.5 256L256 256L256 309.5Z"
+     id="path4" />
+  <metadata
+     id="metadata116">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
+        <dc:title>Rong Bao - Identicon</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jdenticon 3.2.0</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:description>Identicon for &quot;Rong Bao&quot;</dc:description>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Copyright (c) 2023 Rong Bao &lt;baorong2005@126.com&gt;</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>Rong Bao</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>Rong Bao</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:prohibits
+           rdf:resource="http://creativecommons.org/ns#CommercialUse" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
