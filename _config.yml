@@ -54,6 +54,8 @@ extra_urls:
   - url: /la32r-instr-stats/
   - url: /ysyx-chip-area-visualizer/
   - url: /wbnbd/
+  - url: /wbnbd/en/
+  - url: /wbnbd/zh/
 
 defaults:
   - scope:
