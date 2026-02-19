@@ -15,5 +15,6 @@ I have some web apps hosted on GitHub Pages as well. Some of these are:
 * [Periotris.js](/periotrisjs) ([repository](https://github.com/CSharperMantle/periotrisjs)): Variant of Tetris based on the periodic table of elements.
 * [LA32R Instruction Statistics](/la32r-instr-stats) ([repository](https://github.com/CSharperMantle/la32r-instr-stats)): Count instructions in LoongArch32 Reduced binaries.
 * [Y Chip Area Visualizer](/ysyx-chip-area-visualizer) ([repository](https://github.com/CSharperMantle/ysyx-chip-area-visualizer)): Visualize [Yosys](https://github.com/YosysHQ/yosys) [`stat`](https://yosyshq.readthedocs.io/projects/yosys/en/stable/cmd/stat.html) reports.
+* [WBNBD (我帮你百度)](/wbnbd) ([repository](https://github.com/CSharperMantle/wbnbd)): Let Me Baidu That For You. A demo app for trying out agentic development (colloquially, Vibe Coding)
 
 Not much <abbr title="Search Engine Optimization">SEO</abbr> is done on this site. Thank you for stopping by and taking a look.
