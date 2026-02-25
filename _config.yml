@@ -7,6 +7,8 @@ description: >-
     up-to-date and outdated, and everything in between.
 baseurl: "/"
 url: https://csmantle.top
+author:
+  name: Rong Bao
 github_username: CSharperMantle
 twitter_username: CSMantle3
 rss: RSS feed
