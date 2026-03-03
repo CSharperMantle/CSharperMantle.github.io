@@ -19,6 +19,25 @@ I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou 
   * `en` (near native)
 * Developing personal projects
 
+<details>
+  <summary><strong>My <abbr title="GNU Privacy Guard">GPG</abbr> keys</strong></summary>
+  <ul>
+    <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=768AA2BE835E1B1CF6D6DA8A419F9DDF521C96C1&fingerprint=on&op=index"><code>768AA2BE835E1B1CF6D6DA8A419F9DDF521C96C1</code></a>: Root key, cold storage
+      <ul>
+        <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=1E58738ACA57D4B3DED1702AE425A121DE2A3C16&fingerprint=on&op=index"><code>1E58738ACA57D4B3DED1702AE425A121DE2A3C16</code></a>: Intermediate key, active
+          <ul>
+            <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=B6AB56831CE5A84CE4CA7F04A6B12B5937BFDD0C&fingerprint=on&op=index"><code>B6AB56831CE5A84CE4CA7F04A6B12B5937BFDD0C</code></a>: Leaf, active signing</li>
+            <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=42429874E31241788348C7E734486F2380FC6732&fingerprint=on&op=index"><code>42429874E31241788348C7E734486F2380FC6732</code></a>: Leaf, active</li>
+            <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=7AD061740BBF8F75662B64D36D75FAA01238AC2A&fingerprint=on&op=index"><code>7AD061740BBF8F75662B64D36D75FAA01238AC2A</code></a>: Leaf, active signing</li>
+            <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=02156202E3C6A2A8E39F8A11BD83C6318EEBDD37&fingerprint=on&op=index"><code>02156202E3C6A2A8E39F8A11BD83C6318EEBDD37</code></a>: Leaf (<a href="mailto:aur@csmantle.top">aur@csmantle.top</a>), active</li>
+            <li><a href="https://keyserver.ubuntu.com/pks/lookup?search=A4EF655E4950AAF6D3B83920538BD74C162381A9&fingerprint=on&op=index"><code>A4EF655E4950AAF6D3B83920538BD74C162381A9</code></a>: Leaf (<a href="mailto:automation@csmantle.top">automation@csmantle.top</a>), active</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
 ### Skills
 
 * Polyglot, enjoy C/Rust/TypeScript most
