@@ -13,10 +13,9 @@ I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou 
 * He/him
 * GitHub: <https://github.com/CSharperMantle>
 * Personal email: <rong.bao@csmantle.top>
-* Natural languages:
-  * `zh-cmn-Hans-CN` (native)
-  * `zh-wuu-Hans-CN` (native)
-  * `en` (near native)
+* Spoken languages:
+  * `zh-{cmn,wuu}-Hans-CN` (native)
+  * `en` (near-native fluency)
 * Developing personal projects
 
 <details>
