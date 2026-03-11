@@ -6,7 +6,7 @@ lang: zh
 tags: topic:misc loongarch
 ---
 
-近期以 *Claw 为代表的智能体非常流行，其中不乏 Rust 语言的实现。[龙架构的 Rust 平台支持已较为完善](https://doc.rust-lang.org/nightly/rustc/platform-support.html#:~:text=loongarch64-unknown-linux-gnu)。因此，我试着在允许 [Arch Linux for Loong64](https://loongarchlinux.lcpu.dev/)（Arch4Loong）的龙芯 3B6000 上“养”了一只龙虾，达到了不错的效果。
+近期以 *Claw 为代表的智能体非常流行，其中不乏 Rust 语言的实现。[龙架构的 Rust 平台支持已较为完善](https://doc.rust-lang.org/nightly/rustc/platform-support.html#:~:text=loongarch64-unknown-linux-gnu)。因此，我试着在运行 [Arch Linux for Loong64](https://loongarchlinux.lcpu.dev/) 的龙芯 3B6000 上“养”了一只龙虾，达到了不错的效果。
 
 ## 0. 前置条件
 
@@ -171,7 +171,7 @@ $ sudo systemctl enable --now systemd-nspawn@claw.service
 
 首先尝试的是原生编译 IronClaw。遗憾的是其依赖 [Wasmtime](https://wasmtime.dev/) 的 JIT 后端 [Cranelift](https://github.com/bytecodealliance/wasmtime/tree/main/cranelift) 并不支持龙架构。为 Cranelift 增加新的后端是一个很大的工作，且目前暂无公开社区努力。
 
-之后尝试交叉编译至 x86_64 并使用 QEMU 模拟执行。首先尝试的目标是 `x86_64-unknown-linux-gnu`，但 Arch4Loong 对非原生架构的支持十分不完善，缺少 ld 等多种必须运行时库。因此尝试 `x86_64-unknown-linux-musl`，静态编译 OpenSSL 后再使用 Cargo 编译项目。这条路径上的第一个问题是 Arch4Loong 的 x86_64 binutils 和原生 binutils 并不兼容。后者使用 2.46，[提供 `libsframe.so.3`](https://archlinux.org/packages/core/x86_64/binutils/#:~:text=%20libsframe.so=3-64)，而前者版本为 2.45，需要 `libsframe.so.2`。对[相关 PKGBUILD](https://github.com/lcpu-club/loongarch-packages/blob/511f520ff4583ff80f448c530cc31003a0055425/x86_64-linux-gnu-binutils/PKGBUILD) 打补丁保留这个 soname 后可以正常工作：
+之后尝试交叉编译至 x86_64 并使用 QEMU 模拟执行。首先尝试的目标是 `x86_64-unknown-linux-gnu`，但 <abbr title="Arch Linux for Loong64">Arch4Loong</abbr> 对非原生架构的支持十分不完善，缺少 ld 等多种必须运行时库。因此尝试 `x86_64-unknown-linux-musl`，静态编译 OpenSSL 后再使用 Cargo 编译项目。这条路径上的第一个问题是 <abbr title="Arch Linux for Loong64">Arch4Loong</abbr> 的 x86_64 binutils 和原生 binutils 并不兼容。后者使用 2.46，[提供 `libsframe.so.3`](https://archlinux.org/packages/core/x86_64/binutils/#:~:text=%20libsframe.so=3-64)，而前者版本为 2.45，需要 `libsframe.so.2`。对[相关 PKGBUILD](https://github.com/lcpu-club/loongarch-packages/blob/511f520ff4583ff80f448c530cc31003a0055425/x86_64-linux-gnu-binutils/PKGBUILD) 打补丁保留这个 soname 后可以正常工作：
 
 ```diff
 diff --git a/x86_64-linux-gnu-binutils/PKGBUILD b/x86_64-linux-gnu-binutils/PKGBUILD
