@@ -6,7 +6,7 @@ lang: zh
 tags: topic:misc loongarch
 ---
 
-近期以 *Claw 为代表的智能体非常流行，其中不乏 Rust 语言的实现。[龙架构的 Rust 平台支持已较为完善](https://doc.rust-lang.org/nightly/rustc/platform-support.html#:~:text=loongarch64-unknown-linux-gnu)。因此，我试着在运行 [Arch Linux for Loong64](https://loongarchlinux.lcpu.dev/) 的龙芯 3B6000 上“养”了一只龙虾，达到了不错的效果。
+近期以 *Claw 为代表的智能体非常流行，其中不乏 Rust 语言的实现。因此，我试着在运行 [Arch Linux for Loong64](https://loongarchlinux.lcpu.dev/) 的龙芯 3B6000 上“养”了一只龙虾，达到了不错的效果。
 
 ## 0. 前置条件
 
@@ -24,6 +24,7 @@ tags: topic:misc loongarch
 * 30 分钟以上、一两个小时为宜的空余时间；
    * 我在安装时花了一个下午，但主要是[在多个 *Claw 实现与部署方案之间不断试错](#i-花絮失败的尝试)
 * Rust 编译器套件和 Cargo。
+   * [龙架构的 Rust 平台支持已较为完善](https://doc.rust-lang.org/nightly/rustc/platform-support.html#:~:text=loongarch64-unknown-linux-gnu)，一般可以无痛原生编译。
 
 ## 1. 编译二进制
 
