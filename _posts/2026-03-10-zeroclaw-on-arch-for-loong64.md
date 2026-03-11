@@ -158,7 +158,7 @@ $ sudo systemctl enable --now systemd-nspawn@claw.service
 
 首先尝试的是原生编译 IronClaw。遗憾的是其依赖 [Wasmtime](https://wasmtime.dev/) 的 JIT 后端 [Cranelift](https://github.com/bytecodealliance/wasmtime/tree/main/cranelift) 并不支持龙架构。为 Cranelift 增加新的后端是一个很大的工作，且目前暂无公开社区努力。
 
-之后尝试交叉编译至 x86_64 并使用 QEMU 模拟执行。首先尝试的目标是 `x86_64-unknown-linux-gnu`，但 Arch4Loong 对非原生架构的支持十分不完善，缺少 ld 等多种必须运行时库。因此尝试 `x86_64-unknown-linux-musl`，静态编译 OpenSSL 后再使用 Cargo 编译项目。这条路径上的第一个问题是 Arch4Loong 的 x86_64 binutils 和原生 binutils 并不兼容。后者使用 2.46，[提供 `libsframe.so.3`](https://archlinux.org/packages/core/x86_64/binutils/#:~:text=%20libsframe.so=3-64)，而前者版本为 2.45，需要 `libsframe.so.2`。对[相关 PKGBUILD](github.com/lcpu-club/loongarch-packages/blob/511f520ff4583ff80f448c530cc31003a0055425/x86_64-linux-gnu-binutils/PKGBUILD) 打补丁保留这个 soname 后可以正常工作：
+之后尝试交叉编译至 x86_64 并使用 QEMU 模拟执行。首先尝试的目标是 `x86_64-unknown-linux-gnu`，但 Arch4Loong 对非原生架构的支持十分不完善，缺少 ld 等多种必须运行时库。因此尝试 `x86_64-unknown-linux-musl`，静态编译 OpenSSL 后再使用 Cargo 编译项目。这条路径上的第一个问题是 Arch4Loong 的 x86_64 binutils 和原生 binutils 并不兼容。后者使用 2.46，[提供 `libsframe.so.3`](https://archlinux.org/packages/core/x86_64/binutils/#:~:text=%20libsframe.so=3-64)，而前者版本为 2.45，需要 `libsframe.so.2`。对[相关 PKGBUILD](https://github.com/lcpu-club/loongarch-packages/blob/511f520ff4583ff80f448c530cc31003a0055425/x86_64-linux-gnu-binutils/PKGBUILD) 打补丁保留这个 soname 后可以正常工作：
 
 ```diff
 diff --git a/x86_64-linux-gnu-binutils/PKGBUILD b/x86_64-linux-gnu-binutils/PKGBUILD
@@ -188,3 +188,4 @@ index 547876b..729ae63 100644
 ```
 
 之后继续尝试静态编译后，编译产物在 QEMU 下和原生环境下始终出现段错误。再加上其令人担忧的代码质量、onboarding 体验、版本兼容性、修复 bug 的方式等种种因素，最终选择放弃部署 IronClaw。
+
