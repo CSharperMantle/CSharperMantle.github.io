@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 用龙架构养龙虾
+title: 在龙架构上养龙虾
 date: 2026-03-10T23:15:45+08:00
 lang: zh
 tags: topic:misc loongarch
