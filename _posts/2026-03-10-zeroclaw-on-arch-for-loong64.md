@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 在龙平台上养龙虾
+title: 用龙架构养龙虾
 date: 2026-03-10T23:15:45+08:00
 lang: zh
 tags: topic:misc loongarch
 ---
 
-近期以 *Claw 为代表的智能体非常流行，其中不乏使用 Rust 语言实现的智能体。所幸，[龙架构的 Rust 平台支持已较为完善](https://doc.rust-lang.org/nightly/rustc/platform-support.html#:~:text=loongarch64-unknown-linux-gnu)，所以龙架构平台上“养”一只龙虾是可行的。
+近期以 *Claw 为代表的智能体非常流行，其中不乏使用 Rust 语言实现的智能体。[龙架构的 Rust 平台支持已较为完善](https://doc.rust-lang.org/nightly/rustc/platform-support.html#:~:text=loongarch64-unknown-linux-gnu)；本文描述了笔者在龙架构平台上“养”一只龙虾的成功尝试。
 
-这里使用的操作系统是 [Arch Linux for Loong64](https://loongarchlinux.lcpu.dev/)。
+这里使用的操作系统是 [Arch Linux for Loong64](https://loongarchlinux.lcpu.dev/)（Arch4Loong）。
 
 ## 1. 编译二进制
 
@@ -112,6 +112,7 @@ $ sudo systemctl enable --now systemd-networkd.service
 之后将编译好的二进制 bind 至容器内即可。
 
 ```plain-text
+# /etc/systemd/nspawn/claw.nspawn
 [Files]
 BindReadOnly=/opt/zeroclaw/target/release/zeroclaw:/usr/local/bin/zeroclaw
 BindReadOnly=/opt/zeroclaw:/opt/zeroclaw
@@ -139,7 +140,7 @@ Restart=always
 WantedBy=multi-user.target
 EOF
 # zeroclaw onboard
-# # ...
+# # Other steps...
 # systemctl enable --now zeroclaw.service
 ```
 
@@ -157,7 +158,7 @@ $ sudo systemctl enable --now systemd-nspawn@claw.service
 
 首先尝试的是原生编译 IronClaw。遗憾的是其依赖 [Wasmtime](https://wasmtime.dev/) 的 JIT 后端 [Cranelift](https://github.com/bytecodealliance/wasmtime/tree/main/cranelift) 并不支持龙架构。为 Cranelift 增加新的后端是一个很大的工作，且目前暂无公开社区努力。
 
-之后尝试交叉编译至 x86_64 并使用 QEMU 模拟执行。首先尝试的目标是 `x86_64-unknown-linux-gnu`，但 Arch4LA 对非原生架构的支持十分不完善，缺少 ld 等多种必须运行时库。因此尝试 `x86_64-unknown-linux-musl`，静态编译 OpenSSL 后再使用 Cargo 编译项目。这条路径上的第一个问题是 Arch4LA 的 x86_64 binutils 和原生 binutils 并不兼容。后者使用 2.46，[提供 `libsframe.so.3`](https://archlinux.org/packages/core/x86_64/binutils/#:~:text=%20libsframe.so=3-64)，而前者版本为 2.45，需要 `libsframe.so.2`。对[相关 PKGBUILD](github.com/lcpu-club/loongarch-packages/blob/511f520ff4583ff80f448c530cc31003a0055425/x86_64-linux-gnu-binutils/PKGBUILD) 打补丁保留这个 soname 后可以正常工作：
+之后尝试交叉编译至 x86_64 并使用 QEMU 模拟执行。首先尝试的目标是 `x86_64-unknown-linux-gnu`，但 Arch4Loong 对非原生架构的支持十分不完善，缺少 ld 等多种必须运行时库。因此尝试 `x86_64-unknown-linux-musl`，静态编译 OpenSSL 后再使用 Cargo 编译项目。这条路径上的第一个问题是 Arch4Loong 的 x86_64 binutils 和原生 binutils 并不兼容。后者使用 2.46，[提供 `libsframe.so.3`](https://archlinux.org/packages/core/x86_64/binutils/#:~:text=%20libsframe.so=3-64)，而前者版本为 2.45，需要 `libsframe.so.2`。对[相关 PKGBUILD](github.com/lcpu-club/loongarch-packages/blob/511f520ff4583ff80f448c530cc31003a0055425/x86_64-linux-gnu-binutils/PKGBUILD) 打补丁保留这个 soname 后可以正常工作：
 
 ```diff
 diff --git a/x86_64-linux-gnu-binutils/PKGBUILD b/x86_64-linux-gnu-binutils/PKGBUILD
