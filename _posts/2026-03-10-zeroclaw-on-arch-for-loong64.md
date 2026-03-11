@@ -6,13 +6,26 @@ lang: zh
 tags: topic:misc loongarch
 ---
 
-近期以 *Claw 为代表的智能体非常流行，其中不乏使用 Rust 语言实现的智能体。[龙架构的 Rust 平台支持已较为完善](https://doc.rust-lang.org/nightly/rustc/platform-support.html#:~:text=loongarch64-unknown-linux-gnu)；本文描述了笔者在龙架构平台上“养”一只龙虾的成功尝试。
+近期以 *Claw 为代表的智能体非常流行，其中不乏 Rust 语言的实现。[龙架构的 Rust 平台支持已较为完善](https://doc.rust-lang.org/nightly/rustc/platform-support.html#:~:text=loongarch64-unknown-linux-gnu)。因此，我试着在允许 [Arch Linux for Loong64](https://loongarchlinux.lcpu.dev/)（Arch4Loong）的龙芯 3B6000 上“养”了一只龙虾，达到了不错的效果。
 
-这里使用的操作系统是 [Arch Linux for Loong64](https://loongarchlinux.lcpu.dev/)（Arch4Loong）。
+## 0. 前置条件
+
+这是一篇笔记式博客，包含了多种仅适用于我本人系统环境的操作与考虑，其中有些已在文内标出，有些则不然。我的系统配置如下：
+
+* **主板：** [Loongson-3B6000x1-7A2000x1-EVB](https://loongfans.cn/devices/loongson-xb612b0-v1.2)
+* **内核：** [Linux 6.19.6-arch1-1-csmantle-aosc-main-16k](https://github.com/CSharperMantle/linux-csmantle)
+
+如果你想跟随本篇博客进行操作，需要准备以下材料：
+
+* 使用 Linux 系统与常见开发工具的经验；
+   * 能理解每步操作的语义、效果、对系统安全的影响
+   * 能在不借助 LLM 的情况下通过手册、文档、搜索引擎或 Wiki 进行故障检修
+* 一个正常的网络环境；
+* 30 分钟以上、一两个小时为宜的空余时间；
+   * 我在安装时花了一个下午，但主要是[在多个 *Claw 实现与部署方案之间不断试错](#i-花絮失败的尝试)
+* Rust 编译器套件和 Cargo。
 
 ## 1. 编译二进制
-
-需要提前安装 Rust 编译器套件和 Cargo。
 
 在 `/opt` 下创建目录并设置权限。我在这里选择将所有者设置为 `csmantle:wheel`、目录权限设为 `drwxr-sr-x`，是为了对齐 `/opt` 下软件全局所有的设计用途，实践中可以自行考量：
 
