@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在龙架构上养龙虾
+title: 在龙架构上“养龙虾”
 date: 2026-03-10T23:15:45+08:00
 lang: zh
 tags: topic:misc loongarch
@@ -202,4 +202,5 @@ index 547876b..729ae63 100644
 ```
 
 之后继续尝试静态编译后，编译产物在 QEMU 下和原生环境下始终出现段错误。再加上其令人担忧的代码质量、onboarding 体验、版本兼容性、修复 bug 的方式等种种因素，最终选择放弃部署 IronClaw。
+
 
