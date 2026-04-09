@@ -111,6 +111,24 @@ passwd: password for root changed by root
 $ 
 ```
 
+参数的含义如下：
+
+* `-machine virt`、`-cpu la464`：设置模拟的 CPU 型号与平台
+* `-m 1G`：给虚拟机分配 1GiB 内存
+* `-bios /usr/share/edk2/loongarch64/QEMU_EFI.fd`：设置 BIOS 文件的路径
+* `-kernel ~/dist/linux-arch/arch/loongarch/boot/vmlinuz.efi`：设置内核文件路径
+* `-drive file=~/alpine-rootfs-qemu-2.img,format=raw,if=virtio`：设置磁盘挂载参数
+  * `file=~/alpine-rootfs-qemu-2.img`：设置磁盘文件在宿主上的路径
+  * `format=raw`：格式为裸镜像，直接包含文件系统层数据，没有封装容器
+  * `if=virtio`：挂载为 VirtIO-BLK 磁盘，虚拟机内设备路径为 `/dev/vd*` [^1] [^2]
+* `-append 'loglevel=7 root=/dev/vda rw console=ttyS0,115200 init=/bin/sh'`：添加内核命令行参数[^3]
+  * `loglevel=7`：设置日志输出为 `KERN_DEBUG` 级别
+  * `root=/dev/vda`：设置 <abbr title="根文件系统">rootfs</abbr> 的设备路径
+  * `rw`：将 <abbr title="根文件系统">rootfs</abbr> 挂载为可读可写
+  * `console=ttyS0,115200`：设置输出到串口 `ttyS0` 并使用 115200 波特率
+  * `init=/bin/sh`：使用 `/bin/sh` 作为 init 进程
+* `-nographic`：
+
 之后，将 init 在内核命令行中换为正常的 `/sbin/init`，即可进入正常的 Alpine 系统。
 
 ```console
@@ -160,7 +178,9 @@ hdddyo+ohddyosdddddddddho+oydddy++ohdddh    Locale: C.UTF-8
 (none):~#
 ```
 
-此时可以删除刚刚下载的临时文件。
+此时虚拟机已经可用，可以正常使用 poweroff(1) 等通用方法进行管理。也可以在宿主机中重新挂载虚拟磁盘来修改磁盘内容。
+
+有需要的可以删除刚才下载的临时文件。
 
 ```console
 $ rm -rf /tmp/alpine*
@@ -168,3 +188,6 @@ $
 ```
 
 [^0]: 准确的介绍可以参考 <https://wiki.archlinux.org/title/Arch_boot_process> 或其他发行版的相关文档。
+[^1]: <https://www.kernel.org/doc/Documentation/admin-guide/devices.txt>
+[^2]: <https://serverfault.com/questions/803388/what-is-the-difference-between-dev-vda-and-dev-sda>
+[^3]: 详见 <https://www.kernel.org/doc/html/v4.14/admin-guide/kernel-parameters.html>。
