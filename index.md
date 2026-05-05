@@ -15,7 +15,7 @@ I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou 
 * Personal email: <rong.bao@csmantle.top>
 * Spoken languages:
   * `zh-{cmn,wuu}-Hans-CN` (native)
-  * `en` (TOEFL iBT 117 = CEFR C1-C2)
+  * `en` (TOEFL iBT 117 = CEFR C2)
 * Developing personal projects
 
 <details>
