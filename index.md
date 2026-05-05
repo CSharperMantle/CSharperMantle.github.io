@@ -56,7 +56,7 @@ I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou 
     <li><span>I do use <abbr title="Large Language Model">LLM</abbr>s to perform repetitive clerical work and typographical proofreading.</span></li>
     <li><span>I do chat with <abbr title="Large Language Model">LLM</abbr>s to have fun in my spare time.</span></li>
     <li><span>I do use generative models to craft images for hobby use.</span></li>
-    <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write code without having the full capability to complete the task myself or without careful scrutiny.</span></li>
+    <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write code beyond my own capability or without careful scrutiny.</span></li>
     <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write casual articles, like blogs.</span></li>
     <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write academic articles or carry out research in place of myself.</span></li>
     <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s as a search engine.</span></li>
