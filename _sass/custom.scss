@@ -24,6 +24,10 @@
   code.language-plaintext:not(pre > *) {
     @include break-anywhere;
   }
+
+  pre {
+    line-height: initial;
+  }
 }
 
 .break-anywhere {
