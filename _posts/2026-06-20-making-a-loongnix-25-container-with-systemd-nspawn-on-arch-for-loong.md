@@ -17,7 +17,7 @@ $ sudo pacman -S debootstrap
 $ sudo ln -s sid /usr/share/debootstrap/scripts/loongnix-stable
 $ sudo cd /var/lib/machines
 $ sudo debootstrap --no-check-gpg --variant=minbase --components=main,non-free,contrib --include=dbus,libpam-systemd --arch=loong64 --foreign --verbose loongnix-stable ./loongnix https://pkg.loongnix.cn/loongnix/25
-$ arch-chroot ./loongnix /debootstrap/debootstrap --second-stage
+$ sudo arch-chroot ./loongnix /debootstrap/debootstrap --second-stage
 ```
 
 As this is a minimal installation, many essential services and utilities are missing. One of them is systemd-networkd.service(8). Start it inside the container for network access:
