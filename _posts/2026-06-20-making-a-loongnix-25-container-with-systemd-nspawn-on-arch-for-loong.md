@@ -6,7 +6,7 @@ lang: en
 tags: topic:dev loongarch
 ---
 
-[Loongnix](https://www.loongnix.cn) is LoongArch's reference Linux distribution. Since it's derived from Debian, it should not be hard to make a rootfs using debootstrap(8). However, it turns out not to be that straightforward as I have thought.
+[Loongnix](https://www.loongnix.cn) is LoongArch's reference Linux distribution. Since it's derived from Debian, it should not be hard to make a rootfs using debootstrap(8). However, it turns out to be less straightforward than expected.
 
 [There is a paragraph](https://docs.loongnix.cn/loongnix/faq/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%A1%8C%E9%9D%A2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html#%E5%88%B6%E4%BD%9Crootfs%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F) in Loongnix's official documentation about how to make a rootfs. However, it's outdated and contains bad practices.
 
