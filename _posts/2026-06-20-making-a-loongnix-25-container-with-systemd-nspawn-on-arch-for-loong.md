@@ -10,7 +10,7 @@ tags: topic:dev loongarch
 
 [There is a paragraph](https://docs.loongnix.cn/loongnix/faq/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%A1%8C%E9%9D%A2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.html#%E5%88%B6%E4%BD%9Crootfs%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F) in Loongnix's official documentation about how to make a rootfs. However, it's outdated and contains bad practices.
 
-Since we're using [systemd-nspawn(1)](https://wiki.archlinux.org/title/Systemd-nspawn) in this post, we create the rootfs at `/var/lib/machines/loongnix`.
+Since we're using [systemd-nspawn(1)](https://wiki.archlinux.org/title/Systemd-nspawn) in this post, we create the rootfs at `/var/lib/machines/loongnix`, thus naming the container "loongnix".
 
 ```console
 $ sudo pacman -S debootstrap
@@ -23,6 +23,7 @@ $ sudo arch-chroot ./loongnix /debootstrap/debootstrap --second-stage
 As this is a minimal installation, many essential services and utilities are missing. One of them is systemd-networkd.service(8). Start it inside the container for network access:
 
 ```console
+$ sudo machinectl start loongnix
 $ sudo machinectl shell loongnix
 # systemctl enable --now systemd-networkd.service
 ```
