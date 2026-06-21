@@ -2,7 +2,7 @@
 layout: home
 title: Home
 list_title: >-
-    <abbr title="Recent 10">R10</abbr> Posts
+    Recent 10 Posts
 nav_priority: 0
 ---
 
