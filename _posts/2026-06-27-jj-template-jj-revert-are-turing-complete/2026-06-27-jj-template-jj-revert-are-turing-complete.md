@@ -10,7 +10,7 @@ tags: topic:dev algorithm
 
 Jujutsu has a [templating language](https://docs.jj-vcs.dev/latest/templates/) primarily for customization and theming of almost all human-oriented TUI parts, including jj-log(1), jj-show(1), etc. I daily-drive the [default, built-in theme](https://github.com/jj-vcs/jj/blob/fdc6c5cff05bcf4ebf76db7ad851da1840f72a40/cli/src/config/templates.toml). The templating language supports a plethora of operations, which made me think whether anything other than themes can be built out of it.
 
-A while ago I read [*Jira is Turing-Complete*](https://seriot.ch/computation/jira.html) by Nicolas Seriot. In the article, he used Jira Automation Rules can be built to simulate a [Minsky machine](https://esolangs.org/wiki/Minsky_machine) by recursion. As Minsky machines with two or more registers can be reduced to a Turing machine, he demonstrated the Turing completeness of Jira. This post shows that the same is also achievable with Jujutsu templating language as the state transition function and jj-revert(1) as the clock driver.
+In [*Jira is Turing-Complete*](https://seriot.ch/computation/jira.html) by Nicolas Seriot, he showed that Jira Automation Rules can be built to simulate a [Minsky machine](https://esolangs.org/wiki/Minsky_machine) by recursion. As Minsky machines with two or more registers can be reduced to Turing machines, he demonstrated the Turing completeness of Jira. In this post, we show that the same is also achievable with Jujutsu templating language as the state transition function, plus jj-revert(1) as the clock driver.
 
 ## A Minsky adder
 
