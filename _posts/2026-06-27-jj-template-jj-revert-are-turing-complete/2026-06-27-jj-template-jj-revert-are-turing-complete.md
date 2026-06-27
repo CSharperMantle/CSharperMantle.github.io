@@ -47,7 +47,7 @@ Revert "Implement feature foo"
 This reverts commit 6987bf02562283e638172d09a1f6822cb67ed73f.
 ```
 
-which is created by [this built-in template](https://github.com/jj-vcs/jj/blob/fdc6c5cff05bcf4ebf76db7ad851da1840f72a40/cli/src/config/templates.toml#L37-L43):
+... which is created by [this built-in template](https://github.com/jj-vcs/jj/blob/fdc6c5cff05bcf4ebf76db7ad851da1840f72a40/cli/src/config/templates.toml#L37-L43):
 
 ```toml
 revert_description = '''
@@ -86,9 +86,9 @@ if(
 revert_description = "step(description.first_line())"
 ```
 
-Next, create the initial state by `jj new zzzzzzzz --message 'S0|aa|bbb|'`, which means "*create a new revision on the null commit (absolute root) with its description set to 'S0|aa|bbb'*". Then, move the working copy forward one commit by `jj new`.
+Next, create the initial state by `jj new zzzzzzzz --message 'S0|aa|bbb|'`[^0], which means "create a new revision on the null commit (absolute root) with its description set to 'S0&#124;aa&#124;bbb'". Then, move the working copy forward one commit by `jj new`.
 
-To run the machine, run `jj revert --revision @- --insert-after @-`, which means "*revert revision @- (parent revision of the working copy), and insert the new revision after it*". This should advance the machine by 1 cycle.
+To run the machine, run `jj revert --revision @- --insert-after @-`, which means "revert revision @- (parent revision of the working copy), and insert the new revision after it". This should advance the machine by 1 cycle.
 
 Finally, use `jj log` to view the evolution of the machine's state.
 
@@ -120,3 +120,7 @@ Here's a demo GIF for the same process:
 ## Conclusion
 
 Jujutsu templates plus jj-revert(1) are Turing complete.
+
+---
+
+[^0]: Edit: This extra trailing pipe character is a typo. This should not affect the behavior of the machine.
