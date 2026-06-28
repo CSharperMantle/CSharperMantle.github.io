@@ -6,9 +6,9 @@ lang: en
 tags: topic:dev algorithm
 ---
 
-[Jujutsu](https://docs.jj-vcs.dev/latest/) is a version control system that is ergonomic to use. I first became aware of it when working on the Firefox codebase, where I needed to juggle with multiple stacks of patches simultaneously. Mozilla has an excellent [introduction to Jujutsu](https://firefox-source-docs.mozilla.org/contributing/jujutsu.html#introduction-to-jujutsu) available on their docs site.
+[Jujutsu](https://docs.jj-vcs.dev/latest/) is an ergonomic <abbr title="Distributed Version Control System">DVCS</abbr> interoperable with Git. I first became aware of it when working on the Firefox codebase, where I needed to juggle with multiple stacks of patches simultaneously. Mozilla has an excellent [*Introduction to Jujutsu*](https://firefox-source-docs.mozilla.org/contributing/jujutsu.html#introduction-to-jujutsu) available on their docs site.
 
-Jujutsu has a [templating language](https://docs.jj-vcs.dev/latest/templates/) primarily for customization and theming of almost all human-oriented TUI parts, including jj-log(1), jj-show(1), etc. I daily-drive the [default, built-in theme](https://github.com/jj-vcs/jj/blob/fdc6c5cff05bcf4ebf76db7ad851da1840f72a40/cli/src/config/templates.toml). The templating language supports a plethora of operations, which made me think whether anything other than themes can be built out of it.
+Jujutsu has a [templating language](https://docs.jj-vcs.dev/latest/templates/) primarily for customization and theming of almost all human-oriented TUI parts, including jj-log(1), jj-show(1), etc. I daily-drive the [default, built-in theme](https://github.com/jj-vcs/jj/blob/fdc6c5cff05bcf4ebf76db7ad851da1840f72a40/cli/src/config/templates.toml). The templating language supports a plethora of operations, which made me think whether it's possible to build something more than themes out of it.
 
 In [*Jira is Turing-Complete*](https://seriot.ch/computation/jira.html) by Nicolas Seriot, he showed that Jira Automation Rules can be built to simulate a [Minsky machine](https://esolangs.org/wiki/Minsky_machine) by recursion. As Minsky machines with two or more registers can be reduced to Turing machines, he demonstrated the Turing completeness of Jira. In this post, we show that the same is also achievable with Jujutsu templating language as the state transition function, plus jj-revert(1) as the clock driver.
 
@@ -61,7 +61,7 @@ concat(
 
 ### Implementation
 
-To create the machine, first create a new directory, enter it, and make a fresh Jujutsu repository by `jj init`. Locally define the templates by `jj config edit --repo`:
+To create the machine, first create a new directory, enter it, and make a fresh Jujutsu repository by `jj git init`. Locally define the templates by `jj config edit --repo`:
 
 ```toml
 [template-aliases]
