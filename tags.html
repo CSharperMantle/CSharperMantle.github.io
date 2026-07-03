@@ -44,7 +44,7 @@ nav_priority: 10
     {%- for tag in sorted_tags -%}
     {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
     <li id="li-tagged-pages-{{ tag[0] }}">
-      <h3>
+      <h3 class="sans-serif">
         {%- if tag_is_topic == true -%}
         <span><strong>{{ tag[0] | strip_tag_type }}</strong></span>
         {%- else -%}
