@@ -169,7 +169,6 @@ blockquote {
  */
 pre,
 code {
-  @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
   background-color: #eef;
@@ -177,6 +176,7 @@ code {
 }
 
 code {
+  @include relative-font-size(0.9);
   padding: 1px 5px;
 }
 
@@ -185,6 +185,7 @@ pre {
   overflow-x: auto;
 
   > code {
+    @include relative-font-size(0.95);
     border: 0;
     padding-right: 0;
     padding-left: 0;
