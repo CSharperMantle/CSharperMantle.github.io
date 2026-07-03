@@ -55,7 +55,7 @@ nav_priority: 10
         {%- for post in sorted_posts -%}
         <li>
           <p>
-            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            <a class="serif" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
              - 
             <time datetime="{{ post.date | date_to_xmlschema }}">
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
