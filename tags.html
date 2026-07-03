@@ -40,7 +40,7 @@ nav_priority: 10
 <section>
   <h2>Tagged pages</h2>
   <p>This section lists all pages associated with a specific tag in chronologically ascending order. Bolded tags are topic tags. The upward arrow next to each tag name is for quick navigation back to the tag index.</p>
-  <ul>
+  <ul class="tagged-pages-list">
     {%- for tag in sorted_tags -%}
     {%- assign tag_is_topic = tag[0] | start_with: 'topic:' -%}
     <li id="li-tagged-pages-{{ tag[0] }}">
@@ -54,14 +54,14 @@ nav_priority: 10
         {%- assign sorted_posts = tag[1] | sort: "date" | reverse -%}
         {%- for post in sorted_posts -%}
         <li>
-          <p>
+          <span>
             <a class="serif" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
              - 
             <time datetime="{{ post.date | date_to_xmlschema }}">
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
               {{- post.date | date: date_format -}}
             </time>
-          </p>
+          </span>
         </li>
         {%- endfor -%}
       </ul>

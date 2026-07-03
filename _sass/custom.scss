@@ -95,6 +95,18 @@ ul.archive-list {
   }
 }
 
+ul.tagged-pages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+  }
+}
+
 a {
   overflow-wrap: break-word;
 }
