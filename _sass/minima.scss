@@ -3,16 +3,12 @@
 @use "sass:color";
 
 // Define defaults for each variable.
-$system-ui-font-stack: system-ui,
-  "Segoe UI", Roboto, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$base-font-family: "Source Sans 3 VF", "Source Han Sans CN", $system-ui-font-stack !default;
+$base-font-family: "Source Sans 3 VF", "Source Han Sans CN", sans-serif !default;
 $base-font-size: 16px !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
-$code-font-family: "Cascadia Code VF", "Cascadia Code", "Fira Code", Consolas,
-  SFMono-Regular, Menlo, Monaco, "Liberation Mono", "Courier New", monospace !default;
+$code-font-family: "Cascadia Code VF", monospace !default;
 
 $spacing-unit: 30px !default;
 
