@@ -128,4 +128,4 @@ Jujutsu templates plus jj-revert(1) are Turing complete.
 ---
 
 [^0]: Edit: This extra trailing pipe character is a typo. This should not affect the behavior of the machine.
-[^1]: https://stackoverflow.com/questions/2497146/is-css-turing-complete#comment96745785_5239256
+[^1]: <https://stackoverflow.com/questions/2497146/is-css-turing-complete#comment96745785_5239256>
