@@ -29,7 +29,7 @@ S1: inc B; goto S0
 #HALT: halt
 ```
 
-The first question is where to store the states. Jujutsu templates [forbids recursion](https://github.com/jj-vcs/jj/blob/fdc6c5cff05bcf4ebf76db7ad851da1840f72a40/cli/src/template_parser.rs#L160), so they inherently cannot have memory. However, each commit has a description (also called message, or subject plus body, pick yours), which is suitable for storing data.
+**Encoding machine states.** The first question is where to store the states. Jujutsu templates [forbids recursion](https://github.com/jj-vcs/jj/blob/fdc6c5cff05bcf4ebf76db7ad851da1840f72a40/cli/src/template_parser.rs#L160), so they inherently cannot have memory. However, each commit has a description (also called message, or subject plus body, pick yours), which is suitable for storing data.
 
 Once encoded in the commit description, the value becomes a `String`. There are no easy ways to make `Integer`s out of `String`s in Jujutsu templating language. To circumvent this, we encode the value into length of `String`s, which itself [has](https://docs.jj-vcs.dev/latest/templates/#string-type) `++` concatenation, `.remove_suffix(needle: Stringify) -> String`, `.split(separator: StringPattern, [limit: Integer]) -> List<String>`, and `.len() -> Integer`.
 
@@ -39,7 +39,9 @@ We use the first (subject) line of the description to hold all states, which loo
 S0|aa|bbb
 ```
 
-jj-revert(1) is a good clock source to our machine. It creates a new commit and sets its description by applying a template to the reverted one. The default template would generate something like this:
+**Finding a clock source.** Since templates themselves cannot recurse (["combinational"](https://en.wikipedia.org/wiki/Combinational_logic) in this sense), an external excitation is needed to drive the state transition. This source should also be dead simple to avoid the "CSS is as turing complete as [a couple of rocks on the beach](https://xkcd.com/505/)" pitfall[^1].
+
+It turns out that jj-revert(1) is a good candidate. It creates a new commit and sets its description by applying a template to the reverted one. By default, this command produces the following:
 
 ```plain-text
 Revert "Implement feature foo"
@@ -58,6 +60,8 @@ concat(
 )
 '''
 ```
+
+So, once we set `revert_description` appropriately, we can simply `jj revert` the previous commit over and over again to advance the clock tick. Since there's no extra decision involved, it's dead simple.
 
 ### Implementation
 
@@ -124,3 +128,4 @@ Jujutsu templates plus jj-revert(1) are Turing complete.
 ---
 
 [^0]: Edit: This extra trailing pipe character is a typo. This should not affect the behavior of the machine.
+[^1]: https://stackoverflow.com/questions/2497146/is-css-turing-complete#comment96745785_5239256
