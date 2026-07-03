@@ -1,6 +1,6 @@
 $font-styles: (
   "Normal": normal,
-  "Italic": italic
+  "Italic": italic,
 );
 
 @each $style-name, $style-value in $font-styles {
@@ -10,7 +10,10 @@ $font-styles: (
     font-style: $style-value;
     font-stretch: normal;
     font-display: swap;
-    src: url("/assets/fonts/CascadiaCode-2407.24/#{$style-name}.woff2") format("woff2-variations"),
-      url("/assets/fonts/CascadiaCode-2407.24/#{$style-name}.ttf") format("truetype-variations");
+    src:
+      url("/assets/fonts/CascadiaCode-2407.24/#{$style-name}.woff2")
+        format("woff2-variations"),
+      url("/assets/fonts/CascadiaCode-2407.24/#{$style-name}.ttf")
+        format("truetype-variations");
   }
 }
