@@ -110,48 +110,63 @@
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
-}
 
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: math.div($spacing-unit, 2);
-}
-
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-}
-
-.footer-col-wrapper {
-  @include relative-font-size(0.9375);
-  color: $grey-color;
-  margin-left: math.div(-$spacing-unit, 2);
-
-  display: grid;
-  grid-template-areas:
-    "a c"
-    "b c";
-  column-gap: 5px;
-
-  @extend %clearfix;
-}
-
-.footer-col {
-  float: left;
-  margin-bottom: math.div($spacing-unit, 2);
-  padding-left: math.div($spacing-unit, 2);
-
-  &.footer-col-1 {
-    grid-area: a;
+  .footer-heading {
+    @include relative-font-size(1.125);
+    margin-bottom: math.div($spacing-unit, 2);
   }
 
-  &.footer-col-2 {
-    grid-area: b;
+  .contact-list,
+  .social-media-list {
+    list-style: none;
+    margin-left: 0;
   }
 
-  &.footer-col-3 {
-    grid-area: c;
+  .footer-col-wrapper {
+    @include relative-font-size(0.9375);
+    color: $grey-color;
+    margin-left: math.div(-$spacing-unit, 2);
+
+    display: grid;
+    grid-template-areas:
+      "a c"
+      "b c";
+    column-gap: 5px;
+
+    @extend %clearfix;
+  }
+
+  .footer-col {
+    float: left;
+    margin-bottom: math.div($spacing-unit, 2);
+    padding-left: math.div($spacing-unit, 2);
+
+    &.footer-col-1 {
+      grid-area: a;
+    }
+
+    &.footer-col-2 {
+      grid-area: b;
+    }
+
+    &.footer-col-3 {
+      grid-area: c;
+    }
+  }
+
+  .license-cc {
+    .license-cc-link {
+      .license-cc-icons {
+        display: inline-flex;
+        flex-direction: row;
+        column-gap: 1px;
+
+        > img {
+          height: 22px !important;
+          vertical-align: text-bottom;
+        }
+      }
+    }
   }
 }
 
