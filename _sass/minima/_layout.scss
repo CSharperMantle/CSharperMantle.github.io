@@ -131,6 +131,12 @@
     grid-template-areas:
       "a c"
       "b c";
+    @include media-query($on-palm) {
+      grid-template-areas:
+        "a"
+        "c"
+        "b";
+    }
     column-gap: 5px;
 
     @extend %clearfix;
@@ -138,6 +144,9 @@
 
   .footer-col {
     float: left;
+    @include media-query($on-palm) {
+      float: none;
+    }
     margin-bottom: math.div($spacing-unit, 2);
     padding-left: math.div($spacing-unit, 2);
 
@@ -167,19 +176,6 @@
         }
       }
     }
-  }
-}
-
-@include media-query($on-palm) {
-  .footer-col-wrapper {
-    grid-template-areas:
-      "a"
-      "c"
-      "b";
-  }
-
-  .footer-col {
-    float: none;
   }
 }
 
