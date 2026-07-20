@@ -30,7 +30,7 @@ When agents are detected, it becomes less verbose while keeping the behaviors ma
 0:02.60 W AI agent detected. Terminal output limited to warnings and errors.
 ```
 
-So far so good. However, I use [Pi.dev](https://pi.dev/docs/latest), which isn't included in the detection list. All other popular coding agents like [crush](https://github.com/charmbracelet/crush), [Cline](https://github.com/cline/cline), Copilot CLI, as well as various provider-specific agents, are all undetected by this function.
+So far so good. However, I use [Pi.dev](https://pi.dev/docs/latest), which isn't included in the detection list. Also undetected are other popular choices like [crush](https://github.com/charmbracelet/crush), [Cline](https://github.com/cline/cline), Copilot CLI, as well as most open-source provider's agents.
 
 To solve this, we can either:
 
