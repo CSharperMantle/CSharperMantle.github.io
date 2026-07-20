@@ -3,6 +3,8 @@ layout: post
 title: User-Agent drama of coding agents
 date: 2026-07-20T21:49:24+08:00
 lang: en
+description: >-
+    History repeats itself once more.
 tags: topic:misc ai
 ---
 
