@@ -206,7 +206,6 @@ The measurement contains 30 rounds for each kernel. In each round, we warm up th
 
 From the results, it’s clear that Snippets A and B actually perform quite similarly at low offset, with Snippet B taking ~0.3 cycles more. At somewhat larger offsets, Snippet B takes 2 cycles to finish while Snippet A remains 1 cycle. At even larger offsets, the two snippets both take 2 cycles to finish. Idiom recognition is certainly helping us at lower offsets, while at larger offsets the sequence probably goes beyond the recognition window. I have not carried out this test on RISC-V processors with longer sequences yet, and I believe the results would be more interesting.
 
-Loading an immediate value into a register is not so easy and "immediate", after all. Yet, it is certainly a fascinating topic in computer architecture and micro-architecture research.
+Loading an immediate value into a register is not so easy and "immediate", after all. Yet, what a fascinating topic it is in computer architecture and micro-architecture research!
 
-[^0]: This is usually done by [*register renaming*](https://en.wikipedia.org/wiki/Register_renaming). At this stage, a small number of *architectural registers* (like `eax`) are dynamically mapped to a larger number of *physical registers*. Then, two unrelated computations writing to the same architectural register can be transformed to use different physical registers, allowing them to be run in parallel.
-
+[^0]: This is usually done by [*register renaming*](https://en.wikipedia.org/wiki/Register_renaming). At this stage, a small number of *architectural registers* (like `eax`) are dynamically mapped to a larger number of *physical registers*. Then, two unrelated computations that write to the same architectural register can be transformed to use different physical registers, allowing them to be run in parallel.
