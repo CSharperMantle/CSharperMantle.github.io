@@ -40,3 +40,5 @@ gem "faraday-retry"
 gem "webrick"
 
 gem "csv", "~> 3.3"
+
+gem "rouge", "~> 4.7"

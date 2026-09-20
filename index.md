@@ -37,13 +37,12 @@ I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou 
   </ul>
 </details>
 
-### Skills
+### I like...
 
-* Polyglot, enjoy C/Rust/TypeScript most
-* Reverse engineering, messing around with <abbr title="Operating System">OS</abbr> and <abbr title="Instruction Set Architecture">ISA</abbr>. Member of [Vidar-Team](https://vidar.club/)
-* Bare-metal, desktop native, single-page WebApps development
-* Interested in x86-64 assembly, RISC-V/LoongArch <abbr title="Instruction Set Architecture">ISA</abbr>s and microarch implementation
-* [Mozilla Level 3 Commit Access](https://bugzilla.mozilla.org/user_profile?user_id=774743), active maintainer of SpiderMonkey's RV64 <abbr title="Just-In-Time">JIT</abbr> backend
+* Coding. Polyglot, enjoy C/Rust/TypeScript most
+* Coding in reverse. Reverse engineering, messing around with edge cases of the <abbr title="Instruction Set Architecture">ISA</abbr> and the <abbr title="Operating System">OS</abbr>. Member of [Vidar-Team](https://vidar.club/)
+* Low-level works. Interested in x86-64 assembly, RISC-V/LoongArch <abbr title="Instruction Set Architecture">ISA</abbr>s and microarch implementation
+* Compilers and toolchains. [Mozilla Level 3 Commit Access](https://bugzilla.mozilla.org/user_profile?user_id=774743), active maintainer of SpiderMonkey's <abbr title="RISC-V RV64">RV64</abbr> and <abbr title="LoongArch64">LA64</abbr> <abbr title="Just-In-Time">JIT</abbr> backends
 
 <details id="details-ai-attitudes">
   <summary>My attitudes towards <abbr title="Artificial Intelligence">AI</abbr></summary>
