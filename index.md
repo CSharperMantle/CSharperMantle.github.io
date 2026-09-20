@@ -41,7 +41,7 @@ I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou 
 
 * Coding. Polyglot, enjoy C/Rust/TypeScript most
 * Coding in reverse. Reverse engineering, messing around with edge cases of the <abbr title="Instruction Set Architecture">ISA</abbr> and the <abbr title="Operating System">OS</abbr>. Member of [Vidar-Team](https://vidar.club/)
-* Low-level works. Interested in x86-64 assembly, RISC-V/LoongArch <abbr title="Instruction Set Architecture">ISA</abbr>s and microarch implementation
+* Low-level work. Interested in x86-64 assembly, RISC-V/LoongArch <abbr title="Instruction Set Architecture">ISA</abbr>s, and microarch implementation
 * Compilers and toolchains. [Mozilla Level 3 Commit Access](https://bugzilla.mozilla.org/user_profile?user_id=774743), active maintainer of SpiderMonkey's <abbr title="RISC-V RV64">RV64</abbr> and <abbr title="LoongArch64">LA64</abbr> <abbr title="Just-In-Time">JIT</abbr> backends
 
 <details id="details-ai-attitudes">
