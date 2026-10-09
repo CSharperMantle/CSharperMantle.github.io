@@ -68,4 +68,3 @@ defaults:
         path: /social.svg
         height: 640
         width: 1280
-      seo_description_max_words: 1
