@@ -6,7 +6,7 @@ list_title: >-
 nav_priority: 0
 ---
 
-I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou Dianzi University. Welcome to my blog, where I bake all my potatoes.
+I am Rong "Mantle" Bao, a senior-year Computer Science undergraduate at Hangzhou Dianzi University. Welcome to my blog, where I bake all my potatoes.
 
 ## About me
 
@@ -16,7 +16,7 @@ I am Rong "Mantle" Bao, a third-year Computer Science undergraduate at Hangzhou 
 * Spoken languages:
   * `zh-{cmn,wuu}-Hans-CN` (native)
   * `en` (TOEFL iBT 117 = CEFR C2)
-* Developing personal projects
+* Working on my BEng thesis and personal projects
 
 <details>
   <summary><strong>My <abbr title="GNU Privacy Guard">GPG</abbr> keys</strong></summary>
