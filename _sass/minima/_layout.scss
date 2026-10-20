@@ -10,6 +10,8 @@
 
   // Positioning context for the mobile navigation icon
   position: relative;
+
+  background-color: $brand-color-light;
 }
 
 .site-title {
@@ -207,7 +209,7 @@
     margin-bottom: $spacing-unit;
 
     > .post-excerpt {
-      color: #7c7c7c;
+      color: #757575;
     }
   }
 }

@@ -134,11 +134,11 @@ h6 {
  * Links
  */
 a {
-  color: $brand-color;
+  color: $brand-color-dark;
   text-decoration: none;
 
   &:visited {
-    color: color.adjust($brand-color, $lightness: 6%);
+    color: color.adjust($brand-color-dark, $lightness: 6%);
   }
 
   &:hover {
