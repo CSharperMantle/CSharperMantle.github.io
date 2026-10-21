@@ -263,7 +263,7 @@ web%'; INSERT INTO member(id, intro, blog) VALUES ('Mantle2', 'Hacker2', RCE3('c
 
 最后搜索 Hacker 即可。
 
-![](./FtvmbBzDuoEGrwx6hqXcqsnOnvh.png)
+![](./FtvmbBzDuoEGrwx6hqXcqsnOnvh.webp)
 
 `hgame{48b5cc1bc1e7923abbfa71ef6f46fcf93f58782d}`
 
@@ -272,13 +272,13 @@ web%'; INSERT INTO member(id, intro, blog) VALUES ('Mantle2', 'Hacker2', RCE3('c
 > ma5hr00m wants to take more courses, but he may be racing against time. Can you help him?
 > （数据库初始化需要时间，请稍作等待）
 
-![](./HEvvbisdaopWXQxRjvxcDe3SnKe.png)
+![](./HEvvbisdaopWXQxRjvxcDe3SnKe.webp)
 
 需要爆破弱密码。字典选 SecLists 里面随意一个。
 
 <https://github.com/danielmiessler/SecLists>
 
-![](./IknCbuyN6oHCSfxobRgcsquqnzf.png)
+![](./IknCbuyN6oHCSfxobRgcsquqnzf.webp)
 
 密码：`qwert123`。
 
@@ -456,20 +456,20 @@ PS C:\Users\Mantle Bao>
 
 构造大量并发请求：
 
-![](./H61HbfkRRohzBwx9AVvcoH6ZnLc.png)
-![](./Ldh8bDO41o0SmoxORpNcTxIHnAg.png)
+![](./H61HbfkRRohzBwx9AVvcoH6ZnLc.webp)
+![](./Ldh8bDO41o0SmoxORpNcTxIHnAg.webp)
 
-![](./BjlpbiCJGoZ9gVxIQvbcSiOunyg.png)
+![](./BjlpbiCJGoZ9gVxIQvbcSiOunyg.webp)
 
 获得 flag。
 
-![](./CMxTbcPlxoFS2bxhvbcckzA5nfe.png)
+![](./CMxTbcPlxoFS2bxhvbcckzA5nfe.webp)
 
 `hgame{5ak_p45sW0rD_&_r4Ce_c0nDiT10n}`
 
 ### 梅开二度
 
-> ![](./Hm2pb02cnoUQPTxPCgqcxcNYnae.png)
+> ![](./Hm2pb02cnoUQPTxPCgqcxcNYnae.webp)
 
 Golang SSTI + XSS
 
@@ -484,7 +484,7 @@ hack=<script>alert(1)</script>
 
 `http://106.14.57.14:31181/?tmpl=%7B%7B.Query%20%60hack%60%7D%7D&hack=%3Cscript%3Ealert%281%29%3C%2fscript%3E`
 
-![](./Fnzjb1hCRoLynOxNV3NcFdZYncb.png)
+![](./Fnzjb1hCRoLynOxNV3NcFdZYncb.webp)
 
 不能直接读取文件，而且 cookies 有 HttpOnly 选项。但是 fetch 会修改当前环境中的 cookies，后续的 fetch 会带上之前 fetch 到的 cookie。那么我们只需要首先 fetch 一次/flag，然后再用 SSTI 将服务端 request header 里的 Cookie 字段拿到就行了。
 
@@ -530,7 +530,7 @@ for i in range(64):
     input("Press Enter to continue...\n")
 ```
 
-![](./E3Qvb5lYNoVlwAxBM39cmcTOnGg.png)
+![](./E3Qvb5lYNoVlwAxBM39cmcTOnGg.webp)
 
 <https://cyberchef.org/#recipe=From_Decimal('Line%20feed',false)URL_Decode()&input=MTA0CjEwMwo5NwoxMDkKMTAxCjM3CjU1CjY2CjU2CjEwMAoxMDAKNTMKNTMKNTAKMTAyCjQ5CjEwMAo5OQo1NQoxMDIKNTcKNTIKNDgKNTYKNTUKMTAxCjUzCjk4CjEwMAo0OQo0OAoxMDIKOTcKMTAxCjUwCjU1CjU3CjUwCjUzCjk5CjUzCjU0CjU3CjUxCjUxCjU0CjU1CjUyCjM3CjU1CjY4CjM3CjQ4CjY1>
 
@@ -1118,7 +1118,7 @@ mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024/week_2/old_fastnote/at
 
 所有 gadget 不能直接使用，考虑利用 realloc 的序言调整栈帧。
 
-![](./EmDVb5Oc3oTobWxWLzic65zqnyb.png)
+![](./EmDVb5Oc3oTobWxWLzic65zqnyb.webp)
 
 ```plain-text
 pwndbg> stack 32 -16
@@ -1287,11 +1287,11 @@ mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024/week_2/old_fastnote/at
 
 改三处特征的 UPX。
 
-![](./UxQAbPao8oseTQx7uy7cizDPnzh.png)
+![](./UxQAbPao8oseTQx7uy7cizDPnzh.webp)
 
 两个 section 的名字和 PE 段末的 UPX!修复完成（即将三个 `ari` 替换为 `UPX`）后就可以直接脱壳了。
 
-![](./RToKbRmcGo8bTIxooG5ctwSRnkd.png)
+![](./RToKbRmcGo8bTIxooG5ctwSRnkd.webp)
 
 ```plain-text
 PS D:\Workspace\rev\hgame_2024\week_2\arithmetic> upx -f -d .\arithmetic.1.exe
@@ -2098,9 +2098,9 @@ Analyzing Dex... ━━━━━━━━━━━━━━━━━━━━━
 
 用 Findcrypt 可以发现 Check2 是某种模式的 AES，密钥就是用户名 `b"G>IkH<aHu5FE3GSV"`。
 
-![](./Ow0EbrPgOoLWEFxwutJcjmBhnje.png)
+![](./Ow0EbrPgOoLWEFxwutJcjmBhnje.webp)
 
-![](./L2oEbP7Zooseswxl3kDcFeLznUc.png)
+![](./L2oEbP7Zooseswxl3kDcFeLznUc.webp)
 
 dump 出来后进行解密。
 
@@ -2489,11 +2489,11 @@ img_1.save("./奇怪的图片plus/submit_1.png")
 img_2.save("./奇怪的图片plus/submit_2.png")
 ```
 
-![](./AkH7bxAxSoyswFx4hXDcZ7fCnYZ.png)
-![](./HLonbulwNoL5aZxdC3Fcm1FMnaf.png)
+![](./AkH7bxAxSoyswFx4hXDcZ7fCnYZ.webp)
+![](./HLonbulwNoL5aZxdC3Fcm1FMnaf.webp)
 
-![](./A2aeb33JjoUq82xDSPfcNfHEnmg.png)
-![](./RSEtbJayco3GXqxRwAHcoWdTnNe.png)
+![](./A2aeb33JjoUq82xDSPfcNfHEnmg.webp)
+![](./RSEtbJayco3GXqxRwAHcoWdTnNe.webp)
 
 ```plain-text
 PS D:\Workspace\rev\hgame_2024\week_2\奇怪的图片plus> & d:/Workspace/pwnenv/Scripts/python.exe d:/Workspace/rev/hgame_2024/week_2/奇怪的图片plus/client.py
@@ -2551,7 +2551,7 @@ encrypted_image.save("encrypted_flag.png")
 
 文字区域是彩色的，其他区域是(0, 0, 0)。我们不妨大胆假设明文的第一个块中全是 0。由于 AES-OFB 密钥流的第一个块数值上等于密文的第一个块，我们可以方便地使用 ECB 模式解密一次得到 IV。
 
-![](./GKhCbwgqMo4AtOxCmAccgvDXnIf.png)
+![](./GKhCbwgqMo4AtOxCmAccgvDXnIf.webp)
 
 ```python
 import itertools as it
@@ -2612,7 +2612,7 @@ PS D:\Workspace\rev\hgame_2024\week_2> & d:/Workspace/pwnenv/Scripts/python.exe 
 PS D:\Workspace\rev\hgame_2024\week_2>
 ```
 
-![](./DBTSbbtWtoW4gGxY1gGc7ldin2d.png)
+![](./DBTSbbtWtoW4gGxY1gGc7ldin2d.webp)
 
 `hgame{1ad4_80cc_1fb2_be7c}`
 
@@ -2624,11 +2624,11 @@ PS D:\Workspace\rev\hgame_2024\week_2>
 
 简单 Wireshark 使用。
 
-![](./QvxNbdE8loJJmjxeBc1cJDPqndd.png)
+![](./QvxNbdE8loJJmjxeBc1cJDPqndd.webp)
 
 最开始几个包中就有一个 http 请求。直接 follow HTTP stream，然后把包体导出来，发现是个 JPG 文件。
 
-![](./KX4KbU6T7okwCixN3KfcJSzhndh.jpg)
+![](./KX4KbU6T7okwCixN3KfcJSzhndh.webp)
 
 OCR 能得到结果。
 
@@ -2645,22 +2645,22 @@ OCR 能得到结果。
 
 DeepSound 密钥破解。
 
-![](./KJ5RbibHNo26wLxlA1HcBqQunyc.png)
+![](./KJ5RbibHNo26wLxlA1HcBqQunyc.webp)
 
 `KEY: 5H8w1nlWCX3hQLG`
 
 拼接后的第一个二维码扫不出来。
 
-![](./Yx0kbcjbJoo1hsxqloCcvxRNn3c.png)
+![](./Yx0kbcjbJoo1hsxqloCcvxRNn3c.webp)
 
 考虑格式信息被破坏了。使用 https://merri.cx/qrazybox/尝试恢复。
 
-![](./CCpwbm8DvoJAWcxrHQwce7ITnih.png)
-![](./IaTJbXlfaox9F0x3Vc7ch3tGnMg.png)
+![](./CCpwbm8DvoJAWcxrHQwce7ITnih.webp)
+![](./IaTJbXlfaox9F0x3Vc7ch3tGnMg.webp)
 
 右边是扫得出来的。
 
-![](./La6ObNWdboG9JQxhMopcrJKTnFd.png)
+![](./La6ObNWdboG9JQxhMopcrJKTnFd.webp)
 
 `hgame{drag0n_1s_d4nc1ng}`
 
@@ -2674,7 +2674,7 @@ DeepSound 密钥破解。
 
 <https://github.com/chishaxie/BlindWaterMark>
 
-![](./AeZub88kaoxVq8x96t2cIEqtncf.png)
+![](./AeZub88kaoxVq8x96t2cIEqtncf.webp)
 
 ZIP 压缩文件密码为 `T1hi3sI4sKey`。解开后得到另一个文件。
 
@@ -2684,7 +2684,7 @@ ZIP 压缩文件密码为 `T1hi3sI4sKey`。解开后得到另一个文件。
 
 解码后得到很多 utf-8 编码的 CJK 字符。
 
-![](./GmCAbtQOqo8BtdxFvpwcYlzXntf.png)
+![](./GmCAbtQOqo8BtdxFvpwcYlzXntf.webp)
 
 观察到其前五项的 Unicode codepoint 相对差值与 `b"hgame"` 类似，考虑加法解密。编写脚本计算偏移并解码。
 

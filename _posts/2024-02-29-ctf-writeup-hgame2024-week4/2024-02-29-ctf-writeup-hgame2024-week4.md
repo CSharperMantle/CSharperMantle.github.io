@@ -325,7 +325,7 @@ hgame{89e12dc0a019805ee3c7d4a7c236a153643d62d8}
 
 qbittorrent，creds：admin/adminadmin。
 
-![](./JooWbdozso1W1CxgIYTcOfkSnKc.png)
+![](./JooWbdozso1W1CxgIYTcOfkSnKc.webp)
 
 设置在加入 torrent 时运行 hook 程序：
 
@@ -551,7 +551,7 @@ PS D:\Workspace\rev\hgame_2024\week_4> & d:/Workspace/pwnenv/Scripts/python.exe 
 
 从 QB 中寻找 secret token：
 
-![](./YklcbuhWhoy4t7xYyCHcIPIWn5e.png)
+![](./YklcbuhWhoy4t7xYyCHcIPIWn5e.webp)
 
 ```json
 {
@@ -688,7 +688,7 @@ Rust 代码审计，字典值污染，JWT forgery。
 
 题目希望我们切换到用户 `Liki4` 并查看私密留言。
 
-![](./GcoGbHbCPobuZZxRwKkcukasnwe.png)
+![](./GcoGbHbCPobuZZxRwKkcukasnwe.webp)
 
 观察关键代码片段：
 
@@ -816,8 +816,8 @@ pub fn message_page(
 
 我们先注册目标用户，再写入相应键值以覆盖目标 key 为 `"a"`。
 
-![](./J0k5bA3nyo7uO4xXjodczCWsn6e.png)
-![](./A7jNbJV3Joj9vYxmh2RcRi32nPg.png)
+![](./J0k5bA3nyo7uO4xXjodczCWsn6e.webp)
+![](./A7jNbJV3Joj9vYxmh2RcRi32nPg.webp)
 
 然后编写程序生成用 `"a"` 签名的、所有待尝试的 ID-用户名组合的 JWT：
 
@@ -852,16 +852,16 @@ pub fn user_login_post(
 }
 ```
 
-![](./Ue8ibQsDxoN93FxYiA9cK296nvd.png)
+![](./Ue8ibQsDxoN93FxYiA9cK296nvd.webp)
 
 将结果保存至文件，使用 burp 对文件中的 token 逐一尝试。
 
-![](./QfPvb1s7IoJYRDxurjvcNihKnSg.png)
-![](./ZnUSbn3msonT9yxKGVCcq2uSn7Q.png)
+![](./QfPvb1s7IoJYRDxurjvcNihKnSg.webp)
+![](./ZnUSbn3msonT9yxKGVCcq2uSn7Q.webp)
 
 能够看到除了原始请求之外，还有一个请求返回值为 200，此即为正确的 ID-用户名组合生成的 JWT。使用该 JWT 访问 `/message` 即可访问到 `Liki4` 的非公开留言，即为 flag。
 
-![](./HwooboEyNoXaF4xmG5KckKzrnfb.png)
+![](./HwooboEyNoXaF4xmG5KckKzrnfb.webp)
 
 `hgame{63c4d9fc4613c81bce3a2e05577e8fc024c93ed1}`
 
@@ -1623,7 +1623,7 @@ bkcrack 的 issue 中的一条回复提供了启发：
 
 也就是说，虽然我们无法得知 deflate 流第一个块的内容（Huffman tree 结构依赖于文件内容），但最后一个块有很大概率是 store 的。那么，由于 PNG 文件以 `IEND` 段结束，我们就有了一段明文 `b"\x00\x00\x00\x00IEND\xae\x42\x60\x82"`，长度为 12 字节，恰好满足已知明文攻击的最低要求。我们可以通过手动创建一个可控的 zip 文件证实这个说法。
 
-![](./GxZ9bkywcoOcXLx3kVucSKMZnah.png)
+![](./GxZ9bkywcoOcXLx3kVucSKMZnah.webp)
 
 由于压缩包中有大量 PNG 文件，我们尝试对每一个文件 deflate 流的末尾进行已知明文攻击。注意这里的 offset 是 `ciphertext.size() - ENCRYPTION_HEADER_SIZE - plaintext.size() == 83374 - 12 - 12`（<https://github.com/kimci86/bkcrack/blob/0b5a89130346b15a1297c99e1ef98e56a35c4243/src/Data.cpp#L50>）。
 
@@ -1659,12 +1659,12 @@ PS D:\bdist\bkcrack-1.6.1-win64>
 
 将 zip 的密码改为 `"simple"` 后解压。
 
-![](./D5Hobn3cNoCJljxqVfkcjc95nid.png)
-![](./L3YRbmcGoomTf1xAFg0cKNnKn9d.png)
+![](./D5Hobn3cNoCJljxqVfkcjc95nid.webp)
+![](./L3YRbmcGoomTf1xAFg0cKNnKn9d.webp)
 
 my_secret 中有很多数字。观察压缩包中图片文件的修改日期，猜测可能存在隐写。
 
-![](./FiLPbFHBeoWLlPxMaPycA7VLn0c.png)
+![](./FiLPbFHBeoWLlPxMaPycA7VLn0c.webp)
 
 编写脚本解码。
 
@@ -1703,12 +1703,12 @@ PS D:\Workspace\rev\hgame_2024\week_4>
 
 结果提示我们上述数字可能是 Tupper's formula 的参数，可以查找工具解码。
 
-![](./PGp5bvqZAoM6Icx4hn0cUUAUn5c.png)
+![](./PGp5bvqZAoM6Icx4hn0cUUAUn5c.webp)
 
 是一个 Micro QR code（<https://en.wikipedia.org/wiki/QR_code#Micro_QR_code>），增强后使用扫描软件得到 flag。
 
-![](./ErmobiJsXobNwtxpwoocyidinNe.png)
-![](./K0LabqC0JoGA0jxgvZscWNplnpd.jpg)
+![](./ErmobiJsXobNwtxpwoocyidinNe.webp)
+![](./K0LabqC0JoGA0jxgvZscWNplnpd.webp)
 
 `hgame{Matryo5hk4_d01l}`
 
@@ -1727,11 +1727,11 @@ USB HID 流量分析。
 
 发现多个设备。
 
-![](./WVlTbgDNvo8P36xpbbEcZDzunDd.png)
+![](./WVlTbgDNvo8P36xpbbEcZDzunDd.webp)
 
 使用 tshark 进行包筛选。
 
-![](./SmyMbTYi0oFzCPxKjxKcMvFgnQc.png)
+![](./SmyMbTYi0oFzCPxKjxKcMvFgnQc.webp)
 
 `usb.src == "1.2.3" && usbhid.data`
 

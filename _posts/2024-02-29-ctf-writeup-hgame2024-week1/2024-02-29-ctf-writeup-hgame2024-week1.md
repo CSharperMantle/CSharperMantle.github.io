@@ -236,7 +236,7 @@ PS D:\Workspace\rev\hgame_2024>
 
 看上去是 OAuth 的 token，解码得到 flag。
 
-![](./Hz4hbu2GVoG6q0x4lNRcR95Rn7f.png)
+![](./Hz4hbu2GVoG6q0x4lNRcR95Rn7f.webp)
 
 `hgame{HTTP_!s_1mP0rT4nt}`
 
@@ -344,7 +344,7 @@ mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$
 
 点击注册，无法注册。
 
-![](./KlNxbvv7tonX7jxck6TckLRJn6c.png)
+![](./KlNxbvv7tonX7jxck6TckLRJn6c.webp)
 
 直接 curl 一份网页下来。
 
@@ -429,7 +429,7 @@ PS D:\Workspace\rev\hgame_2024>
 
 登录拿 flag。
 
-![](./GmYZbrbaioInOPxaW3ScSUi1ngc.png)
+![](./GmYZbrbaioInOPxaW3ScSUi1ngc.webp)
 
 `hgame{0c3c63a86c53b38e9fe038c6e2e4c7f843c77f0e}`
 
@@ -443,7 +443,7 @@ jhat 中的自定义查询存在 RCE。
 (new java.util.Scanner(java.lang.Runtime.getRuntime().exec("cat /flag").getInputStream())).useDelimiter('\\\\A').next()
 ```
 
-![](./SPYhbmUHkoj9gbx0GFscPPkfnQf.png)
+![](./SPYhbmUHkoj9gbx0GFscPPkfnQf.webp)
 
 ### 2048*16
 
@@ -453,29 +453,29 @@ JS anti-`debugger` 和 patch。
 
 直接 F12 的话，Firefox 会直接 hang，Chrome 能看到一个相当深的 debugger 递归。
 
-![](./TxuWb2fQ3o29X1xiey9cudn4noe.png)
+![](./TxuWb2fQ3o29X1xiey9cudn4noe.webp)
 
 爬取网页，然后 patch 掉相关 debugger 语句片段。
 
-![](./Z6qObHwaLoxkbcxLU25cUklvnoh.png)
+![](./Z6qObHwaLoxkbcxLU25cUklvnoh.webp)
 
 这样的代码有很多处。全部完成后可以使用 F12 调试。
 
 选择将初始生成方块的数字调至接近 32768 的数值，比如 16384。
 
-![](./UIJjbUiziorMS9xCHoxcTTHenZb.png)
+![](./UIJjbUiziorMS9xCHoxcTTHenZb.webp)
 
 看到一个 this.addStartTiles()，动调获取函数体。
 
-![](./ByxHbfnt0okhmJxzJCCcmAXQnFc.png)
+![](./ByxHbfnt0okhmJxzJCCcmAXQnFc.webp)
 
 然后进一步跟进。修改生成的块上数量为 8192 和 16384。
 
-![](./H1s4bqoyBo0YTuxn3bCcJ5Y8n2f.png)
+![](./H1s4bqoyBo0YTuxn3bCcJ5Y8n2f.webp)
 
 稍微按两下即可 getflag。
 
-![](./FWbXboxMwoAGSFxHQEHclubGnRh.png)
+![](./FWbXboxMwoAGSFxHQEHclubGnRh.webp)
 
 `flag{b99b820f-934d-44d4-93df-41361df7df2d}`
 
@@ -611,15 +611,15 @@ mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$
 
 除了 NX 之外保护全关。
 
-![](./UXF3b7PtPoli9BxlTcmcgT6snTh.png)
+![](./UXF3b7PtPoli9BxlTcmcgT6snTh.webp)
 
 没有 execve。
 
-![](./EXvWbRWJuokB42xXJ1xcwzxXnTd.png)
+![](./EXvWbRWJuokB42xXJ1xcwzxXnTd.webp)
 
 只有一个很小的溢出。
 
-![](./VQUXbIFtUom7xMxv0BJczApWnAc.png)
+![](./VQUXbIFtUom7xMxv0BJczApWnAc.webp)
 
 那么考虑先 leak 再 orw，~~但是有长度限制。~~栈迁移到 bss 可解。
 
@@ -767,7 +767,7 @@ mantlebao@LAPTOP-RONG-BAO:/mnt/d/Workspace/rev/hgame_2024$
 
 checksec 看到没开 canary 和 PIE：
 
-![](./HWAAbFn6po0yTBx1aEEcREGRnAb.png)
+![](./HWAAbFn6po0yTBx1aEEcREGRnAb.webp)
 
 看代码：
 
@@ -949,11 +949,11 @@ hgame{R4nd0m_Th1ngs_4r3_pr3sen7s_1n_l1f3}
 
 需要绕过 canary。
 
-![](./DBIQbA94eoy9H3xrNUcc396on9g.png)
+![](./DBIQbA94eoy9H3xrNUcc396on9g.webp)
 
 提供了后门函数。
 
-![](./MrHWbXipFoLGEkxtLGccIA4onEg.png)
+![](./MrHWbXipFoLGEkxtLGccIA4onEg.webp)
 
 80 个字符，不包含 p 和 s。
 
@@ -973,7 +973,7 @@ void __fastcall vuln()
 }
 ```
 
-![](./P6Ppbg5u8oj38LxyMQhcdp2gnze.png)
+![](./P6Ppbg5u8oj38LxyMQhcdp2gnze.webp)
 
 那么这个位置就是 `69 13 40 00 00 00 00 00`。sys 在 `3D 12 40 00 00 00 00 00`。能不能直接写入？
 
@@ -996,7 +996,7 @@ offset=10
 
 `%{N}c%18$hhn-%18$llx-%22$llx` 可以将 %22$llx处的最低字节改为N。~~那么只需要将%22$llx 处改为 16k+8 where 0<=K<=15 即可写入返回地址。~~失败。必须有至少 2 次 printf 才行。
 
-![](./Pc4Hb465FoylBsxOxL7cIl4Kn5f.png)
+![](./Pc4Hb465FoylBsxOxL7cIl4Kn5f.webp)
 
 尝试利用函数返回的 `leave; ret; leave; ret;` 迁移栈。新栈区的数据可以从 read 读入。
 
@@ -1235,11 +1235,11 @@ VIDAR{Python_R3vers3_1s_1nter3st1ng!}
 
 >
 
-![](./GIg5br8xdoI4sjxgWIMchWABnhe.png)
+![](./GIg5br8xdoI4sjxgWIMchWABnhe.webp)
 
 看来没修改过任何特征。
 
-![](./WC4TbpIPZoL7MlxPXPPczSTfnmZ.png)
+![](./WC4TbpIPZoL7MlxPXPPczSTfnmZ.webp)
 
 直接 dump 出来然后解密即可。注意密文常量数组的长度。
 
@@ -1262,9 +1262,9 @@ VIDAR{Wow!Y0u_kn0w_4_l1ttl3_0f_UPX!}22222222222
 
 无壳，直接 ida。
 
-![](./QUzlb5uJUoWuWpxg2n1cIyNgnic.png)
+![](./QUzlb5uJUoWuWpxg2n1cIyNgnic.webp)
 
-![](./PFKnbFGTJoEiWMxSQPUcKElqnmb.png)
+![](./PFKnbFGTJoEiWMxSQPUcKElqnmb.webp)
 
 `hgame{W3lc0me_T0_Th3_World_of_Rev3rse!}`
 
@@ -1426,7 +1426,7 @@ xor，差分。人肉处理。
 
 Pell's equation，丢番图方程的特例
 
-![](./LinbbOGfpoA2dJxAe6gcvQ3vnXb.png)
+![](./LinbbOGfpoA2dJxAe6gcvQ3vnXb.webp)
 
 ```python
 from Crypto.Cipher import AES
@@ -1469,7 +1469,7 @@ D:\Workspace\pwnenv\Lib\site-packages\pwnlib\log.py:347: BytesWarning: Bytes is 
 
 将图片高缩至 150px 即可。
 
-![](./XMd5bndFWomh0wxD561cgpmrnjb.png)
+![](./XMd5bndFWomh0wxD561cgpmrnjb.webp)
 
 `hgame{WOW_GREAT_YOU_SEE_IT_WONDERFUL}`
 
@@ -1535,9 +1535,9 @@ PS D:\bdist\bkcrack-1.5.0-win64>
 > Ch405 是一名忠实的希儿厨，于是他出了一道这样的题，不过他似乎忘了这个加密的名字不是希儿了（x 虽然经常有人叫错
 > 补充： 图片打不开是正常现象,需要修复 最终得到的大写字母请用 hgame{}包裹
 
-![](./MCBobOF57oEGudxd3aucjrNznrg.png)
+![](./MCBobOF57oEGudxd3aucjrNznrg.webp)
 
-![](./Z5ZFbS4dLoXzQ5xjZU6culJenBf.png)
+![](./Z5ZFbS4dLoXzQ5xjZU6culJenBf.webp)
 
 文件尾部有一个嵌入的 zip。打开是一串大写字母。结合标题猜测是希尔密码。
 
@@ -1578,15 +1578,15 @@ for w, h in tqdm(list(it.product(range(1, 2000), range(1, 2000)))):
 
 那么修复文件。
 
-![](./FwcJbVIvIoSg2rxRXArcyPk0n6b.png)
+![](./FwcJbVIvIoSg2rxRXArcyPk0n6b.webp)
 
 然后提取 LSB，得到 key matrix。
 
-![](./LhZnblXbsotB6DxNr2OcNeXvnGc.png)
+![](./LhZnblXbsotB6DxNr2OcNeXvnGc.webp)
 
 提取的 zip 中是密文。解密即可。
 
-![](./TB0kb1JqAoQRT9xoXDecyeZRn89.png)
+![](./TB0kb1JqAoQRT9xoXDecyeZRn89.webp)
 
 `hgame{DISAPPEARINTHESEAOFBUTTERFLY}`
 
@@ -1597,7 +1597,7 @@ for w, h in tqdm(list(it.product(range(1, 2000), range(1, 2000)))):
 
 可以抓到网站上的资源。
 
-![](./ZayTbmOyAoDZwRxjtJOca9wRnZd.png)
+![](./ZayTbmOyAoDZwRxjtJOca9wRnZd.webp)
 
 从上到下：A-Z；a-z；0-9。
 
@@ -1631,6 +1631,6 @@ StegSeek 0.6 - https://github.com/RickdeJager/StegSeek
 └─$
 ```
 
-![](./MbaVbpiauotMskxZXL1cTBGUnGg.png)
+![](./MbaVbpiauotMskxZXL1cTBGUnGg.webp)
 
 `hgame{welc0me!}`
