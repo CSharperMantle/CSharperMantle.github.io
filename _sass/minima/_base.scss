@@ -94,12 +94,20 @@ img {
 /**
  * Figures
  */
-figure > img {
-  display: block;
-}
 
-figcaption {
-  font-size: $small-font-size;
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  > img {
+    display: block;
+  }
+
+  > figcaption {
+    font-size: $small-font-size;
+    text-align: center;
+  }
 }
 
 /**
