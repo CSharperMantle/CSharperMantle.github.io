@@ -8,7 +8,7 @@ description: >-
 tags: topic:dev loongarch
 ---
 
-> Note: This isn't intended to replace the official [*Getting Set Up To Work On The Firefox Codebase*](https://firefox-source-docs.mozilla.org/setup/index.html) guide.
+> Note: This isn't intended to replace the official [*Getting Set Up To Work On The Firefox Codebase*](https://firefox-source-docs.mozilla.org/setup/index.html) guide.
 
 ## 1. Prepare tools
 
