@@ -49,20 +49,21 @@ I am Rong "Mantle" Bao, a senior-year Computer Science undergraduate at Hangzhou
   <ul>
     <li><span>Machine learning problems are analytical and statistical problems.</span></li>
     <li><span>Neural networks are good at discovering patterns not obvious to traditional approaches.</span></li>
-    <li><span><abbr title="Large Language Model">LLM</abbr>s are probabilistic token predictors. They often intrinsically hallucinate.</span></li>
+    <li><span><abbr title="Large Language Model">LLM</abbr>s are probabilistic token predictors. They generate plausible-looking output, and often intrinsically hallucinate.</span></li>
     <li><span>Garbage in, garbage out. Observation in, imitation out.</span></li>
     <li><span>I do use <abbr title="Large Language Model">LLM</abbr>s to brainstorm ideas.</span></li>
-    <li><span>I do use <abbr title="Large Language Model">LLM</abbr>s to perform repetitive clerical work and typographical proofreading.</span></li>
+    <li><span>I do use <abbr title="Large Language Model">LLM</abbr>s to perform repetitive work, like typographical proofreading and babysitting pre-written scripts.</span></li>
     <li><span>I do chat with <abbr title="Large Language Model">LLM</abbr>s to have fun in my spare time.</span></li>
-    <li><span>I do use generative models to craft images for hobby use.</span></li>
-    <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write code beyond my own capability or without careful scrutiny.</span></li>
+    <li><span>I do use generative models to craft multimedia content for personal, hobby use.</span></li>
+    <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write code beyond my own capabilities, or without careful scrutiny.</span></li>
     <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write casual articles, like blogs.</span></li>
-    <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write academic articles or carry out research in place of myself.</span></li>
+    <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s to write academic articles, or carry out research in place of myself.</span></li>
     <li><span>I do <em>not</em> use <abbr title="Large Language Model">LLM</abbr>s as a search engine.</span></li>
     <li><span>I do <em>not</em> trust <abbr title="Large Language Model">LLM</abbr>s as a sole source of information.</span></li>
     <li><span>I do <em>not</em> accept responses from <abbr title="Large Language Model">LLM</abbr>s without verification.</span></li>
-    <li><span>I believe the loopholes and waivers in <abbr title="Large Language Model">LLM</abbr> hosting companies' <abbr title="End-User License Agreement">EULA</abbr> put much personal information at risk.</span></li>
-    <li><span>I believe <abbr title="Large Language Model">LLM</abbr>s are energy hogs that should be used with conservation in mind.</span></li>
+    <li><span><abbr title="Large Language Model">LLM</abbr>s are trained on humanity's collective knowledge. Human labor and intellectual rights must be honored and respected.</span></li>
+    <li><span>Loopholes and waivers in <abbr title="Large Language Model">LLM</abbr> hosting companies' <abbr title="End-User License Agreement">EULA</abbr> put much data at risk.</span></li>
+    <li><span><abbr title="Large Language Model">LLM</abbr>s are energy hogs that should be used with conservation in mind.</span></li>
     <li><span>I believe <abbr title="Large Language Model">LLM</abbr>s are becoming more performant as theories and technologies evolve.</span></li>
   </ul>
 </details>
