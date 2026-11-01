@@ -34,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
 
-  deploy:
+  deploy-gh-pages:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -44,3 +44,18 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+  
+  deploy-vps:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to VPS
+        uses: burnett01/rsync-deployments@v9
+        with:
+          switches: -avzr --delete
+          path: _site/
+          remote_path: "${{ secrets.REMOTE_PATH }}"
+          remote_host: "${{ secrets.REMOTE_HOST }}"
+          remote_port: "${{ secrets.REMOTE_PORT }}"
+          remote_user: "${{ secrets.REMOTE_USER }}"
+          remote_key: "${{ secrets.REMOTE_PRIVATE_KEY }}"
