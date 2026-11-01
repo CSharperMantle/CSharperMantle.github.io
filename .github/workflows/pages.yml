@@ -31,8 +31,11 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: jekyll-site
+          path: ./_site
 
   deploy-gh-pages:
     environment:
@@ -41,19 +44,35 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: jekyll-site
+          path: ./_site
+      - name: Package site artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./_site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
   
-  deploy-vps:
+  deploy-self-hosted:
+    environment:
+      name: self-hosted
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to VPS
+      - name: Download site artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: jekyll-site
+          path: ./_site
+      - name: Deploy to self-hosted server
         uses: burnett01/rsync-deployments@v9
         with:
           switches: -avzr --delete
-          path: _site/
+          path: ./_site
           remote_path: "${{ secrets.REMOTE_PATH }}"
           remote_host: "${{ secrets.REMOTE_HOST }}"
           remote_port: "${{ secrets.REMOTE_PORT }}"
