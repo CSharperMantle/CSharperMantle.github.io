@@ -36,6 +36,7 @@ jobs:
         with:
           name: jekyll-site
           path: ./_site
+          include-hidden-files: true
 
   deploy-gh-pages:
     environment:
