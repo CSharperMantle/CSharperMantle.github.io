@@ -72,7 +72,7 @@ jobs:
         uses: burnett01/rsync-deployments@v9
         with:
           switches: -avzr --delete
-          path: ./_site
+          path: ./_site/
           remote_path: "${{ secrets.REMOTE_PATH }}"
           remote_host: "${{ secrets.REMOTE_HOST }}"
           remote_port: "${{ secrets.REMOTE_PORT }}"
