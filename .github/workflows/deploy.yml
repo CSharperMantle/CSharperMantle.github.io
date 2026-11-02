@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
@@ -61,6 +61,7 @@ jobs:
   deploy-self-hosted:
     environment:
       name: self-hosted
+      url: https://csmantle.top
     runs-on: ubuntu-latest
     needs: build
     steps:
