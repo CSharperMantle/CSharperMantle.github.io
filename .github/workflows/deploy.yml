@@ -15,7 +15,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy-gh-pages:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,25 +34,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      - name: Upload site artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: jekyll-site
-          path: ./_site
-          include-hidden-files: true
-
-  deploy-gh-pages:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download site artifact
-        uses: actions/download-artifact@v8
-        with:
-          name: jekyll-site
-          path: ./_site
       - name: Package site artifact
         uses: actions/upload-pages-artifact@v5
         with:
@@ -59,17 +43,23 @@ jobs:
         uses: actions/deploy-pages@v5
   
   deploy-self-hosted:
+    env:
+      base-url: https://csmantle.top/
     environment:
       name: self-hosted
-      url: https://csmantle.top/
+      url: "${{ env.base-url }}"
     runs-on: ubuntu-latest
-    needs: build
     steps:
-      - name: Download site artifact
-        uses: actions/download-artifact@v8
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          name: jekyll-site
-          path: ./_site
+          bundler-cache: true
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --baseurl "${{ env.base-url }}"
+        env:
+          JEKYLL_ENV: production
       - name: Deploy to self-hosted server
         uses: burnett01/rsync-deployments@v9
         with:
