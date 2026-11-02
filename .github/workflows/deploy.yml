@@ -61,7 +61,13 @@ jobs:
       - name: Deploy to self-hosted server
         uses: burnett01/rsync-deployments@v9
         with:
-          switches: -avzr --delete
+          switches: >-
+            -avzr --delete
+            --exclude 'periotrisjs/'
+            --exclude 'la32r-instr-stats/'
+            --exclude 'ysyx-chip-area-visualizer/'
+            --exclude 'wbnbd/'
+            --exclude 'resume/'
           path: ./_site/
           remote_path: "${{ secrets.REMOTE_PATH }}"
           remote_host: "${{ secrets.REMOTE_HOST }}"
