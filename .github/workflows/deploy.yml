@@ -43,11 +43,9 @@ jobs:
         uses: actions/deploy-pages@v5
   
   deploy-self-hosted:
-    env:
-      base-url: https://csmantle.top/
     environment:
       name: self-hosted
-      url: "${{ env.base-url }}"
+      url: https://csmantle.top/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -57,7 +55,7 @@ jobs:
         with:
           bundler-cache: true
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ env.base-url }}"
+        run: bundle exec jekyll build --baseurl '/'
         env:
           JEKYLL_ENV: production
       - name: Deploy to self-hosted server
