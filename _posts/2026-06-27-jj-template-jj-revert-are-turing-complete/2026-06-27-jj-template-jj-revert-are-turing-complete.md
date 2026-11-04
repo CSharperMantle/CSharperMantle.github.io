@@ -119,7 +119,10 @@ $ jj log
 
 Here's a demo GIF for the same process:
 
-![GIF screen recording of the Minsky adder](./demo-minsky.gif)
+<figure>
+    <img src="./demo-minsky.avif" alt="GIF screen recording of the Minsky adder">
+    <figcaption>The Minsky adder runs. </figcaption>
+</figure>
 
 ## Conclusion
 
