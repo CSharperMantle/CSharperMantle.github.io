@@ -137,7 +137,7 @@ tags: topic:misc non-technical
 返程从灵隐公交总站开始，站点对游客有比较完善的分流措施，地下大厅内分出了多条通道，每个通道对应目的地相近的几路公交。从地下大厅到站台建有扶梯，但是当日并未启用。
 
 <figure>
-    <div>
+    <div style="display: flex; flex-direction: column; align-item: stretch; gap: 0.25em;">
         <img src="./IMG_20261028_141833.avif" alt="灵隐公交总站地下大厅">
         <img src="./IMG_20261028_141924.avif" alt="站台">
     </div>
