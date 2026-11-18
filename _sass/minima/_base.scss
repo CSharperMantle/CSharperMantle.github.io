@@ -100,11 +100,11 @@ figure {
   flex-direction: column;
   align-items: stretch;
 
-  > img {
+  img {
     display: block;
   }
 
-  > figcaption {
+  figcaption {
     font-size: $small-font-size;
     text-align: center;
   }
