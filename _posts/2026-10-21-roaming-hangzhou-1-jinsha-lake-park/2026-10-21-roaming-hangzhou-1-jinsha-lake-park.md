@@ -38,7 +38,7 @@ tags: topic:misc non-technical
 
 公园西南角为金沙湖的入水口，也是公园南侧铺设跑道的终点。
 
-<div style="display: flex; flex-direction: row; align-item: stretch; gap: 1em;">
+<div style="display: flex; flex-direction: row; align-items: stretch; gap: 1em;">
     <figure>
         <img src="./IMG_20261021_103112.webp" alt="可交互的终点按钮">
         <figcaption>可交互的终点按钮</figcaption>
@@ -52,7 +52,7 @@ tags: topic:misc non-technical
 公园南侧有较大的亲水观景台，可以饱览湖上风光。湖边有若干饭店、小型赛车场，以及所谓“低空科技馆”。经过时，有一架送货无人机正从此处升空，向西北方飞去。
 
 <figure>
-    <div style="display: flex; flex-direction: column; align-item: stretch; gap: 0.25em;">
+    <div style="display: flex; flex-direction: column; align-items: stretch; gap: 0.25em;">
         <img src="./IMG_20261021_104210.webp" alt="“莫奈花园”（一）">
         <img src="./IMG_20261021_104232.webp" alt="“莫奈花园”（二）">
     </div>
